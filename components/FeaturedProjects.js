@@ -81,7 +81,7 @@ const ProjectImage = styled(Image)`
 const Projects = () => {
   return (
     <section>
-      <h2 style={{ height: "120px", paddingTop: "60px", textAlign: "center" }}>
+      <h2 style={{ padding: "80px 0 60px", textAlign: "center" }}>
         Featured
       </h2>
       <ProjectsWrapper>
