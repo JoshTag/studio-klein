@@ -6,7 +6,7 @@ const ProjectsWrapper = styled.div`
   display: flex;
   flex-direction: column;
 
-  @media ${(props) => props.theme.breakpoints.tablet} {
+  @media ${({ theme }) => theme.breakpoints.tablet} {
     flex-direction: row;
     justify-content: space-between;
   }
@@ -18,18 +18,17 @@ const ProjectItem = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
-  background: ${(props) => props.bgColour};
   overflow: hidden;
 
-  @media ${(props) => props.theme.breakpoints.mobileLarge} {
+  @media ${({ theme }) => theme.breakpoints.mobileLarge} {
     height: 800px;
   }
 
-  @media ${(props) => props.theme.breakpoints.tabletSmall} {
+  @media ${({ theme }) => theme.breakpoints.tabletSmall} {
     height: 900px;
   }
 
-  @media ${(props) => props.theme.breakpoints.tablet} {
+  @media ${({ theme }) => theme.breakpoints.tablet} {
     height: 600px;
     width: 100%;
     transition: 0.6s;
@@ -39,7 +38,7 @@ const ProjectItem = styled.div`
     }
   }
 
-  @media ${(props) => props.theme.breakpoints.desktopLarge} {
+  @media ${({ theme }) => theme.breakpoints.desktopLarge} {
     height: 650px;
   }
 `;
@@ -48,7 +47,7 @@ const LogoContainer = styled.div`
   width: 200px;
   margin-top: 20px;
 
-  @media ${(props) => props.theme.breakpoints.tablet} {
+  @media ${({ theme }) => theme.breakpoints.tablet} {
     width: 145px;
   }
 `;

@@ -5,7 +5,7 @@ import Image from "next/image";
 const HeroSection = styled.section`
   position: relative;
 
-  @media ${(props) => props.theme.breakpoints.desktop} {
+  @media ${({ theme }) => theme.breakpoints.desktop} {
     height: 685px;
   }
 `;
@@ -16,25 +16,25 @@ const ImageContainer = styled.div`
   position: absolute;
   overflow: hidden;
 
-  @media ${(props) => props.theme.breakpoints.mobileLarge} {
+  @media ${({ theme }) => theme.breakpoints.mobileLarge} {
     height: 942px;
     top: -30px;
   }
 
-  @media ${(props) => props.theme.breakpoints.tablet} {
+  @media ${({ theme }) => theme.breakpoints.tablet} {
     height: 860px;
     top: -60px
   }
 
-  @media ${(props) => props.theme.breakpoints.tabletLarge} {
+  @media ${({ theme }) => theme.breakpoints.tabletLarge} {
     height: 960px;
   }
 
-  @media ${(props) => props.theme.breakpoints.desktop} {
+  @media ${({ theme }) => theme.breakpoints.desktop} {
     height: 960px;
   }
 
-  @media ${(props) => props.theme.breakpoints.desktopLarge} {
+  @media ${({ theme }) => theme.breakpoints.desktopLarge} {
     height: 960px;
   }
 `;
@@ -45,38 +45,38 @@ const ImageBox = styled.div`
   right: -255px;
   width: 741px;
 
-  @media ${(props) => props.theme.breakpoints.mobileLarge} {
+  @media ${({ theme }) => theme.breakpoints.mobileLarge} {
     width: 715px;
     bottom: -87px;
     right: -35px;
   }
 
-  @media ${(props) => props.theme.breakpoints.tablet} {
+  @media ${({ theme }) => theme.breakpoints.tablet} {
     width: 665px;
     bottom: -72px;
     right: -41px;
   }
 
-  @media ${(props) => props.theme.breakpoints.tabletLarge} {
+  @media ${({ theme }) => theme.breakpoints.tabletLarge} {
     width: 87%;
     top: -140px;
     left: 47%;
   }
 
-  @media ${(props) => props.theme.breakpoints.desktop} {
+  @media ${({ theme }) => theme.breakpoints.desktop} {
     width: 78%;
     top: -150px;
     max-width: 858px
   }
 
-  @media ${(props) => props.theme.breakpoints.desktopLarge} {
+  @media ${({ theme }) => theme.breakpoints.desktopLarge} {
     width: 62%;
     top: -90px;
     max-width: 806px;
     left: 48%;
   }
 
-  @media ${(props) => props.theme.breakpoints.desktopWide} {
+  @media ${({ theme }) => theme.breakpoints.desktopWide} {
     right: -90px;
     left: auto;
   }
@@ -87,7 +87,7 @@ const HeroImage = styled(Image)`
   opacity: 0.07;
   height: 100%;
 
-  @media ${(props) => props.theme.breakpoints.tabletLarge} {
+  @media ${({ theme }) => theme.breakpoints.tabletLarge} {
     opacity: 0.7;
   }
 `;
@@ -95,25 +95,25 @@ const HeroImage = styled(Image)`
 const Wrapper = styled.div`
   margin: 0 5%;
 
-  @media ${(props) => props.theme.breakpoints.mobileLarge} {
+  @media ${({ theme }) => theme.breakpoints.mobileLarge} {
     margin: 0 10%;
   }
 `;
 
 const HeroDescription = styled.div`
-  @media ${(props) => props.theme.breakpoints.tabletLarge} {
+  @media ${({ theme }) => theme.breakpoints.tabletLarge} {
     width: 50%;
   }
 
   & p:first-of-type {
-    font-size: ${(props) => props.theme.fontSize.xLarge};
+    font-size: ${({ theme }) => theme.fontSize.xLarge};
     line-height: 40px;
     margin-bottom: 2rem;
     padding-top: 2rem;
   }
 
   & > p {
-    font-size: ${(props) => props.theme.fontSize.small};
+    font-size: ${({ theme }) => theme.fontSize.small};
     line-height: 27px;
     margin-bottom: 1.8rem;
   }
@@ -122,14 +122,14 @@ const HeroDescription = styled.div`
 const Herolist = styled.ul`
   list-style: none;
 
-  @media ${(props) => props.theme.breakpoints.tabletLarge} {
+  @media ${({ theme }) => theme.breakpoints.tabletLarge} {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
     margin: 50px 0;
   }
 
-  @media ${(props) => props.theme.breakpoints.desktop} {
+  @media ${({ theme }) => theme.breakpoints.desktop} {
     max-width: 820px;
     margin: 100px auto 50px;
   }
@@ -137,11 +137,11 @@ const Herolist = styled.ul`
   & > li {
     margin-bottom: 1rem;
 
-    @media ${(props) => props.theme.breakpoints.tabletLarge} {
+    @media ${({ theme }) => theme.breakpoints.tabletLarge} {
       width: 200px;
     }
 
-    @media ${(props) => props.theme.breakpoints.desktop} {
+    @media ${({ theme }) => theme.breakpoints.desktop} {
       width: 240px;
     }
   }
@@ -150,11 +150,11 @@ const Herolist = styled.ul`
 const Break = styled.br`
   display: none;
 
-  @media ${(props) => props.theme.breakpoints.tabletLarge} {
+  @media ${({ theme }) => theme.breakpoints.tabletLarge} {
     display: block;
   }
 
-  @media ${(props) => props.theme.breakpoints.desktop} {
+  @media ${({ theme }) => theme.breakpoints.desktop} {
     display: none;
   }
 `;

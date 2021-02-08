@@ -13,7 +13,14 @@ export default function Home() {
       <Header />
       <Hero />
       <FeaturedProjects />
-      <div styled={{ height: "500px" }}>TEST</div>
+      <div className="test">TEST</div>
+      <style jsx >
+      {
+      `.test {
+        height: 500px;
+      }`
+      }
+      </style>
     </div>
   )
 }
