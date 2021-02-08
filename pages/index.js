@@ -1,16 +1,15 @@
 import Head from 'next/head'
 import Hero from "./../components/Hero"
-import Header from "./../components/Header"
+import Layout from "./../components/Layout.js"
 import FeaturedProjects from "./../components/FeaturedProjects"
 
 export default function Home() {
   return (
-    <div>
+    <Layout page="home" >
       <Head>
         <title>Studio Klein</title>
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <Header />
       <Hero />
       <FeaturedProjects />
       <div className="test">TEST</div>
@@ -21,6 +20,6 @@ export default function Home() {
       }`
       }
       </style>
-    </div>
+    </Layout>
   )
 }

@@ -203,7 +203,7 @@ const Hero = () => {
             </Button>
           </li>
           <li>
-            <Button>SEO app intergration</Button>
+            <Button>SEO app integration</Button>
           </li>
         </Herolist>
       </Wrapper>

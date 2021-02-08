@@ -2,7 +2,7 @@ import styled from "styled-components";
 import Image from "next/image";
 import SiteButton from "./Button";
 
-const ProjectsWrapper = styled.div`
+const ProjectWrapper = styled.div`
   display: flex;
   flex-direction: column;
 
@@ -19,6 +19,7 @@ const ProjectItem = styled.div`
   flex-direction: column;
   align-items: center;
   overflow: hidden;
+  transition-timing-function: ease-in-out;
 
   @media ${({ theme }) => theme.breakpoints.mobileLarge} {
     height: 800px;
@@ -34,7 +35,7 @@ const ProjectItem = styled.div`
     transition: 0.6s;
 
     &:hover {
-      width: 400%;
+      width: 300%;
     }
   }
 
@@ -46,15 +47,11 @@ const ProjectItem = styled.div`
 const LogoContainer = styled.div`
   width: 200px;
   margin-top: 20px;
+  z-index: 100;
 
   @media ${({ theme }) => theme.breakpoints.tablet} {
     width: 145px;
   }
-`;
-
-const ProjectLogo = styled(Image)`
-  z-index: 100;
-  width: 100%;
 `;
 
 const ProjectBtn = styled(SiteButton)`
@@ -66,13 +63,18 @@ const ProjectBtn = styled(SiteButton)`
 `;
 
 const ProjectImage = styled(Image)`
+  filter: saturate(70%);
+  transition: 0.3s;
+`;
+
+const ImageWrapper = styled.div`
+  position: absolute;
   z-index: 90;
   height: 100%;
   width: 100%;
-  filter: saturate(70%);
-  transition: 0.3s;
+  overflow: hidden;
 
-  &:hover {
+  &:hover ${ProjectImage} {
     filter: saturate(100%);
   }
 `;
@@ -80,32 +82,63 @@ const ProjectImage = styled(Image)`
 const Projects = () => {
   return (
     <section>
-      <h2 style={{ padding: "80px 0 60px", textAlign: "center" }}>
-        Featured
-      </h2>
-      <ProjectsWrapper>
+      <h2 style={{ padding: "80px 0 60px", textAlign: "center" }}>Featured</h2>
+      <ProjectWrapper>
         <ProjectItem>
           <LogoContainer>
-            <ProjectLogo src='/images/project-logo-1.png' layout="fill" />
+            <Image
+              src='/images/project-logo-1.png'
+              width={166}
+              height={101}
+              layout='responsive'
+            />
           </LogoContainer>
           <ProjectBtn>view project</ProjectBtn>
-          <ProjectImage src='/images/project-1.png' layout="fill"  />
+          <ImageWrapper>
+            <ProjectImage
+              src='/images/project-1.png'
+              layout='fill'
+              objectFit='cover'
+            />
+          </ImageWrapper>
         </ProjectItem>
         <ProjectItem>
           <LogoContainer>
-            <ProjectLogo src='/images/project-logo-1.png' layout="fill" />
+            <Image
+              src='/images/project-logo-1.png'
+              width={166}
+              height={101}
+              layout='responsive'
+            />
           </LogoContainer>
           <ProjectBtn>view project</ProjectBtn>
-          <ProjectImage src='/images/project-1.png' layout="fill"  />
+          <ImageWrapper>
+            <ProjectImage
+              src='/images/project-1.png'
+              layout='fill'
+              objectFit='cover'
+            />
+          </ImageWrapper>
         </ProjectItem>
         <ProjectItem>
           <LogoContainer>
-            <ProjectLogo src='/images/project-logo-1.png' layout="fill" />
+            <Image
+              src='/images/project-logo-1.png'
+              width={166}
+              height={101}
+              layout='responsive'
+            />
           </LogoContainer>
           <ProjectBtn>view project</ProjectBtn>
-          <ProjectImage src='/images/project-1.png' layout="fill" />
+          <ImageWrapper>
+            <ProjectImage
+              src='/images/project-1.png'
+              layout='fill'
+              objectFit='cover'
+            />
+          </ImageWrapper>
         </ProjectItem>
-      </ProjectsWrapper>
+      </ProjectWrapper>
     </section>
   );
 };

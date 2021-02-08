@@ -1,8 +1,8 @@
 import React from "react";
-import Header from "./header";
+import Header from "./Header";
 import Head from "next/head";
 
-const Layout = ({ children }) => {
+const Layout = ({ children, page }) => {
   return (
     <>
       <Head>
@@ -19,9 +19,9 @@ const Layout = ({ children }) => {
           crossOrigin=''
         />
       </Head>
-      <Header />
+      <Header page={page} />
       <main>{children}</main>
-      <div style={{ height: "300px" }}>placeholder</div>
+      <div style={{ height: "1000px" }}>placeholder</div>
     </>
   );
 };

@@ -7,6 +7,8 @@ const HeaderContainer = styled.header`
   display: flex;
   justify-content: center;
   padding: 2rem 0 0;
+  background-color: ${({ page }) =>
+    page === "home" ? "transparent" : ({ theme }) => theme.colours.secondary80};
 `;
 
 const Navigation = styled.nav`
@@ -27,7 +29,8 @@ const NavMobileContainer = styled.div`
 const NavListMobile = styled.ul`
   list-style: none;
   margin: 20px 0 0;
-  background: ${({ theme }) => theme.colours.secondary80};
+  background: ${({ page }) =>
+    page !== "home" ? "transparent" : ({ theme }) => theme.colours.secondary80};
   display: block;
   overflow: hidden;
   height: ${(props) => (props.showMenu ? "200px" : "0px")};
@@ -63,13 +66,17 @@ const NavList = styled.ul`
   }
 
   & li > a {
-    color: ${({ theme }) => theme.colours.secondary80};
   }
 `;
+
 const NavLink = styled.a`
   position: relative;
   text-decoration: none;
   font-size: ${({ theme }) => theme.fontSize.medium};
+  color: ${({ page }) =>
+    page === "home"
+      ? ({ theme }) => theme.colours.secondary80
+      : ({ theme }) => theme.colours.primary};
   transition: 0.3s;
 
   &:hover {
@@ -84,7 +91,10 @@ const NavLink = styled.a`
       width: 0;
       height: 1px;
       top: 100%;
-      background: ${({ theme }) => theme.colours.secondary80};
+      background: ${({ page }) =>
+        page === "home"
+          ? ({ theme }) => theme.colours.secondary80
+          : ({ theme }) => theme.colours.primary};
     }
 
     &:after {
@@ -120,39 +130,35 @@ const Hamurger = styled.div`
   }
 `;
 
-// const Logo = styled(Image)`
-//   width: 60px;
-//   height: 60px;
+const Logo = styled(Image)`
+  position: relative;
+  z-index: 1000;
+`
 
-//   @media ${({ theme }) => theme.breakpoints.tabletMin} {
-//     width: 80px;
-//     height: 80px;
-//   }
-
-//   @media ${({ theme }) => theme.breakpoints.tabletLarge} {
-//     width: 100px;
-//     height: 100px;
-//   }
-// `;
-
-const Header = () => {
+const Header = ({ page }) => {
   const [showMenu, setShowMenu] = useState(false);
+  const NAV_ITEMS = ["Projects", "Services", "Logo", "Testamonials", "Contact"];
 
   const handleMenuClick = () => {
     setShowMenu((prevState) => !prevState);
   };
 
+
   return (
-    <HeaderContainer>
+    <HeaderContainer page={page}>
       <Navigation>
         <NavMobileContainer>
-          <Link href='/projects'>
+          <Link href='/'>
             <a>
-              <Image
-                height="60"
-                width="60"
+              <Logo
+                height='60'
+                width='60'
                 layout='fixed'
-                src='/images/logo.svg'
+                src={
+                  page === "home"
+                    ? "/images/logo.svg"
+                    : "/images/logo-white.svg"
+                }
               />
             </a>
           </Link>
@@ -160,7 +166,7 @@ const Header = () => {
             <img src='/images/hamburger.svg' alt='Hamburger Menu' />
           </Hamurger>
         </NavMobileContainer>
-        <NavListMobile showMenu={showMenu}>
+        <NavListMobile showMenu={showMenu} page={page}>
           <li>
             <Link href='/projects'>
               <NavLink>Projects</NavLink>
@@ -185,29 +191,37 @@ const Header = () => {
         <NavList>
           <li>
             <Link href='/projects'>
-              <NavLink>Projects</NavLink>
+              <NavLink page={page}>Projects</NavLink>
             </Link>
           </li>
           <li>
             <Link href='/'>
-              <NavLink>Services</NavLink>
+              <NavLink page={page}>Services</NavLink>
             </Link>
           </li>
           <li>
             <Link href='/'>
               <a>
-                <Image height="100" width="100" src='/images/logo.svg' />
+                <Logo
+                  height='100'
+                  width='100'
+                  src={
+                    page === "home"
+                      ? "/images/logo.svg"
+                      : "/images/logo-white.svg"
+                  }
+                />
               </a>
             </Link>
           </li>
           <li>
             <Link href='/'>
-              <NavLink>Testamonials</NavLink>
+              <NavLink page={page}>Testamonials</NavLink>
             </Link>
           </li>
           <li>
             <Link href='/'>
-              <NavLink>Contact</NavLink>
+              <NavLink page={page}>Contact</NavLink>
             </Link>
           </li>
         </NavList>
