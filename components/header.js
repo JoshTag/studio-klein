@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import styled from "styled-components";
 import Link from "next/link";
 import Image from "next/image";
@@ -133,7 +133,7 @@ const Hamurger = styled.div`
 const Logo = styled(Image)`
   position: relative;
   z-index: 1000;
-`
+`;
 
 const Header = ({ page }) => {
   const [showMenu, setShowMenu] = useState(false);

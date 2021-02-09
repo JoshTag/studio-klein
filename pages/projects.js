@@ -1,5 +1,5 @@
-import Layout from "../components/layout"
-import ProjectList from "./../components/project-list"
+import Layout from "components/layout"
+import ProjectList from "components/project-list"
 
 const Projects = () => {
   return (

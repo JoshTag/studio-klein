@@ -1,7 +1,7 @@
 import Head from 'next/head'
-import Hero from "../components/hero"
-import Layout from "../components/layout.js"
-import FeaturedProjects from "../components/featured"
+import Hero from "components/hero"
+import Layout from "components/layout.js"
+import FeaturedProjects from "components/featured"
 
 export default function Home() {
   return (

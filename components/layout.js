@@ -1,5 +1,5 @@
 import React from "react";
-import Header from "./header";
+import Header from "components/header";
 import Head from "next/head";
 
 const Layout = ({ children, page }) => {
