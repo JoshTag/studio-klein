@@ -1,8 +1,14 @@
 import styled from "styled-components";
 import Image from "next/image";
-import SiteButton from "./button";
+import SiteButton from "components/button";
+import Title from "components/title"
 
-const ProjectWrapper = styled.div`
+const FeaturedTitle = styled(Title)`
+  text-align: center;
+  padding: 80px 0 60px;
+`
+
+const FeaturedWrapper = styled.div`
   display: flex;
   flex-direction: column;
 
@@ -12,7 +18,7 @@ const ProjectWrapper = styled.div`
   }
 `;
 
-const ProjectItem = styled.div`
+const FeaturedProject = styled.div`
   position: relative;
   height: 700px;
   display: flex;
@@ -79,15 +85,15 @@ const ImageWrapper = styled.div`
   }
 `;
 
-const Projects = () => {
+const Featured = () => {
   return (
     <section>
-      <h2 style={{ padding: "80px 0 60px", textAlign: "center" }}>Featured</h2>
-      <ProjectWrapper>
-        <ProjectItem>
+      <FeaturedTitle>Featured</FeaturedTitle>
+      <FeaturedWrapper>
+        <FeaturedProject>
           <LogoContainer>
             <Image
-              src='/images/project-logo-1.png'
+              src='/images/featured-project-logo-1.png'
               width={166}
               height={101}
               layout='responsive'
@@ -96,16 +102,16 @@ const Projects = () => {
           <ProjectBtn>view project</ProjectBtn>
           <ImageWrapper>
             <ProjectImage
-              src='/images/project-1.png'
+              src='/images/featured-project-1.png'
               layout='fill'
               objectFit='cover'
             />
           </ImageWrapper>
-        </ProjectItem>
-        <ProjectItem>
+        </FeaturedProject>
+        <FeaturedProject>
           <LogoContainer>
             <Image
-              src='/images/project-logo-1.png'
+              src='/images/featured-project-logo-1.png'
               width={166}
               height={101}
               layout='responsive'
@@ -114,16 +120,16 @@ const Projects = () => {
           <ProjectBtn>view project</ProjectBtn>
           <ImageWrapper>
             <ProjectImage
-              src='/images/project-1.png'
+              src='/images/featured-project-1.png'
               layout='fill'
               objectFit='cover'
             />
           </ImageWrapper>
-        </ProjectItem>
-        <ProjectItem>
+        </FeaturedProject>
+        <FeaturedProject>
           <LogoContainer>
             <Image
-              src='/images/project-logo-1.png'
+              src='/images/featured-project-logo-1.png'
               width={166}
               height={101}
               layout='responsive'
@@ -132,15 +138,15 @@ const Projects = () => {
           <ProjectBtn>view project</ProjectBtn>
           <ImageWrapper>
             <ProjectImage
-              src='/images/project-1.png'
+              src='/images/featured-project-1.png'
               layout='fill'
               objectFit='cover'
             />
           </ImageWrapper>
-        </ProjectItem>
-      </ProjectWrapper>
+        </FeaturedProject>
+      </FeaturedWrapper>
     </section>
   );
 };
 
-export default Projects;
+export default Featured;

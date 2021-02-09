@@ -1,27 +1,27 @@
-import React from "react"
-import { createGlobalStyle, ThemeProvider } from 'styled-components'
-import Theme from "styles/theme"
+import React from "react";
+import { createGlobalStyle, ThemeProvider } from "styled-components";
+import Theme from "styles/theme";
 
-import NavigoWoff from "public/fonts/Navigo/Navigo-Regular.woff"
-import NavigoWoff2 from "public/fonts/Navigo/Navigo-Regular.woff2"
-import NavigoTtf from "public/fonts/Navigo/Navigo-Regular.ttf"
-import NavigoEot from "public/fonts/Navigo/Navigo-Regular.eot"
-import NavigoLightWoff from "public/fonts/Navigo/Navigo-Light.woff"
-import NavigoLightWoff2 from "public/fonts/Navigo/Navigo-Light.woff2"
-import NavigoLightTtf from "public/fonts/Navigo/Navigo-Light.ttf"
-import NavigoLightEot from "public/fonts/Navigo/Navigo-Light.eot"
-import NavigoThinWoff from "public/fonts/Navigo/Navigo-Thin.woff"
-import NavigoThinWoff2 from "public/fonts/Navigo/Navigo-Thin.woff2"
-import NavigoThinTtf from "public/fonts/Navigo/Navigo-Thin.ttf"
-import NavigoThinEot from "public/fonts/Navigo/Navigo-Thin.eot"
-import NavigoBoldWoff from "public/fonts/Navigo/Navigo-Bold.woff"
-import NavigoBoldWoff2 from "public/fonts/Navigo/Navigo-Bold.woff2"
-import NavigoBoldTtf from "public/fonts/Navigo/Navigo-Bold.ttf"
-import NavigoBoldEot from "public/fonts/Navigo/Navigo-Bold.eot"
-import NavigoExtraLightWoff from "public/fonts/Navigo/Navigo-ExtraLight.woff"
-import NavigoExtraLightWoff2 from "public/fonts/Navigo/Navigo-ExtraLight.woff2"
-import NavigoExtraLightTtf from "public/fonts/Navigo/Navigo-ExtraLight.ttf"
-import NavigoExtraLightEot from "public/fonts/Navigo/Navigo-ExtraLight.eot"
+import NavigoWoff from "public/fonts/Navigo/Navigo-Regular.woff";
+import NavigoWoff2 from "public/fonts/Navigo/Navigo-Regular.woff2";
+import NavigoTtf from "public/fonts/Navigo/Navigo-Regular.ttf";
+import NavigoEot from "public/fonts/Navigo/Navigo-Regular.eot";
+import NavigoLightWoff from "public/fonts/Navigo/Navigo-Light.woff";
+import NavigoLightWoff2 from "public/fonts/Navigo/Navigo-Light.woff2";
+import NavigoLightTtf from "public/fonts/Navigo/Navigo-Light.ttf";
+import NavigoLightEot from "public/fonts/Navigo/Navigo-Light.eot";
+import NavigoThinWoff from "public/fonts/Navigo/Navigo-Thin.woff";
+import NavigoThinWoff2 from "public/fonts/Navigo/Navigo-Thin.woff2";
+import NavigoThinTtf from "public/fonts/Navigo/Navigo-Thin.ttf";
+import NavigoThinEot from "public/fonts/Navigo/Navigo-Thin.eot";
+import NavigoBoldWoff from "public/fonts/Navigo/Navigo-Bold.woff";
+import NavigoBoldWoff2 from "public/fonts/Navigo/Navigo-Bold.woff2";
+import NavigoBoldTtf from "public/fonts/Navigo/Navigo-Bold.ttf";
+import NavigoBoldEot from "public/fonts/Navigo/Navigo-Bold.eot";
+import NavigoExtraLightWoff from "public/fonts/Navigo/Navigo-ExtraLight.woff";
+import NavigoExtraLightWoff2 from "public/fonts/Navigo/Navigo-ExtraLight.woff2";
+import NavigoExtraLightTtf from "public/fonts/Navigo/Navigo-ExtraLight.ttf";
+import NavigoExtraLightEot from "public/fonts/Navigo/Navigo-ExtraLight.eot";
 
 const GlobalStyle = createGlobalStyle`
   @font-face {
@@ -87,11 +87,24 @@ const GlobalStyle = createGlobalStyle`
     padding: 0;
   }
 
-  body, html {
-    font-family: ${({theme}) => theme.fonts.primary}, Helvetica Neue, sans-serif;
-    color: ${({theme}) => theme.colours.secondary};
+  body {
+    -moz-osx-font-smoothing: grayscale;
+    -webkit-font-smoothing: antialiased;
   }
-`
+
+  @-moz-document url-prefix() {
+    body {
+      font-weight: lighter !important;
+    }
+  }
+
+
+  body, html {
+    font-family: ${({ theme }) =>
+      theme.fonts.primary}, Helvetica Neue, sans-serif;
+    color: ${({ theme }) => theme.colours.secondary};
+  }
+`;
 
 export default function App({ Component, pageProps }) {
   return (
@@ -101,5 +114,5 @@ export default function App({ Component, pageProps }) {
         <Component {...pageProps} />
       </ThemeProvider>
     </>
-  )
+  );
 }

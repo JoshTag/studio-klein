@@ -1,7 +1,7 @@
 import Head from 'next/head'
 import Hero from "components/hero"
 import Layout from "components/layout.js"
-import FeaturedProjects from "components/featured"
+import Featured from "components/featured"
 
 export default function Home() {
   return (
@@ -11,7 +11,7 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <Hero />
-      <FeaturedProjects />
+      <Featured />
       <div className="test">TEST</div>
       <style jsx >
       {
