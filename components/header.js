@@ -143,7 +143,6 @@ const Header = ({ page }) => {
     setShowMenu((prevState) => !prevState);
   };
 
-
   return (
     <HeaderContainer page={page}>
       <Navigation>

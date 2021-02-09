@@ -1,6 +1,6 @@
 import styled from "styled-components";
 import Image from "next/image";
-import SiteButton from "./Button";
+import SiteButton from "./button";
 
 const ProjectWrapper = styled.div`
   display: flex;

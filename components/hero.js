@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import Button from "./Button";
+import Button from "./button";
 import Image from "next/image";
 
 const HeroSection = styled.section`
