@@ -127,50 +127,39 @@ const Featured = () => {
           </ImageWrapper>
         </FeaturedProject>
         <FeaturedProject>
-          <LogoContainer>
-            <Image
-              src='/images/projects/studio-zoubida/logo-white.svg'
-              width={166}
-              height={101}
-              layout='responsive'
-            />
-          </LogoContainer>
-          <Link href='/projects' passHref>
-            <ProjectLink>
-              <LinkButton>view project {">>"} </LinkButton>
-            </ProjectLink>
-          </Link>
+          <span className="logo-placeholder">Coming Soon</span>
           <ImageWrapper>
-            <ProjectImage
-              src='/images/projects/studio-zoubida/featured-image.png'
-              layout='fill'
-              objectFit='cover'
-            />
+            <div className='image-placeholder' />
           </ImageWrapper>
         </FeaturedProject>
         <FeaturedProject>
-          <LogoContainer>
-            <Image
-              src='/images/projects/studio-zoubida/logo-white.svg'
-              width={166}
-              height={101}
-              layout='responsive'
-            />
-          </LogoContainer>
-          <Link href='/projects' passHref>
-            <ProjectLink>
-              <LinkButton>view project {">>"} </LinkButton>
-            </ProjectLink>
-          </Link>
+          <span className="logo-placeholder">Coming Soon</span>
           <ImageWrapper>
-            <ProjectImage
-              src='/images/projects/studio-zoubida/featured-image.png'
-              layout='fill'
-              objectFit='cover'
-            />
+            <div className='image-placeholder--light' />
           </ImageWrapper>
         </FeaturedProject>
       </FeaturedWrapper>
+      <style jsx>
+        {`
+          .image-placeholder {
+            background-color: #323232;
+            width: 100%;
+            height: 100%;
+          }
+
+          .image-placeholder--light {
+            background-color: #393939;
+            width: 100%;
+            height: 100%;
+          }
+
+          .logo-placeholder {
+            margin-top: 4rem;
+            color: rgb(244, 242, 235);
+            font-size: 21px;
+          }
+        `}
+      </style>
     </section>
   );
 };
