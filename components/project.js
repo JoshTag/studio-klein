@@ -1,5 +1,5 @@
 import Image from "next/image";
-import styled from "styled-components";
+import styled, { keyframes } from "styled-components";
 import Title from "components/title";
 
 const ProjectContainer = styled.section`
@@ -102,27 +102,53 @@ const ProjectInfo = styled.div`
   }
 `;
 
+const scroll = keyframes`
+  0% { transform: translateX(0); }
+	100% { transform: translateX(-260px)}
+`;
+
 const ProjectURL = styled.a`
   position: relative;
-  font-size: ${({ theme }) => theme.fontSize.xLarge};
+  font-size: ${({ theme }) => theme.fontSize.medium};
   color: ${({ theme }) => theme.colours.secondary80};
   margin-bottom: 2rem;
   display: inline-block;
   text-decoration: none;
+  height: 40px;
+  width: 206px;
+  overflow: hidden;
+  text-decoration: none;
 
-  &:after {
+  &:after, :before {
     content: "";
     position: absolute;
-    width: 100%;
+    width: 260px;
     height: 10px;
-    bottom: -10px;
+    bottom: 0px;
+    background: url(/images/projects/studio-zoubida/link-underline.svg)
+      no-repeat;
+    animation: ${scroll} 10s linear infinite;
+  }
+
+  &:after {
     left: 0;
-    background: url(/images/projects/studio-zoubida/underline.svg) no-repeat;
+  }
+
+  &:before {
+    right: -313px;
   }
 `;
 
+// const UrlUnderline = styled.div``;
+
 const ImageWrapper = styled.div`
   margin: 3rem 0;
+  display: flex;
+  flex-direction: row;
+
+  & > div:last-child {
+    margin-left: 2rem;
+  }
 `;
 
 const Project = () => {
@@ -201,16 +227,20 @@ const Project = () => {
           course we couldn’t help but make an animated version as well.
         </p>
         <ImageWrapper>
-          <Image
-            src='/images/projects/studio-zoubida/logo-pink.svg'
-            width={200}
-            height={140}
-          />
-          <Image
-            src='/images/projects/studio-zoubida/logo-green.svg'
-            width={200}
-            height={140}
-          />
+          <div>
+            <Image
+              src='/images/projects/studio-zoubida/logo-pink.svg'
+              width={200}
+              height={140}
+            />
+          </div>
+          <div>
+            <Image
+              src='/images/projects/studio-zoubida/logo-green.svg'
+              width={200}
+              height={140}
+            />
+          </div>
         </ImageWrapper>
         <h4>The Shop</h4>
         <p>
