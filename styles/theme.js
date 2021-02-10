@@ -11,8 +11,9 @@ export default {
     small: "1rem", // 16px
     medium: "1.1875rem", // 19px
     large: "1.3125rem", // 21px
-    xLarge: "1.8125rem", // 29px
-    xxLarge: "1.9375rem", // 31px
+    xLarge: "1.5rem", // 24px
+    xxLarge: "1.8125rem", // 29px
+    xxxLarge: "1.9375rem", // 31px
   },
   colours: {
     primary: "rgb(244, 242, 235)",

@@ -1,12 +1,13 @@
-import styled from "styled-components";
 import Image from "next/image";
-import SiteButton from "components/button";
-import Title from "components/title"
+import Link from "next/link";
+import Button from "components/button";
+import Title from "components/title";
+import styled from "styled-components";
 
 const FeaturedTitle = styled(Title)`
   text-align: center;
   padding: 80px 0 60px;
-`
+`;
 
 const FeaturedWrapper = styled.div`
   display: flex;
@@ -18,6 +19,23 @@ const FeaturedWrapper = styled.div`
   }
 `;
 
+const ProjectImage = styled(Image)`
+  filter: saturate(70%);
+  transition: 0.3s;
+`;
+
+const ImageWrapper = styled.div`
+  position: absolute;
+  z-index: -1;
+  height: 100%;
+  width: 100%;
+  overflow: hidden;
+
+  &:hover ${ProjectImage} {
+    filter: saturate(100%);
+  }
+`;
+
 const FeaturedProject = styled.div`
   position: relative;
   height: 700px;
@@ -25,7 +43,6 @@ const FeaturedProject = styled.div`
   flex-direction: column;
   align-items: center;
   overflow: hidden;
-  transition-timing-function: ease-in-out;
 
   @media ${({ theme }) => theme.breakpoints.mobileLarge} {
     height: 800px;
@@ -48,11 +65,15 @@ const FeaturedProject = styled.div`
   @media ${({ theme }) => theme.breakpoints.desktopLarge} {
     height: 650px;
   }
+
+  &:hover ${ProjectImage} {
+    filter: saturate(100%);
+  }
 `;
 
 const LogoContainer = styled.div`
   width: 200px;
-  margin-top: 20px;
+  margin-top: 1.5rem;
   z-index: 100;
 
   @media ${({ theme }) => theme.breakpoints.tablet} {
@@ -60,28 +81,21 @@ const LogoContainer = styled.div`
   }
 `;
 
-const ProjectBtn = styled(SiteButton)`
+const ProjectLink = styled(Link)`
+  width: 100%;
+`;
+
+const LinkButton = styled(Button)`
+  margin: auto 2.5% 40px;
   width: 95%;
   text-align: center;
-  z-index: 100;
-  margin: auto 2.5% 40px;
   padding: 0.5rem;
-`;
 
-const ProjectImage = styled(Image)`
-  filter: saturate(70%);
-  transition: 0.3s;
-`;
-
-const ImageWrapper = styled.div`
-  position: absolute;
-  z-index: 90;
-  height: 100%;
-  width: 100%;
-  overflow: hidden;
-
-  &:hover ${ProjectImage} {
-    filter: saturate(100%);
+  @media ${({ theme }) => theme.breakpoints.tablet} {
+    margin: 1rem 2.5% 40px;
+    background: transparent;
+    border: none;
+    font-size: ${({ theme }) => theme.fontSize.large};
   }
 `;
 
@@ -93,16 +107,20 @@ const Featured = () => {
         <FeaturedProject>
           <LogoContainer>
             <Image
-              src='/images/featured-project-logo-1.png'
+              src='/images/projects/studio-zoubida/logo-white.svg'
               width={166}
               height={101}
               layout='responsive'
             />
           </LogoContainer>
-          <ProjectBtn>view project</ProjectBtn>
+          <Link href='/projects' passHref>
+            <ProjectLink>
+              <LinkButton>view project {">>"} </LinkButton>
+            </ProjectLink>
+          </Link>
           <ImageWrapper>
             <ProjectImage
-              src='/images/featured-project-1.png'
+              src='/images/projects/studio-zoubida/featured-image.png'
               layout='fill'
               objectFit='cover'
             />
@@ -111,16 +129,20 @@ const Featured = () => {
         <FeaturedProject>
           <LogoContainer>
             <Image
-              src='/images/featured-project-logo-1.png'
+              src='/images/projects/studio-zoubida/logo-white.svg'
               width={166}
               height={101}
               layout='responsive'
             />
           </LogoContainer>
-          <ProjectBtn>view project</ProjectBtn>
+          <Link href='/projects' passHref>
+            <ProjectLink>
+              <LinkButton>view project {">>"} </LinkButton>
+            </ProjectLink>
+          </Link>
           <ImageWrapper>
             <ProjectImage
-              src='/images/featured-project-1.png'
+              src='/images/projects/studio-zoubida/featured-image.png'
               layout='fill'
               objectFit='cover'
             />
@@ -129,16 +151,20 @@ const Featured = () => {
         <FeaturedProject>
           <LogoContainer>
             <Image
-              src='/images/featured-project-logo-1.png'
+              src='/images/projects/studio-zoubida/logo-white.svg'
               width={166}
               height={101}
               layout='responsive'
             />
           </LogoContainer>
-          <ProjectBtn>view project</ProjectBtn>
+          <Link href='/projects' passHref>
+            <ProjectLink>
+              <LinkButton>view project {">>"} </LinkButton>
+            </ProjectLink>
+          </Link>
           <ImageWrapper>
             <ProjectImage
-              src='/images/featured-project-1.png'
+              src='/images/projects/studio-zoubida/featured-image.png'
               layout='fill'
               objectFit='cover'
             />

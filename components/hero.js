@@ -1,7 +1,6 @@
 import styled from "styled-components";
 import Image from "next/image";
 import Button from "components/button";
-import Paragraph from "components/paragraph"
 
 const HeroSection = styled.section`
   position: relative;
@@ -108,11 +107,18 @@ const HeroDescription = styled.div`
 `;
 
 const HeroHeader = styled.h2`
-    font-size: ${({ theme }) => theme.fontSize.xLarge};
+    font-size: ${({ theme }) => theme.fontSize.xxLarge};
     line-height: 40px;
     margin-bottom: 1.5rem;
     padding-top: 2rem;
     font-weight: normal;
+`
+
+const HeroParagraph = styled.p`
+  font-size: ${({ theme }) => theme.fontSize.small};
+  line-height: 27px;
+  margin: 1rem 0;
+  display: inline-block;
 `
 
 const Herolist = styled.ul`
@@ -175,18 +181,18 @@ const Hero = () => {
             StudioKlein is the full-service agency building the future of
             e-commerce.
           </HeroHeader>
-          <Paragraph>
+          <HeroParagraph>
             At Studio Klein, we believe small business is the future. Thats why
             we are deeply committed to helping small business succeed in the
             rapidly evolving world of e-commerce.
-          </Paragraph>
-          <Paragraph>
+          </HeroParagraph>
+          <HeroParagraph>
             Studio Klein the agency committed to creating the most unique,
             beautiful and functional e-shops that will scale with your business.
             No matter if you are just starting out or looking to expand your
             reach, our flexible and innovative approach to e-commerce will allow
             your business to stand out and succeed.
-          </Paragraph>
+          </HeroParagraph>
         </HeroDescription>
         <Herolist>
           <li>

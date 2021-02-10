@@ -21,7 +21,6 @@ const Layout = ({ children, page }) => {
       </Head>
       <Header page={page} />
       <main>{children}</main>
-      <div style={{ height: "1000px" }}>placeholder</div>
     </>
   );
 };
