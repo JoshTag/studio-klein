@@ -27,7 +27,7 @@ const ImageContainer = styled.div`
   }
 
   @media ${({ theme }) => theme.breakpoints.tabletLarge} {
-    height: 960px;
+    height: 980px;
   }
 
   @media ${({ theme }) => theme.breakpoints.desktop} {
@@ -59,7 +59,7 @@ const ImageBox = styled.div`
 
   @media ${({ theme }) => theme.breakpoints.tabletLarge} {
     width: 87%;
-    top: -140px;
+    top: -109px;
     left: 47%;
   }
 
@@ -167,7 +167,7 @@ const Hero = () => {
       <ImageContainer>
         <ImageBox>
           <HeroImage
-            src='/images/homepage-image.png'
+            src='/images/hero-image.png'
             width={480}
             height={725}
             layout='responsive'

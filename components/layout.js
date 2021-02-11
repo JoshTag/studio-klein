@@ -8,13 +8,25 @@ const Layout = ({ children, page }) => {
       <Head>
         <link
           rel='preload'
-          href='/fonts/Navigo/Navigo-Regular.ttf'
+          href='./../public/fonts/Navigo/Navigo-ExtraLight.ttf'
           as='font'
           crossOrigin=''
         />
         <link
           rel='preload'
-          href='/fonts/Navigo/Navigo-Medium.ttf'
+          href='./../public/fonts/Navigo/Navigo-ExtraLight.woff'
+          as='font'
+          crossOrigin=''
+        />
+        <link
+          rel='preload'
+          href='./../public/fonts/Navigo/Navigo-ExtraLight.woff2'
+          as='font'
+          crossOrigin=''
+        />
+        <link
+          rel='preload'
+          href='./../public/fonts/Navigo/Navigo-ExtraLight.eot'
           as='font'
           crossOrigin=''
         />

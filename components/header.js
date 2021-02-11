@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { useRouter } from "next/router";
 import styled from "styled-components";
 import Link from "next/link";
 import Image from "next/image";
@@ -8,12 +9,13 @@ const HeaderContainer = styled.header`
   justify-content: center;
   padding: 2rem 0 0;
   background-color: ${({ page }) =>
-    page === "home" ? "transparent" : ({ theme }) => theme.colours.secondary80};
+    page === "/" ? "transparent" : ({ theme }) => theme.colours.secondary80};
 `;
 
 const Navigation = styled.nav`
   width: 100%;
   position: relative;
+  padding-bottom: 2rem;
 `;
 
 const NavMobileContainer = styled.div`
@@ -30,11 +32,11 @@ const NavListMobile = styled.ul`
   list-style: none;
   margin: 20px 0 0;
   background: ${({ page }) =>
-    page !== "home" ? "transparent" : ({ theme }) => theme.colours.secondary80};
+    page !== "/" ? "transparent" : ({ theme }) => theme.colours.secondary80};
   display: block;
   overflow: hidden;
   height: ${(props) => (props.showMenu ? "200px" : "0px")};
-  transition: 0.3s;
+  transition: 0.3s ease-in-out;
 
   @media ${({ theme }) => theme.breakpoints.tablet} {
     display: none;
@@ -74,7 +76,7 @@ const NavLink = styled.a`
   text-decoration: none;
   font-size: ${({ theme }) => theme.fontSize.medium};
   color: ${({ page }) =>
-    page === "home"
+    page === "/"
       ? ({ theme }) => theme.colours.secondary80
       : ({ theme }) => theme.colours.primary};
   transition: 0.3s;
@@ -92,7 +94,7 @@ const NavLink = styled.a`
       height: 1px;
       top: 100%;
       background: ${({ page }) =>
-        page === "home"
+        page === "/"
           ? ({ theme }) => theme.colours.secondary80
           : ({ theme }) => theme.colours.primary};
     }
@@ -135,9 +137,11 @@ const Logo = styled(Image)`
   z-index: 1000;
 `;
 
-const Header = ({ page }) => {
+const Header = () => {
   const [showMenu, setShowMenu] = useState(false);
-  const NAV_ITEMS = ["Projects", "Services", "Logo", "Testamonials", "Contact"];
+  const NAV_ITEMS = ["projects", "services", "logo", "testamonials", "contact"];
+  const router = useRouter();
+  const page = router.pathname;
 
   const handleMenuClick = () => {
     setShowMenu((prevState) => !prevState);
@@ -154,15 +158,16 @@ const Header = ({ page }) => {
                 width='60'
                 layout='fixed'
                 src={
-                  page === "home"
-                    ? "/images/logo.svg"
-                    : "/images/logo-white.svg"
+                  page === "/" ? "/images/logo.svg" : "/images/logo-white.svg"
                 }
               />
             </a>
           </Link>
           <Hamurger onClick={handleMenuClick}>
-            <img src='/images/hamburger.svg' alt='Hamburger Menu' />
+            <img
+              src={`/images/hamburger${page === "/" ? "" : "-white"}.svg`}
+              alt='Hamburger Menu'
+            />
           </Hamurger>
         </NavMobileContainer>
         <NavListMobile showMenu={showMenu} page={page}>
@@ -172,17 +177,17 @@ const Header = ({ page }) => {
             </Link>
           </li>
           <li>
-            <Link href='/'>
+            <Link href='/services'>
               <NavLink>Services</NavLink>
             </Link>
           </li>
           <li>
-            <Link href='/'>
+            <Link href='/testamonials'>
               <NavLink>Testamonials</NavLink>
             </Link>
           </li>
           <li>
-            <Link href='/'>
+            <Link href='/contact'>
               <NavLink>Contact</NavLink>
             </Link>
           </li>
@@ -194,7 +199,7 @@ const Header = ({ page }) => {
             </Link>
           </li>
           <li>
-            <Link href='/'>
+            <Link href='/services'>
               <NavLink page={page}>Services</NavLink>
             </Link>
           </li>
@@ -205,21 +210,19 @@ const Header = ({ page }) => {
                   height='100'
                   width='100'
                   src={
-                    page === "home"
-                      ? "/images/logo.svg"
-                      : "/images/logo-white.svg"
+                    page === "/" ? "/images/logo.svg" : "/images/logo-white.svg"
                   }
                 />
               </a>
             </Link>
           </li>
           <li>
-            <Link href='/'>
+            <Link href='/testamonials'>
               <NavLink page={page}>Testamonials</NavLink>
             </Link>
           </li>
           <li>
-            <Link href='/'>
+            <Link href='/contact'>
               <NavLink page={page}>Contact</NavLink>
             </Link>
           </li>

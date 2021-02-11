@@ -139,8 +139,6 @@ const ProjectURL = styled.a`
   }
 `;
 
-// const UrlUnderline = styled.div``;
-
 const ImageWrapper = styled.div`
   margin: 3rem 0;
   display: flex;

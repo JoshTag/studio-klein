@@ -55,7 +55,7 @@ const FeaturedProject = styled.div`
   @media ${({ theme }) => theme.breakpoints.tablet} {
     height: 600px;
     width: 100%;
-    transition: 0.6s;
+    transition: 0.6s ease-in-out;
 
     &:hover {
       width: 300%;

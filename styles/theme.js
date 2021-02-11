@@ -1,9 +1,6 @@
 export default {
   fonts: {
-    primary: "Navigo Extra Light",
-    primaryLight: "Navigo Light",
-    primaryThin: "Navigo Thin",
-    primaryBold: "Navigo Bold",
+    siteFont: "Navigo Extra Light",
   },
   fontSize: {
     xxSmall: "0.6875rem", // 11px
