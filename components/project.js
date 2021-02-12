@@ -1,6 +1,5 @@
 import Image from "next/image";
 import styled, { keyframes } from "styled-components";
-import Title from "components/title";
 
 const ProjectContainer = styled.section`
   display: flex;
@@ -78,6 +77,13 @@ const ProjectInfo = styled.div`
     margin: 4rem;
   }
 
+  & > h2 {
+    font-size: ${({ theme }) => theme.fontSize.xxLarge};
+    color: ${({ theme }) => theme.colours.secondary80};
+    font-weight: normal;
+    padding-bottom: 0.5rem;
+  }
+
   & > h3 {
     margin-bottom: 1.5rem;
   }
@@ -86,17 +92,17 @@ const ProjectInfo = styled.div`
     font-size: ${({ theme }) => theme.fontSize.xLarge};
     color: ${({ theme }) => theme.colours.secondary80};
     font-weight: normal;
-    margin-bottom: 1rem;
+    margin-bottom: 1.5rem;
   }
 
   & > p {
     font-size: ${({ theme }) => theme.fontSize.small};
     line-height: 27px;
-    margin: 0.5rem 0;
+    margin-bottom: 2rem;
     display: inline-block;
   }
 
-  & > video {
+  .video-container {
     max-width: 660px;
     margin: 3rem 0;
   }
@@ -107,35 +113,37 @@ const scroll = keyframes`
 	100% { transform: translateX(-260px)}
 `;
 
-const ProjectURL = styled.a`
-  position: relative;
-  font-size: ${({ theme }) => theme.fontSize.medium};
-  color: ${({ theme }) => theme.colours.secondary80};
-  margin-bottom: 2rem;
-  display: inline-block;
-  text-decoration: none;
-  height: 40px;
-  width: 206px;
-  overflow: hidden;
-  text-decoration: none;
+const ProjectURL = styled.div`
+  & > a {
+    position: relative;
+    font-size: ${({ theme }) => theme.fontSize.medium};
+    color: ${({ theme }) => theme.colours.secondary80};
+    margin-bottom: 2rem;
+    display: inline-block;
+    text-decoration: none;
+    height: 40px;
+    width: 206px;
+    overflow: hidden;
+    text-decoration: none;
 
-  &:after, :before {
-    content: "";
-    position: absolute;
-    width: 260px;
-    height: 10px;
-    bottom: 0px;
-    background: url(/images/projects/studio-zoubida/link-underline.svg)
-      no-repeat;
-    animation: ${scroll} 10s linear infinite;
-  }
+    &:after,
+    :before {
+      content: "";
+      position: absolute;
+      width: 260px;
+      height: 10px;
+      bottom: 0px;
+      background: url(/images/link-underline-pink.svg) no-repeat;
+      animation: ${scroll} 15s linear infinite;
+    }
 
-  &:after {
-    left: 0;
-  }
+    &:after {
+      left: 0;
+    }
 
-  &:before {
-    right: -313px;
+    &:before {
+      right: -313px;
+    }
   }
 `;
 
@@ -169,13 +177,15 @@ const Project = () => {
         </ProjectLogo>
       </ProjectImage>
       <ProjectInfo>
-        <Title>Studio Zoubida</Title>
-        <ProjectURL
-          href='https://www.studiozoubida.com'
-          target='_blank'
-          rel='noopener'
-        >
-          www.studiozoubida.com
+        <h2>Studio Zoubida</h2>
+        <ProjectURL>
+          <a
+            href='https://www.studiozoubida.com'
+            target='_blank'
+            rel='noopener'
+          >
+            www.studiozoubida.com
+          </a>
         </ProjectURL>
         <p>
           Studio Zoubida is owned by Rhekia Fahssi (they/them), a queer Toronto
@@ -211,13 +221,15 @@ const Project = () => {
           peachy pink and dark muted green can be used in variety of different
           scenarios, with light and dark backgrounds.
         </p>
-        <video width='100%' loop autoPlay muted>
-          <source
-            src='/images/projects/studio-zoubida/zoubida-video.mp4'
-            type='video/mp4'
-          />
-          Sorry, your browser doesn't support embedded videos.
-        </video>
+        <div className='video-container'>
+          <video width='100%' loop autoPlay muted>
+            <source
+              src='/images/projects/studio-zoubida/product-video.mp4'
+              type='video/mp4'
+            />
+            Sorry, your browser doesn't support embedded videos.
+          </video>
+        </div>
         <p>
           Taking inspiration from 60s psychedelia lettering, we built the Studio
           Zoubida logo to be light-hearted, irreverent, and versatile. We

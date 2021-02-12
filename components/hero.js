@@ -1,6 +1,6 @@
-import styled from "styled-components";
 import Image from "next/image";
-import Button from "components/button";
+import Link from "next/link";
+import styled from "styled-components";
 
 const HeroSection = styled.section`
   position: relative;
@@ -15,6 +15,7 @@ const ImageContainer = styled.div`
   width: 100%;
   position: absolute;
   overflow: hidden;
+  z-index: -1;
 
   @media ${({ theme }) => theme.breakpoints.mobileLarge} {
     height: 942px;
@@ -23,7 +24,7 @@ const ImageContainer = styled.div`
 
   @media ${({ theme }) => theme.breakpoints.tablet} {
     height: 860px;
-    top: -60px
+    top: -60px;
   }
 
   @media ${({ theme }) => theme.breakpoints.tabletLarge} {
@@ -66,7 +67,7 @@ const ImageBox = styled.div`
   @media ${({ theme }) => theme.breakpoints.desktop} {
     width: 78%;
     top: -150px;
-    max-width: 858px
+    max-width: 858px;
   }
 
   @media ${({ theme }) => theme.breakpoints.desktopLarge} {
@@ -107,19 +108,19 @@ const HeroDescription = styled.div`
 `;
 
 const HeroHeader = styled.h2`
-    font-size: ${({ theme }) => theme.fontSize.xxLarge};
-    line-height: 40px;
-    margin-bottom: 1.5rem;
-    padding-top: 2rem;
-    font-weight: normal;
-`
+  font-size: ${({ theme }) => theme.fontSize.xxLarge};
+  line-height: 40px;
+  margin-bottom: 1.5rem;
+  padding-top: 2rem;
+  font-weight: normal;
+`;
 
 const HeroParagraph = styled.p`
   font-size: ${({ theme }) => theme.fontSize.small};
   line-height: 27px;
   margin: 1rem 0;
   display: inline-block;
-`
+`;
 
 const Herolist = styled.ul`
   list-style: none;
@@ -149,15 +150,21 @@ const Herolist = styled.ul`
   }
 `;
 
-const Break = styled.br`
-  display: none;
+const ButtonStyle = styled.a`
+  width: 100%;
+  background-color: ${({ theme }) => theme.colours.secondary70};
+  font-family: ${({ theme }) => theme.fonts.primary};
+  font-size: ${({ theme }) => theme.fontSize.medium};
+  color: ${({ theme }) => theme.colours.primary};
+  border: 1px solid ${({ theme }) => theme.colours.secondary70};
+  border-radius: 5px;
+  padding: 1rem;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
 
-  @media ${({ theme }) => theme.breakpoints.tabletLarge} {
-    display: block;
-  }
-
-  @media ${({ theme }) => theme.breakpoints.desktop} {
-    display: none;
+  &:hover {
+    cursor: pointer;
   }
 `;
 
@@ -178,7 +185,7 @@ const Hero = () => {
       <Wrapper>
         <HeroDescription>
           <HeroHeader>
-            StudioKlein is the full-service agency building the future of
+            Studio Klein is the full-service agency building the future of
             e-commerce.
           </HeroHeader>
           <HeroParagraph>
@@ -196,16 +203,19 @@ const Hero = () => {
         </HeroDescription>
         <Herolist>
           <li>
-            <Button>design development</Button>
+            <Link href='/services' passHref>
+              <ButtonStyle>design</ButtonStyle>
+            </Link>
           </li>
           <li>
-            <Button>
-              brand <Break />
-              creation
-            </Button>
+            <Link href='/services' passHref>
+              <ButtonStyle>development</ButtonStyle>
+            </Link>
           </li>
           <li>
-            <Button>SEO app integration</Button>
+            <Link href='/services' passHref>
+              <ButtonStyle>SEO</ButtonStyle>
+            </Link>
           </li>
         </Herolist>
       </Wrapper>

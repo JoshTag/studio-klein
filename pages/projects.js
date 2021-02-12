@@ -1,10 +1,11 @@
-import ProjectsNav from "components/projects-nav";
+import Layout from "components/layout"
+import ProjectsHeader from "components/projects-header";
 import Project from "components/project";
 
 const Projects = () => {
   return (
-    <>
-      <ProjectsNav />
+    <Layout>
+      <ProjectsHeader />
       <div className='project-container'>
         <Project />
         <div className='container' id='coming-soon'>
@@ -27,7 +28,7 @@ const Projects = () => {
           text-align: center;
         }
       `}</style>
-    </>
+    </Layout>
   );
 };
 

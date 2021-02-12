@@ -2,36 +2,40 @@ import React from "react";
 import Header from "components/header";
 import Head from "next/head";
 
-const Layout = ({ children, page }) => {
+const Layout = ({ children }) => {
   return (
     <>
       <Head>
         <link
           rel='preload'
-          href='./../public/fonts/Navigo/Navigo-ExtraLight.ttf'
+          href='/fonts/Navigo/Navigo-ExtraLight.ttf'
           as='font'
-          crossOrigin=''
+          crossOrigin='true'
+          type="font/ttf"
         />
         <link
           rel='preload'
-          href='./../public/fonts/Navigo/Navigo-ExtraLight.woff'
+          href='/fonts/Navigo/Navigo-ExtraLight.woff'
           as='font'
-          crossOrigin=''
+          crossOrigin='true'
+          type="font/woff"
         />
         <link
           rel='preload'
-          href='./../public/fonts/Navigo/Navigo-ExtraLight.woff2'
+          href='/fonts/Navigo/Navigo-ExtraLight.woff2'
           as='font'
-          crossOrigin=''
+          crossOrigin='true'
+          type="font/woff2"
         />
         <link
           rel='preload'
-          href='./../public/fonts/Navigo/Navigo-ExtraLight.eot'
+          href='/fonts/Navigo/Navigo-ExtraLight.eot'
           as='font'
-          crossOrigin=''
+          crossOrigin='true'
+          type="font/eot"
         />
       </Head>
-      <Header page={page} />
+      <Header />
       <main>{children}</main>
     </>
   );

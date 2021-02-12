@@ -1,11 +1,13 @@
 import Image from "next/image";
 import Link from "next/link";
-import Button from "components/button";
-import Title from "components/title";
 import styled from "styled-components";
 
-const FeaturedTitle = styled(Title)`
+const FeaturedTitle = styled.h2`
   text-align: center;
+  font-size: ${({ theme }) => theme.fontSize.xxLarge};
+  color: ${({ theme }) => theme.colours.secondary80};
+  font-weight: normal;
+  padding-bottom: 1rem;
   padding: 80px 0 60px;
 `;
 
@@ -21,6 +23,9 @@ const FeaturedWrapper = styled.div`
 
 const ProjectImage = styled(Image)`
   filter: saturate(70%);
+  -webkit-transition: 0.3s;
+  -moz-transition: 0.3s;
+  -o-transition: 0.3s;
   transition: 0.3s;
 `;
 
@@ -55,6 +60,9 @@ const FeaturedProject = styled.div`
   @media ${({ theme }) => theme.breakpoints.tablet} {
     height: 600px;
     width: 100%;
+    -webkit-transition: 0.6s ease-in-out;
+    -moz-transition: 0.6s ease-in-out;
+    -o-transition: 0.6s ease-in-out;
     transition: 0.6s ease-in-out;
 
     &:hover {
@@ -81,21 +89,25 @@ const LogoContainer = styled.div`
   }
 `;
 
-const ProjectLink = styled(Link)`
-  width: 100%;
-`;
-
-const LinkButton = styled(Button)`
+const LinkButton = styled.a`
   margin: auto 2.5% 40px;
   width: 95%;
-  text-align: center;
   padding: 0.5rem;
+  background-color: ${({ theme }) => theme.colours.secondary70};
+  border: 1px solid ${({ theme }) => theme.colours.secondary70};
+  font-size: ${({ theme }) => theme.fontSize.medium};
+  color: ${({ theme }) => theme.colours.primary};
+  border-radius: 5px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
 
   @media ${({ theme }) => theme.breakpoints.tablet} {
-    margin: 1rem 2.5% 40px;
+    width: auto;
+    font-size: ${({ theme }) => theme.fontSize.xLarge};
     background: transparent;
+    margin: 1rem 2.5% 40px;
     border: none;
-    font-size: ${({ theme }) => theme.fontSize.large};
   }
 `;
 
@@ -114,9 +126,7 @@ const Featured = () => {
             />
           </LogoContainer>
           <Link href='/projects' passHref>
-            <ProjectLink>
-              <LinkButton>view project {">>"} </LinkButton>
-            </ProjectLink>
+            <LinkButton>view project {">>"}</LinkButton>
           </Link>
           <ImageWrapper>
             <ProjectImage
@@ -127,13 +137,13 @@ const Featured = () => {
           </ImageWrapper>
         </FeaturedProject>
         <FeaturedProject>
-          <span className="logo-placeholder">Coming Soon</span>
+          <span className='logo-placeholder'>Coming Soon</span>
           <ImageWrapper>
             <div className='image-placeholder' />
           </ImageWrapper>
         </FeaturedProject>
         <FeaturedProject>
-          <span className="logo-placeholder">Coming Soon</span>
+          <span className='logo-placeholder'>Coming Soon</span>
           <ImageWrapper>
             <div className='image-placeholder--light' />
           </ImageWrapper>

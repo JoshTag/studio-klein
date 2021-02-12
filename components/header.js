@@ -1,8 +1,7 @@
 import { useState } from "react";
 import { useRouter } from "next/router";
-import styled from "styled-components";
 import Link from "next/link";
-import Image from "next/image";
+import styled from "styled-components";
 
 const HeaderContainer = styled.header`
   display: flex;
@@ -62,6 +61,11 @@ const NavList = styled.ul`
     margin: 0 10%;
   }
 
+  @media ${({ theme }) => theme.breakpoints.desktopLarge} {
+    max-width: 990px;
+    margin: 0 auto;
+  }
+
   & > li {
     width: 100px;
     text-align: center;
@@ -79,6 +83,10 @@ const NavLink = styled.a`
     page === "/"
       ? ({ theme }) => theme.colours.secondary80
       : ({ theme }) => theme.colours.primary};
+  text-transform: capitalize;
+  -webkit-transition: 0.3s;
+  -moz-transition: 0.3s;
+  -o-transition: 0.3s;
   transition: 0.3s;
 
   &:hover {
@@ -132,9 +140,16 @@ const Hamurger = styled.div`
   }
 `;
 
-const Logo = styled(Image)`
+const Logo = styled.img`
   position: relative;
   z-index: 1000;
+  width: 60px;
+  height: 60px;
+
+  @media ${({ theme }) => theme.breakpoints.tablet} {
+    width: 100px;
+    height: 100px;
+  }
 `;
 
 const Header = () => {
@@ -154,12 +169,8 @@ const Header = () => {
           <Link href='/'>
             <a>
               <Logo
-                height='60'
-                width='60'
-                layout='fixed'
-                src={
-                  page === "/" ? "/images/logo.svg" : "/images/logo-white.svg"
-                }
+                src={`/images/logo${page === "/" ? "" : "-white"}.svg`}
+                alt='logo'
               />
             </a>
           </Link>
@@ -171,61 +182,37 @@ const Header = () => {
           </Hamurger>
         </NavMobileContainer>
         <NavListMobile showMenu={showMenu} page={page}>
-          <li>
-            <Link href='/projects'>
-              <NavLink>Projects</NavLink>
-            </Link>
-          </li>
-          <li>
-            <Link href='/services'>
-              <NavLink>Services</NavLink>
-            </Link>
-          </li>
-          <li>
-            <Link href='/testamonials'>
-              <NavLink>Testamonials</NavLink>
-            </Link>
-          </li>
-          <li>
-            <Link href='/contact'>
-              <NavLink>Contact</NavLink>
-            </Link>
-          </li>
+          {NAV_ITEMS.filter((route) => route !== "logo").map((route) => (
+            <li key={route}>
+              <h1>
+                <Link href={`/${route}`}>
+                  <NavLink page={page}>{route}</NavLink>
+                </Link>
+              </h1>
+            </li>
+          ))}
         </NavListMobile>
         <NavList>
-          <li>
-            <Link href='/projects'>
-              <NavLink page={page}>Projects</NavLink>
-            </Link>
-          </li>
-          <li>
-            <Link href='/services'>
-              <NavLink page={page}>Services</NavLink>
-            </Link>
-          </li>
-          <li>
-            <Link href='/'>
-              <a>
-                <Logo
-                  height='100'
-                  width='100'
-                  src={
-                    page === "/" ? "/images/logo.svg" : "/images/logo-white.svg"
-                  }
-                />
-              </a>
-            </Link>
-          </li>
-          <li>
-            <Link href='/testamonials'>
-              <NavLink page={page}>Testamonials</NavLink>
-            </Link>
-          </li>
-          <li>
-            <Link href='/contact'>
-              <NavLink page={page}>Contact</NavLink>
-            </Link>
-          </li>
+          {NAV_ITEMS.map((route) => {
+            return route === "logo" ? (
+              <li key={route}>
+                <Link href='/'>
+                  <a>
+                    <Logo
+                      src={`/images/logo${page === "/" ? "" : "-white"}.svg`}
+                      alt='logo'
+                    />
+                  </a>
+                </Link>
+              </li>
+            ) : (
+              <li key={route}>
+                <Link href={`/${route}`}>
+                  <NavLink page={page}>{route}</NavLink>
+                </Link>
+              </li>
+            );
+          })}
         </NavList>
       </Navigation>
     </HeaderContainer>

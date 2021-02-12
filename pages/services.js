@@ -1,9 +1,14 @@
+import Layout from "components/layout";
+import ServicesHeader from "components/services-header";
+import Service from "components/service";
+import styled from "styled-components";
 
 const Services = () => {
   return (
-    <>
-      <h2>Services</h2>
-    </>
+    <Layout>
+      <ServicesHeader />
+      <Service />
+    </Layout>
   );
 };
 

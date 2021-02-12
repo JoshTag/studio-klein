@@ -4,9 +4,10 @@ export default {
   },
   fontSize: {
     xxSmall: "0.6875rem", // 11px
-    xSmall: "0.875rem", // 11px
+    xSmall: "0.875rem", // 14px
     small: "1rem", // 16px
     medium: "1.1875rem", // 19px
+    mediumLarge: "1.25rem", // 20px
     large: "1.3125rem", // 21px
     xLarge: "1.5rem", // 24px
     xxLarge: "1.8125rem", // 29px
