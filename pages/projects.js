@@ -6,12 +6,12 @@ const Projects = () => {
   return (
     <Layout>
       <ProjectsHeader />
-      <div className='project-container'>
+        <Project />
+        <Project />
         <Project />
         <div className='container' id='coming-soon'>
           More Featured Projects Coming Soon
         </div>
-      </div>
       <style global jsx>{`
         html {
           -webkit-scroll-behavior: smooth;

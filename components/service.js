@@ -1,5 +1,6 @@
+import React, { createRef, useEffect } from "react";
 import styled, { keyframes } from "styled-components";
-import Link from "next/link"
+import Link from "next/link";
 
 const ServiceContainer = styled.section`
   display: flex;
@@ -22,6 +23,30 @@ const ServiceSidebar = styled.div`
     position: -webkit-sticky;
     position: sticky;
     top: 0;
+  }
+
+  @media ${({ theme }) => theme.breakpoints.desktop} {
+    width: 400px;
+  }
+
+  @media ${({ theme }) => theme.breakpoints.desktopLarge} {
+    width: 500px;
+  }
+`;
+
+const HeaderWrapper = styled.div`
+  height: 100%;
+  width: 100%;
+  display: grid;
+  place-items: center;
+`;
+
+const SVGWrapper = styled.svg`
+  width: 60%;
+
+  & > path {
+    stroke-dasharray: 1508;
+    stroke-dashoffset: 1508;
   }
 `;
 
@@ -76,8 +101,7 @@ const ProjectURL = styled.div`
       width: 260px;
       height: 10px;
       bottom: 0px;
-      background: url(/images/link-underline-black.svg)
-        no-repeat;
+      background: url(/images/link-underline-black.svg) no-repeat;
       animation: ${scroll} 15s linear infinite;
     }
 
@@ -92,10 +116,46 @@ const ProjectURL = styled.div`
 `;
 
 const Service = () => {
+  const pathRef = createRef();
+
+  useEffect(() => {
+    if (pathRef.current) {
+      console.log(pathRef.current.getTotalLength());
+
+      window.addEventListener("scroll", function (e) {
+        // What % down is it?
+        const scrollPercentage =
+          (document.documentElement.scrollTop + document.body.scrollTop) /
+          (document.documentElement.scrollHeight -
+            document.documentElement.clientHeight);
+
+        // Length to offset the dashes
+        const drawLength = pathRef.current.getTotalLength() * scrollPercentage;
+
+        // Draw in reverse
+        pathRef.current.style.strokeDashoffset =
+          pathRef.current.getTotalLength() - drawLength;
+      });
+    }
+  }, [pathRef]);
+
   return (
     <ServiceContainer>
       <ServiceSidebar>
-        <h3>full service design</h3>
+        <HeaderWrapper>
+          <SVGWrapper
+            viewBox='0 0 500 500'
+            fill='none'
+            xmlns='http://www.w3.org/2000/svg'
+          >
+            <path
+              ref={pathRef}
+              d='M 250, 250 m -240, 0 a 240,240 0 1,0 480,0 a 240,240 0 1,0 -480,0'
+              stroke='#F4F2EB'
+              strokeWidth='10'
+            />
+          </SVGWrapper>
+        </HeaderWrapper>
       </ServiceSidebar>
       <ServiceContent>
         <h4>the most customizable Shopify shops</h4>
@@ -110,7 +170,7 @@ const Service = () => {
           You can trust your brand with us. Just look at how cute our site is!
           Other Shopify experts just don’t have the chops. We understand what it
           means to stand out in today’s online market. A sticky brand is KEY to
-          success -- and we’re going to build you a great one.{" "}
+          success -- and we’re going to build you a great one.
         </p>
         <h4>layouts, logos & videos, oh my!</h4>
         <p>
@@ -120,10 +180,8 @@ const Service = () => {
           instagram content again.
         </p>
         <ProjectURL>
-          <Link href="/projects">
-            <a>
-              check out our projects
-            </a>
+          <Link href='/projects'>
+            <a>check out our projects</a>
           </Link>
         </ProjectURL>
       </ServiceContent>
