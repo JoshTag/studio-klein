@@ -7,6 +7,12 @@ const Services = () => {
     <Layout>
       <ServicesHeader />
       <Service />
+      <div className='service-space'>space</div>
+      <style jsx>{`
+        .service-space {
+          height: 500px;
+        }
+      `}</style>
     </Layout>
   );
 };

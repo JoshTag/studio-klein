@@ -44,6 +44,10 @@ const GlobalStyle = createGlobalStyle`
       theme.fonts.siteFont}, Helvetica Neue, sans-serif;
     color: ${({ theme }) => theme.colours.secondary};
   }
+
+  .active-path {
+    opacity: 1 !important;
+  }
 `;
 
 

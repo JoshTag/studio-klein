@@ -1,8 +1,11 @@
 import React, { createRef, useEffect } from "react";
 import styled, { keyframes } from "styled-components";
 import Link from "next/link";
+import { gsap } from "gsap/dist/gsap";
+import ScrollTrigger from "gsap/dist/ScrollTrigger";
 
 const ServiceContainer = styled.section`
+  position: relative; // remove
   display: flex;
   flex-direction: column;
 
@@ -11,12 +14,38 @@ const ServiceContainer = styled.section`
   }
 `;
 
-const ServiceSidebar = styled.div`
+const MobileHeader = styled.div`
   background: ${({ theme }) => theme.colours.secondary80};
-  height: 300px;
+  height: 200px;
   background: #494947;
+  display: grid;
+  place-items: center;
 
   @media ${({ theme }) => theme.breakpoints.tabletLarge} {
+    display: none;
+  }
+
+  & > h3 {
+    text-align: center;
+    font-size: ${({ theme }) => theme.fontSize.xxLarge};
+    color: ${({ theme }) => theme.colours.primary};
+    font-weight: normal;
+    width: 300px;
+
+    @media ${({ theme }) => theme.breakpoints.tabletSmall} {
+      width: 500px;
+    }
+  }
+`;
+
+const ServiceAside = styled.aside`
+  display: none;
+
+  @media ${({ theme }) => theme.breakpoints.tabletLarge} {
+    display: block;
+    background: ${({ theme }) => theme.colours.secondary80};
+    height: 300px;
+    background: #494947;
     height: 100vh;
     width: 350px;
     flex-shrink: 0;
@@ -34,11 +63,28 @@ const ServiceSidebar = styled.div`
   }
 `;
 
-const HeaderWrapper = styled.div`
+const AsideWrapper = styled.div`
+  position: relative;
   height: 100%;
   width: 100%;
   display: grid;
   place-items: center;
+`;
+
+const AsideHeader = styled.h3`
+  position: absolute;
+  text-align: center;
+  font-size: ${({ theme }) => theme.fontSize.xxLarge};
+  color: ${({ theme }) => theme.colours.primary};
+  font-weight: normal;
+  padding-bottom: 1rem;
+  margin: 0 1rem;
+
+  @media ${({ theme }) => theme.breakpoints.tabletLarge} {
+    padding: 0;
+    opacity: 0;
+    margin: 0;
+  }
 `;
 
 const SVGWrapper = styled.svg`
@@ -47,8 +93,11 @@ const SVGWrapper = styled.svg`
   & > path {
     stroke-dasharray: 1508;
     stroke-dashoffset: 1508;
+    opacity: 0;
   }
 `;
+
+const ServiceMain = styled.div``;
 
 const ServiceContent = styled.div`
   margin: 4rem 1rem;
@@ -58,7 +107,8 @@ const ServiceContent = styled.div`
   }
 
   @media ${({ theme }) => theme.breakpoints.tablet} {
-    margin: 4rem;
+    margin: 0 4rem 0;
+    padding: 4rem 0 0;
   }
 
   & > h4 {
@@ -116,75 +166,210 @@ const ProjectURL = styled.div`
 `;
 
 const Service = () => {
-  const pathRef = createRef();
+  const designContainer = createRef(null);
+  const designPath = createRef(null);
+  const designHeader = createRef(null);
+  const developContainer = createRef(null);
+  const developPath = createRef(null);
+  const developHeader = createRef(null);
+  const unknownContainer = createRef(null);
+  const unknownPath = createRef(null);
+  const unknownHeader = createRef(null);
+  const box = createRef(null);
+
+  gsap.registerPlugin(ScrollTrigger);
 
   useEffect(() => {
-    if (pathRef.current) {
-      console.log(pathRef.current.getTotalLength());
+    const DRAW_LENGTH = designPath.current.getTotalLength();
+    const designTrigger = designContainer.current;
+    const designDraw = designPath.current;
+    const designTitle = designHeader.current;
+    const developTrigger = developContainer.current;
+    const developDraw = developPath.current;
+    const developTitle = developHeader.current;
+    const unknownTrigger = unknownContainer.current;
+    const unknownDraw = unknownPath.current;
+    const unknownTitle = unknownHeader.current;
 
-      window.addEventListener("scroll", function (e) {
-        // What % down is it?
-        const scrollPercentage =
-          (document.documentElement.scrollTop + document.body.scrollTop) /
-          (document.documentElement.scrollHeight -
-            document.documentElement.clientHeight);
+    const DrawSVG = (trigger, draw, start, end) => {
+      gsap.fromTo(
+        draw,
+        {
+          strokeDashoffset: DRAW_LENGTH,
+        },
+        {
+          strokeDashoffset: 0,
+          scrollTrigger: {
+            toggleClass: { targets: draw, className: "active-path" },
+            trigger: trigger,
+            start: `top ${start}`,
+            end: `bottom ${end}`,
+            scrub: true,
+          },
+        }
+      );
+    };
 
-        // Length to offset the dashes
-        const drawLength = pathRef.current.getTotalLength() * scrollPercentage;
+    const AnimateHeader = (trigger, headerRef) => {
+      gsap.fromTo(
+        headerRef,
+        {
+          transform: "translateY(30px)",
+        },
+        {
+          opacity: 1,
+          transform: "translateY(0)",
+          duration: 1.2,
+          scrollTrigger: {
+            trigger: trigger,
+            toggleActions: "play reset play reset",
+            start: `top center`,
+            end: `bottom center`,
+          },
+        }
+      );
+    };
 
-        // Draw in reverse
-        pathRef.current.style.strokeDashoffset =
-          pathRef.current.getTotalLength() - drawLength;
-      });
-    }
-  }, [pathRef]);
+    AnimateHeader(designTrigger, designTitle);
+    AnimateHeader(developTrigger, developTitle);
+    AnimateHeader(unknownTrigger, unknownTitle);
+
+    DrawSVG(designTrigger, designDraw, "300px", "center");
+    DrawSVG(developTrigger, developDraw, "center", "center");
+    DrawSVG(unknownTrigger, unknownDraw, "center", "center");
+  }, []);
 
   return (
     <ServiceContainer>
-      <ServiceSidebar>
-        <HeaderWrapper>
+      <ServiceAside>
+        <AsideWrapper>
+          <AsideHeader ref={designHeader}>design</AsideHeader>
+          <AsideHeader ref={developHeader}>development</AsideHeader>
+          <AsideHeader ref={unknownHeader}>SEO</AsideHeader>
           <SVGWrapper
             viewBox='0 0 500 500'
             fill='none'
             xmlns='http://www.w3.org/2000/svg'
           >
             <path
-              ref={pathRef}
-              d='M 250, 250 m -240, 0 a 240,240 0 1,0 480,0 a 240,240 0 1,0 -480,0'
+              ref={designPath}
+              d='M250.5 10.159C383.048 10.159 490.5 117.611 490.5 250.159C490.5 382.707 383.048 490.159 250.5 490.159C117.952 490.159 10.5 382.707 10.5 250.159C10.5 117.611 117.952 10.159 250.5 10.159Z'
               stroke='#F4F2EB'
-              strokeWidth='10'
+              strokeWidth='20'
+            />
+            <path
+              ref={developPath}
+              d='M250.5 10.159C383.048 10.159 490.5 117.611 490.5 250.159C490.5 382.707 383.048 490.159 250.5 490.159C117.952 490.159 10.5 382.707 10.5 250.159C10.5 117.611 117.952 10.159 250.5 10.159Z'
+              stroke='#F4F2EB'
+              strokeWidth='20'
+            />
+            <path
+              ref={unknownPath}
+              d='M250.5 10.159C383.048 10.159 490.5 117.611 490.5 250.159C490.5 382.707 383.048 490.159 250.5 490.159C117.952 490.159 10.5 382.707 10.5 250.159C10.5 117.611 117.952 10.159 250.5 10.159Z'
+              stroke='#F4F2EB'
+              strokeWidth='20'
             />
           </SVGWrapper>
-        </HeaderWrapper>
-      </ServiceSidebar>
-      <ServiceContent>
-        <h4>the most customizable Shopify shops</h4>
-        <p>
-          Shopify is the gold standard for e-commerce, but templates are not
-          going to get your business to stand out. Our team is built of top
-          notch developers and designers that can create the best Shopify stores
-          you can find nowhere else. Your shop deserves more than a template!
-        </p>
-        <h4>full service brand creation by *real* design experts</h4>
-        <p>
-          You can trust your brand with us. Just look at how cute our site is!
-          Other Shopify experts just don’t have the chops. We understand what it
-          means to stand out in today’s online market. A sticky brand is KEY to
-          success -- and we’re going to build you a great one.
-        </p>
-        <h4>layouts, logos & videos, oh my!</h4>
-        <p>
-          But wait, you need more than just a great e-shop to build a brand.
-          From logo and style-guide creation to animations, and social media
-          graphics, we will build you ALL the assets. You’ll never run out of
-          instagram content again.
-        </p>
-        <ProjectURL>
-          <Link href='/projects'>
-            <a>check out our projects</a>
-          </Link>
-        </ProjectURL>
-      </ServiceContent>
+        </AsideWrapper>
+      </ServiceAside>
+      <ServiceMain>
+        <MobileHeader>
+          <h3>development</h3>
+        </MobileHeader>
+        <ServiceContent ref={designContainer}>
+          <h4>the most customizable Shopify shops</h4>
+          <p>
+            Shopify is the gold standard for e-commerce, but templates are not
+            going to get your business to stand out. Our team is built of top
+            notch developers and designers that can create the best Shopify
+            stores you can find nowhere else. Your shop deserves more than a
+            template!
+          </p>
+          <h4>full service brand creation by *real* design experts</h4>
+          <p>
+            You can trust your brand with us. Just look at how cute our site is!
+            Other Shopify experts just don’t have the chops. We understand what
+            it means to stand out in today’s online market. A sticky brand is
+            KEY to success -- and we’re going to build you a great one.
+          </p>
+          <h4>layouts, logos & videos, oh my!</h4>
+          <p>
+            But wait, you need more than just a great e-shop to build a brand.
+            From logo and style-guide creation to animations, and social media
+            graphics, we will build you ALL the assets. You’ll never run out of
+            instagram content again.
+          </p>
+          <ProjectURL>
+            <Link href='/projects'>
+              <a>check out our projects</a>
+            </Link>
+          </ProjectURL>
+        </ServiceContent>
+        <MobileHeader>
+          <h3>development</h3>
+        </MobileHeader>
+        <ServiceContent ref={developContainer}>
+          <h4>the most customizable Shopify shops</h4>
+          <p>
+            Shopify is the gold standard for e-commerce, but templates are not
+            going to get your business to stand out. Our team is built of top
+            notch developers and designers that can create the best Shopify
+            stores you can find nowhere else. Your shop deserves more than a
+            template!
+          </p>
+          <h4>full service brand creation by *real* design experts</h4>
+          <p>
+            You can trust your brand with us. Just look at how cute our site is!
+            Other Shopify experts just don’t have the chops. We understand what
+            it means to stand out in today’s online market. A sticky brand is
+            KEY to success -- and we’re going to build you a great one.
+          </p>
+          <h4>layouts, logos & videos, oh my!</h4>
+          <p>
+            But wait, you need more than just a great e-shop to build a brand.
+            From logo and style-guide creation to animations, and social media
+            graphics, we will build you ALL the assets. You’ll never run out of
+            instagram content again.
+          </p>
+          <ProjectURL>
+            <Link href='/projects'>
+              <a>check out our projects</a>
+            </Link>
+          </ProjectURL>
+        </ServiceContent>
+        <MobileHeader>
+          <h3>SEO</h3>
+        </MobileHeader>
+        <ServiceContent ref={unknownContainer}>
+          <h4>the most customizable Shopify shops</h4>
+          <p>
+            Shopify is the gold standard for e-commerce, but templates are not
+            going to get your business to stand out. Our team is built of top
+            notch developers and designers that can create the best Shopify
+            stores you can find nowhere else. Your shop deserves more than a
+            template!
+          </p>
+          <h4>full service brand creation by *real* design experts</h4>
+          <p>
+            You can trust your brand with us. Just look at how cute our site is!
+            Other Shopify experts just don’t have the chops. We understand what
+            it means to stand out in today’s online market. A sticky brand is
+            KEY to success -- and we’re going to build you a great one.
+          </p>
+          <h4>layouts, logos & videos, oh my!</h4>
+          <p>
+            But wait, you need more than just a great e-shop to build a brand.
+            From logo and style-guide creation to animations, and social media
+            graphics, we will build you ALL the assets. You’ll never run out of
+            instagram content again.
+          </p>
+          <ProjectURL>
+            <Link href='/projects'>
+              <a>check out our projects</a>
+            </Link>
+          </ProjectURL>
+        </ServiceContent>
+      </ServiceMain>
     </ServiceContainer>
   );
 };
