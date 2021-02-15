@@ -89,12 +89,12 @@ const AsideHeader = styled.h3`
 
 const SVGWrapper = styled.svg`
   width: 60%;
+`;
 
-  & > path {
-    stroke-dasharray: 1508;
-    stroke-dashoffset: 1508;
-    opacity: 0;
-  }
+const PathDraw = styled.path`
+  stroke-dasharray: 1508;
+  stroke-dashoffset: 1508;
+  opacity: 0;
 `;
 
 const ServiceMain = styled.div``;
@@ -219,7 +219,7 @@ const Service = () => {
         {
           opacity: 1,
           transform: "translateY(0)",
-          duration: 1.2,
+          duration: 0.8,
           scrollTrigger: {
             trigger: trigger,
             toggleActions: "play reset play reset",
@@ -251,23 +251,28 @@ const Service = () => {
             fill='none'
             xmlns='http://www.w3.org/2000/svg'
           >
-            <path
+            <PathDraw
               ref={designPath}
               d='M250.5 10.159C383.048 10.159 490.5 117.611 490.5 250.159C490.5 382.707 383.048 490.159 250.5 490.159C117.952 490.159 10.5 382.707 10.5 250.159C10.5 117.611 117.952 10.159 250.5 10.159Z'
               stroke='#F4F2EB'
               strokeWidth='20'
             />
-            <path
+            <PathDraw
               ref={developPath}
               d='M250.5 10.159C383.048 10.159 490.5 117.611 490.5 250.159C490.5 382.707 383.048 490.159 250.5 490.159C117.952 490.159 10.5 382.707 10.5 250.159C10.5 117.611 117.952 10.159 250.5 10.159Z'
               stroke='#F4F2EB'
               strokeWidth='20'
             />
-            <path
+            <PathDraw
               ref={unknownPath}
               d='M250.5 10.159C383.048 10.159 490.5 117.611 490.5 250.159C490.5 382.707 383.048 490.159 250.5 490.159C117.952 490.159 10.5 382.707 10.5 250.159C10.5 117.611 117.952 10.159 250.5 10.159Z'
               stroke='#F4F2EB'
               strokeWidth='20'
+            />
+            <path
+              d='M250.5 1.15899C388.019 1.15899 499.5 112.64 499.5 250.159C499.5 387.678 388.019 499.159 250.5 499.159C112.981 499.159 1.49999 387.678 1.49999 250.159C1.49999 112.64 112.981 1.15899 250.5 1.15899Z'
+              stroke='#F4F2EB'
+              strokeWidth='1'
             />
           </SVGWrapper>
         </AsideWrapper>
