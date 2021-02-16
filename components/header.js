@@ -184,11 +184,9 @@ const Header = () => {
         <NavListMobile showMenu={showMenu} page={page}>
           {NAV_ITEMS.filter((route) => route !== "logo").map((route) => (
             <li key={route}>
-              <h1>
-                <Link href={`/${route}`}>
-                  <NavLink page={page}>{route}</NavLink>
-                </Link>
-              </h1>
+              <Link href={`/${route}`}>
+                <NavLink page={page}>{route}</NavLink>
+              </Link>
             </li>
           ))}
         </NavListMobile>
