@@ -140,7 +140,6 @@ const ProjectURL = styled.div`
     display: inline-block;
     text-decoration: none;
     height: 40px;
-    width: 206px;
     overflow: hidden;
     text-decoration: none;
 
@@ -160,7 +159,7 @@ const ProjectURL = styled.div`
     }
 
     &:before {
-      right: -313px;
+      left: 259px;
     }
   }
 `;
