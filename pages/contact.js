@@ -12,53 +12,66 @@ const ContactContainer = styled.div`
   }
 `;
 
-const TeamInfo = styled.div`
+const TeamContainer = styled.div`
   width: 100%;
-  display: flex;
-  flex-direction: column;
-  margin: 4rem 1rem;
-
-  @media ${({ theme }) => theme.breakpoints.tabletSmall} {
-    margin: 4rem 2rem;
-  }
-
-  @media ${({ theme }) => theme.breakpoints.tablet} {
-    margin: 0 2% 0;
-    padding: 4rem 0 0;
-  }
-
-  @media ${({ theme }) => theme.breakpoints.desktopLarge} {
-    margin: 0 4% 0;
-  }
-
-  @media ${({ theme }) => theme.breakpoints.desktopWide} {
-    width: 800px;
-    margin: 0 auto 0;
-    padding: 4rem 0 0;
-  }
-
-  & > div {
-    @media ${({ theme }) => theme.breakpoints.desktop} {
-      width: 100%;
-      display: flex;
-      flex-direction: row;
-      justify-content: space-between;
-    }
-  }
 `;
 
 const ContactHeader = styled.h2`
   font-size: ${({ theme }) => theme.fontSize.xxLarge};
   color: ${({ theme }) => theme.colours.secondary80};
   font-weight: normal;
-  margin-bottom: 1rem;
+  margin: 4rem 1rem 0;
+  width: auto;
+
+  @media ${({ theme }) => theme.breakpoints.tabletSmall} {
+    margin: 4rem 2rem 0;
+  }
+
+  @media ${({ theme }) => theme.breakpoints.desktop} {
+    margin: 4rem 4rem 1rem;
+  }
+`;
+
+const TeamInfo = styled.div`
+  display: flex;
+  flex-direction: column;
+  margin: 2rem 1rem;
+
+  @media ${({ theme }) => theme.breakpoints.tabletSmall} {
+    margin: 2rem 2rem;
+  }
+
+  @media ${({ theme }) => theme.breakpoints.tablet} {
+    margin: 0 2rem 0;
+    padding: 1rem 0 0;
+  }
+
+  @media ${({ theme }) => theme.breakpoints.desktop} {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin: 0 4rem 0;
+    padding: 0;
+  }
+
+  @media ${({ theme }) => theme.breakpoints.desktopLarge} {
+    margin: 0 4rem 0;
+    /* max-width: 810px; */
+  }
+
+  /* @media ${({ theme }) => theme.breakpoints.desktopWide} {
+    width: 800px;
+    margin: 0 auto 0;
+    padding: 4rem 0 0;
+  } */
 `;
 
 const TeamMember = styled.div`
   margin-bottom: 2rem;
 
   @media ${({ theme }) => theme.breakpoints.desktop} {
-    width: 45%;
+    width: 47%;
+    max-width: 460px;
   }
 
   & > h3 {
@@ -117,14 +130,14 @@ const Contact = () => {
     <Layout>
       <ContactContainer>
         <ContactForm />
-        <TeamInfo>
+        <TeamContainer>
           <ContactHeader>Meet the Team</ContactHeader>
-          <div>
+          <TeamInfo>
             <TeamMember>
               <Image
                 src='/images/contact-heather.png'
-                width={381}
-                height={481}
+                width={460}
+                height={582}
               />
               <h3>Joshua Taguicana</h3>
               <p>Josh is the technical genius</p>
@@ -137,8 +150,8 @@ const Contact = () => {
             <TeamMember>
               <Image
                 src='/images/contact-heather.png'
-                width={381}
-                height={481}
+                width={460}
+                height={582}
               />
               <h3>Heather Alsen</h3>
               <p>Heather makes it beautiful</p>
@@ -148,8 +161,8 @@ const Contact = () => {
                 </a>
               </ProjectURL>
             </TeamMember>
-          </div>
-        </TeamInfo>
+          </TeamInfo>
+        </TeamContainer>
       </ContactContainer>
     </Layout>
   );

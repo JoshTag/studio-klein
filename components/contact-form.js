@@ -1,7 +1,7 @@
 import styled from "styled-components";
 
 const FormContainer = styled.div`
-  background: ${({ theme }) => theme.colours.secondary80};
+  background: ${({ theme }) => theme.colours.button};
   padding: 4rem 1rem;
   flex-shrink: 0;
 
@@ -16,6 +16,14 @@ const FormContainer = styled.div`
   @media ${({ theme }) => theme.breakpoints.tabletLarge} {
     padding: 4rem 2rem;
     width: 350px;
+  }
+
+  @media ${({ theme }) => theme.breakpoints.desktopLarge} {
+    width: 400px;
+  }
+
+  @media ${({ theme }) => theme.breakpoints.desktopWide} {
+    width: 500px;
   }
 `;
 
