@@ -152,11 +152,11 @@ const Herolist = styled.ul`
 
 const ButtonStyle = styled.a`
   width: 100%;
-  background-color: ${({ theme }) => theme.colours.secondary70};
+  background-color: ${({ theme }) => theme.colours.lightGrey};
   font-family: ${({ theme }) => theme.fonts.primary};
   font-size: ${({ theme }) => theme.fontSize.medium};
   color: ${({ theme }) => theme.colours.primary};
-  border: 1px solid ${({ theme }) => theme.colours.secondary70};
+  border: 1px solid ${({ theme }) => theme.colours.lightGrey};
   border-radius: 5px;
   padding: 1rem;
   text-align: center;

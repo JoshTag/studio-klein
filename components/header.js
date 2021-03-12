@@ -8,7 +8,7 @@ const HeaderContainer = styled.header`
   justify-content: center;
   padding: 2rem 0 0;
   background-color: ${({ page }) =>
-    page === "/" ? "transparent" : ({ theme }) => theme.colours.secondary80};
+    page === "/" ? "transparent" : ({ theme }) => theme.colours.header};
 `;
 
 const Navigation = styled.nav`
@@ -31,7 +31,7 @@ const NavListMobile = styled.ul`
   list-style: none;
   margin: 20px 0 0;
   background: ${({ page }) =>
-    page !== "/" ? "transparent" : ({ theme }) => theme.colours.secondary80};
+    page !== "/" ? "transparent" : ({ theme }) => theme.colours.header};
   display: block;
   overflow: hidden;
   height: ${(props) => (props.showMenu ? "200px" : "0px")};
@@ -81,7 +81,7 @@ const NavLink = styled.a`
   font-size: ${({ theme }) => theme.fontSize.medium};
   color: ${({ page }) =>
     page === "/"
-      ? ({ theme }) => theme.colours.secondary80
+      ? ({ theme }) => theme.colours.grey
       : ({ theme }) => theme.colours.primary};
   text-transform: capitalize;
   -webkit-transition: 0.3s;
@@ -103,7 +103,7 @@ const NavLink = styled.a`
       top: 100%;
       background: ${({ page }) =>
         page === "/"
-          ? ({ theme }) => theme.colours.secondary80
+          ? ({ theme }) => theme.colours.grey
           : ({ theme }) => theme.colours.primary};
     }
 

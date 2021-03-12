@@ -5,7 +5,7 @@ import styled from "styled-components";
 const FeaturedTitle = styled.h2`
   text-align: center;
   font-size: ${({ theme }) => theme.fontSize.xxLarge};
-  color: ${({ theme }) => theme.colours.secondary80};
+  color: ${({ theme }) => theme.colours.grey};
   font-weight: normal;
   padding-bottom: 1rem;
   padding: 80px 0 60px;
@@ -93,8 +93,8 @@ const LinkButton = styled.a`
   margin: auto 2.5% 40px;
   width: 95%;
   padding: 0.5rem;
-  background-color: ${({ theme }) => theme.colours.secondary70};
-  border: 1px solid ${({ theme }) => theme.colours.secondary70};
+  background-color: ${({ theme }) => theme.colours.lightGrey};
+  border: 1px solid ${({ theme }) => theme.colours.lightGrey};
   font-size: ${({ theme }) => theme.fontSize.medium};
   color: ${({ theme }) => theme.colours.primary};
   border-radius: 5px;

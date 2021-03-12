@@ -15,7 +15,7 @@ const ServiceContainer = styled.section`
 `;
 
 const MobileHeader = styled.div`
-  background: ${({ theme }) => theme.colours.secondary80};
+  background: ${({ theme }) => theme.colours.grey};
   height: 200px;
   background: #494947;
   display: grid;
@@ -43,7 +43,7 @@ const ServiceAside = styled.aside`
 
   @media ${({ theme }) => theme.breakpoints.tabletLarge} {
     display: block;
-    background: ${({ theme }) => theme.colours.secondary80};
+    background: ${({ theme }) => theme.colours.grey};
     height: 300px;
     background: #494947;
     height: 100vh;
@@ -113,7 +113,7 @@ const ServiceContent = styled.div`
 
   & > h4 {
     font-size: ${({ theme }) => theme.fontSize.mediumLarge};
-    color: ${({ theme }) => theme.colours.secondary80};
+    color: ${({ theme }) => theme.colours.grey};
     font-weight: normal;
     margin-bottom: 1.5rem;
   }
@@ -135,7 +135,7 @@ const ProjectURL = styled.div`
   & > a {
     position: relative;
     font-size: ${({ theme }) => theme.fontSize.medium};
-    color: ${({ theme }) => theme.colours.secondary80};
+    color: ${({ theme }) => theme.colours.grey};
     margin-bottom: 2rem;
     display: inline-block;
     text-decoration: none;
@@ -165,6 +165,8 @@ const ProjectURL = styled.div`
 `;
 
 const Service = () => {
+  gsap.registerPlugin(ScrollTrigger);
+
   const designContainer = createRef(null);
   const designPath = createRef(null);
   const designHeader = createRef(null);
@@ -174,9 +176,6 @@ const Service = () => {
   const unknownContainer = createRef(null);
   const unknownPath = createRef(null);
   const unknownHeader = createRef(null);
-  const box = createRef(null);
-
-  gsap.registerPlugin(ScrollTrigger);
 
   useEffect(() => {
     const DRAW_LENGTH = designPath.current.getTotalLength();
@@ -190,7 +189,7 @@ const Service = () => {
     const unknownDraw = unknownPath.current;
     const unknownTitle = unknownHeader.current;
 
-    const DrawSVG = (trigger, draw, start, end) => {
+    const drawSVG = (trigger, draw, start, end) => {
       gsap.fromTo(
         draw,
         {
@@ -209,16 +208,20 @@ const Service = () => {
       );
     };
 
-    const AnimateHeader = (trigger, headerRef) => {
+    drawSVG(designTrigger, designDraw, "300px", "center");
+    drawSVG(developTrigger, developDraw, "center", "center");
+    drawSVG(unknownTrigger, unknownDraw, "center", "center");
+
+    const animateHeader = (trigger, headerRef) => {
       gsap.fromTo(
         headerRef,
         {
-          transform: "translateY(30px)",
+          transform: "translateY(20px)",
         },
         {
           opacity: 1,
           transform: "translateY(0)",
-          duration: 0.8,
+          duration: 0.6,
           scrollTrigger: {
             trigger: trigger,
             toggleActions: "play reset play reset",
@@ -229,13 +232,9 @@ const Service = () => {
       );
     };
 
-    AnimateHeader(designTrigger, designTitle);
-    AnimateHeader(developTrigger, developTitle);
-    AnimateHeader(unknownTrigger, unknownTitle);
-
-    DrawSVG(designTrigger, designDraw, "300px", "center");
-    DrawSVG(developTrigger, developDraw, "center", "center");
-    DrawSVG(unknownTrigger, unknownDraw, "center", "center");
+    animateHeader(designTrigger, designTitle);
+    animateHeader(developTrigger, developTitle);
+    animateHeader(unknownTrigger, unknownTitle);
   }, []);
 
   return (

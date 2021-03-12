@@ -7,24 +7,17 @@ const Projects = () => {
     <Layout>
       <ProjectsHeader />
         <Project />
-        <Project />
-        <Project />
-        <div className='container' id='coming-soon'>
+        {/* <Project />
+        <Project /> */}
+        <div className='container'>
           More Featured Projects Coming Soon
         </div>
       <style global jsx>{`
-        html {
-          -webkit-scroll-behavior: smooth;
-          -moz-scroll-behavior: smooth;
-          -ms-scroll-behavior: smooth;
-          scroll-behavior: smooth;
-        }
-
         .container {
           padding: 50px;
           background: rgba(0, 0, 0, 0.8);
           color: rgb(244, 242, 235);
-          font-size: 29px;
+          font-size: 21px;
           text-align: center;
         }
       `}</style>

@@ -1,7 +1,7 @@
 import styled from "styled-components";
 
 const HeaderContainer = styled.div`
-  background-color: ${({ theme }) => theme.colours.secondary80};
+  background-color: ${({ theme }) => theme.colours.grey};
   padding: 3rem 0 1.5rem;
 `;
 

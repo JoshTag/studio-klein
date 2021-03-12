@@ -15,8 +15,9 @@ export default {
   },
   colours: {
     primary: "rgb(244, 242, 235)",
-    secondary80: "rgba(0, 0, 0, 0.8)",
-    secondary70: "rgba(0, 0, 0, 0.7)",
+    grey: "#292929",
+    lightGrey: "#494947",
+    header: "rgba(0,0,0,0.8)",
     button: "rgb(73, 73, 71)",
   },
   breakpoints: {

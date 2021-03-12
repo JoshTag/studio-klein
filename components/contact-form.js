@@ -1,7 +1,7 @@
 import styled from "styled-components";
 
 const FormContainer = styled.div`
-  background: ${({ theme }) => theme.colours.button};
+  background: ${({ theme }) => theme.colours.lightGrey};
   padding: 4rem 1rem;
   flex-shrink: 0;
 
@@ -15,6 +15,10 @@ const FormContainer = styled.div`
 
   @media ${({ theme }) => theme.breakpoints.tabletLarge} {
     padding: 4rem 2rem;
+    width: 320px;
+  }
+
+  @media ${({ theme }) => theme.breakpoints.desktop} {
     width: 350px;
   }
 
@@ -23,7 +27,7 @@ const FormContainer = styled.div`
   }
 
   @media ${({ theme }) => theme.breakpoints.desktopWide} {
-    width: 500px;
+    width: 450px;
   }
 `;
 
@@ -40,6 +44,7 @@ const Form = styled.form`
 
   & > label {
     color: ${({ theme }) => theme.colours.primary};
+    margin-bottom: 5px;
   }
 
   & > input,
@@ -49,6 +54,7 @@ const Form = styled.form`
     height: 40px;
     padding: 5px 10px;
     margin-bottom: 1rem;
+    border-radius: 2px;
   }
 
   & > textarea {
@@ -58,13 +64,19 @@ const Form = styled.form`
 
   & > button {
     margin-top: 2rem;
-    background: ${({ theme }) => theme.colours.secondary70};
+    background: transparent;
     color: ${({ theme }) => theme.colours.primary};
     font-size: ${({ theme }) => theme.fontSize.medium};
-    border: none;
-    border-radius: 5px;
+    border: 1px solid ${({ theme }) => theme.colours.primary};
+    border-radius: 2px;
     height: 50px;
-    max-width: 600px;
+    transition: 0.3s;
+
+    &:hover {
+      color: ${({ theme }) => theme.colours.grey};
+      background: ${({ theme }) => theme.colours.primary};
+      cursor: pointer;
+    }
   }
 `;
 
@@ -74,9 +86,19 @@ const ContactForm = () => {
       <ContactHeader>Contact Form</ContactHeader>
       <Form>
         <label>name</label>
-        <input className='contact-inputs' name='name' type='text' required />
+        <input
+          className='contact-inputs'
+          name='name'
+          type='text'
+          required
+        />
         <label>email</label>
-        <input className='contact-inputs' name='email' type='text' required />
+        <input
+          className='contact-inputs'
+          name='email'
+          type='email'
+          required
+        />
         <label>subject</label>
         <input className='contact-inputs' name='subject' type='text' required />
         <label>message</label>
@@ -86,7 +108,9 @@ const ContactForm = () => {
           type='text'
           required
         />
-        <button type='submit'>submit</button>
+        <button type='submit'>
+          submit
+        </button>
       </Form>
     </FormContainer>
   );
