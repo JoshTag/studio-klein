@@ -1,3 +1,4 @@
+import { useState } from "react";
 import styled from "styled-components";
 
 const FormContainer = styled.div`
@@ -81,37 +82,118 @@ const Form = styled.form`
 `;
 
 const ContactForm = () => {
+  const [status, setStatus] = useState({
+    submitted: false,
+    submitting: false,
+    info: { error: false, msg: null }
+  })
+
+  const [inputs, setInputs] = useState({
+    name: '',
+    email: '',
+    subject: '',
+    message: ''
+  })
+
+  const handleResponse = (status, msg) => {
+    if (status === 200) {
+      setStatus({
+        submitted: true,
+        submitting: false,
+        info: { error: false, msg: msg }
+      })
+      setInputs({
+        name: '',
+        email: '',
+        subject: '',
+        message: ''
+      })
+    } else {
+      setStatus({
+        info: { error: true, msg: msg }
+      })
+    }
+  }
+
+  const handleOnChange = e => {
+    e.persist()
+    setInputs(prev => ({
+      ...prev,
+      [e.target.id]: e.target.value
+    }))
+    setStatus({
+      submitted: false,
+      submitting: false,
+      info: { error: false, msg: null }
+    })
+  }
+
+  const handleOnSubmit = async e => {
+    e.preventDefault()
+    setStatus(prevStatus => ({ ...prevStatus, submitting: true }))
+    const res = await fetch('/api/contact', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify(inputs)
+    })
+    const text = await res.text()
+    handleResponse(res.status, text)
+  }
+
   return (
     <FormContainer>
       <ContactHeader>Contact Form</ContactHeader>
-      <Form>
-        <label>name</label>
+      <Form onSubmit={handleOnSubmit}>
+        <label htmlFor="name">name</label>
         <input
           className='contact-inputs'
-          name='name'
+          id='name'
           type='text'
           required
+          value={inputs.name}
+          onChange={handleOnChange}
         />
-        <label>email</label>
+        <label htmlFor="email">email</label>
         <input
           className='contact-inputs'
-          name='email'
+          id='email'
           type='email'
           required
+          value={inputs.email}
+          onChange={handleOnChange}
         />
-        <label>subject</label>
-        <input className='contact-inputs' name='subject' type='text' required />
-        <label>message</label>
-        <textarea
+        <label htmlFor="subject">subject</label>
+        <input
           className='contact-inputs'
-          name='message'
+          id='subject'
           type='text'
           required
+          onChange={handleOnChange}
         />
-        <button type='submit'>
-          submit
+        <label htmlFor="message">message</label>
+        <textarea
+          className='contact-inputs'
+          id='message'
+          type='text'
+          required
+          onChange={handleOnChange}
+        />
+        <button type='submit' disabled={status.submitting}>
+        {!status.submitting
+            ? !status.submitted
+              ? 'submit'
+              : 'submitted'
+            : 'submitting...'}
         </button>
       </Form>
+      {status.info.error && (
+        <div>Error: {status.info.msg}</div>
+      )}
+      {!status.info.error && status.info.msg && (
+        <div>{status.info.msg}</div>
+      )}
     </FormContainer>
   );
 };
