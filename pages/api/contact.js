@@ -8,7 +8,7 @@ export default async function (req, res) {
   const msg = {
     to: [
       { email: "josh.taguicana@thestudioklein.com" },
-      { email: "joshtaguicana@gmail.com" },
+      { email: "heather.alsen@thestudioklein.com" },
     ],
     from: "josh.taguicana@thestudioklein.com",
     subject: `New Message From - ${email}`,

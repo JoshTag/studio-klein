@@ -61,6 +61,7 @@ const Form = styled.form`
   & > textarea {
     height: 250px;
     resize: vertical;
+    font-family: ${({ theme }) => theme.fonts.siteFont};
   }
 
   & > button {
@@ -85,68 +86,68 @@ const ContactForm = () => {
   const [status, setStatus] = useState({
     submitted: false,
     submitting: false,
-    info: { error: false, msg: null }
-  })
+    info: { error: false, msg: null },
+  });
 
   const [inputs, setInputs] = useState({
-    name: '',
-    email: '',
-    subject: '',
-    message: ''
-  })
+    name: "",
+    email: "",
+    subject: "",
+    message: "",
+  });
 
   const handleResponse = (status, msg) => {
     if (status === 200) {
       setStatus({
         submitted: true,
         submitting: false,
-        info: { error: false, msg: msg }
-      })
+        info: { error: false, msg: msg },
+      });
       setInputs({
-        name: '',
-        email: '',
-        subject: '',
-        message: ''
-      })
+        name: "",
+        email: "",
+        subject: "",
+        message: "",
+      });
     } else {
       setStatus({
-        info: { error: true, msg: msg }
-      })
+        info: { error: true, msg: msg },
+      });
     }
-  }
+  };
 
-  const handleOnChange = e => {
-    e.persist()
-    setInputs(prev => ({
+  const handleOnChange = (e) => {
+    e.persist();
+    setInputs((prev) => ({
       ...prev,
-      [e.target.id]: e.target.value
-    }))
+      [e.target.id]: e.target.value,
+    }));
     setStatus({
       submitted: false,
       submitting: false,
-      info: { error: false, msg: null }
-    })
-  }
+      info: { error: false, msg: null },
+    });
+  };
 
-  const handleOnSubmit = async e => {
-    e.preventDefault()
-    setStatus(prevStatus => ({ ...prevStatus, submitting: true }))
-    const res = await fetch('/api/contact', {
-      method: 'POST',
+  const handleOnSubmit = async (e) => {
+    e.preventDefault();
+    setStatus((prevStatus) => ({ ...prevStatus, submitting: true }));
+    const res = await fetch("/api/contact", {
+      method: "POST",
       headers: {
-        'Content-Type': 'application/json'
+        "Content-Type": "application/json",
       },
-      body: JSON.stringify(inputs)
-    })
-    const text = await res.text()
-    handleResponse(res.status, text)
-  }
+      body: JSON.stringify(inputs),
+    });
+    const text = await res.text();
+    handleResponse(res.status, text);
+  };
 
   return (
     <FormContainer>
       <ContactHeader>Contact Form</ContactHeader>
       <Form onSubmit={handleOnSubmit}>
-        <label htmlFor="name">name</label>
+        <label htmlFor='name'>name</label>
         <input
           className='contact-inputs'
           id='name'
@@ -155,7 +156,7 @@ const ContactForm = () => {
           value={inputs.name}
           onChange={handleOnChange}
         />
-        <label htmlFor="email">email</label>
+        <label htmlFor='email'>email</label>
         <input
           className='contact-inputs'
           id='email'
@@ -164,36 +165,34 @@ const ContactForm = () => {
           value={inputs.email}
           onChange={handleOnChange}
         />
-        <label htmlFor="subject">subject</label>
+        <label htmlFor='subject'>subject</label>
         <input
           className='contact-inputs'
           id='subject'
           type='text'
           required
+          value={inputs.subject}
           onChange={handleOnChange}
         />
-        <label htmlFor="message">message</label>
+        <label htmlFor='message'>message</label>
         <textarea
           className='contact-inputs'
           id='message'
           type='text'
           required
+          value={inputs.message}
           onChange={handleOnChange}
         />
         <button type='submit' disabled={status.submitting}>
-        {!status.submitting
+          {!status.submitting
             ? !status.submitted
-              ? 'submit'
-              : 'submitted'
-            : 'submitting...'}
+              ? "submit"
+              : "submitted"
+            : "submitting..."}
         </button>
       </Form>
-      {status.info.error && (
-        <div>Error: {status.info.msg}</div>
-      )}
-      {!status.info.error && status.info.msg && (
-        <div>{status.info.msg}</div>
-      )}
+      {status.info.error && <div>Error: {status.info.msg}</div>}
+      {!status.info.error && status.info.msg && <div>{status.info.msg}</div>}
     </FormContainer>
   );
 };
