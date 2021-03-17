@@ -1,8 +1,7 @@
 import React, { createRef, useEffect } from "react";
 import styled, { keyframes } from "styled-components";
 import Link from "next/link";
-import { gsap } from "gsap/dist/gsap";
-import ScrollTrigger from "gsap/dist/ScrollTrigger";
+import { serviceScrollAnimation } from "./../utils/gsap";
 
 const ServiceContainer = styled.section`
   position: relative; // remove
@@ -165,8 +164,6 @@ const ProjectURL = styled.div`
 `;
 
 const Service = () => {
-  gsap.registerPlugin(ScrollTrigger);
-
   const designContainer = createRef(null);
   const designPath = createRef(null);
   const designHeader = createRef(null);
@@ -178,7 +175,6 @@ const Service = () => {
   const unknownHeader = createRef(null);
 
   useEffect(() => {
-    const DRAW_LENGTH = designPath.current.getTotalLength();
     const designTrigger = designContainer.current;
     const designDraw = designPath.current;
     const designTitle = designHeader.current;
@@ -189,52 +185,27 @@ const Service = () => {
     const unknownDraw = unknownPath.current;
     const unknownTitle = unknownHeader.current;
 
-    const drawSVG = (trigger, draw, start, end) => {
-      gsap.fromTo(
-        draw,
-        {
-          strokeDashoffset: DRAW_LENGTH,
-        },
-        {
-          strokeDashoffset: 0,
-          scrollTrigger: {
-            toggleClass: { targets: draw, className: "active-path" },
-            trigger: trigger,
-            start: `top ${start}`,
-            end: `bottom ${end}`,
-            scrub: true,
-          },
-        }
-      );
-    };
-
-    drawSVG(designTrigger, designDraw, "300px", "center");
-    drawSVG(developTrigger, developDraw, "center", "center");
-    drawSVG(unknownTrigger, unknownDraw, "center", "center");
-
-    const animateHeader = (trigger, headerRef) => {
-      gsap.fromTo(
-        headerRef,
-        {
-          transform: "translateY(20px)",
-        },
-        {
-          opacity: 1,
-          transform: "translateY(0)",
-          duration: 0.6,
-          scrollTrigger: {
-            trigger: trigger,
-            toggleActions: "play reset play reset",
-            start: `top center`,
-            end: `bottom center`,
-          },
-        }
-      );
-    };
-
-    animateHeader(designTrigger, designTitle);
-    animateHeader(developTrigger, developTitle);
-    animateHeader(unknownTrigger, unknownTitle);
+    serviceScrollAnimation(
+      designTrigger,
+      designDraw,
+      "300px",
+      "center",
+      designTitle
+    );
+    serviceScrollAnimation(
+      developTrigger,
+      developDraw,
+      "center",
+      "center",
+      developTitle
+    );
+    serviceScrollAnimation(
+      unknownTrigger,
+      unknownDraw,
+      "center",
+      "center",
+      unknownTitle
+    );
   }, []);
 
   return (

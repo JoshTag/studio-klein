@@ -47,3 +47,48 @@ export const projectAsideTransition = (
     }
   );
 };
+
+export const serviceScrollAnimation = (
+  trigger,
+  draw,
+  start,
+  end,
+  headerRef
+) => {
+  gsap.registerPlugin(ScrollTrigger);
+
+  gsap.fromTo(
+    draw,
+    {
+      strokeDashoffset: 1508.176513671875,
+    },
+    {
+      strokeDashoffset: 0,
+      scrollTrigger: {
+        toggleClass: { targets: draw, className: "active-path" },
+        trigger: trigger,
+        start: `top ${start}`,
+        end: `bottom ${end}`,
+        scrub: true,
+      },
+    }
+  );
+
+  gsap.fromTo(
+    headerRef,
+    {
+      transform: "translateY(20px)",
+    },
+    {
+      opacity: 1,
+      transform: "translateY(0)",
+      duration: 0.6,
+      scrollTrigger: {
+        trigger: trigger,
+        toggleActions: "play reset play reset",
+        start: `top center`,
+        end: `bottom center`,
+      },
+    }
+  );
+};
