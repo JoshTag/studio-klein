@@ -1,4 +1,4 @@
-import Layout from "components/layout"
+import Layout from "components/layout";
 import ProjectsHeader from "components/projects-header";
 import Project from "components/project";
 
@@ -6,15 +6,11 @@ const Projects = () => {
   return (
     <Layout>
       <ProjectsHeader />
-        <Project />
-        {/* <Project />
-        <Project /> */}
-        <div className='container'>
-          More Featured Projects Coming Soon
-        </div>
+      <Project />
+      <div className='container'>More Featured Projects Coming Soon</div>
       <style global jsx>{`
         .container {
-          padding: 50px;
+          padding: 500px;
           background: rgba(0, 0, 0, 0.8);
           color: rgb(244, 242, 235);
           font-size: 21px;
