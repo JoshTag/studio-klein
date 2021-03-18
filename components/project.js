@@ -215,7 +215,8 @@ const Project = () => {
       "top",
       animate,
       asideTriggerOne,
-      "pause reset restart restart"
+      "pause reset restart restart",
+      "-500"
     );
     projectAsideTransition(
       triggerTwo,
@@ -478,9 +479,7 @@ const Project = () => {
           </p>
         </ProjectContent>
       </ProjectInfoContainer>
-      <style global jsx>{`
-
-      `}</style>
+      <style global jsx>{``}</style>
     </ProjectPageContainer>
   );
 };

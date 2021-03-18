@@ -7,22 +7,23 @@ export const projectAsideTransition = (
   endPlacement,
   transitionAnimation,
   aside,
-  actions
+  actions,
+  start = "top"
 ) => {
   gsap.registerPlugin(ScrollTrigger);
 
   gsap.fromTo(
     transitionAnimation,
     {
-      transform: "translateY(100vh)",
+      transform: "translateY(100%)",
     },
     {
-      transform: "translateY(-100vh)",
+      transform: "translateY(-100%)",
       duration: 1.2,
       scrollTrigger: {
         trigger: triggerStart,
         toggleActions: `${actions}`,
-        start: `top center`,
+        start: `${start} center`,
         endTrigger: triggerEnd,
         end: `${endPlacement} center`,
       },
@@ -40,7 +41,7 @@ export const projectAsideTransition = (
       scrollTrigger: {
         trigger: triggerStart,
         toggleActions: "play reset play reset",
-        start: `top center`,
+        start: `${start} center`,
         endTrigger: triggerEnd,
         end: `${endPlacement} center`,
       },
@@ -60,7 +61,7 @@ export const serviceScrollAnimation = (
   gsap.fromTo(
     draw,
     {
-      strokeDashoffset: 1508.176513671875,
+      strokeDashoffset: 1508.176513671875, // Circle SVG total length
     },
     {
       strokeDashoffset: 0,

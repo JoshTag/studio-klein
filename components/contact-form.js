@@ -145,7 +145,7 @@ const ContactForm = () => {
 
   return (
     <FormContainer>
-      <ContactHeader>Contact Form</ContactHeader>
+      <ContactHeader>Contact Us</ContactHeader>
       <Form onSubmit={handleOnSubmit}>
         <label htmlFor='name'>name</label>
         <input
