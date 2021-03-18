@@ -98,6 +98,10 @@ const Wrapper = styled.div`
 
   @media ${({ theme }) => theme.breakpoints.mobileLarge} {
     margin: 0 10%;
+    display: flex;
+    flex-direction: column;
+    height: 70vh;
+    justify-content: space-between;
   }
 `;
 
@@ -111,7 +115,7 @@ const HeroHeader = styled.h2`
   font-size: ${({ theme }) => theme.fontSize.xxLarge};
   line-height: 40px;
   margin-bottom: 1.5rem;
-  padding-top: 2rem;
+  padding-top: 4rem;
   font-weight: normal;
 `;
 
@@ -133,8 +137,9 @@ const Herolist = styled.ul`
   }
 
   @media ${({ theme }) => theme.breakpoints.desktop} {
-    max-width: 820px;
-    margin: 100px auto 50px;
+    margin: 2rem auto 50px;
+    display: flex;
+    width: 80%;
   }
 
   & > li {
@@ -145,7 +150,7 @@ const Herolist = styled.ul`
     }
 
     @media ${({ theme }) => theme.breakpoints.desktop} {
-      width: 240px;
+      width: 30%;
     }
   }
 `;
