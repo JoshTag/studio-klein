@@ -14,7 +14,7 @@ const HeaderContainer = styled.header`
 const Navigation = styled.nav`
   width: 100%;
   position: relative;
-  padding-bottom: 2rem;
+  padding-bottom: 1.5rem;
 `;
 
 const NavMobileContainer = styled.div`
@@ -98,7 +98,8 @@ const NavLink = styled.a`
     :after {
       content: "";
       position: absolute;
-      width: 0;
+      width: ${({ page, route }) =>
+        page.substring(1) === route ? "100%" : "0"};
       height: 1px;
       top: 100%;
       background: ${({ page }) =>
@@ -134,6 +135,8 @@ const Hamurger = styled.div`
   position: absolute;
   top: 0;
   right: 1rem;
+  width: 33px;
+  height: 24px;
 
   &:hover {
     cursor: pointer;
@@ -192,6 +195,7 @@ const Header = () => {
         </NavListMobile>
         <NavList>
           {NAV_ITEMS.map((route) => {
+            console.log(page.substring(1), route);
             return route === "logo" ? (
               <li key={route}>
                 <Link href='/'>
@@ -206,7 +210,9 @@ const Header = () => {
             ) : (
               <li key={route}>
                 <Link href={`/${route}`}>
-                  <NavLink page={page}>{route}</NavLink>
+                  <NavLink page={page} route={route}>
+                    {route}
+                  </NavLink>
                 </Link>
               </li>
             );
