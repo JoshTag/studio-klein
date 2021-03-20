@@ -82,11 +82,20 @@ const Form = styled.form`
   }
 `;
 
+const Message = styled.div`
+  color: ${({ status }) => status ? "#ff7e7e" : "#FFF"};
+  margin-top: 1rem;
+  font-weight: 600;
+`;
+
 const ContactForm = () => {
   const [status, setStatus] = useState({
     submitted: false,
     submitting: false,
-    info: { error: false, msg: null },
+    info: {
+      error: false,
+      msg: null,
+    },
   });
 
   const [inputs, setInputs] = useState({
@@ -191,8 +200,16 @@ const ContactForm = () => {
             : "submitting..."}
         </button>
       </Form>
-      {status.info.error && <div>Error: {status.info.msg}</div>}
-      {!status.info.error && status.info.msg && <div>{status.info.msg}</div>}
+      {status.info.error && (
+        <Message status={status.info.error}>
+          <span>Error: {status.info.msg}</span>
+        </Message>
+      )}
+      {!status.info.error && status.info.msg && (
+        <Message status={status.info.error}>
+          <span>{status.info.msg}</span>
+        </Message>
+      )}
     </FormContainer>
   );
 };

@@ -21,9 +21,12 @@ export default async function (req, res) {
 
   try {
     await sgMail.send(msg);
-    res.status(200).send("Message sent successfully.");
+    res.status(200).send("Message sent successfully! We will contact you as soon as we can!");
   } catch (error) {
-    console.log("ERROR", error);
-    res.status(400).send("Message not sent.");
+    res
+      .status(400)
+      .send(
+        "Message not sent. You can contact us at heather.alsen@thestudioklein.com or josh.taguicana@thestudioklein.com"
+      );
   }
 }
