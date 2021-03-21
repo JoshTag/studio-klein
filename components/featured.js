@@ -8,7 +8,7 @@ const FeaturedTitle = styled.h2`
   color: ${({ theme }) => theme.colours.grey};
   font-weight: normal;
   padding-bottom: 1rem;
-  padding: 80px 0 60px;
+  padding: 50px 0 50px;
 `;
 
 const FeaturedWrapper = styled.div`

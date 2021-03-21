@@ -6,7 +6,7 @@ const HeroSection = styled.section`
   position: relative;
 
   @media ${({ theme }) => theme.breakpoints.desktop} {
-    height: 685px;
+    height: 600px;
   }
 `;
 
@@ -100,7 +100,6 @@ const Wrapper = styled.div`
     margin: 0 10%;
     display: flex;
     flex-direction: column;
-    height: 70vh;
     justify-content: space-between;
   }
 `;
@@ -122,7 +121,7 @@ const HeroHeader = styled.h2`
 const HeroParagraph = styled.p`
   font-size: ${({ theme }) => theme.fontSize.small};
   line-height: 27px;
-  margin: 1rem 0;
+  margin-bottom: 1rem;
   display: inline-block;
 `;
 
