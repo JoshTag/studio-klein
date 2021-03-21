@@ -1,6 +1,4 @@
 import { gsap, Circ } from "gsap/dist/gsap";
-import ScrollTrigger from "gsap/dist/ScrollTrigger";
-import ScrollToPlugin from "gsap/dist/ScrollToPlugin";
 
 export const projectAsideTransition = (
   triggerStart,
@@ -56,8 +54,6 @@ export const serviceScrollAnimation = (
   end,
   headerRef
 ) => {
-  gsap.registerPlugin(ScrollTrigger);
-
   gsap.fromTo(
     draw,
     {

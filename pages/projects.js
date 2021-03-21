@@ -1,6 +1,6 @@
 import Layout from "components/layout";
 import Project from "components/project";
-import PageSubHeader from "components/page-sub-header";
+import PageSubHeader from "components/page-subheader";
 import Head from "next/head";
 
 const Projects = () => {

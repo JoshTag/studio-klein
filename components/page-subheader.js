@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import { smoothScrollTo } from "./../utils/gsap";
+import { smoothScrollTo } from "../utils/gsap";
 
 const HeaderContainer = styled.div`
   background-color: ${({ theme }) => theme.colours.header};
@@ -56,6 +56,7 @@ const PageSubheader = ({ subheadings }) => {
       <nav>
         <List>
           {subheadings.map((item) => {
+            console.log(`#${item.toLowerCase().split(" ").join("")}`)
             return (
               <ListItem key={item}>
                 <div

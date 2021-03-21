@@ -1,7 +1,7 @@
 import React, { createRef, useEffect } from "react";
 import styled, { keyframes } from "styled-components";
 import Link from "next/link";
-import { serviceScrollAnimation } from "./../utils/gsap";
+import { serviceScrollAnimation, smoothScrollTo } from "./../utils/gsap";
 
 const ServiceContainer = styled.section`
   position: relative; // remove
@@ -260,7 +260,7 @@ const Service = () => {
         <MobileHeader>
           <h3>Desgin</h3>
         </MobileHeader>
-        <ServiceContent ref={designContainer}>
+        <ServiceContent ref={designContainer} id="design">
           <h3>Design</h3>
           <h4>the most customizable Shopify shops</h4>
           <p>
@@ -293,7 +293,7 @@ const Service = () => {
         <MobileHeader>
           <h3>development</h3>
         </MobileHeader>
-        <ServiceContent ref={developContainer}>
+        <ServiceContent ref={developContainer} id="development">
           <h3>Development</h3>
           <h4>the most customizable Shopify shops</h4>
           <p>
@@ -326,7 +326,7 @@ const Service = () => {
         <MobileHeader>
           <h3>SEO</h3>
         </MobileHeader>
-        <ServiceContent ref={unknownContainer}>
+        <ServiceContent ref={unknownContainer} id="seo">
           <h3>SEO</h3>
           <h4>the most customizable Shopify shops</h4>
           <p>
