@@ -70,7 +70,7 @@ const AsideWrapper = styled.div`
   place-items: center;
 `;
 
-const AsideHeader = styled.h3`
+const AsideTitle = styled.h3`
   position: absolute;
   text-align: center;
   font-size: ${({ theme }) => theme.fontSize.xxLarge};
@@ -110,9 +110,19 @@ const ServiceContent = styled.div`
     padding: 4rem 0 0;
   }
 
+  & > h3 {
+    display: none;
+
+    @media ${({ theme }) => theme.breakpoints.tabletLarge} {
+      display: block;
+      font-size: ${({ theme }) => theme.fontSize.xxLarge};
+      font-weight: normal;
+      margin-bottom: 1.5rem;
+    }
+  }
+
   & > h4 {
     font-size: ${({ theme }) => theme.fontSize.mediumLarge};
-    color: ${({ theme }) => theme.colours.grey};
     font-weight: normal;
     margin-bottom: 1.5rem;
   }
@@ -188,7 +198,7 @@ const Service = () => {
     serviceScrollAnimation(
       designTrigger,
       designDraw,
-      "300px",
+      "200px",
       "center",
       designTitle
     );
@@ -212,9 +222,9 @@ const Service = () => {
     <ServiceContainer>
       <ServiceAside>
         <AsideWrapper>
-          <AsideHeader ref={designHeader}>design</AsideHeader>
-          <AsideHeader ref={developHeader}>development</AsideHeader>
-          <AsideHeader ref={unknownHeader}>SEO</AsideHeader>
+          <AsideTitle ref={designHeader}>design</AsideTitle>
+          <AsideTitle ref={developHeader}>development</AsideTitle>
+          <AsideTitle ref={unknownHeader}>SEO</AsideTitle>
           <SVGWrapper
             viewBox='0 0 500 500'
             fill='none'
@@ -248,9 +258,10 @@ const Service = () => {
       </ServiceAside>
       <ServiceMain>
         <MobileHeader>
-          <h3>development</h3>
+          <h3>Desgin</h3>
         </MobileHeader>
         <ServiceContent ref={designContainer}>
+          <h3>Design</h3>
           <h4>the most customizable Shopify shops</h4>
           <p>
             Shopify is the gold standard for e-commerce, but templates are not
@@ -283,6 +294,7 @@ const Service = () => {
           <h3>development</h3>
         </MobileHeader>
         <ServiceContent ref={developContainer}>
+          <h3>Development</h3>
           <h4>the most customizable Shopify shops</h4>
           <p>
             Shopify is the gold standard for e-commerce, but templates are not
@@ -315,6 +327,7 @@ const Service = () => {
           <h3>SEO</h3>
         </MobileHeader>
         <ServiceContent ref={unknownContainer}>
+          <h3>SEO</h3>
           <h4>the most customizable Shopify shops</h4>
           <p>
             Shopify is the gold standard for e-commerce, but templates are not

@@ -194,9 +194,8 @@ const Header = () => {
           ))}
         </NavListMobile>
         <NavList>
-          {NAV_ITEMS.map((route) => {
-            console.log(page.substring(1), route);
-            return route === "logo" ? (
+          {NAV_ITEMS.map((route) =>
+            route === "logo" ? (
               <li key={route}>
                 <Link href='/'>
                   <a>
@@ -215,8 +214,8 @@ const Header = () => {
                   </NavLink>
                 </Link>
               </li>
-            );
-          })}
+            )
+          )}
         </NavList>
       </Navigation>
     </HeaderContainer>

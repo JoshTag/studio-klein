@@ -8,7 +8,6 @@ export default function Home() {
     <Layout>
       <Head>
         <title>Studio Klein</title>
-        <link rel="icon" href="/favicon.ico" />
       </Head>
       <Hero />
       <Featured />

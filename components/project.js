@@ -1,6 +1,8 @@
 import { createRef, useEffect } from "react";
 import Image from "next/image";
 import styled, { keyframes } from "styled-components";
+import { gsap } from "gsap/dist/gsap";
+import ScrollTrigger from "gsap/dist/ScrollTrigger";
 import { projectAsideTransition } from "../utils/gsap";
 
 const ProjectPageContainer = styled.section`
@@ -282,7 +284,7 @@ const Project = () => {
             />
           </ProjectLogo>
         </MobileBanner>
-        <ProjectContent ref={projectOne}>
+        <ProjectContent ref={projectOne} id="studiozoubida">
           <h2>Studio Zoubida</h2>
           <ProjectURL>
             <a
@@ -388,7 +390,7 @@ const Project = () => {
             />
           </ProjectLogo>
         </MobileBanner>
-        <ProjectContent ref={projectTwo}>
+        <ProjectContent ref={projectTwo} id="thepielander">
           <h2>The Pielander</h2>
           <ProjectURL>
             <a
@@ -479,7 +481,6 @@ const Project = () => {
           </p>
         </ProjectContent>
       </ProjectInfoContainer>
-      <style global jsx>{``}</style>
     </ProjectPageContainer>
   );
 };

@@ -184,6 +184,7 @@ const Hero = () => {
             height={725}
             layout='responsive'
             quality={100}
+            alt="Studio Klein Hero"
           />
         </ImageBox>
       </ImageContainer>

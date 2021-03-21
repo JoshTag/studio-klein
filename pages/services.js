@@ -1,18 +1,13 @@
 import Layout from "components/layout";
-import ServicesHeader from "components/services-header";
 import Service from "components/service";
+import PageSubHeader from "components/page-sub-header";
 
 const Services = () => {
+  const subheadings = ["Design", "Development", "SEO"]
   return (
     <Layout>
-      <ServicesHeader />
+      <PageSubHeader subheadings={subheadings} />
       <Service />
-      <div className='service-space'>space</div>
-      <style jsx>{`
-        .service-space {
-          height: 500px;
-        }
-      `}</style>
     </Layout>
   );
 };

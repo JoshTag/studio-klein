@@ -123,6 +123,7 @@ const Featured = () => {
               width={166}
               height={101}
               layout='responsive'
+              alt="Studio Zoubida Logo"
             />
           </LogoContainer>
           <Link href='/projects' passHref>
@@ -133,6 +134,7 @@ const Featured = () => {
               src='/images/projects/studio-zoubida/featured-image.png'
               layout='fill'
               objectFit='cover'
+              alt="Studio Zoubida feature"
             />
           </ImageWrapper>
         </FeaturedProject>

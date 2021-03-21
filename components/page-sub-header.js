@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import { smoothScrollTo } from "./../utils/gsap";
 
 const HeaderContainer = styled.div`
   background-color: ${({ theme }) => theme.colours.header};
@@ -20,7 +21,8 @@ const List = styled.ul`
     @media ${({ theme }) => theme.breakpoints.tabletSmall} {
       position: absolute;
       content: "/";
-      right: -20px;
+      right: -19px;
+      top: 0;
       font-weight: 400;
     }
   }
@@ -38,7 +40,7 @@ const ListItem = styled.li`
     margin: 0 1rem;
   }
 
-  & > a {
+  & > div {
     text-decoration: none;
     color: inherit;
 
@@ -53,12 +55,15 @@ const PageSubheader = ({ subheadings }) => {
     <HeaderContainer>
       <nav>
         <List>
-          {subheadings.map((item, i) => {
+          {subheadings.map((item) => {
             return (
               <ListItem key={item}>
-                <a href={`#${item.toLowerCase().split(" ").join("")}`}>
+                <div
+                  href={`#${item.toLowerCase().split(" ").join("")}`}
+                  onClick={() => smoothScrollTo(`#${item.toLowerCase().split(" ").join("")}`)}
+                >
                   {item}
-                </a>
+                </div>
               </ListItem>
             );
           })}
