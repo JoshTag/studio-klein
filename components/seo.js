@@ -40,7 +40,7 @@ const Meta = () => {
     <link rel='apple-touch-icon' href='/static/images/favicon.ico' /> */}
       {/* <meta property='og:image' content='' />
     <meta name='twitter:image' content='' /> */}
-      <link
+      {/* <link
         rel='preload'
         href='/fonts/Navigo/Navigo-ExtraLight.ttf'
         as='font'
@@ -63,7 +63,7 @@ const Meta = () => {
         href='/fonts/Navigo/Navigo-ExtraLight.eot'
         as='font'
         crossOrigin='true'
-      />
+      /> */}
     </Head>
   );
 };
