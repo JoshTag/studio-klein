@@ -1,8 +1,6 @@
 import { createRef, useEffect } from "react";
 import Image from "next/image";
 import styled, { keyframes } from "styled-components";
-import { gsap } from "gsap/dist/gsap";
-import ScrollTrigger from "gsap/dist/ScrollTrigger";
 import { projectAsideTransition } from "../utils/gsap";
 
 const ProjectPageContainer = styled.section`
@@ -45,7 +43,7 @@ const TransitionAnimation = styled.div`
   width: 100%;
   z-index: 1000;
   background: #292929;
-  /* transform: translateY(100vh); */
+  display: block;
 
   @media ${({ theme }) => theme.breakpoints.tabletMax} {
     display: none;
@@ -71,15 +69,18 @@ const Background = styled.div`
 
 const ProjectLogo = styled.div`
   position: absolute;
-  width: 150px;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
   z-index: 100;
 
-  @media ${({ theme }) => theme.breakpoints.tabletLarge} {
-    width: 175px;
+  & > img {
+    width: 300px;
   }
+
+  /* @media ${({ theme }) => theme.breakpoints.tabletLarge} {
+    width: 175px;
+  } */
 `;
 
 const MobileBanner = styled.div`
@@ -142,6 +143,10 @@ const ProjectContent = styled.section`
     display: inline-block;
   }
 
+  .indent-left {
+    margin-left: 2rem;
+  }
+
   .video-container {
     max-width: 660px;
     margin: 3rem 0;
@@ -173,7 +178,7 @@ const ProjectURL = styled.div`
       width: 260px;
       height: 10px;
       bottom: 0px;
-      background: url(/images/link-underline-pink.svg) no-repeat;
+      background: url(/images/link-underline-${({ underlineColor }) => underlineColor}.svg) no-repeat;
       animation: ${scroll} 15s linear infinite;
     }
 
@@ -217,7 +222,7 @@ const Project = () => {
       "top",
       animate,
       asideTriggerOne,
-      "pause reset restart restart",
+      "pause reset play reset",
       "-500"
     );
     projectAsideTransition(
@@ -253,17 +258,18 @@ const Project = () => {
         <div className='aside-wrapper' ref={asideTwo}>
           <Background>
             <Image
-              src='/images/projects/studio-zoubida/featured-image.png'
+              src='/images/projects/the-pielander/background.png'
               layout='fill'
               objectFit='cover'
             />
           </Background>
           <ProjectLogo>
-            <Image
-              src='/images/projects/studio-zoubida/logo-green.svg'
-              width={200}
-              height={144}
-            />
+            {/* <Image
+              src='/images/projects/the-pielander/logo.svg'
+              width={393}
+              height={172}
+            /> */}
+            <img src='/images/projects/the-pielander/logo.svg' />
           </ProjectLogo>
         </div>
       </ProjectAside>
@@ -284,9 +290,9 @@ const Project = () => {
             />
           </ProjectLogo>
         </MobileBanner>
-        <ProjectContent ref={projectOne} id="studiozoubida">
+        <ProjectContent ref={projectOne} id='studiozoubida'>
           <h2>Studio Zoubida</h2>
-          <ProjectURL>
+          <ProjectURL underlineColor='pink'>
             <a
               href='https://www.studiozoubida.com'
               target='_blank'
@@ -377,22 +383,22 @@ const Project = () => {
         <MobileBanner>
           <Background>
             <Image
-              src='/images/projects/studio-zoubida/background.png'
+              src='/images/projects/the-pielander/background.png'
               layout='fill'
               objectFit='cover'
             />
           </Background>
           <ProjectLogo>
             <Image
-              src='/images/projects/studio-zoubida/logo-pink.svg'
-              width={200}
-              height={144}
+              src='/images/projects/the-pielander/logo.svg'
+              width={393}
+              height={172}
             />
           </ProjectLogo>
         </MobileBanner>
-        <ProjectContent ref={projectTwo} id="thepielander">
-          <h2>The Pielander</h2>
-          <ProjectURL>
+        <ProjectContent ref={projectTwo} id='thepielander'>
+          <h2>Pielander 100% Vegan Scottish Comfort Food.</h2>
+          <ProjectURL underlineColor='rust'>
             <a
               href='https://www.thepielander.com'
               target='_blank'
@@ -402,83 +408,47 @@ const Project = () => {
             </a>
           </ProjectURL>
           <p>
-            Studio Zoubida is owned by Rhekia Fahssi (they/them), a queer
-            Toronto artist making one-of-a-kind decorative rug hangings. From
-            subtle earth tones in organic shapes to vivid tufts in elegantly
-            chaotic geometry - Studio Zoubida’s aesthetic is as eclectic as it
-            is beautiful.
+            The Pielander is delivering delicious Scottish comfort foods such as
+            pasties, pot pies, mac and cheese, ‘broon suss’ in Toronto, Canada.
+            Scottish import John started his business during the Covid-19
+            pandemic, and quickly realized that many Canadians shared his love
+            of Scottish classics.
+          </p>
+          <h4>The Shop</h4>
+          <p>
+            Pielander needed a simple ‘get-to-the-pie’ approach. We opted for a
+            Shopify theme that would allow us to implement his menu in the most
+            straightforward way possible, while still full of personality.
+          </p>
+          <h4 className='indent-left'>Delivery Zones</h4>
+          <p className='indent-left'>
+            Pielander does locally delivery only, so we implemented Postal/Zip
+            code based ordering.
+          </p>
+          <h4 className='indent-left'>Route-Making</h4>
+          <p className='indent-left'>
+            We implemented Route-Planning as the Pielander does his deliveries
+            in-house. By using this app, we have made it so the most efficient
+            route is planned out automatically according to delivery locations.
+          </p>
+          <h4>The Brand</h4>
+          <p>
+            We took the colours and jolly pie logo that John had when he came to
+            us, and developed a full-fledged brand for Pielander.
           </p>
           <p>
-            The name Studio Zoubida comes from Rhekia’s grandmother in Morocco.
+            The colour references some classic pie hues, paried with a
+            flamboyant-but-functional font that just makes you feel like you’re
+            in a Scottish pub! (Again, this was made for during a global
+            pandemic so on online pub is as good as we’re going to get.)
           </p>
           <ImageWrapper>
             <Image
-              src='/images/projects/studio-zoubida/image-1.png'
-              width={551}
-              height={797}
+              src='/images/projects/the-pielander/menu.svg'
+              width={416}
+              height={704}
             />
           </ImageWrapper>
-          <h4>The Brand</h4>
-          <p>
-            We set up to build a brand around Studio Zoubida that would match
-            its light hearted spirit and work well in any of the varied ways the
-            brand presents its aesthetic. Our main goal is always to highlight
-            product - adding to the overall experiencing and never taking away
-            from the product.
-          </p>
-          <p>
-            We used backgrounds of industrial textures like cement and concrete.
-            This mimics the aesthetic in the product photos, and gives a neutral
-            yet interesting backdrop for the shop.
-          </p>
-          <p>
-            We used accent colours that spark joy in the owner, Rhekia. A light
-            peachy pink and dark muted green can be used in variety of different
-            scenarios, with light and dark backgrounds.
-          </p>
-          <div className='video-container'>
-            <video width='100%' loop autoPlay muted>
-              <source
-                src='/images/projects/studio-zoubida/product-video.mp4'
-                type='video/mp4'
-              />
-              Sorry, your browser doesn't support embedded videos.
-            </video>
-          </div>
-          <p>
-            Taking inspiration from 60s psychedelia lettering, we built the
-            Studio Zoubida logo to be light-hearted, irreverent, and versatile.
-            We created the logo in the Studio Zoubida signature colours - but of
-            course we couldn’t help but make an animated version as well.
-          </p>
-          <ImageWrapper>
-            <div>
-              <Image
-                src='/images/projects/studio-zoubida/logo-pink.svg'
-                width={200}
-                height={140}
-              />
-            </div>
-            <div>
-              <Image
-                src='/images/projects/studio-zoubida/logo-green.svg'
-                width={200}
-                height={140}
-              />
-            </div>
-          </ImageWrapper>
-          <h4>The Shop</h4>
-          <p>
-            Because many of Rhekia’s pieces are truly one-of-kind, simplicity
-            was key. We did not need to build out a lot of different options for
-            products because some products are not available in different{" "}
-          </p>
-          <p>
-            Studio Zoubida is a small-scale operation and we wanted the shop to
-            reflect that. We did not build out colour and size options for every
-            product because some products are truly one-of-a-kind, and we wanted
-            to highlight that.{" "}
-          </p>
         </ProjectContent>
       </ProjectInfoContainer>
     </ProjectPageContainer>
