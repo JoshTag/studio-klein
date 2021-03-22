@@ -114,7 +114,7 @@ const LinkButton = styled.a`
 const Featured = () => {
   return (
     <section>
-      <FeaturedTitle>Featured</FeaturedTitle>
+      <FeaturedTitle>Featured Shop</FeaturedTitle>
       <FeaturedWrapper>
         <FeaturedProject>
           <LogoContainer>
@@ -123,7 +123,7 @@ const Featured = () => {
               width={166}
               height={101}
               layout='responsive'
-              alt="Studio Zoubida Logo"
+              alt='Studio Zoubida Logo'
             />
           </LogoContainer>
           <Link href='/projects' passHref>
@@ -134,14 +134,30 @@ const Featured = () => {
               src='/images/projects/studio-zoubida/featured-image.png'
               layout='fill'
               objectFit='cover'
-              alt="Studio Zoubida feature"
+              alt='Studio Zoubida feature'
             />
           </ImageWrapper>
         </FeaturedProject>
         <FeaturedProject>
-          <span className='logo-placeholder'>Coming Soon</span>
+          <LogoContainer>
+            <Image
+              src='/images/projects/the-pielander/logo.svg'
+              width={166}
+              height={101}
+              layout='responsive'
+              alt='Studio Zoubida Logo'
+            />
+          </LogoContainer>
+          <Link href='/projects' passHref>
+            <LinkButton>view project {">>"}</LinkButton>
+          </Link>
           <ImageWrapper>
-            <div className='image-placeholder' />
+            <ProjectImage
+              src='/images/projects/the-pielander/featured-image.jpg'
+              layout='fill'
+              objectFit='cover'
+              alt='Studio Zoubida feature'
+            />
           </ImageWrapper>
         </FeaturedProject>
         <FeaturedProject>

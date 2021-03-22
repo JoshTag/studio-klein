@@ -147,7 +147,7 @@ const Contact = () => {
           <TeamInfo>
             <TeamMember>
               <TeamMemberPhoto
-                src='/images/contact-heather.png'
+                src='/images/contact-josh.jpg'
                 width={304}
                 height={385}
               />
@@ -161,7 +161,7 @@ const Contact = () => {
             </TeamMember>
             <TeamMember>
               <TeamMemberPhoto
-                src='/images/contact-heather.png'
+                src='/images/contact-heather.jpg'
                 width={304}
                 height={385}
               />

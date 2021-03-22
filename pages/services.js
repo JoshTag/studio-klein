@@ -3,7 +3,7 @@ import Service from "components/service";
 import PageSubHeader from "components/page-subheader";
 
 const Services = () => {
-  const subheadings = ["Design", "Development", "SEO"]
+  const subheadings = ["Fully Customizable Shops", "Brand Creation", "SEO and App Integration"]
   return (
     <Layout>
       <PageSubHeader subheadings={subheadings} />

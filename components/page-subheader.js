@@ -55,19 +55,17 @@ const PageSubheader = ({ subheadings }) => {
     <HeaderContainer>
       <nav>
         <List>
-          {subheadings.map((item) => {
-            console.log(`#${item.toLowerCase().split(" ").join("")}`)
-            return (
-              <ListItem key={item}>
-                <div
-                  href={`#${item.toLowerCase().split(" ").join("")}`}
-                  onClick={() => smoothScrollTo(`#${item.toLowerCase().split(" ").join("")}`)}
-                >
-                  {item}
-                </div>
-              </ListItem>
-            );
-          })}
+          {subheadings.map((item) => (
+            <ListItem key={item}>
+              <div
+                onClick={() =>
+                  smoothScrollTo(`#${item.toLowerCase().split(" ").join("")}`)
+                }
+              >
+                {item}
+              </div>
+            </ListItem>
+          ))}
         </List>
       </nav>
     </HeaderContainer>

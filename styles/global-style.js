@@ -2,20 +2,17 @@ import { createGlobalStyle } from "styled-components";
 
 import NavigoExtraLightWoff from "public/fonts/Navigo/Navigo-ExtraLight.woff";
 import NavigoExtraLightWoff2 from "public/fonts/Navigo/Navigo-ExtraLight.woff2";
-import NavigoExtraLightTtf from "public/fonts/Navigo/Navigo-ExtraLight.ttf";
-import NavigoExtraLightEot from "public/fonts/Navigo/Navigo-ExtraLight.eot";
 
 const GlobalStyle = createGlobalStyle`
   @font-face {
-      font-family: 'Navigo Extra Light';
-      src: local('Navigo Extra Light'), local('Navigo-Extra-Light'),
+    src: local('Navigo Extra Light'),
       url(${NavigoExtraLightWoff2}) format('woff2'),
-      url(${NavigoExtraLightWoff}) format('woff'),
-      url(${NavigoExtraLightTtf}) format('ttf'),
-      url(${NavigoExtraLightEot}) format('eot');
-      font-weight: 400;
-      font-style: normal;
-      font-display: swap;
+      url(${NavigoExtraLightWoff}) format('woff');
+    font-family: 'Navigo Extra Light';
+    font-weight: 400;
+    font-style: normal;
+    font-display: swap;
+    unicode-range: U+000-5FF;
   }
 
   *,
@@ -52,6 +49,5 @@ const GlobalStyle = createGlobalStyle`
     opacity: 1 !important;
   }
 `;
-
 
 export default GlobalStyle;

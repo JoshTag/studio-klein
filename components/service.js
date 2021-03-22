@@ -1,7 +1,7 @@
-import React, { createRef, useEffect } from "react";
+import { createRef, useEffect } from "react";
 import styled, { keyframes } from "styled-components";
 import Link from "next/link";
-import { serviceScrollAnimation, smoothScrollTo } from "./../utils/gsap";
+import { serviceScrollAnimation } from "./../utils/gsap";
 
 const ServiceContainer = styled.section`
   position: relative; // remove
@@ -133,43 +133,21 @@ const ServiceContent = styled.div`
     margin-bottom: 2rem;
     display: inline-block;
   }
-`;
 
-const scroll = keyframes`
-  0% { transform: translateX(0); }
-	100% { transform: translateX(-260px)}
-`;
+  & > ul {
+    margin: 0 0 2.5rem 4rem;
 
-const ProjectURL = styled.div`
-  & > a {
-    position: relative;
-    font-size: ${({ theme }) => theme.fontSize.medium};
-    color: ${({ theme }) => theme.colours.grey};
-    margin-bottom: 2rem;
-    display: inline-block;
-    text-decoration: none;
-    height: 40px;
-    overflow: hidden;
-    text-decoration: none;
-
-    &:after,
-    :before {
-      content: "";
-      position: absolute;
-      width: 260px;
-      height: 10px;
-      bottom: 0px;
-      background: url(/images/link-underline-black.svg) no-repeat;
-      animation: ${scroll} 15s linear infinite;
+    & li > ul > li:first-of-type {
+      margin-top: 1rem;
     }
 
-    &:after {
-      left: 0;
+    & > li > ul {
+      margin-left: 2rem;
     }
+  }
 
-    &:before {
-      left: 259px;
-    }
+  & li {
+    margin-bottom: 1rem;
   }
 `;
 
@@ -213,8 +191,9 @@ const Service = () => {
       unknownTrigger,
       unknownDraw,
       "center",
-      "center",
-      unknownTitle
+      "bottom",
+      unknownTitle,
+      "bottom"
     );
   }, []);
 
@@ -222,9 +201,20 @@ const Service = () => {
     <ServiceContainer>
       <ServiceAside>
         <AsideWrapper>
-          <AsideTitle ref={designHeader}>design</AsideTitle>
-          <AsideTitle ref={developHeader}>development</AsideTitle>
-          <AsideTitle ref={unknownHeader}>SEO</AsideTitle>
+          <AsideTitle ref={designHeader}>
+            design and <br />
+            development
+          </AsideTitle>
+          <AsideTitle ref={developHeader}>
+            brand
+            <br />
+            creation
+          </AsideTitle>
+          <AsideTitle ref={unknownHeader}>
+            SEO and app
+            <br />
+            integration
+          </AsideTitle>
           <SVGWrapper
             viewBox='0 0 500 500'
             fill='none'
@@ -258,105 +248,100 @@ const Service = () => {
       </ServiceAside>
       <ServiceMain>
         <MobileHeader>
-          <h3>Desgin</h3>
+          <h3>Fully Customizable Shops</h3>
         </MobileHeader>
-        <ServiceContent ref={designContainer} id="design">
-          <h3>Design</h3>
-          <h4>the most customizable Shopify shops</h4>
+        <ServiceContent ref={designContainer} id='fullycustomizableshops'>
+          <h3>Fully Customizable Shops</h3>
           <p>
-            Shopify is the gold standard for e-commerce, but templates are not
-            going to get your business to stand out. Our team is built of top
-            notch developers and designers that can create the best Shopify
-            stores you can find nowhere else. Your shop deserves more than a
-            template!
+            We offer the most well-rounded, holistic e-shop development on the
+            market. We understand the full package of what e-commerce businesses
+            need today, and in the future - A great brand combined with the most
+            functional and customized features, fully integrated with social
+            media, and stack of content ready for you to publish.
           </p>
-          <h4>full service brand creation by *real* design experts</h4>
           <p>
-            You can trust your brand with us. Just look at how cute our site is!
-            Other Shopify experts just don’t have the chops. We understand what
-            it means to stand out in today’s online market. A sticky brand is
-            KEY to success -- and we’re going to build you a great one.
+            That’s what Studio Klein provides. No exceptions, no compromises.
+            Your business is guaranteed to stand out.
           </p>
-          <h4>layouts, logos & videos, oh my!</h4>
-          <p>
-            But wait, you need more than just a great e-shop to build a brand.
-            From logo and style-guide creation to animations, and social media
-            graphics, we will build you ALL the assets. You’ll never run out of
-            instagram content again.
-          </p>
-          <ProjectURL>
-            <Link href='/projects'>
-              <a>check out our projects</a>
-            </Link>
-          </ProjectURL>
         </ServiceContent>
         <MobileHeader>
-          <h3>development</h3>
+          <h3>Brand Creation</h3>
         </MobileHeader>
-        <ServiceContent ref={developContainer} id="development">
-          <h3>Development</h3>
-          <h4>the most customizable Shopify shops</h4>
+        <ServiceContent ref={developContainer} id='brandcreation'>
+          <h3>Brand Creation</h3>
           <p>
-            Shopify is the gold standard for e-commerce, but templates are not
-            going to get your business to stand out. Our team is built of top
-            notch developers and designers that can create the best Shopify
-            stores you can find nowhere else. Your shop deserves more than a
-            template!
+            If your e-commerce business needs a boost of brand power, Studio
+            Klein delivers. We offer the total package, full brand creation,
+            including assets. This means we supply:
           </p>
-          <h4>full service brand creation by *real* design experts</h4>
+          <ul>
+            <li>Logo</li>
+            <li>Brand colours and fonts</li>
+            <li>
+              Graphics for Web and Social
+              <ul>
+                <li>Hero Images</li>
+                <li>Product Photo Editing</li>
+                <li>Animated Logos</li>
+                <li>Videos, including animations</li>
+                <li>
+                  Extras like Menus, Size Guides, Delivery Maps, or anything you
+                  need!
+                </li>
+              </ul>
+            </li>
+          </ul>
           <p>
-            You can trust your brand with us. Just look at how cute our site is!
-            Other Shopify experts just don’t have the chops. We understand what
-            it means to stand out in today’s online market. A sticky brand is
-            KEY to success -- and we’re going to build you a great one.
+            When we create a brand we don’t just design a logo. We also set you
+            up for success, so your site and social media never get stale.
           </p>
-          <h4>layouts, logos & videos, oh my!</h4>
           <p>
-            But wait, you need more than just a great e-shop to build a brand.
-            From logo and style-guide creation to animations, and social media
-            graphics, we will build you ALL the assets. You’ll never run out of
-            instagram content again.
+            We give you a stack of social media postings, videos and hero
+            images, so you’re site stays fresh.
           </p>
-          <ProjectURL>
-            <Link href='/projects'>
-              <a>check out our projects</a>
-            </Link>
-          </ProjectURL>
         </ServiceContent>
         <MobileHeader>
-          <h3>SEO</h3>
+          <h3>SEO and App Integration</h3>
         </MobileHeader>
-        <ServiceContent ref={unknownContainer} id="seo">
-          <h3>SEO</h3>
-          <h4>the most customizable Shopify shops</h4>
+        <ServiceContent ref={unknownContainer} id='seoandappintegration'>
+          <h3>SEO and App Integration</h3>
           <p>
-            Shopify is the gold standard for e-commerce, but templates are not
-            going to get your business to stand out. Our team is built of top
-            notch developers and designers that can create the best Shopify
-            stores you can find nowhere else. Your shop deserves more than a
-            template!
+            We provide integration for any Shopify app. Also, look forward to
+            seamless integration with social media platforms. When a customer
+            buys from your store on social, the order comes in as normal on your
+            e-shop.
           </p>
-          <h4>full service brand creation by *real* design experts</h4>
-          <p>
-            You can trust your brand with us. Just look at how cute our site is!
-            Other Shopify experts just don’t have the chops. We understand what
-            it means to stand out in today’s online market. A sticky brand is
-            KEY to success -- and we’re going to build you a great one.
+          <p className='margin-list'>Available for:</p>
+          <ul>
+            <li>Instgram</li>
+            <li>Facebook</li>
+            <li>Any major social media platforms</li>
+          </ul>
+          <p className='margin-list'>
+            Incorporate any Shopify app into your store. Including but not
+            limited to:
           </p>
-          <h4>layouts, logos & videos, oh my!</h4>
-          <p>
-            But wait, you need more than just a great e-shop to build a brand.
-            From logo and style-guide creation to animations, and social media
-            graphics, we will build you ALL the assets. You’ll never run out of
-            instagram content again.
-          </p>
-          <ProjectURL>
-            <Link href='/projects'>
-              <a>check out our projects</a>
-            </Link>
-          </ProjectURL>
+          <ul className='margin-bottom'>
+            <li>MailChimp and other popular email marketing apps</li>
+            <li>SEO optimization</li>
+            <li>Incremental payment services like Afterpay</li>
+            <li>Performance and financial reporting</li>
+            <li>Marketing tools</li>
+            <li>Specialized shipping and tracking features</li>
+            <li>And endless other options!</li>
+          </ul>
         </ServiceContent>
       </ServiceMain>
+      <style jsx>
+        {`
+          .margin-bottom {
+            margin-bottom: 5rem;
+          }
+          .margin-list {
+            margin-bottom: 1rem;
+          }
+        `}
+      </style>
     </ServiceContainer>
   );
 };

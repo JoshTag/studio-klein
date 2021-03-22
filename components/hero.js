@@ -194,14 +194,14 @@ const Hero = () => {
             e-commerce.
           </HeroHeader>
           <HeroParagraph>
-            At Studio Klein, we believe small business is the future. Thats why
+            At Studio Klein, we believe small business is the future. That is why
             we are deeply committed to helping small business succeed in the
             rapidly evolving world of e-commerce.
           </HeroParagraph>
           <HeroParagraph>
-            Studio Klein the agency committed to creating the most unique,
+            Studio Klein is committed to creating the most unique,
             beautiful and functional e-shops that will scale with your business.
-            No matter if you are just starting out or looking to expand your
+            Whether you are just starting out or looking to expand your
             reach, our flexible and innovative approach to e-commerce will allow
             your business to stand out and succeed.
           </HeroParagraph>
@@ -209,17 +209,17 @@ const Hero = () => {
         <Herolist>
           <li>
             <Link href='/services' passHref>
-              <ButtonStyle>design</ButtonStyle>
+              <ButtonStyle>fully customizable</ButtonStyle>
             </Link>
           </li>
           <li>
             <Link href='/services' passHref>
-              <ButtonStyle>development</ButtonStyle>
+              <ButtonStyle>brand creation</ButtonStyle>
             </Link>
           </li>
           <li>
             <Link href='/services' passHref>
-              <ButtonStyle>SEO</ButtonStyle>
+              <ButtonStyle>SEO and apps</ButtonStyle>
             </Link>
           </li>
         </Herolist>

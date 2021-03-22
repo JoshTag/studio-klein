@@ -16,7 +16,7 @@ export const projectAsideTransition = (
     },
     {
       yPercent: -100,
-      duration: 1.2,
+      duration: 1,
       scrollTrigger: {
         trigger: triggerStart,
         toggleActions: `${actions}`,
@@ -51,7 +51,8 @@ export const serviceScrollAnimation = (
   draw,
   start,
   end,
-  headerRef
+  headerRef,
+  bottomTrigger = "bottom",
 ) => {
   gsap.fromTo(
     draw,
@@ -64,7 +65,7 @@ export const serviceScrollAnimation = (
         toggleClass: { targets: draw, className: "active-path" },
         trigger: trigger,
         start: `top ${start}`,
-        end: `bottom ${end}`,
+        end: `${bottomTrigger} ${end}`,
         scrub: true,
       },
     }

@@ -1,7 +1,6 @@
 import Head from "next/head";
 
 const Meta = () => {
-
   /*
     Keep to under 155
     description are for SEO
@@ -9,11 +8,13 @@ const Meta = () => {
   */
 
   const desc = {
-    index: "Studio Klein is a full service e-commerce agency specializing in shopify. Providing expert services in design, development, and SEO.",
+    index:
+      "Studio Klein is a full service e-commerce agency specializing in shopify. Providing expert services in design, development, and SEO.",
     projects: "",
     services: "",
     testamonials: "",
-    contact: "",
+    contact:
+      "For more information about Studio Klein or if you want to work on a project together, email us.",
   };
 
   return (
@@ -36,25 +37,27 @@ const Meta = () => {
         name='twitter:description'
         content='Studio Klein is a full service e-commerce agency specializing in shopify.'
       />
-      {/* <link rel='icon' type='image/png' href='/static/images/favicon.ico' />
-    <link rel='apple-touch-icon' href='/static/images/favicon.ico' /> */}
+      <link rel='icon' href='/favicon.png' />
+      {/* <link rel='apple-touch-icon' href='/public/images/favicon.ico' /> */}
       {/* <meta property='og:image' content='' />
     <meta name='twitter:image' content='' /> */}
+      <link
+        rel='preload'
+        as='font'
+        href='/fonts/Navigo/Navigo-ExtraLight.woff'
+        type='font/woff2'
+        crossOrigin='anonymous'
+      />
+      <link
+        rel='preload'
+        as='font'
+        href='/fonts/Navigo/Navigo-ExtraLight.woff2'
+        type='font/woff2'
+        crossOrigin='anonymous'
+      />
       {/* <link
         rel='preload'
         href='/fonts/Navigo/Navigo-ExtraLight.ttf'
-        as='font'
-        crossOrigin='true'
-      />
-      <link
-        rel='preload'
-        href='/fonts/Navigo/Navigo-ExtraLight.woff'
-        as='font'
-        crossOrigin='true'
-      />
-      <link
-        rel='preload'
-        href='/fonts/Navigo/Navigo-ExtraLight.woff2'
         as='font'
         crossOrigin='true'
       />
