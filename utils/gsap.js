@@ -9,14 +9,13 @@ export const projectAsideTransition = (
   actions,
   start = "top"
 ) => {
-
   gsap.fromTo(
     transitionAnimation,
     {
-      transform: "translateY(100%)",
+      yPercent: 200,
     },
     {
-      transform: "translateY(-100%)",
+      yPercent: -100,
       duration: 1.2,
       scrollTrigger: {
         trigger: triggerStart,
