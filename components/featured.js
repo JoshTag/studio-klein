@@ -15,9 +15,8 @@ const FeaturedWrapper = styled.div`
   display: flex;
   flex-direction: column;
 
-  @media ${({ theme }) => theme.breakpoints.tablet} {
+  @media ${({ theme }) => theme.breakpoints.tabletLarge} {
     flex-direction: row;
-    justify-content: space-between;
   }
 `;
 
@@ -29,8 +28,7 @@ const ProjectImage = styled(Image)`
   transition: 0.3s;
 `;
 
-const ImageWrapper = styled.div`
-  position: absolute;
+const ProjectBackground = styled.div`
   z-index: -1;
   height: 100%;
   width: 100%;
@@ -44,10 +42,6 @@ const ImageWrapper = styled.div`
 const FeaturedProject = styled.div`
   position: relative;
   height: 700px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  overflow: hidden;
 
   @media ${({ theme }) => theme.breakpoints.mobileLarge} {
     height: 800px;
@@ -79,13 +73,21 @@ const FeaturedProject = styled.div`
   }
 `;
 
-const LogoContainer = styled.div`
+const ProjectLogo = styled.img`
   width: 200px;
   margin-top: 1.5rem;
   z-index: 100;
 
   @media ${({ theme }) => theme.breakpoints.tablet} {
-    width: 145px;
+    width: ${({ width }) => width};
+  }
+
+  @media ${({ theme }) => theme.breakpoints.tabletLarge} {
+    position: absolute;
+    margin: 0;
+    top: 40px;
+    left: 50%;
+    transform: translateX(-50%);
   }
 `;
 
@@ -101,70 +103,71 @@ const LinkButton = styled.a`
   text-align: center;
   text-decoration: none;
   display: inline-block;
+  z-index: 100;
 
   @media ${({ theme }) => theme.breakpoints.tablet} {
-    width: auto;
+    width: 190px;
     font-size: ${({ theme }) => theme.fontSize.xLarge};
     background: transparent;
-    margin: 1rem 2.5% 40px;
+    margin: auto 2.5% 450px;
     border: none;
+  }
+
+  @media ${({ theme }) => theme.breakpoints.tabletLarge} {
+    position: absolute;
+    margin: 0;
+    top: 150px;
+    left: 50%;
+    transform: translateX(-50%);
   }
 `;
 
 const Featured = () => {
   return (
     <section>
-      <FeaturedTitle>Featured Shop</FeaturedTitle>
+      <FeaturedTitle>Featured Shops</FeaturedTitle>
       <FeaturedWrapper>
         <FeaturedProject>
-          <LogoContainer>
-            <Image
+            <ProjectLogo
               src='/images/projects/studio-zoubida/logo-white.svg'
-              width={166}
-              height={101}
-              layout='responsive'
               alt='Studio Zoubida Logo'
+              width='150px'
             />
-          </LogoContainer>
-          <Link href='/projects' passHref>
-            <LinkButton>view project {">>"}</LinkButton>
-          </Link>
-          <ImageWrapper>
+            <Link href='/projects' passHref>
+              <LinkButton>view project {">>"}</LinkButton>
+            </Link>
+          <ProjectBackground>
             <ProjectImage
               src='/images/projects/studio-zoubida/featured-image.png'
               layout='fill'
               objectFit='cover'
               alt='Studio Zoubida feature'
             />
-          </ImageWrapper>
+          </ProjectBackground>
         </FeaturedProject>
         <FeaturedProject>
-          <LogoContainer>
-            <Image
+            <ProjectLogo
               src='/images/projects/the-pielander/logo.svg'
-              width={166}
-              height={101}
-              layout='responsive'
-              alt='Studio Zoubida Logo'
+              alt='The Pielander Logo'
+              width='175px'
             />
-          </LogoContainer>
-          <Link href='/projects' passHref>
-            <LinkButton>view project {">>"}</LinkButton>
-          </Link>
-          <ImageWrapper>
+            <Link href='/projects' passHref>
+              <LinkButton>view project {">>"}</LinkButton>
+            </Link>
+          <ProjectBackground>
             <ProjectImage
               src='/images/projects/the-pielander/featured-image.jpg'
               layout='fill'
               objectFit='cover'
               alt='Studio Zoubida feature'
             />
-          </ImageWrapper>
+          </ProjectBackground>
         </FeaturedProject>
         <FeaturedProject>
-          <span className='logo-placeholder'>Coming Soon</span>
-          <ImageWrapper>
+            <span className='logo-placeholder'>Coming Soon</span>
+          <ProjectBackground>
             <div className='image-placeholder--light' />
-          </ImageWrapper>
+          </ProjectBackground>
         </FeaturedProject>
       </FeaturedWrapper>
       <style jsx>
@@ -185,6 +188,11 @@ const Featured = () => {
             margin-top: 4rem;
             color: rgb(244, 242, 235);
             font-size: 21px;
+            z-index: 100;
+            position: absolute;
+            top: 50px;;
+            left: 50%;
+            transform: translateX(-50%);
           }
         `}
       </style>
