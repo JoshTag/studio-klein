@@ -193,9 +193,7 @@ const ProjectURL = styled.div`
       width: 260px;
       height: 10px;
       bottom: 0px;
-      background: url(/images/link-underline-${({ underlineColor }) =>
-          underlineColor}.svg)
-        no-repeat;
+      background: url(/images/link-underline-${({ underlineColor }) => underlineColor}.svg) no-repeat;
       animation: ${scroll} 15s linear infinite;
     }
 
