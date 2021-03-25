@@ -157,7 +157,7 @@ const Logo = styled.img`
 
 const Header = () => {
   const [showMenu, setShowMenu] = useState(false);
-  const NAV_ITEMS = ["projects", "services", "logo", "testamonials", "contact"];
+  const NAV_ITEMS = ["projects", "services", "logo", "testimonials", "contact"];
   const router = useRouter();
   const page = router.pathname;
 

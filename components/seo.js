@@ -12,7 +12,7 @@ const Meta = () => {
       "Studio Klein is a full service e-commerce agency specializing in shopify. Providing expert services in design, development, and SEO.",
     projects: "",
     services: "",
-    testamonials: "",
+    testimonials: "",
     contact:
       "For more information about Studio Klein or if you want to work on a project together, email us.",
   };

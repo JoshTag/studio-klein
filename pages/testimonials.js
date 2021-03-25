@@ -1,11 +1,11 @@
 
 import Layout from "components/layout"
 
-const Testamonials = () => {
+const Testimonials = () => {
   return (
     <Layout>
       <div className="coming-soon">
-        <h2>Testamonials Coming Soon</h2>
+        <h2>Testimonials Coming Soon</h2>
       </div>
       <style jsx>{`
         .coming-soon {
@@ -23,4 +23,4 @@ const Testamonials = () => {
   );
 };
 
-export default Testamonials;
+export default Testimonials;
