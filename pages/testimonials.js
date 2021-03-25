@@ -1,10 +1,13 @@
-
-import Layout from "components/layout"
+import Layout from "components/layout";
+import Head from "next/head";
 
 const Testimonials = () => {
   return (
     <Layout>
-      <div className="coming-soon">
+      <Head>
+        <title>Studio Klein | Testimonials</title>
+      </Head>
+      <div className='coming-soon'>
         <h2>Testimonials Coming Soon</h2>
       </div>
       <style jsx>{`

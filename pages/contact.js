@@ -2,6 +2,7 @@ import Image from "next/image";
 import Layout from "components/layout";
 import ContactForm from "components/contact-form";
 import styled, { keyframes } from "styled-components";
+import Head from "next/head";
 
 const ContactContainer = styled.div`
   display: flex;
@@ -140,6 +141,9 @@ const ProjectURL = styled.div`
 const Contact = () => {
   return (
     <Layout>
+      <Head>
+        <title>Studio Klein | Contact</title>
+      </Head>
       <ContactContainer>
         <ContactForm />
         <TeamContainer>
