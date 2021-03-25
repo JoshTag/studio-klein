@@ -102,7 +102,7 @@ const TeamMemberPhoto = styled(Image)`
 
 const scroll = keyframes`
   0% { transform: translateX(0); }
-	100% { transform: translateX(-260px)}
+	100% { transform: translateX(-265px)}
 `;
 
 const ProjectURL = styled.div`
@@ -121,11 +121,11 @@ const ProjectURL = styled.div`
     :before {
       content: "";
       position: absolute;
-      width: 260px;
+      width: 265px;
       height: 10px;
       bottom: 0px;
       background: url(/images/link-underline-black.svg) no-repeat;
-      animation: ${scroll} 15s linear infinite;
+      animation: ${scroll} 6s linear infinite;
     }
 
     &:after {
@@ -133,7 +133,7 @@ const ProjectURL = styled.div`
     }
 
     &:before {
-      left: 259px;
+      left: 265px;
     }
   }
 `;
