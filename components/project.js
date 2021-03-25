@@ -173,36 +173,34 @@ const scroll = keyframes`
 	100% { transform: translateX(-265px)}
 `;
 
-const ProjectURL = styled.div`
-  & > a {
-    position: relative;
-    font-size: ${({ theme }) => theme.fontSize.medium};
-    color: ${({ theme }) => theme.colours.grey};
-    margin-bottom: 2rem;
-    display: inline-block;
-    text-decoration: none;
-    height: 40px;
-    overflow: hidden;
-    text-decoration: none;
+const ProjectURL = styled.a`
+  position: relative;
+  font-size: ${({ theme }) => theme.fontSize.medium};
+  color: ${({ theme }) => theme.colours.grey};
+  margin-bottom: 2rem;
+  display: inline-block;
+  text-decoration: none;
+  height: 40px;
+  overflow: hidden;
+  text-decoration: none;
 
-    &:after,
-    :before {
-      content: "";
-      position: absolute;
-      width: 265px;
-      height: 10px;
-      bottom: 0px;
-      background: url(/images/link-underline-${({ underlineColor }) => underlineColor}.svg) no-repeat;
-      animation: ${scroll} 6s linear infinite;
-    }
+  &:after,
+  :before {
+    content: "";
+    position: absolute;
+    width: 265px;
+    height: 10px;
+    bottom: 0px;
+    background: url(/images/link-underline-${({ underlineColor }) => underlineColor}.svg) no-repeat;
+    animation: ${scroll} 6s linear infinite;
+  }
 
-    &:after {
-      left: 0;
-    }
+  &:after {
+    left: 0;
+  }
 
-    &:before {
-      left: 265px;
-    }
+  &:before {
+    left: 265px;
   }
 `;
 
@@ -278,11 +276,6 @@ const Project = () => {
             />
           </Background>
           <ProjectLogo>
-            {/* <Image
-              src='/images/projects/the-pielander/logo.svg'
-              width={393}
-              height={172}
-            /> */}
             <img src='/images/projects/the-pielander/logo.svg' />
           </ProjectLogo>
         </div>
@@ -306,14 +299,13 @@ const Project = () => {
         </MobileBanner>
         <ProjectContent ref={projectOne} id='studiozoubida'>
           <h2>Studio Zoubida</h2>
-          <ProjectURL underlineColor='pink'>
-            <a
-              href='https://www.studiozoubida.com'
-              target='_blank'
-              rel='noopener'
-            >
-              www.studiozoubida.com
-            </a>
+          <ProjectURL
+            href='https://www.studiozoubida.com'
+            target='_blank'
+            rel='noopener'
+            underlineColor='pink'
+          >
+            www.studiozoubida.com
           </ProjectURL>
           <p>
             Studio Zoubida is owned by Rhekia Fahssi (they/them), a queer
@@ -419,14 +411,13 @@ const Project = () => {
         </MobileBanner>
         <ProjectContent ref={projectTwo} id='thepielander'>
           <h2>Pielander: Vegan Scottish Comfort Food</h2>
-          <ProjectURL underlineColor='rust'>
-            <a
-              href='https://www.thepielander.com'
-              target='_blank'
-              rel='noopener'
-            >
-              www.thepielander.com
-            </a>
+          <ProjectURL
+            underlineColor='rust'
+            href='https://the-pielander.myshopify.com/'
+            target='_blank'
+            rel='noopener'
+          >
+            www.thepielander.com
           </ProjectURL>
           <p>
             The Pielander is making delicious Scottish comfort foods such as

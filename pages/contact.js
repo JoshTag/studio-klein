@@ -105,36 +105,34 @@ const scroll = keyframes`
 	100% { transform: translateX(-265px)}
 `;
 
-const ProjectURL = styled.div`
-  & > a {
-    position: relative;
-    font-size: ${({ theme }) => theme.fontSize.small};
-    color: ${({ theme }) => theme.colours.grey};
-    margin-bottom: 2rem;
-    display: inline-block;
-    text-decoration: none;
-    height: 40px;
-    overflow: hidden;
-    text-decoration: none;
+const ProjectURL = styled.a`
+  position: relative;
+  font-size: ${({ theme }) => theme.fontSize.small};
+  color: ${({ theme }) => theme.colours.grey};
+  margin-bottom: 2rem;
+  display: inline-block;
+  text-decoration: none;
+  height: 40px;
+  overflow: hidden;
+  text-decoration: none;
 
-    &:after,
-    :before {
-      content: "";
-      position: absolute;
-      width: 265px;
-      height: 10px;
-      bottom: 0px;
-      background: url(/images/link-underline-black.svg) no-repeat;
-      animation: ${scroll} 6s linear infinite;
-    }
+  &:after,
+  :before {
+    content: "";
+    position: absolute;
+    width: 265px;
+    height: 10px;
+    bottom: 0px;
+    background: url(/images/link-underline-black.svg) no-repeat;
+    animation: ${scroll} 6s linear infinite;
+  }
 
-    &:after {
-      left: 0;
-    }
+  &:after {
+    left: 0;
+  }
 
-    &:before {
-      left: 265px;
-    }
+  &:before {
+    left: 265px;
   }
 `;
 
@@ -157,10 +155,8 @@ const Contact = () => {
               />
               <h3>Joshua Taguicana</h3>
               <p>Josh is the technical genius</p>
-              <ProjectURL>
-                <a href='mailto:josh.taguicana@thestudioklein.com'>
-                  josh.taguicana@thestudioklein.com
-                </a>
+              <ProjectURL href='mailto:josh.taguicana@thestudioklein.com'>
+                josh.taguicana@thestudioklein.com
               </ProjectURL>
             </TeamMember>
             <TeamMember>
@@ -171,10 +167,8 @@ const Contact = () => {
               />
               <h3>Heather Alsen</h3>
               <p>Heather makes it beautiful</p>
-              <ProjectURL>
-                <a href='mailto:heather.alsen@thestudioklein.com'>
-                  heather.alsen@thestudioklein.com
-                </a>
+              <ProjectURL href='mailto:heather.alsen@thestudioklein.com'>
+                heather.alsen@thestudioklein.com
               </ProjectURL>
             </TeamMember>
           </TeamInfo>
