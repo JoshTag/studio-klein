@@ -73,21 +73,21 @@ const FeaturedProject = styled.div`
   }
 `;
 
-const ProjectLogo = styled.img`
-  width: 200px;
-  margin-top: 1.5rem;
-  z-index: 100;
+const ProjectLogo = styled.div`
+  position: absolute;
+  margin: 0;
+  top: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  padding: 10px;
+  z-index: 1000;
 
   @media ${({ theme }) => theme.breakpoints.tablet} {
     width: ${({ width }) => width};
   }
 
-  @media ${({ theme }) => theme.breakpoints.tabletLarge} {
-    position: absolute;
-    margin: 0;
-    top: 40px;
-    left: 50%;
-    transform: translateX(-50%);
+  & > img {
+    width: 100%;
   }
 `;
 
@@ -128,14 +128,15 @@ const Featured = () => {
       <FeaturedTitle>Featured Shops</FeaturedTitle>
       <FeaturedWrapper>
         <FeaturedProject>
-            <ProjectLogo
+          <ProjectLogo width='175px'>
+            <img
               src='/images/projects/studio-zoubida/logo-white.svg'
               alt='Studio Zoubida Logo'
-              width='150px'
             />
-            <Link href='/projects' passHref>
-              <LinkButton>view project {">>"}</LinkButton>
-            </Link>
+          </ProjectLogo>
+          <Link href='/projects' passHref>
+            <LinkButton>view project {">>"}</LinkButton>
+          </Link>
           <ProjectBackground>
             <ProjectImage
               src='/images/projects/studio-zoubida/featured-image.png'
@@ -146,14 +147,15 @@ const Featured = () => {
           </ProjectBackground>
         </FeaturedProject>
         <FeaturedProject>
-            <ProjectLogo
+          <ProjectLogo width='200px'>
+            <img
               src='/images/projects/the-pielander/logo.svg'
               alt='The Pielander Logo'
-              width='175px'
             />
-            <Link href='/projects' passHref>
-              <LinkButton>view project {">>"}</LinkButton>
-            </Link>
+          </ProjectLogo>
+          <Link href='/projects' passHref>
+            <LinkButton>view project {">>"}</LinkButton>
+          </Link>
           <ProjectBackground>
             <ProjectImage
               src='/images/projects/the-pielander/featured-image.jpg'
@@ -164,7 +166,7 @@ const Featured = () => {
           </ProjectBackground>
         </FeaturedProject>
         <FeaturedProject>
-            <span className='logo-placeholder'>Coming Soon</span>
+          <span className='logo-placeholder'>Coming Soon</span>
           <ProjectBackground>
             <div className='image-placeholder--light' />
           </ProjectBackground>
@@ -190,7 +192,7 @@ const Featured = () => {
             font-size: 21px;
             z-index: 100;
             position: absolute;
-            top: 50px;;
+            top: 50px;
             left: 50%;
             transform: translateX(-50%);
           }
