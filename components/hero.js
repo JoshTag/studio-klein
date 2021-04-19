@@ -20,6 +20,7 @@ const HeroImages = styled.div`
   height: 575px;
   z-index: -1;
   position: relative;
+  margin-top: 50px;
 
   @media ${({ theme }) => theme.breakpoints.mobileLarge} {
     height: 800px;
@@ -131,12 +132,6 @@ const HeroImages = styled.div`
       left: -40px;
     }
   }
-
-  @media ${({ theme }) => theme.breakpoints.desktop} {
-    .hero-CTA {
-      display: none;
-    }
-  }
 `;
 
 const ImageBox = styled.div`
@@ -217,8 +212,16 @@ const HeroHeader = styled.h2`
   font-size: ${({ theme }) => theme.fontSize.xxLarge};
   line-height: 40px;
   margin-bottom: 1.5rem;
-  padding-top: 4rem;
+  /* padding-top: 4rem; */
   font-weight: normal;
+
+  @media ${({ theme }) => theme.breakpoints.tablet} {
+    padding-top: 2rem;
+  }
+
+  @media ${({ theme }) => theme.breakpoints.desktop} {
+    padding-top: 4rem;
+  }
 `;
 
 const HeroParagraph = styled.p`
@@ -229,7 +232,6 @@ const HeroParagraph = styled.p`
 `;
 
 const ButtonStyle = styled.a`
-  width: 100%;
   background-color: ${({ theme }) => theme.colours.lightGrey};
   font-family: ${({ theme }) => theme.fonts.primary};
   font-size: ${({ theme }) => theme.fontSize.medium};
@@ -239,14 +241,31 @@ const ButtonStyle = styled.a`
   padding: 1rem;
   text-align: center;
   text-decoration: none;
-  display: inline-block;
   position: absolute;
-  bottom: 0;
 
   &:hover {
     cursor: pointer;
   }
 `;
+
+const MobileCTA = styled(ButtonStyle)`
+  width: 100%;
+  bottom: 0;
+
+  @media ${({ theme }) => theme.breakpoints.desktop} {
+    display: none;
+  }
+`;
+
+const CTA = styled(ButtonStyle)`
+  display: none;
+
+  @media ${({ theme }) => theme.breakpoints.desktop} {
+    width: 200px;
+    display: block;
+    margin-top: 2rem;
+  }
+`
 
 const Hero = () => {
   return (
@@ -269,6 +288,9 @@ const Hero = () => {
             and innovative approach to e-commerce will allow your business to
             stand out and succeed.
           </HeroParagraph>
+          <Link href='/services' passHref>
+            <CTA className='hero-CTA'>services</CTA>
+          </Link>
         </HeroDescription>
         <HeroImages>
           <lottie-player
@@ -296,7 +318,7 @@ const Hero = () => {
             autoplay
           ></lottie-player>
           <Link href='/services' passHref>
-            <ButtonStyle className='hero-CTA'>serivces</ButtonStyle>
+            <MobileCTA>services</MobileCTA>
           </Link>
         </HeroImages>
       </Wrapper>
