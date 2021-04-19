@@ -51,7 +51,7 @@ const FeaturedProject = styled.div`
     height: 900px;
   }
 
-  @media ${({ theme }) => theme.breakpoints.tablet} {
+  @media ${({ theme }) => theme.breakpoints.tabletLarge} {
     height: 600px;
     width: 100%;
     -webkit-transition: 0.6s ease-in-out;

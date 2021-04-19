@@ -4,39 +4,138 @@ import styled from "styled-components";
 
 const HeroSection = styled.section`
   position: relative;
+  overflow: hidden;
 
   @media ${({ theme }) => theme.breakpoints.desktop} {
     height: 600px;
   }
+
+  @media ${({ theme }) => theme.breakpoints.desktopLarge} {
+    height: 700px;
+  }
 `;
 
-const ImageContainer = styled.div`
-  height: 1032px;
+const HeroImages = styled.div`
   width: 100%;
-  position: absolute;
-  overflow: hidden;
+  height: 575px;
   z-index: -1;
+  position: relative;
 
   @media ${({ theme }) => theme.breakpoints.mobileLarge} {
-    height: 942px;
-    top: -30px;
+    height: 800px;
   }
 
   @media ${({ theme }) => theme.breakpoints.tablet} {
-    height: 860px;
-    top: -60px;
-  }
-
-  @media ${({ theme }) => theme.breakpoints.tabletLarge} {
-    height: 980px;
+    height: 1000px;
   }
 
   @media ${({ theme }) => theme.breakpoints.desktop} {
-    height: 960px;
+    height: auto;
+    width: 50%;
   }
 
-  @media ${({ theme }) => theme.breakpoints.desktopLarge} {
-    height: 960px;
+  & > .lottie-social {
+    position: absolute;
+    height: 275px;
+    top: 10px;
+    right: 70px;
+
+    @media ${({ theme }) => theme.breakpoints.mobileLarge} {
+      height: 375px;
+      right: 110px;
+    }
+
+    @media ${({ theme }) => theme.breakpoints.tablet} {
+      height: 500px;
+      right: 150px;
+    }
+
+    @media ${({ theme }) => theme.breakpoints.desktop} {
+      height: 300px;
+      right: -200px;
+      top: 20px;
+      z-index: 95;
+    }
+
+    @media ${({ theme }) => theme.breakpoints.desktopLarge} {
+      right: -240px;
+      top: 20px;
+    }
+
+    @media ${({ theme }) => theme.breakpoints.desktopWide} {
+      height: 350px;
+      right: -250px;
+    }
+  }
+
+  & > .lottie-branding {
+    position: absolute;
+    height: 225px;
+    top: 90px;
+    left: 60px;
+
+    @media ${({ theme }) => theme.breakpoints.mobileLarge} {
+      height: 325px;
+      left: 80px;
+    }
+
+    @media ${({ theme }) => theme.breakpoints.tablet} {
+      height: 450px;
+      left: 120px;
+      top: 125px;
+    }
+
+    @media ${({ theme }) => theme.breakpoints.desktop} {
+      height: 320px;
+      left: 120px;
+      top: 250px;
+      z-index: 100;
+    }
+
+    @media ${({ theme }) => theme.breakpoints.desktopLarge} {
+      left: 150px;
+    }
+
+    @media ${({ theme }) => theme.breakpoints.desktopWide} {
+      height: 370px;
+      top: 275px;
+    }
+  }
+
+  & > .lottie-seo {
+    position: absolute;
+    height: 225px;
+    top: 275px;
+    z-index: 100;
+
+    @media ${({ theme }) => theme.breakpoints.mobileLarge} {
+      height: 325px;
+      top: 375px;
+    }
+
+    @media ${({ theme }) => theme.breakpoints.tablet} {
+      height: 425px;
+      top: 475px;
+    }
+
+    @media ${({ theme }) => theme.breakpoints.desktop} {
+      height: 275px;
+      top: 75px;
+      left: 0px;
+      z-index: 90;
+    }
+
+    @media ${({ theme }) => theme.breakpoints.desktopWide} {
+      height: 325px;
+      top: 75px;
+      left: -40px;
+    }
+  }
+
+  @media ${({ theme }) => theme.breakpoints.desktop} {
+    .hero-CTA {
+      display: none;
+    }
   }
 `;
 
@@ -102,10 +201,14 @@ const Wrapper = styled.div`
     flex-direction: column;
     justify-content: space-between;
   }
+
+  @media ${({ theme }) => theme.breakpoints.desktop} {
+    flex-direction: row;
+  }
 `;
 
 const HeroDescription = styled.div`
-  @media ${({ theme }) => theme.breakpoints.tabletLarge} {
+  @media ${({ theme }) => theme.breakpoints.desktop} {
     width: 50%;
   }
 `;
@@ -125,35 +228,6 @@ const HeroParagraph = styled.p`
   display: inline-block;
 `;
 
-const Herolist = styled.ul`
-  list-style: none;
-
-  @media ${({ theme }) => theme.breakpoints.tabletLarge} {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    margin: 50px 0;
-  }
-
-  @media ${({ theme }) => theme.breakpoints.desktop} {
-    margin: 2rem auto 50px;
-    display: flex;
-    width: 80%;
-  }
-
-  & > li {
-    margin-bottom: 1rem;
-
-    @media ${({ theme }) => theme.breakpoints.tabletLarge} {
-      width: 200px;
-    }
-
-    @media ${({ theme }) => theme.breakpoints.desktop} {
-      width: 30%;
-    }
-  }
-`;
-
 const ButtonStyle = styled.a`
   width: 100%;
   background-color: ${({ theme }) => theme.colours.lightGrey};
@@ -166,6 +240,8 @@ const ButtonStyle = styled.a`
   text-align: center;
   text-decoration: none;
   display: inline-block;
+  position: absolute;
+  bottom: 0;
 
   &:hover {
     cursor: pointer;
@@ -175,18 +251,6 @@ const ButtonStyle = styled.a`
 const Hero = () => {
   return (
     <HeroSection>
-      <ImageContainer>
-        <ImageBox>
-          <HeroImage
-            src='/images/hero-image.png'
-            width={480}
-            height={725}
-            layout='responsive'
-            quality={100}
-            alt="Studio Klein Hero"
-          />
-        </ImageBox>
-      </ImageContainer>
       <Wrapper>
         <HeroDescription>
           <HeroHeader>
@@ -194,35 +258,47 @@ const Hero = () => {
             e-commerce.
           </HeroHeader>
           <HeroParagraph>
-            At Studio Klein, we believe small business is the future. That is why
-            we are deeply committed to helping small business succeed in the
+            At Studio Klein, we believe small business is the future. That is
+            why we are deeply committed to helping small business succeed in the
             rapidly evolving world of e-commerce.
           </HeroParagraph>
           <HeroParagraph>
-            Studio Klein is committed to creating the most unique,
-            beautiful and functional e-shops that will scale with your business.
-            Whether you are just starting out or looking to expand your
-            reach, our flexible and innovative approach to e-commerce will allow
-            your business to stand out and succeed.
+            Studio Klein is committed to creating the most unique, beautiful and
+            functional e-shops that will scale with your business. Whether you
+            are just starting out or looking to expand your reach, our flexible
+            and innovative approach to e-commerce will allow your business to
+            stand out and succeed.
           </HeroParagraph>
         </HeroDescription>
-        <Herolist>
-          <li>
-            <Link href='/services' passHref>
-              <ButtonStyle>fully customizable</ButtonStyle>
-            </Link>
-          </li>
-          <li>
-            <Link href='/services' passHref>
-              <ButtonStyle>brand creation</ButtonStyle>
-            </Link>
-          </li>
-          <li>
-            <Link href='/services' passHref>
-              <ButtonStyle>SEO and apps</ButtonStyle>
-            </Link>
-          </li>
-        </Herolist>
+        <HeroImages>
+          <lottie-player
+            class='lottie-social'
+            src='https://assets8.lottiefiles.com/packages/lf20_gafmag5k.json'
+            background='transparent'
+            speed='1'
+            loop='true'
+            autoplay
+          ></lottie-player>
+          <lottie-player
+            class='lottie-seo'
+            src='https://assets4.lottiefiles.com/packages/lf20_gsmymebw.json'
+            background='transparent'
+            speed='1'
+            loop='true'
+            autoplay
+          ></lottie-player>
+          <lottie-player
+            class='lottie-branding'
+            src='https://assets10.lottiefiles.com/packages/lf20_ut1ind7s.json'
+            background='transparent'
+            speed='1'
+            loop='true'
+            autoplay
+          ></lottie-player>
+          <Link href='/services' passHref>
+            <ButtonStyle className='hero-CTA'>serivces</ButtonStyle>
+          </Link>
+        </HeroImages>
       </Wrapper>
     </HeroSection>
   );

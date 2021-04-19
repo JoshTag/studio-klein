@@ -14,7 +14,7 @@ export default {
     xxxLarge: "1.9375rem", // 31px
   },
   colours: {
-    primary: "rgb(244, 242, 235)",
+    primary: "rgb(240, 240, 227)",
     grey: "#292929",
     lightGrey: "#494947",
     header: "rgba(0,0,0,0.8)",

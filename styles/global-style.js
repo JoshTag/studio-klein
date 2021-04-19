@@ -26,7 +26,7 @@ const GlobalStyle = createGlobalStyle`
   body {
     -moz-osx-font-smoothing: grayscale;
     -webkit-font-smoothing: antialiased;
-    background-color: #F4F2EB;
+    background-color: rgb(240, 240, 227);
   }
 
   @-moz-document url-prefix() {
