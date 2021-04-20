@@ -10,8 +10,8 @@ const HeroSection = styled.section`
     height: 600px;
   }
 
-  @media ${({ theme }) => theme.breakpoints.desktopLarge} {
-    height: 700px;
+  @media ${({ theme }) => theme.breakpoints.desktopWide} {
+    height: 650px;
   }
 `;
 
@@ -33,6 +33,7 @@ const HeroImages = styled.div`
   @media ${({ theme }) => theme.breakpoints.desktop} {
     height: auto;
     width: 50%;
+    margin-top: 0;
   }
 
   & > .lottie-social {

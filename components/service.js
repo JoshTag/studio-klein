@@ -2,6 +2,10 @@ import { createRef, useEffect } from "react";
 import styled, { keyframes } from "styled-components";
 import Link from "next/link";
 import { serviceScrollAnimation } from "./../utils/gsap";
+import LottieData from "components/lottie"
+import social from "./../public/images/social.json";
+import seo from "./../public/images/seo.json";
+import branding from "./../public/images/branding.json";
 
 const ServiceContainer = styled.section`
   position: relative; // remove
@@ -149,6 +153,18 @@ const ServiceContent = styled.div`
   & li {
     margin-bottom: 1rem;
   }
+
+  .services__social-lottie {
+    width: 250px;
+  }
+
+  .services__branding-lottie {
+    width: 250px;
+  }
+
+  .services__seo-lottie {
+    width: 250px;
+  }
 `;
 
 const Service = () => {
@@ -263,6 +279,9 @@ const Service = () => {
             That’s what Studio Klein provides. No exceptions, no compromises.
             Your business is guaranteed to stand out.
           </p>
+          <div className="services__branding-lottie">
+            <LottieData data={branding}/>
+          </div>
         </ServiceContent>
         <MobileHeader>
           <h3>Brand Creation</h3>
@@ -291,6 +310,9 @@ const Service = () => {
               </ul>
             </li>
           </ul>
+          <div className="services__social-lottie">
+          <LottieData data={social}/>
+          </div>
           <p>
             When we create a brand we don’t just design a logo. We also set you
             up for success, so your site and social media never get stale.
@@ -317,6 +339,9 @@ const Service = () => {
             <li>Facebook</li>
             <li>Any major social media platforms</li>
           </ul>
+          <div className="services__seo-lottie">
+            <LottieData data={seo}/>
+          </div>
           <p className='margin-list'>
             Incorporate any Shopify app into your store. Including but not
             limited to:
