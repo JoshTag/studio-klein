@@ -78,7 +78,7 @@ const NavList = styled.ul`
 const NavLink = styled.a`
   position: relative;
   text-decoration: none;
-  font-size: ${({ theme }) => theme.fontSize.medium};
+  font-size: ${({ theme }) => theme.fontSize.xLarge};
   color: ${({ page }) =>
     page === "/"
       ? ({ theme }) => theme.colours.grey
@@ -88,6 +88,8 @@ const NavLink = styled.a`
   -moz-transition: 0.3s;
   -o-transition: 0.3s;
   transition: 0.3s;
+  font-family: ${({ theme }) => theme.fonts.josefinSans};
+  font-weight: 300;
 
   &:hover {
     cursor: pointer;

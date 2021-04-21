@@ -142,7 +142,8 @@ const Featured = () => {
               src='/images/projects/studio-zoubida/featured-image.png'
               layout='fill'
               objectFit='cover'
-              alt='Studio Zoubida feature'
+              alt='Studio Zoubida Feature'
+
             />
           </ProjectBackground>
         </FeaturedProject>
@@ -161,7 +162,7 @@ const Featured = () => {
               src='/images/projects/the-pielander/featured-image.jpg'
               layout='fill'
               objectFit='cover'
-              alt='Studio Zoubida feature'
+              alt='The Pielander Feature'
             />
           </ProjectBackground>
         </FeaturedProject>

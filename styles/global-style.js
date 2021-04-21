@@ -41,7 +41,7 @@ const GlobalStyle = createGlobalStyle`
 
   body, html {
     font-family: ${({ theme }) =>
-      theme.fonts.siteFont}, Helvetica Neue, sans-serif;
+      theme.fonts.navigo}, Helvetica Neue, sans-serif;
     color: ${({ theme }) => theme.colours.grey};
   }
 

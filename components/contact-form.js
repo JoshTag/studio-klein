@@ -61,7 +61,7 @@ const Form = styled.form`
   & > textarea {
     height: 250px;
     resize: vertical;
-    font-family: ${({ theme }) => theme.fonts.siteFont};
+    font-family: ${({ theme }) => theme.fonts.navigo};
   }
 
   & > button {

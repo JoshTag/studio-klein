@@ -311,7 +311,7 @@ const Service = () => {
             </li>
           </ul>
           <div className="services__social-lottie">
-          <LottieData data={social}/>
+            <LottieData data={social}/>
           </div>
           <p>
             When we create a brand we don’t just design a logo. We also set you

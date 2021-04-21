@@ -1,6 +1,7 @@
 export default {
   fonts: {
-    siteFont: "Navigo Extra Light",
+    navigo: "Navigo Extra Light",
+    josefinSans: 'Josefin Sans',
   },
   fontSize: {
     xxSmall: "0.6875rem", // 11px
