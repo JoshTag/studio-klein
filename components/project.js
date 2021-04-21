@@ -122,7 +122,7 @@ const ProjectContent = styled.section`
   & > h2 {
     font-size: ${({ theme }) => theme.fontSize.xxLarge};
     color: ${({ theme }) => theme.colours.grey};
-    font-weight: normal;
+    font-weight: 300;
     padding-bottom: 0.5rem;
   }
 
@@ -133,7 +133,7 @@ const ProjectContent = styled.section`
   & > h4 {
     font-size: ${({ theme }) => theme.fontSize.xLarge};
     color: ${({ theme }) => theme.colours.grey};
-    font-weight: normal;
+    font-weight: 300;
     margin-bottom: 1.5rem;
   }
 

@@ -32,7 +32,7 @@ const MobileHeader = styled.div`
     text-align: center;
     font-size: ${({ theme }) => theme.fontSize.xxLarge};
     color: ${({ theme }) => theme.colours.primary};
-    font-weight: normal;
+    font-weight: 300;
     width: 300px;
 
     @media ${({ theme }) => theme.breakpoints.tabletSmall} {
@@ -79,7 +79,7 @@ const AsideTitle = styled.h3`
   text-align: center;
   font-size: ${({ theme }) => theme.fontSize.xxLarge};
   color: ${({ theme }) => theme.colours.primary};
-  font-weight: normal;
+  font-weight: 300;
   padding-bottom: 1rem;
   margin: 0 1rem;
 
@@ -120,14 +120,14 @@ const ServiceContent = styled.div`
     @media ${({ theme }) => theme.breakpoints.tabletLarge} {
       display: block;
       font-size: ${({ theme }) => theme.fontSize.xxLarge};
-      font-weight: normal;
+      font-weight: 300;
       margin-bottom: 1.5rem;
     }
   }
 
   & > h4 {
     font-size: ${({ theme }) => theme.fontSize.mediumLarge};
-    font-weight: normal;
+    font-weight: 300;
     margin-bottom: 1.5rem;
   }
 
@@ -164,6 +164,10 @@ const ServiceContent = styled.div`
 
   .services__seo-lottie {
     width: 250px;
+
+    @media ${({ theme }) => theme.breakpoints.mobileLarge} {
+      width: 370px;
+    }
   }
 `;
 
@@ -273,10 +277,9 @@ const Service = () => {
             market. We understand the full package of what e-commerce businesses
             need today, and in the future - A great brand combined with the most
             functional and customized features, fully integrated with social
-            media, and stack of content ready for you to publish.
+            media, and a stack of content ready for you to publish.
           </p>
           <p>
-            That’s what Studio Klein provides. No exceptions, no compromises.
             Your business is guaranteed to stand out.
           </p>
           <div className="services__branding-lottie">

@@ -18,7 +18,7 @@ const Testimonials = () => {
         h2 {
           margin-top: 6rem;
           text-align: center;
-          font-weight: normal;
+          font-weight: 300;
           font-size: 31px;
         }
       `}</style>

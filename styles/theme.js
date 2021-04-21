@@ -1,7 +1,7 @@
 export default {
   fonts: {
     navigo: "Navigo Extra Light",
-    josefinSans: 'Josefin Sans',
+    primary: 'Josefin Sans',
   },
   fontSize: {
     xxSmall: "0.6875rem", // 11px
@@ -20,6 +20,7 @@ export default {
     lightGrey: "#494947",
     header: "rgba(0,0,0,0.8)",
     button: "rgb(73, 73, 71)",
+    tan: "#D7D5C3"
   },
   breakpoints: {
     mobileLarge: "only screen and (min-width: 480px)",
@@ -32,3 +33,4 @@ export default {
     desktopWide: "only screen and (min-width: 1440px)",
   },
 }
+

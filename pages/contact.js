@@ -46,7 +46,7 @@ const TeamContainer = styled.div`
 const ContactHeader = styled.h2`
   font-size: ${({ theme }) => theme.fontSize.xxLarge};
   color: ${({ theme }) => theme.colours.grey};
-  font-weight: normal;
+  font-weight: 300;
   margin-top: 4rem 1rem;
   width: auto;
   text-align: center;
@@ -86,7 +86,7 @@ const TeamMember = styled.div`
   & > h3 {
     font-size: ${({ theme }) => theme.fontSize.xLarge};
     color: ${({ theme }) => theme.colours.grey};
-    font-weight: normal;
+    font-weight: 300;
     margin: 1rem 0;
   }
 

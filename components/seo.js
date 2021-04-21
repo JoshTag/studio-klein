@@ -55,18 +55,6 @@ const Meta = () => {
         type='font/woff2'
         crossOrigin='anonymous'
       />
-      {/* <link
-        rel='preload'
-        href='/fonts/Navigo/Navigo-ExtraLight.ttf'
-        as='font'
-        crossOrigin='true'
-      />
-      <link
-        rel='preload'
-        href='/fonts/Navigo/Navigo-ExtraLight.eot'
-        as='font'
-        crossOrigin='true'
-      /> */}
     </Head>
   );
 };

@@ -35,7 +35,7 @@ const FormContainer = styled.div`
 const ContactHeader = styled.h2`
   font-size: ${({ theme }) => theme.fontSize.xxLarge};
   color: ${({ theme }) => theme.colours.primary};
-  font-weight: normal;
+  font-weight: 300;
   margin-bottom: 1rem;
 `;
 

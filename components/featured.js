@@ -6,7 +6,7 @@ const FeaturedTitle = styled.h2`
   text-align: center;
   font-size: ${({ theme }) => theme.fontSize.xxLarge};
   color: ${({ theme }) => theme.colours.grey};
-  font-weight: normal;
+  font-weight: 300;
   padding-bottom: 1rem;
   padding: 50px 0 50px;
 `;
@@ -92,6 +92,8 @@ const ProjectLogo = styled.div`
 `;
 
 const LinkButton = styled.a`
+  position: absolute;
+  top: 90%;
   margin: auto 2.5% 40px;
   width: 95%;
   padding: 0.5rem;
@@ -105,20 +107,16 @@ const LinkButton = styled.a`
   display: inline-block;
   z-index: 100;
 
-  @media ${({ theme }) => theme.breakpoints.tablet} {
+  @media ${({ theme }) => theme.breakpoints.tabletLarge} {
+    position: absolute;
     width: 190px;
     font-size: ${({ theme }) => theme.fontSize.xLarge};
     background: transparent;
-    margin: auto 2.5% 450px;
-    border: none;
-  }
-
-  @media ${({ theme }) => theme.breakpoints.tabletLarge} {
-    position: absolute;
     margin: 0;
     top: 150px;
     left: 50%;
     transform: translateX(-50%);
+    border: none;
   }
 `;
 
@@ -139,7 +137,7 @@ const Featured = () => {
           </Link>
           <ProjectBackground>
             <ProjectImage
-              src='/images/projects/studio-zoubida/featured-image.png'
+              src='/images/projects/studio-zoubida/featured-image.jpg'
               layout='fill'
               objectFit='cover'
               alt='Studio Zoubida Feature'

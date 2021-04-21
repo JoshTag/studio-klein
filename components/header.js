@@ -15,6 +15,15 @@ const Navigation = styled.nav`
   width: 100%;
   position: relative;
   padding-bottom: 1.5rem;
+
+  @media ${({ theme }) => theme.breakpoints.tabletLarge} {
+    height: 80px;
+    padding-bottom: 0;
+  }
+
+  @media ${({ theme }) => theme.breakpoints.desktop} {
+    margin-bottom: 35px;
+  }
 `;
 
 const NavMobileContainer = styled.div`
@@ -22,7 +31,7 @@ const NavMobileContainer = styled.div`
   flex-direction: row;
   justify-content: space-around;
 
-  @media ${({ theme }) => theme.breakpoints.tablet} {
+  @media ${({ theme }) => theme.breakpoints.desktop} {
     display: none;
   }
 `;
@@ -37,7 +46,7 @@ const NavListMobile = styled.ul`
   height: ${(props) => (props.showMenu ? "200px" : "0px")};
   transition: 0.3s ease-in-out;
 
-  @media ${({ theme }) => theme.breakpoints.tablet} {
+  @media ${({ theme }) => theme.breakpoints.desktop} {
     display: none;
   }
 
@@ -54,31 +63,39 @@ const NavList = styled.ul`
   display: none;
   list-style: none;
 
-  @media ${({ theme }) => theme.breakpoints.tablet} {
+  @media ${({ theme }) => theme.breakpoints.desktop} {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
     margin: 0 10%;
+    height: 100%;
+    max-width: 1000px;
   }
 
   @media ${({ theme }) => theme.breakpoints.desktopLarge} {
-    max-width: 990px;
     margin: 0 auto;
   }
 
   & > li {
-    width: 100px;
+    width: 125px;
     text-align: center;
-  }
+    line-height: 50px;
 
-  & li > a {
+    &:nth-child(3) {
+      width: 200px;
+
+      & > a {
+        height: 80px;
+        display: inline-block;
+      }
+    }
   }
 `;
 
 const NavLink = styled.a`
   position: relative;
   text-decoration: none;
-  font-size: ${({ theme }) => theme.fontSize.xLarge};
+  font-size: ${({ theme }) => theme.fontSize.large};
   color: ${({ page }) =>
     page === "/"
       ? ({ theme }) => theme.colours.grey
@@ -88,8 +105,7 @@ const NavLink = styled.a`
   -moz-transition: 0.3s;
   -o-transition: 0.3s;
   transition: 0.3s;
-  font-family: ${({ theme }) => theme.fonts.josefinSans};
-  font-weight: 300;
+  font-family: ${({ theme }) => theme.fonts.primary};
 
   &:hover {
     cursor: pointer;
@@ -148,12 +164,14 @@ const Hamurger = styled.div`
 const Logo = styled.img`
   position: relative;
   z-index: 1000;
-  width: 60px;
-  height: 60px;
+  width: 150px;
 
   @media ${({ theme }) => theme.breakpoints.tablet} {
-    width: 100px;
-    height: 100px;
+    width: 160px;
+  }
+
+  @media ${({ theme }) => theme.breakpoints.tablet} {
+    height: 45px;;
   }
 `;
 
@@ -173,8 +191,8 @@ const Header = () => {
         <NavMobileContainer>
           <Link href='/'>
             <a>
-              <Logo
-                src={`/images/logo${page === "/" ? "" : "-white"}.svg`}
+            <Logo
+                src={`/images/logo-wordmark${page === "/" ? "" : "-light"}.svg`}
                 alt='logo'
               />
             </a>
@@ -202,7 +220,7 @@ const Header = () => {
                 <Link href='/'>
                   <a>
                     <Logo
-                      src={`/images/logo${page === "/" ? "" : "-white"}.svg`}
+                      src={`/images/logo-wordmark${page === "/" ? "" : "-light"}.svg`}
                       alt='logo'
                     />
                   </a>

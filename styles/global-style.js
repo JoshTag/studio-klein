@@ -2,6 +2,7 @@ import { createGlobalStyle } from "styled-components";
 
 import NavigoExtraLightWoff from "public/fonts/Navigo/Navigo-ExtraLight.woff";
 import NavigoExtraLightWoff2 from "public/fonts/Navigo/Navigo-ExtraLight.woff2";
+import JosefinSansLight from "public/fonts/Josefin-Sans/JosefinSans-Light.ttf";
 
 const GlobalStyle = createGlobalStyle`
   @font-face {
@@ -10,6 +11,15 @@ const GlobalStyle = createGlobalStyle`
       url(${NavigoExtraLightWoff}) format('woff');
     font-family: 'Navigo Extra Light';
     font-weight: 400;
+    font-style: normal;
+    font-display: swap;
+    unicode-range: U+000-5FF;
+  }
+
+  @font-face {
+    src: local('Josefin Sans'), url(${JosefinSansLight}) format('truetype'),;
+    font-family: 'Josefin Sans';
+    font-weight: 300;
     font-style: normal;
     font-display: swap;
     unicode-range: U+000-5FF;
@@ -41,7 +51,8 @@ const GlobalStyle = createGlobalStyle`
 
   body, html {
     font-family: ${({ theme }) =>
-      theme.fonts.navigo}, Helvetica Neue, sans-serif;
+      theme.fonts.primary}, Helvetica Neue, sans-serif;
+    font-weight: 300;
     color: ${({ theme }) => theme.colours.grey};
   }
 

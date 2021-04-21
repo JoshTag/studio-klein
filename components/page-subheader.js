@@ -23,7 +23,6 @@ const List = styled.ul`
       content: "/";
       right: -19px;
       top: 0;
-      font-weight: 400;
     }
   }
 `;
