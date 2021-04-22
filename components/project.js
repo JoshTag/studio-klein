@@ -256,7 +256,7 @@ const Project = () => {
     projectAsideTransition(
       projectTwo.current,
       projectTwo.current,
-      "bottom+=170",
+      "bottom+=1000",
       projectAnimation.current,
       asideTwo.current,
       "play reset reset reset",

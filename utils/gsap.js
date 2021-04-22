@@ -23,7 +23,6 @@ export const projectAsideTransition = (
         start: `${start} center`,
         endTrigger: triggerEnd,
         end: `${endPlacement} center`,
-        markers: true
       },
     }
   );
