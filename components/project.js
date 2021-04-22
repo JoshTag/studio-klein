@@ -481,7 +481,7 @@ const Project = () => {
             <div>
               <Image
                 src='/images/projects/studio-zoubida/logo-pink.svg'
-                width={200
+                width={200}
                 height={140}
               />
             </div>
