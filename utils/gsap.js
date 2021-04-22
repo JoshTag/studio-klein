@@ -20,9 +20,10 @@ export const projectAsideTransition = (
       scrollTrigger: {
         trigger: triggerStart,
         toggleActions: `${actions}`,
-        start: `${start} center-=100`,
+        start: `${start} center`,
         endTrigger: triggerEnd,
-        end: `${endPlacement} center-=100`,
+        end: `${endPlacement} center`,
+        markers: true
       },
     }
   );
@@ -67,7 +68,6 @@ export const serviceScrollAnimation = (
         start: `top ${start}`,
         end: `${bottomTrigger} ${end}`,
         scrub: true,
-        // markers: true
       },
     }
   );
