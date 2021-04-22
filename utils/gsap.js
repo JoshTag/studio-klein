@@ -7,7 +7,7 @@ export const projectAsideTransition = (
   transitionAnimation,
   aside,
   actions,
-  start = "top"
+  start = "top",
 ) => {
   gsap.fromTo(
     transitionAnimation,
@@ -67,6 +67,7 @@ export const serviceScrollAnimation = (
         start: `top ${start}`,
         end: `${bottomTrigger} ${end}`,
         scrub: true,
+        // markers: true
       },
     }
   );

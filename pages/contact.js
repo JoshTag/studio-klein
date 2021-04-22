@@ -97,7 +97,7 @@ const TeamMember = styled.div`
 `;
 
 const TeamMemberPhoto = styled(Image)`
-  border-radius: 2px;
+  border-radius: 3px;
 `;
 
 const scroll = keyframes`

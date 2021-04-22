@@ -3,7 +3,7 @@ import Image from "next/image";
 import styled, { keyframes } from "styled-components";
 import { projectAsideTransition } from "../utils/gsap";
 
-const ProjectPageContainer = styled.section`
+const ProjectPage = styled.section`
   display: flex;
   flex-direction: column;
 
@@ -35,14 +35,12 @@ const ProjectAside = styled.div`
   }
 `;
 
-const AsideWrapper = styled.div``;
-
 const TransitionAnimation = styled.div`
   position: absolute;
   height: 100%;
   width: 100%;
   z-index: 1000;
-  background: #292929;
+  background: ${({ theme }) => theme.colours.lightGrey};
   display: block;
 
   @media ${({ theme }) => theme.breakpoints.tabletMax} {
@@ -75,12 +73,8 @@ const ProjectLogo = styled.div`
   z-index: 100;
 
   & > img {
-    width: 300px;
+    width: 200px;
   }
-
-  /* @media ${({ theme }) => theme.breakpoints.tabletLarge} {
-    width: 175px;
-  } */
 `;
 
 const MobileBanner = styled.div`
@@ -95,15 +89,15 @@ const MobileBanner = styled.div`
   }
 `;
 
-const ProjectInfoContainer = styled.div`
-  /* margin: 4rem 1rem;
+const ProjectsWrapper = styled.div`
+  /* margin: 0 1rem;
 
   @media ${({ theme }) => theme.breakpoints.tabletSmall} {
-    margin: 4rem 2rem;
+    margin: 0 2rem;
   }
 
   @media ${({ theme }) => theme.breakpoints.tablet} {
-    margin: 4rem;
+    margin: 0 4rem;
   } */
 `;
 
@@ -119,19 +113,42 @@ const ProjectContent = styled.section`
     margin: 4rem;
   }
 
-  & > h2 {
-    font-size: ${({ theme }) => theme.fontSize.xxLarge};
-    color: ${({ theme }) => theme.colours.grey};
-    font-weight: 300;
-    padding-bottom: 0.5rem;
+  .header-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin-bottom: 2rem;
+
+    & > h2 {
+      font-size: ${({ theme }) => theme.fontSize.xLarge};
+      color: ${({ theme }) => theme.colours.grey};
+      font-weight: 600;
+    }
+  }
+
+  .deliverables {
+    display: flex;
+    flex-flow: row wrap;
+    list-style: none;
+    margin: 0 0 2rem -0.25rem;
+
+    & > li {
+      font-size: ${({ theme }) => theme.fontSize.small};
+      color: ${({ theme }) => theme.colours.primary};
+      background-color: ${({ theme }) => theme.colours.lightGrey};
+      border-radius: 3px;
+      padding: 0.75rem 1.25rem 0.5rem;
+      margin: 0.25rem 0.25rem;
+    }
   }
 
   & > h3 {
     margin-bottom: 1.5rem;
   }
 
-  & > h4 {
-    font-size: ${({ theme }) => theme.fontSize.xLarge};
+  & > h4,
+  h5 {
+    font-size: 22px;
     color: ${({ theme }) => theme.colours.grey};
     font-weight: 300;
     margin-bottom: 1.5rem;
@@ -145,7 +162,11 @@ const ProjectContent = styled.section`
   }
 
   .indent-left {
-    margin-left: 2rem;
+    margin-left: 1rem;
+
+    @media ${({ theme }) => theme.breakpoints.tablet} {
+      margin-left: 2rem;
+    }
   }
 
   .video-container {
@@ -155,6 +176,7 @@ const ProjectContent = styled.section`
 
   .pielander-menu {
     width: 80%;
+    max-width: 400px;
   }
 
   &:not(:last-of-type):after {
@@ -177,7 +199,6 @@ const ProjectURL = styled.a`
   position: relative;
   font-size: ${({ theme }) => theme.fontSize.medium};
   color: ${({ theme }) => theme.colours.grey};
-  margin-bottom: 2rem;
   display: inline-block;
   text-decoration: none;
   height: 40px;
@@ -191,7 +212,8 @@ const ProjectURL = styled.a`
     width: 265px;
     height: 10px;
     bottom: 0px;
-    background: url(/images/link-underline-${({ underlineColor }) => underlineColor}.svg) no-repeat;
+    background: url(/images/link-underline-${({ underlineColor }) => underlineColor}.svg);
+    background-repeat: no-repeat;
     animation: ${scroll} 6s linear infinite;
   }
 
@@ -222,52 +244,31 @@ const Project = () => {
   const asideTwo = createRef(null);
 
   useEffect(() => {
-    const animate = projectAnimation.current;
-    const triggerOne = projectOne.current;
-    const asideTriggerOne = asideOne.current;
-    const triggerTwo = projectTwo.current;
-    const asideTriggerTwo = asideTwo.current;
-
     projectAsideTransition(
-      triggerOne,
-      triggerTwo,
+      projectOne.current,
+      projectTwo.current,
       "top",
-      animate,
-      asideTriggerOne,
+      projectAnimation.current,
+      asideOne.current,
       "pause reset play reset",
       "-500"
     );
     projectAsideTransition(
-      triggerTwo,
-      triggerTwo,
-      "bottom",
-      animate,
-      asideTriggerTwo,
-      "play reset play reset"
+      projectTwo.current,
+      projectTwo.current,
+      "bottom+=500",
+      projectAnimation.current,
+      asideTwo.current,
+      "play reset play reset",
+      "top"
     );
   }, []);
 
   return (
-    <ProjectPageContainer>
+    <ProjectPage>
       <ProjectAside>
         <TransitionAnimation ref={projectAnimation} />
         <div className='aside-wrapper' ref={asideOne}>
-          <Background>
-            <Image
-              src='/images/projects/studio-zoubida/background.png'
-              layout='fill'
-              objectFit='cover'
-            />
-          </Background>
-          <ProjectLogo>
-            <Image
-              src='/images/projects/studio-zoubida/logo-pink.svg'
-              width={200}
-              height={144}
-            />
-          </ProjectLogo>
-        </div>
-        <div className='aside-wrapper' ref={asideTwo}>
           <Background>
             <Image
               src='/images/projects/the-pielander/background.png'
@@ -279,8 +280,110 @@ const Project = () => {
             <img src='/images/projects/the-pielander/logo.svg' />
           </ProjectLogo>
         </div>
+        <div className='aside-wrapper' ref={asideTwo}>
+          <Background>
+            <Image
+              src='/images/projects/studio-zoubida/background.png'
+              layout='fill'
+              objectFit='cover'
+            />
+          </Background>
+          <ProjectLogo>
+            <img src='/images/projects/studio-zoubida/logo-pink.svg' />
+          </ProjectLogo>
+        </div>
       </ProjectAside>
-      <ProjectInfoContainer>
+      <ProjectsWrapper>
+        <MobileBanner>
+          <Background>
+            <Image
+              src='/images/projects/the-pielander/background.png'
+              layout='fill'
+              objectFit='cover'
+            />
+          </Background>
+          <ProjectLogo>
+            <Image
+              src='/images/projects/the-pielander/logo.svg'
+              width={393}
+              height={172}
+            />
+          </ProjectLogo>
+        </MobileBanner>
+        <ProjectContent ref={projectOne} id='thepielander'>
+          <div className='header-container'>
+            <h2>The Pielander</h2>
+            <ProjectURL
+              underlineColor='rust'
+              href='https://the-pielander.myshopify.com/'
+              target='_blank'
+              rel='noopener'
+            >
+              www.thepielander.com
+            </ProjectURL>
+          </div>
+          <h4>Project Deliverables</h4>
+          <ul className='deliverables'>
+            <li>Shop Setp-up</li>
+            <li>Custom Shop Design</li>
+            <li>Video Creation</li>
+            <li>SEO</li>
+            <li>Logos and Brand Guide</li>
+            <li>Product Photo Editing</li>
+            <li>Social Media Assets</li>
+            <li>Delivery Restrictions</li>
+          </ul>
+          <p>
+            The Pielander is making delicious Scottish comfort foods such as
+            pasties, pot pies, mac and cheese and don't forget the ‘broon sass’.
+            They deliver the goodies in Toronto, Canada. Scottish import John
+            started his business during the Covid-19 pandemic, and quickly
+            realized that many Canadians shared his love of Scottish classics,
+            made vegan.
+          </p>
+          <Image
+            src='/images/projects/the-pielander/mockup.png'
+            width={660}
+            height={435}
+          />
+          <h4>The Shop</h4>
+          <p>
+            Pielander needed a simple ‘get-to-the-pie’ approach. We opted for a
+            Shopify theme that would allow us to implement his menu in the most
+            straightforward way possible, while still full of personality.
+          </p>
+          <h5 className='indent-left'>Delivery Zones</h5>
+          <p className='indent-left'>
+            Pielander does local delivery only, so we implemented Postal/Zip
+            code based ordering.
+          </p>
+          <h5 className='indent-left'>Route-Making</h5>
+          <p className='indent-left'>
+            We implemented Route-Planning as the Pielander does his deliveries
+            in-house. By using this app, we have made it so the most efficient
+            route is planned out automatically according to delivery locations.
+          </p>
+          <h4>The Brand</h4>
+          <p>
+            We took the inspiration from Pielander's social media presence, and
+            developed a full-fledged brand for Pielander.
+          </p>
+          <p>
+            The colour choices reference vintagey hues reminescent of pies,
+            paried with a flamboyant-but-functional font that just makes you
+            feel like you’re in a Scottish pub! Again, this was made during a
+            global pandemic so an online pub is as good as we’re going to get.
+          </p>
+          <p>
+            Check out the menu below for an example of the branded assets we
+            created for Pielander.
+          </p>
+          <img
+            className='pielander-menu'
+            src='/images/projects/the-pielander/menu.svg'
+            alt='Pielander Menu'
+          />
+        </ProjectContent>
         <MobileBanner>
           <Background>
             <Image
@@ -297,16 +400,28 @@ const Project = () => {
             />
           </ProjectLogo>
         </MobileBanner>
-        <ProjectContent ref={projectOne} id='studiozoubida'>
-          <h2>Studio Zoubida</h2>
-          <ProjectURL
-            href='https://www.studiozoubida.com'
-            target='_blank'
-            rel='noopener'
-            underlineColor='pink'
-          >
-            www.studiozoubida.com
-          </ProjectURL>
+        <ProjectContent ref={projectTwo} id='studiozoubida'>
+          <div className='header-container'>
+            <h2>Studio Zoubida</h2>
+            <ProjectURL
+              href='https://www.studiozoubida.com'
+              target='_blank'
+              rel='noopener'
+              underlineColor='pink'
+            >
+              www.studiozoubida.com
+            </ProjectURL>
+          </div>
+          <h4>Project Deliverables</h4>
+          <ul className='deliverables'>
+            <li>Shop Setp-up</li>
+            <li>Custom Shop Design</li>
+            <li>Video Creation</li>
+            <li>Logos and Brand Guide</li>
+            <li>Product Photo Editing</li>
+            <li>Social Media Assets</li>
+            <li>SEO</li>
+          </ul>
           <p>
             Studio Zoubida is owned by Rhekia Fahssi (they/them), a queer
             Toronto artist making one-of-a-kind decorative rug hangings. From
@@ -314,14 +429,14 @@ const Project = () => {
             chaotic geometry - Studio Zoubida’s aesthetic is as eclectic as it
             is beautiful.
           </p>
+          <p>
+            The name Studio Zoubida comes from Rhekia’s grandmother in Morocco.
+          </p>
           <Image
             src='/images/projects/studio-zoubida/mockup.png'
             width={660}
             height={435}
           />
-          <p>
-            The name Studio Zoubida comes from Rhekia’s grandmother in Morocco.
-          </p>
           <ImageWrapper>
             <Image
               src='/images/projects/studio-zoubida/image-1.png'
@@ -393,84 +508,8 @@ const Project = () => {
             to highlight that.{" "}
           </p>
         </ProjectContent>
-        <MobileBanner>
-          <Background>
-            <Image
-              src='/images/projects/the-pielander/background.png'
-              layout='fill'
-              objectFit='cover'
-            />
-          </Background>
-          <ProjectLogo>
-            <Image
-              src='/images/projects/the-pielander/logo.svg'
-              width={393}
-              height={172}
-            />
-          </ProjectLogo>
-        </MobileBanner>
-        <ProjectContent ref={projectTwo} id='thepielander'>
-          <h2>Pielander: Vegan Scottish Comfort Food</h2>
-          <ProjectURL
-            underlineColor='rust'
-            href='https://the-pielander.myshopify.com/'
-            target='_blank'
-            rel='noopener'
-          >
-            www.thepielander.com
-          </ProjectURL>
-          <p>
-            The Pielander is making delicious Scottish comfort foods such as
-            pasties, pot pies, mac and cheese and don't forget the ‘broon sass’.
-            They deliver the goodies in Toronto, Canada. Scottish import John
-            started his business during the Covid-19 pandemic, and quickly
-            realized that many Canadians shared his love of Scottish classics,
-            made vegan.
-          </p>
-          <Image
-            src='/images/projects/the-pielander/mockup.png'
-            width={660}
-            height={435}
-          />
-          <h4>The Shop</h4>
-          <p>
-            Pielander needed a simple ‘get-to-the-pie’ approach. We opted for a
-            Shopify theme that would allow us to implement his menu in the most
-            straightforward way possible, while still full of personality.
-          </p>
-          <h4 className='indent-left'>Delivery Zones</h4>
-          <p className='indent-left'>
-            Pielander does local delivery only, so we implemented Postal/Zip
-            code based ordering.
-          </p>
-          <h4 className='indent-left'>Route-Making</h4>
-          <p className='indent-left'>
-            We implemented Route-Planning as the Pielander does his deliveries
-            in-house. By using this app, we have made it so the most efficient
-            route is planned out automatically according to delivery locations.
-          </p>
-          <h4>The Brand</h4>
-          <p>
-            We took the inspiration from Pielander's social media presence, and
-            developed a full-fledged brand for Pielander.
-          </p>
-          <p>
-            The colour choices reference vintagey hues reminescent of pies,
-            paried with a flamboyant-but-functional font that just makes you
-            feel like you’re in a Scottish pub! Again, this was made during a
-            global pandemic so an online pub is as good as we’re going to get.
-          </p>
-          <p>
-            Check out the menu below for an example of the branded assets we
-            created for Pielander.
-          </p>
-          <img
-            className='pielander-menu'
-            src='/images/projects/the-pielander/menu.svg'
-          />
-        </ProjectContent>
-      </ProjectInfoContainer>
-    </ProjectPageContainer>
+      </ProjectsWrapper>
+    </ProjectPage>
   );
 };
 

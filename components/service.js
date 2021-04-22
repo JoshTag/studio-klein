@@ -2,7 +2,7 @@ import { createRef, useEffect } from "react";
 import styled, { keyframes } from "styled-components";
 import Link from "next/link";
 import { serviceScrollAnimation } from "./../utils/gsap";
-import LottieData from "components/lottie"
+import LottieData from "components/lottie";
 import social from "./../public/images/social.json";
 import seo from "./../public/images/seo.json";
 import branding from "./../public/images/branding.json";
@@ -178,42 +178,32 @@ const Service = () => {
   const developContainer = createRef(null);
   const developPath = createRef(null);
   const developHeader = createRef(null);
-  const unknownContainer = createRef(null);
-  const unknownPath = createRef(null);
-  const unknownHeader = createRef(null);
+  const seoContainer = createRef(null);
+  const seoPath = createRef(null);
+  const seoHeader = createRef(null);
 
   useEffect(() => {
-    const designTrigger = designContainer.current;
-    const designDraw = designPath.current;
-    const designTitle = designHeader.current;
-    const developTrigger = developContainer.current;
-    const developDraw = developPath.current;
-    const developTitle = developHeader.current;
-    const unknownTrigger = unknownContainer.current;
-    const unknownDraw = unknownPath.current;
-    const unknownTitle = unknownHeader.current;
-
     serviceScrollAnimation(
-      designTrigger,
-      designDraw,
-      "200px",
+      designContainer.current,
+      designPath.current,
+      "170px",
       "center",
-      designTitle
+      designHeader.current
     );
     serviceScrollAnimation(
-      developTrigger,
-      developDraw,
+      developContainer.current,
+      developPath.current,
       "center",
       "center",
-      developTitle
+      developHeader.current
     );
     serviceScrollAnimation(
-      unknownTrigger,
-      unknownDraw,
+      seoContainer.current,
+      seoPath.current,
       "center",
       "bottom",
-      unknownTitle,
-      "bottom"
+      seoHeader.current,
+      "bottom+=170px"
     );
   }, []);
 
@@ -230,7 +220,7 @@ const Service = () => {
             <br />
             creation
           </AsideTitle>
-          <AsideTitle ref={unknownHeader}>
+          <AsideTitle ref={seoHeader}>
             SEO and app
             <br />
             integration
@@ -253,7 +243,7 @@ const Service = () => {
               strokeWidth='20'
             />
             <PathDraw
-              ref={unknownPath}
+              ref={seoPath}
               d='M250.5 10.159C383.048 10.159 490.5 117.611 490.5 250.159C490.5 382.707 383.048 490.159 250.5 490.159C117.952 490.159 10.5 382.707 10.5 250.159C10.5 117.611 117.952 10.159 250.5 10.159Z'
               stroke='#F4F2EB'
               strokeWidth='20'
@@ -279,11 +269,9 @@ const Service = () => {
             functional and customized features, fully integrated with social
             media, and a stack of content ready for you to publish.
           </p>
-          <p>
-            Your business is guaranteed to stand out.
-          </p>
-          <div className="services__branding-lottie">
-            <LottieData data={branding}/>
+          <p>Your business is guaranteed to stand out.</p>
+          <div className='services__branding-lottie'>
+            <LottieData data={branding} />
           </div>
         </ServiceContent>
         <MobileHeader>
@@ -313,8 +301,8 @@ const Service = () => {
               </ul>
             </li>
           </ul>
-          <div className="services__social-lottie">
-            <LottieData data={social}/>
+          <div className='services__social-lottie'>
+            <LottieData data={social} />
           </div>
           <p>
             When we create a brand we don’t just design a logo. We also set you
@@ -328,7 +316,7 @@ const Service = () => {
         <MobileHeader>
           <h3>SEO and App Integration</h3>
         </MobileHeader>
-        <ServiceContent ref={unknownContainer} id='seoandappintegration'>
+        <ServiceContent ref={seoContainer} id='seoandappintegration'>
           <h3>SEO and App Integration</h3>
           <p>
             We provide integration for any Shopify app. Also, look forward to
@@ -342,8 +330,8 @@ const Service = () => {
             <li>Facebook</li>
             <li>Any major social media platforms</li>
           </ul>
-          <div className="services__seo-lottie">
-            <LottieData data={seo}/>
+          <div className='services__seo-lottie'>
+            <LottieData data={seo} />
           </div>
           <p className='margin-list'>
             Incorporate any Shopify app into your store. Including but not

@@ -101,7 +101,7 @@ const LinkButton = styled.a`
   border: 1px solid ${({ theme }) => theme.colours.lightGrey};
   font-size: ${({ theme }) => theme.fontSize.medium};
   color: ${({ theme }) => theme.colours.primary};
-  border-radius: 5px;
+  border-radius: 3px;
   text-align: center;
   text-decoration: none;
   display: inline-block;

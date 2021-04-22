@@ -55,7 +55,7 @@ const Form = styled.form`
     height: 40px;
     padding: 5px 10px;
     margin-bottom: 1rem;
-    border-radius: 2px;
+    border-radius: 3px;
   }
 
   & > textarea {
@@ -70,7 +70,7 @@ const Form = styled.form`
     color: ${({ theme }) => theme.colours.primary};
     font-size: ${({ theme }) => theme.fontSize.medium};
     border: 1px solid ${({ theme }) => theme.colours.primary};
-    border-radius: 2px;
+    border-radius: 3px;
     height: 50px;
     transition: 0.3s;
 

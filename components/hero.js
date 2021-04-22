@@ -222,7 +222,7 @@ const ButtonStyle = styled.a`
   font-size: ${({ theme }) => theme.fontSize.medium};
   color: ${({ theme }) => theme.colours.grey};
   border: 1px solid ${({ theme }) => theme.colours.grey};
-  border-radius: 5px;
+  border-radius: 3px;
   padding: 0.5rem;
   text-align: center;
   text-decoration: none;
