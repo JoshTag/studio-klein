@@ -17,12 +17,13 @@ const Navigation = styled.nav`
   padding-bottom: 1.5rem;
 
   @media ${({ theme }) => theme.breakpoints.tabletLarge} {
-    height: 80px;
     padding-bottom: 0;
   }
 
   @media ${({ theme }) => theme.breakpoints.desktop} {
     margin-bottom: 35px;
+    height: 80px;
+    padding-bottom: 0;
   }
 `;
 

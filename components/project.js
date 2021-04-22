@@ -259,7 +259,7 @@ const Project = () => {
       "bottom+=500",
       projectAnimation.current,
       asideTwo.current,
-      "play reset play reset",
+      "play reset reset reset",
       "top"
     );
   }, []);
@@ -481,7 +481,7 @@ const Project = () => {
             <div>
               <Image
                 src='/images/projects/studio-zoubida/logo-pink.svg'
-                width={200}
+                width={200
                 height={140}
               />
             </div>
