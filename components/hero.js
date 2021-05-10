@@ -301,13 +301,13 @@ const Hero = () => {
           </HeroHeader>
           <HeroParagraph>
             Grow your business with the most unique, beautiful and functional
-            e-shops that scale with your business
+            e-shops that scale with your business.
           </HeroParagraph>
           <HeroParagraph>
-            We offer a one-stop shop for premium e-commerce building
+            We offer a one-stop shop for premium e-commerce building.
           </HeroParagraph>
           <HeroParagraphPartner>
-            <img src={logo} alt="Studio Klein"/>is a Shopify Partner
+            <img src={logo} alt="Studio Klein"/>is a Shopify Partner.
           </HeroParagraphPartner>
           <Link href='/services' passHref>
             <CTA className='hero-CTA'>our services</CTA>
