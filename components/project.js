@@ -188,6 +188,10 @@ const ProjectContent = styled.section`
     height: 1px;
     background: ${({ theme }) => theme.colours.header};
   }
+  
+  .soap-mockup2 {
+    margin-top: 2rem;
+  }
 `;
 
 const scroll = keyframes`
@@ -271,6 +275,18 @@ const Project = () => {
         <div className='aside-wrapper' ref={asideOne}>
           <Background>
             <Image
+              src='/images/projects/soap/background.png'
+              layout='fill'
+              objectFit='cover'
+            />
+          </Background>
+          <ProjectLogo>
+            <img src='/images/projects/soap/logo.svg' />
+          </ProjectLogo>
+        </div>
+        <div className='aside-wrapper' ref={asideOne}>
+          <Background>
+            <Image
               src='/images/projects/the-pielander/background.png'
               layout='fill'
               objectFit='cover'
@@ -294,6 +310,82 @@ const Project = () => {
         </div>
       </ProjectAside>
       <ProjectsWrapper>
+      <MobileBanner>
+          <Background>
+            <Image
+              src='/images/projects/the-pielander/background.png'
+              layout='fill'
+              objectFit='cover'
+            />
+          </Background>
+          <ProjectLogo>
+            <Image
+              src='/images/projects/the-pielander/logo.svg'
+              width={393}
+              height={172}
+            />
+          </ProjectLogo>
+        </MobileBanner>
+        <ProjectContent ref={projectOne} id='thepielander'>
+          <div className='header-container'>
+            <h2>Operation SOAP</h2>
+            <ProjectURL
+              underlineColor='rust'
+              href='https://the-pielander.myshopify.com/'
+              target='_blank'
+              rel='noopener'
+            >
+              www.soap-shop.ca
+            </ProjectURL>
+          </div>
+          <h4>Project Deliverables</h4>
+          <ul className='deliverables'>
+            <li>Shop Set-up</li>
+            <li>Custom Shop Design</li>
+            <li>SEO</li>
+            <li>Merch Design</li>
+            <li>Web &amp; Social Media Assets</li>
+          </ul>
+          <h4>The Shop</h4>
+          <p>
+          SOAP shop creates premium garments, designed and printed in Toronto, Canada.
+          SOAP is short for 'Operation Soap', the metro Toronto police's code name for the 1981 Toronto bathhouse raids. 
+          Studio Klein set out to build a site that celebrates the bold spirit of the brand. 
+          </p>
+          <Image
+            src='/images/projects/soap/mockup-13.png'
+            width={700}
+            height={435}
+          />
+          <Image
+            src='/images/projects/soap/mockup-2.png'
+            width={700}
+            height={435}
+            class="soap-mockup2"
+          />
+
+          <h4>Merch</h4>
+          <p>
+          Studio Klein designed using SOAP’s slogan, “Nurture Your Nature” featuring a mushroom motif and a decorative font.
+          </p>
+          <img
+            className='pielander-menu'
+            src='/images/projects/soap/merch.png'
+            alt='Nurture Your Nature t-shirts'
+          />
+
+
+          <h4>Extra Assets</h4>
+          <p>
+          Many extra assets were created for website and social to ensure the brand stays consistent and fresh across all platforms.
+          </p>
+          <img
+            className='pielander-menu'
+            src='/images/projects/soap/extra-assets.png'
+            alt='SOAP Size Guide and instagram post'
+          />
+          
+        </ProjectContent>
         <MobileBanner>
           <Background>
             <Image
@@ -324,7 +416,7 @@ const Project = () => {
           </div>
           <h4>Project Deliverables</h4>
           <ul className='deliverables'>
-            <li>Shop Setp-up</li>
+            <li>Shop Set-up</li>
             <li>Custom Shop Design</li>
             <li>Video Creation</li>
             <li>SEO</li>
