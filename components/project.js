@@ -26,12 +26,8 @@ const ProjectAside = styled.div`
     display: block;
   }
 
-  @media ${({ theme }) => theme.breakpoints.desktop} {
-    width: 400px;
-  }
-
   @media ${({ theme }) => theme.breakpoints.desktopLarge} {
-    width: 500px;
+    width: 400px;
   }
 `;
 
@@ -54,6 +50,7 @@ const Background = styled.div`
   z-index: -1;
 
   &:before {
+    visibility: ${({ bgOverlay }) => bgOverlay === true ? "visible" : "hidden"};
     position: absolute;
     content: " ";
     top: 0;
@@ -67,7 +64,7 @@ const Background = styled.div`
 
 const ProjectLogo = styled.div`
   position: absolute;
-  top: 50%;
+  top: ${({ logoPosition }) => (logoPosition === "high" ? "15%" : "50%")};
   left: 50%;
   transform: translate(-50%, -50%);
   z-index: 100;
@@ -104,6 +101,7 @@ const ProjectsWrapper = styled.div`
 const ProjectContent = styled.section`
   position: relative;
   margin: 4rem 1rem;
+  padding-bottom: 2rem;
 
   @media ${({ theme }) => theme.breakpoints.tabletSmall} {
     margin: 4rem 2rem;
@@ -142,11 +140,11 @@ const ProjectContent = styled.section`
     }
   }
 
-  & > h3 {
+  h3 {
     margin-bottom: 1.5rem;
   }
 
-  & > h4,
+  h4,
   h5 {
     font-size: 22px;
     color: ${({ theme }) => theme.colours.grey};
@@ -154,11 +152,16 @@ const ProjectContent = styled.section`
     margin-bottom: 1.5rem;
   }
 
-  & > p {
+  p {
     font-size: ${({ theme }) => theme.fontSize.small};
     line-height: 27px;
     margin-bottom: 2rem;
     display: inline-block;
+  }
+
+  & img {
+    max-width: 100%;
+    margin-bottom: 2rem;
   }
 
   .indent-left {
@@ -174,7 +177,7 @@ const ProjectContent = styled.section`
     margin: 3rem 0;
   }
 
-  .pielander-menu {
+  .img--eight-tenths {
     width: 80%;
     max-width: 400px;
   }
@@ -188,9 +191,65 @@ const ProjectContent = styled.section`
     height: 1px;
     background: ${({ theme }) => theme.colours.header};
   }
-  
-  .soap-mockup2 {
+
+  .pree-logos:not(:first-of-type) {
+    margin-left: 2rem;
+  }
+
+  .pree-3d-logo {
+    display: block;
+  }
+
+  .moo-sections {
+    display: flex;
+    flex-direction: column;
     margin-top: 2rem;
+
+    @media ${({ theme }) => theme.breakpoints.tablet} {
+      flex-direction: row;
+      justify-content: space-evenly;
+    }
+
+    @media ${({ theme }) => theme.breakpoints.tabletLarge} {
+      flex-direction: column;
+    }
+
+    @media ${({ theme }) => theme.breakpoints.desktop} {
+      flex-direction: row;
+    }
+
+    & > div {
+      display: flex;
+      flex-direction: column;
+      padding-bottom: 2rem;
+
+      @media ${({ theme }) => theme.breakpoints.desktop} {
+        width: 250px;
+      }
+
+      @media ${({ theme }) => theme.breakpoints.desktopLarge} {
+        width: 300px;
+      }
+
+      & h4 {
+        font-weight: 400;
+      }
+
+      & p,
+      h4 {
+        text-align: center;
+        margin-bottom: 5px;
+      }
+
+      & p:last-of-type {
+        margin-bottom: 2rem;
+      }
+
+      & img {
+        width: 300px;
+        margin: 0 auto 2rem;
+      }
+    }
   }
 `;
 
@@ -246,6 +305,10 @@ const Project = () => {
   const asideOne = createRef(null);
   const projectTwo = createRef(null);
   const asideTwo = createRef(null);
+  const projectThree = createRef(null);
+  const asideThree = createRef(null);
+  const projectFour = createRef(null);
+  const asideFour = createRef(null);
 
   useEffect(() => {
     projectAsideTransition(
@@ -259,10 +322,28 @@ const Project = () => {
     );
     projectAsideTransition(
       projectTwo.current,
-      projectTwo.current,
-      "bottom+=1000",
+      projectThree.current,
+      "top",
       projectAnimation.current,
       asideTwo.current,
+      "play reset play reset",
+      "top"
+    );
+    projectAsideTransition(
+      projectThree.current,
+      projectFour.current,
+      "top",
+      projectAnimation.current,
+      asideThree.current,
+      "play reset play reset",
+      "top"
+    );
+    projectAsideTransition(
+      projectFour.current,
+      projectFour.current,
+      "bottom+=1000",
+      projectAnimation.current,
+      asideFour.current,
       "play reset reset reset",
       "top"
     );
@@ -275,28 +356,63 @@ const Project = () => {
         <div className='aside-wrapper' ref={asideOne}>
           <Background>
             <Image
-              src='/images/projects/soap/background.png'
+              src='/images/projects/moo/background.png'
               layout='fill'
               objectFit='cover'
+              quality='100'
+              priority={true}
             />
           </Background>
           <ProjectLogo>
-            <img src='/images/projects/soap/logo.svg' />
+            <img src='/images/projects/moo/logo.svg' alt='Moo Vintage Logo' />
           </ProjectLogo>
         </div>
-        <div className='aside-wrapper' ref={asideOne}>
+        <div className='aside-wrapper' ref={asideTwo}>
           <Background>
+            <Image
+              src='/images/projects/soap/background.png'
+              layout='fill'
+              objectFit='cover'
+              quality='100'
+            />
+          </Background>
+          <ProjectLogo logoPosition='high'>
+            <img
+              src='/images/projects/soap/logo.svg'
+              alt='Operation Soap Logo'
+            />
+          </ProjectLogo>
+        </div>
+        <div className='aside-wrapper' ref={asideThree}>
+          <Background>
+            <Image
+              src='/images/projects/pree/background.png'
+              layout='fill'
+              objectFit='cover'
+              quality='100'
+            />
+          </Background>
+          <ProjectLogo>
+            <img src='/images/projects/pree/logo.svg' alt='Pree Logo' />
+          </ProjectLogo>
+        </div>
+        <div className='aside-wrapper' ref={asideFour}>
+          <Background bgOverlay={true}>
             <Image
               src='/images/projects/the-pielander/background.png'
               layout='fill'
               objectFit='cover'
+              quality='100'
             />
           </Background>
           <ProjectLogo>
-            <img src='/images/projects/the-pielander/logo.svg' />
+            <img
+              src='/images/projects/the-pielander/logo.svg'
+              alt='The Pielander Logo'
+            />
           </ProjectLogo>
         </div>
-        <div className='aside-wrapper' ref={asideTwo}>
+        {/* <div className='aside-wrapper' ref={asideTwo}>
           <Background>
             <Image
               src='/images/projects/studio-zoubida/background.png'
@@ -307,31 +423,101 @@ const Project = () => {
           <ProjectLogo>
             <img src='/images/projects/studio-zoubida/logo-pink.svg' />
           </ProjectLogo>
-        </div>
+        </div> */}
       </ProjectAside>
       <ProjectsWrapper>
-      <MobileBanner>
+        <MobileBanner>
           <Background>
             <Image
-              src='/images/projects/the-pielander/background.png'
+              src='/images/projects/moo/background.png'
               layout='fill'
               objectFit='cover'
             />
           </Background>
           <ProjectLogo>
             <Image
-              src='/images/projects/the-pielander/logo.svg'
+              src='/images/projects/moo/logo.svg'
               width={393}
               height={172}
             />
           </ProjectLogo>
         </MobileBanner>
-        <ProjectContent ref={projectOne} id='thepielander'>
+        <ProjectContent ref={projectOne} id='moovintage'>
+          <div className='header-container'>
+            <h2>MOO: Vintage and Thirft</h2>
+            <ProjectURL
+              underlineColor='black'
+              href='https://moo-vintage-thrift.myshopify.com/'
+              target='_blank'
+              rel='noopener'
+            >
+              www.moovintage.com
+            </ProjectURL>
+          </div>
+          <h4>Project Deliverables</h4>
+          <ul className='deliverables'>
+            <li>Custom Shop</li>
+            <li>Shop Branding</li>
+            <li>Product Photo Editing</li>
+            <li>Logo Design</li>
+            <li>3D Rendering</li>
+          </ul>
+          <h4>The Brand</h4>
+          <p>
+            The owners of Moo are just starting their vintage journey and came
+            to us for a full brand concept along with their shop. They wanted
+            something light-hearted with a touch of humour, with a on-trend
+            design aesthetic. That’s where the MOO brand started.
+          </p>
+          <h4>The Shop</h4>
+          <p>
+            The owners wanted innovative ways for customers to see new shop
+            items. We brainstormed with their team and implemented “Picks of the
+            Week” as well as “Shop the Look” features. This allows the MOO team
+            to switch up their site any time and encourage buying items together
+            on their site.
+          </p>
+          <div className='moo-sections'>
+            <div>
+              <h4>Homepage</h4>
+              <p>includes:</p>
+              <p>Parallax Cow Print</p>
+              <p>Picks of the Week</p>
+              <img src='/images/projects/moo/mockup.png' />
+            </div>
+            <div>
+              <h4>Theme Shopping Section</h4>
+              <p>includes:</p>
+              <p>Themed Collection</p>
+              <p>Shop the Look</p>
+              <img src='/images/projects/moo/mockup-section.png' />
+            </div>
+          </div>
+          <h4>Social Media Assets</h4>
+          <img src='/images/projects/moo/moo-asset.png' />
+        </ProjectContent>
+        <MobileBanner>
+          <Background>
+            <Image
+              src='/images/projects/soap/background.png'
+              layout='fill'
+              objectFit='cover'
+            />
+          </Background>
+          <ProjectLogo>
+            <Image
+              src='/images/projects/soap/logo.svg'
+              width={393}
+              height={172}
+            />
+          </ProjectLogo>
+        </MobileBanner>
+        <ProjectContent ref={projectTwo} id='operationsoap'>
           <div className='header-container'>
             <h2>Operation SOAP</h2>
             <ProjectURL
-              underlineColor='rust'
-              href='https://the-pielander.myshopify.com/'
+              underlineColor='blue'
+              href='https://soap-shop.ca/'
               target='_blank'
               rel='noopener'
             >
@@ -348,43 +534,120 @@ const Project = () => {
           </ul>
           <h4>The Shop</h4>
           <p>
-          SOAP shop creates premium garments, designed and printed in Toronto, Canada.
-          SOAP is short for 'Operation Soap', the metro Toronto police's code name for the 1981 Toronto bathhouse raids. 
-          Studio Klein set out to build a site that celebrates the bold spirit of the brand. 
-          </p>
-          <Image
-            src='/images/projects/soap/mockup-13.png'
-            width={700}
-            height={435}
-          />
-          <Image
-            src='/images/projects/soap/mockup-2.png'
-            width={700}
-            height={435}
-            class="soap-mockup2"
-          />
-
-          <h4>Merch</h4>
-          <p>
-          Studio Klein designed using SOAP’s slogan, “Nurture Your Nature” featuring a mushroom motif and a decorative font.
+            SOAP shop creates premium garments, designed and printed in Toronto,
+            Canada. SOAP is short for 'Operation Soap', the metro Toronto
+            police's code name for the 1981 Toronto bathhouse raids. Studio
+            Klein set out to build a site that celebrates the bold spirit of the
+            brand.
           </p>
           <img
-            className='pielander-menu'
+            src='/images/projects/soap/mockup-1.png'
+            alt='Operation Soap Mockup'
+          />
+          <img
+            src='/images/projects/soap/mockup-2.png'
+            alt='Operation Soap Mockup'
+          />
+          <h4>Merch</h4>
+          <p>
+            Studio Klein designed using SOAP’s slogan, “Nurture Your Nature”
+            featuring a mushroom motif and a decorative font.
+          </p>
+          <img
+            className='img--eight-tenths'
             src='/images/projects/soap/merch.png'
             alt='Nurture Your Nature t-shirts'
           />
-
-
           <h4>Extra Assets</h4>
           <p>
-          Many extra assets were created for website and social to ensure the brand stays consistent and fresh across all platforms.
+            Many extra assets were created for website and social to ensure the
+            brand stays consistent and fresh across all platforms.
           </p>
           <img
-            className='pielander-menu'
             src='/images/projects/soap/extra-assets.png'
             alt='SOAP Size Guide and instagram post'
           />
-          
+        </ProjectContent>
+        <MobileBanner>
+          <Background>
+            <Image
+              src='/images/projects/pree/background.png'
+              layout='fill'
+              objectFit='cover'
+            />
+          </Background>
+          <ProjectLogo>
+            <Image
+              src='/images/projects/pree/logo.svg'
+              width={393}
+              height={172}
+            />
+          </ProjectLogo>
+        </MobileBanner>
+        <ProjectContent ref={projectThree} id='pree'>
+          <div className='header-container'>
+            <h2>Pree Rehal: Artist and Educator</h2>
+            <ProjectURL
+              underlineColor='orange'
+              href='https://prehal.com/'
+              target='_blank'
+              rel='noopener'
+            >
+              www.prehal.com
+            </ProjectURL>
+          </div>
+          <h4>Project Deliverables</h4>
+          <ul className='deliverables'>
+            <li>Custom 2-part shop</li>
+            <li>Shop Branding</li>
+            <li>Newsletter Implementation</li>
+            <li>Logo Design</li>
+            <li>3D rendering</li>
+          </ul>
+          <h4>The Shop</h4>
+          <p>
+            Pree Rehal (they/them) is a multidisciplinary artist and community
+            organizer. To create a site that works for them we need to make one
+            site with two separate parts. That led us to this landing page that
+            introduces a cohesive brand while splitting up the two sides of the
+            sites.
+          </p>
+          <img src='/images/projects/pree/mockups.png' alt='Pree Mockups' />
+          <h4>Brand Creation</h4>
+          <p>
+            As part of Pree’s new brand, we created a logo and colour palette
+            which was utilized on the site.
+          </p>
+          <p>
+            To create a logo that best represents Pree, we were inspired by
+            common themes in their art as well as their playful use of colour. A
+            mango-shaped wordmark with a touch of whimsy and smooth bubbly lines
+            fit the bill.
+          </p>
+          <img
+            className='pree-logos'
+            src='/images/projects/pree/logo-1.svg'
+            alt='prehal gradient logo'
+          />
+          <img
+            className='pree-logos'
+            src='/images/projects/pree/logo-2.svg'
+            alt='prehal prehal orange logo'
+          />
+          <img
+            className='pree-logos'
+            src='/images/projects/pree/logo-3.svg'
+            alt='prehal grey logo'
+          />
+          <h4>3D Rendering</h4>
+          <p>
+            Sometimes you just need to throw in a 3D logo rendering for fun.
+          </p>
+          <img
+            src='/images/projects/pree/logo-3d.png'
+            alt='Prehal 3D Logo'
+            className='pree-3d-logo'
+          />
         </ProjectContent>
         <MobileBanner>
           <Background>
@@ -402,7 +665,7 @@ const Project = () => {
             />
           </ProjectLogo>
         </MobileBanner>
-        <ProjectContent ref={projectOne} id='thepielander'>
+        <ProjectContent ref={projectFour} id='thepielander'>
           <div className='header-container'>
             <h2>The Pielander</h2>
             <ProjectURL
@@ -433,10 +696,9 @@ const Project = () => {
             realized that many Canadians shared his love of Scottish classics,
             made vegan.
           </p>
-          <Image
+          <img
             src='/images/projects/the-pielander/mockup.png'
-            width={660}
-            height={435}
+            alt='The Pielander Mockups'
           />
           <h4>The Shop</h4>
           <p>
@@ -471,12 +733,12 @@ const Project = () => {
             created for Pielander.
           </p>
           <img
-            className='pielander-menu'
+            className='img--eight-tenths'
             src='/images/projects/the-pielander/menu.svg'
             alt='Pielander Menu'
           />
         </ProjectContent>
-        <MobileBanner>
+        {/* <MobileBanner>
           <Background>
             <Image
               src='/images/projects/studio-zoubida/background.png'
@@ -599,7 +861,7 @@ const Project = () => {
             product because some products are truly one-of-a-kind, and we wanted
             to highlight that.{" "}
           </p>
-        </ProjectContent>
+        </ProjectContent> */}
       </ProjectsWrapper>
     </ProjectPage>
   );

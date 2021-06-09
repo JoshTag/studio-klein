@@ -4,7 +4,7 @@ import PageSubHeader from "components/page-subheader";
 import Head from "next/head";
 
 const Projects = () => {
-  const subheadings = ["The Pielander", "Studio Zoubida"]
+  const subheadings = ["Moo Vintage", "Operation Soap", "Pree", "The Pielander"]
   return (
     <Layout>
       <Head>

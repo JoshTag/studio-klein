@@ -20,9 +20,9 @@ export const projectAsideTransition = (
       scrollTrigger: {
         trigger: triggerStart,
         toggleActions: `${actions}`,
-        start: `${start} center`,
+        start: `${start} center-=100`,
         endTrigger: triggerEnd,
-        end: `${endPlacement} center`,
+        end: `${endPlacement} center-=100`
       },
     }
   );
@@ -40,7 +40,7 @@ export const projectAsideTransition = (
         toggleActions: "play reset play reset",
         start: `${start} center-=100`,
         endTrigger: triggerEnd,
-        end: `${endPlacement} center-=100`,
+        end: `${endPlacement} center-=100`
       },
     }
   );
