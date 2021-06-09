@@ -50,7 +50,8 @@ const Background = styled.div`
   z-index: -1;
 
   &:before {
-    visibility: ${({ bgOverlay }) => bgOverlay === true ? "visible" : "hidden"};
+    visibility: ${({ bgOverlay }) =>
+      bgOverlay === true ? "visible" : "hidden"};
     position: absolute;
     content: " ";
     top: 0;
@@ -276,7 +277,8 @@ const ProjectURL = styled.a`
     width: 265px;
     height: 10px;
     bottom: 0px;
-    background: url(/images/link-underline-${({ underlineColor }) => underlineColor}.svg);
+    background: url(/images/link-underline-${({ underlineColor }) =>
+      underlineColor}.svg);
     background-repeat: no-repeat;
     animation: ${scroll} 6s linear infinite;
   }
@@ -458,7 +460,7 @@ const Project = () => {
           <h4>Project Deliverables</h4>
           <ul className='deliverables'>
             <li>Custom Shop</li>
-            <li>Shop Branding</li>
+            <li>Brand Creation</li>
             <li>Product Photo Editing</li>
             <li>Logo Design</li>
             <li>3D Rendering</li>
@@ -467,16 +469,17 @@ const Project = () => {
           <p>
             The owners of Moo are just starting their vintage journey and came
             to us for a full brand concept along with their shop. They wanted
-            something light-hearted with a touch of humour, with a on-trend
+            something light-hearted with a touch of humour, and an on-trend
             design aesthetic. That’s where the MOO brand started.
           </p>
           <h4>The Shop</h4>
           <p>
-            The owners wanted innovative ways for customers to see new shop
-            items. We brainstormed with their team and implemented “Picks of the
-            Week” as well as “Shop the Look” features. This allows the MOO team
-            to switch up their site any time and encourage buying items together
-            on their site.
+            The owners were looking for innovative ways for customers to see new
+            shop items. We brainstormed with their team and implemented “Picks
+            of the Week” as well as “Shop the Look” features. These features
+            allow the MOO team to switch up their site by highlighting the
+            products they want to sell. They also encourage customers to
+            purchase items as a pair or group.
           </p>
           <div className='moo-sections'>
             <div>
@@ -494,7 +497,7 @@ const Project = () => {
               <img src='/images/projects/moo/mockup-section.png' />
             </div>
           </div>
-          <h4>Social Media Assets</h4>
+          <h4>Social Media Asset Examples</h4>
           <img src='/images/projects/moo/moo-asset.png' />
         </ProjectContent>
         <MobileBanner>
@@ -551,8 +554,9 @@ const Project = () => {
           />
           <h4>Merch</h4>
           <p>
-            Studio Klein designed using SOAP’s slogan, “Nurture Your Nature”
-            featuring a mushroom motif and a decorative font.
+            Studio Klein designed merch for SOAP using their slogan, “Nurture
+            Your Nature”. This design draws from a 60’s era psychadelic asthetic
+            and features a mushroom motif with a highly decorative font.
           </p>
           <img
             className='img--eight-tenths'
@@ -565,7 +569,7 @@ const Project = () => {
             brand stays consistent and fresh across all platforms.
           </p>
           <img
-            className="img--eight-tenths"
+            className='img--eight-tenths'
             src='/images/projects/soap/extra-assets.png'
             alt='SOAP Size Guide and instagram post'
           />
@@ -604,15 +608,20 @@ const Project = () => {
             <li>Shop Branding</li>
             <li>Newsletter Implementation</li>
             <li>Logo Design</li>
-            <li>3D rendering</li>
+            <li>3D Rendering</li>
           </ul>
           <h4>The Shop</h4>
           <p>
             Pree Rehal (they/them) is a multidisciplinary artist and community
-            organizer. To create a site that works for them we need to make one
-            site with two separate parts. That led us to this landing page that
-            introduces a cohesive brand while splitting up the two sides of the
-            sites.
+            organizer. The challenge was creating a website that separated the
+            art shop from the community organizing/education while keeping a
+            consistent feeling across both sides of the shop.
+          </p>
+          <p>
+            That challenge led us to create a landing page that introduces a
+            cohesive brand while splitting up the two sides of the sites. Once
+            users have chosen a path, they can switch from either side of the
+            site using the footer navigation.
           </p>
           <img src='/images/projects/pree/mockups.png' alt='Pree Mockups' />
           <h4>Brand Creation</h4>

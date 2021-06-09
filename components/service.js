@@ -263,13 +263,16 @@ const Service = () => {
         <ServiceContent ref={designContainer} id='fullycustomizableshops'>
           <h3>Fully Customizable Shops</h3>
           <p>
-            We offer the most well-rounded, holistic e-shop development on the
-            market. We understand the full package of what e-commerce businesses
-            need today, and in the future - A great brand combined with the most
-            functional and customized features, fully integrated with social
-            media, and a stack of content ready for you to publish.
+            We offer comprehensive e-shop development. We understand the full
+            spectrum of what is needed to succeed in e-commerce today, and in
+            the future.
           </p>
-          <p>Your business is guaranteed to stand out.</p>
+          <p>
+            A great brand combined with the most functional and customized
+            features, fully integrated with social media, and a stack of content
+            ready for you to publish. Studio Klein will make your business stand
+            out from the crowd.
+          </p>
           <div className='services__branding-lottie'>
             <LottieData data={branding} />
           </div>
@@ -281,7 +284,7 @@ const Service = () => {
           <h3>Brand Creation</h3>
           <p>
             If your e-commerce business needs a boost of brand power, Studio
-            Klein delivers. We offer the total package, full brand creation,
+            Klein delivers. We offer the total package - full brand creation,
             including assets. This means we supply:
           </p>
           <ul>
@@ -301,9 +304,6 @@ const Service = () => {
               </ul>
             </li>
           </ul>
-          <div className='services__social-lottie'>
-            <LottieData data={social} />
-          </div>
           <p>
             When we create a brand we don’t just design a logo. We also set you
             up for success, so your site and social media never get stale.
@@ -319,25 +319,11 @@ const Service = () => {
         <ServiceContent ref={seoContainer} id='seoandappintegration'>
           <h3>SEO and App Integration</h3>
           <p>
-            We provide integration for any Shopify app. Also, look forward to
-            seamless integration with social media platforms. When a customer
-            buys from your store on social, the order comes in as normal on your
-            e-shop.
+            We provide integration for any Shopify app. Incorporate any Shopify
+            app into your store. Including but not limited to:
           </p>
           <p className='margin-list'>Available for:</p>
           <ul>
-            <li>Instgram</li>
-            <li>Facebook</li>
-            <li>Any major social media platforms</li>
-          </ul>
-          <div className='services__seo-lottie'>
-            <LottieData data={seo} />
-          </div>
-          <p className='margin-list'>
-            Incorporate any Shopify app into your store. Including but not
-            limited to:
-          </p>
-          <ul className='margin-bottom'>
             <li>MailChimp and other popular email marketing apps</li>
             <li>SEO optimization</li>
             <li>Incremental payment services like Afterpay</li>
@@ -346,13 +332,32 @@ const Service = () => {
             <li>Specialized shipping and tracking features</li>
             <li>And endless other options!</li>
           </ul>
+          <div className='services__seo-lottie'>
+            <LottieData data={seo} />
+          </div>
+          <p>
+            Don’t see what you need in the Shopify app store? No worries, we can
+            create a custom app just for your shop.
+          </p>
+          <h3>Social Media Integration</h3>
+          <div className='services__social-lottie'>
+            <LottieData data={social} />
+          </div>
+          <p>
+            Look forward to seamless integration with social media platforms.
+            Customers can buy directly from your socials, but the shop receives
+            all orders as if they are ordering directly from your shop.
+          </p>
+          <p className='margin-list'>Available for:</p>
+          <ul>
+            <li>Instgram</li>
+            <li>Facebook</li>
+            <li>Any major social media platforms</li>
+          </ul>
         </ServiceContent>
       </ServiceMain>
       <style jsx>
         {`
-          .margin-bottom {
-            margin-bottom: 5rem;
-          }
           .margin-list {
             margin-bottom: 1rem;
           }

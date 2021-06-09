@@ -142,6 +142,7 @@ const NavLink = styled.a`
 
     &:hover:before {
       width: 100%;
+      left: 0;
       -webkit-transition: width 0.6s cubic-bezier(0.7, 0, 0.3, 1);
       -moz-transition: width 0.6s cubic-bezier(0.7, 0, 0.3, 1);
       -o-transition: width 0.6s cubic-bezier(0.7, 0, 0.3, 1);
