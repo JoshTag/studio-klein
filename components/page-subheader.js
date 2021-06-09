@@ -42,8 +42,10 @@ const ListItem = styled.li`
   & > div {
     text-decoration: none;
     color: inherit;
+    transition: color 0.3s;
 
     &:hover {
+      color: #a7a7a7;
       cursor: pointer;
     }
   }

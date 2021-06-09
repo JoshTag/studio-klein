@@ -179,7 +179,8 @@ const ProjectContent = styled.section`
 
   .img--eight-tenths {
     width: 80%;
-    max-width: 400px;
+    max-width: 450px;
+    display: block;
   }
 
   &:not(:last-of-type):after {
@@ -444,7 +445,7 @@ const Project = () => {
         </MobileBanner>
         <ProjectContent ref={projectOne} id='moovintage'>
           <div className='header-container'>
-            <h2>MOO: Vintage and Thirft</h2>
+            <h2>MOO: Vintage and Thrift</h2>
             <ProjectURL
               underlineColor='black'
               href='https://moo-vintage-thrift.myshopify.com/'
@@ -564,6 +565,7 @@ const Project = () => {
             brand stays consistent and fresh across all platforms.
           </p>
           <img
+            className="img--eight-tenths"
             src='/images/projects/soap/extra-assets.png'
             alt='SOAP Size Guide and instagram post'
           />

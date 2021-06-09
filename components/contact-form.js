@@ -69,6 +69,7 @@ const Form = styled.form`
     background: transparent;
     color: ${({ theme }) => theme.colours.primary};
     font-size: ${({ theme }) => theme.fontSize.medium};
+    font-family: ${({ theme }) => theme.fonts.primary};
     border: 1px solid ${({ theme }) => theme.colours.primary};
     border-radius: 3px;
     height: 50px;

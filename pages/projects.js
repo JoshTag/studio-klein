@@ -12,7 +12,6 @@ const Projects = () => {
       </Head>
       <PageSubHeader subheadings={subheadings} />
       <Project />
-      <div className='container'>More Projects Coming Soon</div>
       <style global jsx>{`
         .container {
           padding: 50px;
