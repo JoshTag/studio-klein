@@ -9,6 +9,7 @@ const FooterContainer = styled.section`
 
 const Copyright = styled.small`
   color: #fff;
+  font-size: 16px;
 `
 
 const Footer = () => (

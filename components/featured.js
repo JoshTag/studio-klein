@@ -60,7 +60,7 @@ const FeaturedProject = styled.div`
     transition: 0.6s ease-in-out;
 
     &:hover {
-      width: 300%;
+      width: 200%;
     }
   }
 
@@ -110,15 +110,28 @@ const LinkButton = styled.a`
   @media ${({ theme }) => theme.breakpoints.tabletLarge} {
     position: absolute;
     width: 190px;
-    font-size: ${({ theme }) => theme.fontSize.xLarge};
     background: transparent;
     margin: 0;
-    top: 150px;
+    top: 170px;
     left: 50%;
     transform: translateX(-50%);
     border: none;
+
+    &:hover {
+      color: rgb(187, 187, 187);
+    }
   }
 `;
+
+const LinkButtonDark = styled(LinkButton)`
+  @media ${({ theme }) => theme.breakpoints.tabletLarge} {
+    color: ${({ theme }) => theme.colours.grey};
+
+    &:hover {
+      color: rgb(90, 90, 90);
+    }
+  }
+`
 
 const Featured = () => {
   return (
@@ -126,10 +139,10 @@ const Featured = () => {
       <FeaturedTitle>Featured Shops</FeaturedTitle>
       <FeaturedWrapper>
         <FeaturedProject>
-          <ProjectLogo width='175px'>
+          <ProjectLogo width='140px'>
             <img
-              src='/images/projects/studio-zoubida/logo-white.svg'
-              alt='Studio Zoubida Logo'
+              src='/images/projects/pree/featured-logo.svg'
+              alt="Pree Logo"
             />
           </ProjectLogo>
           <Link href='/projects' passHref>
@@ -137,19 +150,38 @@ const Featured = () => {
           </Link>
           <ProjectBackground>
             <ProjectImage
-              src='/images/projects/studio-zoubida/featured-image.jpg'
+              src='/images/projects/pree/featured.png'
               layout='fill'
               objectFit='cover'
-              alt='Studio Zoubida Feature'
-
+              alt='Pree Feature'
             />
           </ProjectBackground>
         </FeaturedProject>
         <FeaturedProject>
           <ProjectLogo width='200px'>
             <img
-              src='/images/projects/the-pielander/logo.svg'
-              alt='The Pielander Logo'
+              src='/images/projects/moo/logo.svg'
+              alt='Moo Vintage and Thrift Logo'
+            />
+          </ProjectLogo>
+          <Link href='/projects' passHref>
+            <LinkButtonDark>view project {">>"}</LinkButtonDark>
+          </Link>
+          <ProjectBackground>
+            <ProjectImage
+              src='/images/projects/moo/featured.png'
+              layout='fill'
+              objectFit='cover'
+              alt='Moo Vintage and Thirft Feature'
+
+            />
+          </ProjectBackground>
+        </FeaturedProject>
+        <FeaturedProject>
+        <ProjectLogo width='175px'>
+            <img
+              src='/images/projects/soap/logo.svg'
+              alt='Operation Soap Logo'
             />
           </ProjectLogo>
           <Link href='/projects' passHref>
@@ -157,17 +189,11 @@ const Featured = () => {
           </Link>
           <ProjectBackground>
             <ProjectImage
-              src='/images/projects/the-pielander/featured-image.jpg'
+              src='/images/projects/soap/featured.png'
               layout='fill'
               objectFit='cover'
-              alt='The Pielander Feature'
+              alt='Operation Soap Feature'
             />
-          </ProjectBackground>
-        </FeaturedProject>
-        <FeaturedProject>
-          <span className='logo-placeholder'>Coming Soon</span>
-          <ProjectBackground>
-            <div className='image-placeholder--light' />
           </ProjectBackground>
         </FeaturedProject>
       </FeaturedWrapper>
