@@ -213,7 +213,7 @@ const HeroParagraphPartner = styled(HeroParagraph)`
     width: 100px;
     margin-right: 8px;
   }
-`
+`;
 
 const ButtonStyle = styled.a`
   display: inline-block;
@@ -300,14 +300,15 @@ const Hero = () => {
             </svg>
           </HeroHeader>
           <HeroParagraph>
-            Grow your business with the most unique, beautiful and functional
-            e-shops that scale with your business.
+            Grow your business with beautiful and functional e-commerce
+            experiences.
           </HeroParagraph>
           <HeroParagraph>
             We offer a one-stop shop for premium e-commerce building.
           </HeroParagraph>
           <HeroParagraphPartner>
-            <img src={logo} alt="Studio Klein"/>is a Shopify Partner.
+            <img src={logo} alt='Studio Klein' />
+            is a Shopify Partner.
           </HeroParagraphPartner>
           <Link href='/services' passHref>
             <CTA className='hero-CTA'>our services</CTA>
