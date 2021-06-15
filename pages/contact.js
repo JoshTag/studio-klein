@@ -47,7 +47,6 @@ const ContactHeader = styled.h2`
   font-size: ${({ theme }) => theme.fontSize.xxLarge};
   color: ${({ theme }) => theme.colours.grey};
   font-weight: 300;
-  margin-top: 4rem 1rem;
   width: auto;
   text-align: center;
 

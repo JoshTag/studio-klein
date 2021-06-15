@@ -277,8 +277,7 @@ const ProjectURL = styled.a`
     width: 265px;
     height: 10px;
     bottom: 0px;
-    background: url(/images/link-underline-${({ underlineColor }) =>
-      underlineColor}.svg);
+    background: url(/images/link-underline-${({ underlineColor }) => underlineColor}.svg);
     background-repeat: no-repeat;
     animation: ${scroll} 6s linear infinite;
   }
