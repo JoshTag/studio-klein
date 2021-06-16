@@ -61,6 +61,7 @@ const TestimonialName = styled.h3`
   margin: 4rem 0 0;
   width: auto;
   text-align: center;
+  line-height: 30px;
 `
 
 const TestimonialImg = styled.img`
