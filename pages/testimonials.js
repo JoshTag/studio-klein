@@ -119,13 +119,7 @@ const Testimonials = () => {
           </TestimonialName>
           <TestimonialImg src="/images/projects/the-pielander/logo-alt.png" imgWidth="200px"/>
           <TestimonialContent>
-            Studio Klein is a stellar partner for our small business website
-            needs. Their approach to having both technical and design expertise
-            made our work with them easy and quick. At every turn they had
-            insightful suggestions that helped maximize our ability to
-            merchandise, makes sales and deepen our relationship with our
-            customer. We’re looking forward to working with them again as our
-            business grows!
+            Coming Soon.
           </TestimonialContent>
         </TestimonialItem>
       </TestimonialsContainer>
