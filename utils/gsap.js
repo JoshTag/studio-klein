@@ -1,50 +1,50 @@
 import { gsap, Circ } from "gsap/dist/gsap";
 
-export const projectAsideTransition = (
-  triggerStart,
-  triggerEnd,
-  endPlacement,
-  transitionAnimation,
-  aside,
-  actions,
-  start = "top",
-) => {
-  gsap.fromTo(
-    transitionAnimation,
-    {
-      yPercent: 200,
-    },
-    {
-      yPercent: -100,
-      duration: 1,
-      scrollTrigger: {
-        trigger: triggerStart,
-        toggleActions: `${actions}`,
-        start: `${start} center-=100`,
-        endTrigger: triggerEnd,
-        end: `${endPlacement} center-=100`
-      },
-    }
-  );
+// export const projectAsideTransition = (
+//   triggerStart,
+//   triggerEnd,
+//   endPlacement,
+//   transitionAnimation,
+//   aside,
+//   actions,
+//   start = "top",
+// ) => {
+//   gsap.fromTo(
+//     transitionAnimation,
+//     {
+//       yPercent: 200,
+//     },
+//     {
+//       yPercent: -100,
+//       duration: 1,
+//       scrollTrigger: {
+//         trigger: triggerStart,
+//         toggleActions: `${actions}`,
+//         start: `${start} center-=100`,
+//         endTrigger: triggerEnd,
+//         end: `${endPlacement} center-=100`
+//       },
+//     }
+//   );
 
-  gsap.fromTo(
-    aside,
-    {
-      opacity: 0,
-    },
-    {
-      opacity: 1,
-      delay: 0.3,
-      scrollTrigger: {
-        trigger: triggerStart,
-        toggleActions: "play reset play reset",
-        start: `${start} center-=100`,
-        endTrigger: triggerEnd,
-        end: `${endPlacement} center-=100`
-      },
-    }
-  );
-};
+//   gsap.fromTo(
+//     aside,
+//     {
+//       opacity: 0,
+//     },
+//     {
+//       opacity: 1,
+//       delay: 0.3,
+//       scrollTrigger: {
+//         trigger: triggerStart,
+//         toggleActions: "play reset play reset",
+//         start: `${start} center-=100`,
+//         endTrigger: triggerEnd,
+//         end: `${endPlacement} center-=100`
+//       },
+//     }
+//   );
+// };
 
 export const serviceScrollAnimation = (
   trigger,

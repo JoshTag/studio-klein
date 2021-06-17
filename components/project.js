@@ -7,40 +7,30 @@ const ProjectPage = styled.section`
   display: flex;
   flex-direction: column;
 
-  @media ${({ theme }) => theme.breakpoints.tabletLarge} {
-    flex-direction: row;
+  & > section:not(:last-of-type) > div:nth-child(2):after {
+    content: " ";
+    position: absolute;
+    bottom: -4rem;
+    left: 0;
+    width: 100%;
+    height: 1px;
+    background: ${({ theme }) => theme.colours.header};
   }
 `;
 
-const ProjectAside = styled.div`
-  display: none;
-  overflow: hidden;
-  height: 100vh;
-  width: 350px;
-  flex-shrink: 0;
+const AsideWrapper = styled.div`
   position: -webkit-sticky;
   position: sticky;
+  width: 350px;
+  height: 100vh;
   top: 0;
-
-  @media ${({ theme }) => theme.breakpoints.tabletLarge} {
-    display: block;
-  }
-
-  @media ${({ theme }) => theme.breakpoints.desktopLarge} {
-    width: 400px;
-  }
-`;
-
-const TransitionAnimation = styled.div`
-  position: absolute;
-  height: 100%;
-  width: 100%;
-  z-index: 1000;
-  background: ${({ theme }) => theme.colours.lightGrey};
-  display: block;
+  flex-shrink: 0;
 
   @media ${({ theme }) => theme.breakpoints.tabletMax} {
     display: none;
+  }
+  @media ${({ theme }) => theme.breakpoints.desktopLarge} {
+    width: 400px;
   }
 `;
 
@@ -87,22 +77,9 @@ const MobileBanner = styled.div`
   }
 `;
 
-const ProjectsWrapper = styled.div`
-  /* margin: 0 1rem;
-
-  @media ${({ theme }) => theme.breakpoints.tabletSmall} {
-    margin: 0 2rem;
-  }
-
-  @media ${({ theme }) => theme.breakpoints.tablet} {
-    margin: 0 4rem;
-  } */
-`;
-
-const ProjectContent = styled.section`
+const ProjectWrapper = styled.section`
   position: relative;
   margin: 4rem 1rem;
-  padding-bottom: 2rem;
 
   @media ${({ theme }) => theme.breakpoints.tabletSmall} {
     margin: 4rem 2rem;
@@ -112,16 +89,35 @@ const ProjectContent = styled.section`
     margin: 4rem;
   }
 
-  .header-container {
+  @media ${({ theme }) => theme.breakpoints.tabletLarge} {
+    margin: 0;
     display: flex;
     flex-direction: row;
-    justify-content: space-between;
+  }
+`;
+
+const ProjectContent = styled.div`
+  margin: 4rem;
+  position: relative;
+
+  .header-container {
     margin-bottom: 2rem;
+
+    @media ${({ theme }) => theme.breakpoints.tablet} {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+    }
 
     & > h2 {
       font-size: ${({ theme }) => theme.fontSize.xLarge};
       color: ${({ theme }) => theme.colours.grey};
       font-weight: 600;
+      margin-bottom: 1rem;
+
+      @media ${({ theme }) => theme.breakpoints.tablet} {
+        margin-bottom: 0;
+      }
     }
   }
 
@@ -184,17 +180,7 @@ const ProjectContent = styled.section`
     display: block;
   }
 
-  &:not(:last-of-type):after {
-    content: " ";
-    position: absolute;
-    bottom: -19px;
-    left: 0;
-    width: 100%;
-    height: 1px;
-    background: ${({ theme }) => theme.colours.header};
-  }
-
-  .pree-logos:not(:first-of-type) {
+  .pree-logos:not(:nth-of-type(2)){
     margin-left: 2rem;
   }
 
@@ -291,75 +277,23 @@ const ProjectURL = styled.a`
   }
 `;
 
-const ImageWrapper = styled.div`
-  margin: 3rem 0;
-  display: flex;
-  flex-direction: row;
-
-  & > div:last-child {
-    margin-left: 2rem;
-  }
-`;
-
 const Project = () => {
-  const projectAnimation = createRef(null);
-  const projectOne = createRef(null);
-  const asideOne = createRef(null);
-  const projectTwo = createRef(null);
-  const asideTwo = createRef(null);
-  const projectThree = createRef(null);
-  const asideThree = createRef(null);
-  const projectFour = createRef(null);
-  const asideFour = createRef(null);
-
-  useEffect(() => {
-    projectAsideTransition(
-      projectOne.current,
-      projectTwo.current,
-      "top",
-      projectAnimation.current,
-      asideOne.current,
-      "pause reset play reset",
-      "-500"
-    );
-    projectAsideTransition(
-      projectTwo.current,
-      projectThree.current,
-      "top",
-      projectAnimation.current,
-      asideTwo.current,
-      "play reset play reset",
-      "top"
-    );
-    projectAsideTransition(
-      projectThree.current,
-      projectFour.current,
-      "top",
-      projectAnimation.current,
-      asideThree.current,
-      "play reset play reset",
-      "top"
-    );
-    projectAsideTransition(
-      projectFour.current,
-      projectFour.current,
-      "bottom+=1000",
-      projectAnimation.current,
-      asideFour.current,
-      "play reset reset reset",
-      "top"
-    );
-
-    return () => {
-      
-    }
-  }, []);
-
   return (
     <ProjectPage>
-      <ProjectAside>
-        <TransitionAnimation ref={projectAnimation} />
-        <div className='aside-wrapper' ref={asideOne}>
+      <MobileBanner>
+        <Background>
+          <Image
+            src='/images/projects/moo/background.png'
+            layout='fill'
+            objectFit='cover'
+          />
+        </Background>
+        <ProjectLogo>
+          <Image src='/images/projects/moo/logo.svg' width={393} height={172} />
+        </ProjectLogo>
+      </MobileBanner>
+      <ProjectWrapper id='moovintage'>
+        <AsideWrapper>
           <Background>
             <Image
               src='/images/projects/moo/background.png'
@@ -372,83 +306,8 @@ const Project = () => {
           <ProjectLogo>
             <img src='/images/projects/moo/logo.svg' alt='Moo Vintage Logo' />
           </ProjectLogo>
-        </div>
-        <div className='aside-wrapper' ref={asideTwo}>
-          <Background>
-            <Image
-              src='/images/projects/soap/background.png'
-              layout='fill'
-              objectFit='cover'
-              quality='100'
-            />
-          </Background>
-          <ProjectLogo logoPosition='high'>
-            <img
-              src='/images/projects/soap/logo.svg'
-              alt='Operation Soap Logo'
-            />
-          </ProjectLogo>
-        </div>
-        <div className='aside-wrapper' ref={asideThree}>
-          <Background>
-            <Image
-              src='/images/projects/pree/background.png'
-              layout='fill'
-              objectFit='cover'
-              quality='100'
-            />
-          </Background>
-          <ProjectLogo>
-            <img src='/images/projects/pree/logo.svg' alt='Pree Logo' />
-          </ProjectLogo>
-        </div>
-        <div className='aside-wrapper' ref={asideFour}>
-          <Background bgOverlay={true}>
-            <Image
-              src='/images/projects/the-pielander/background.png'
-              layout='fill'
-              objectFit='cover'
-              quality='100'
-            />
-          </Background>
-          <ProjectLogo>
-            <img
-              src='/images/projects/the-pielander/logo.svg'
-              alt='The Pielander Logo'
-            />
-          </ProjectLogo>
-        </div>
-        {/* <div className='aside-wrapper' ref={asideTwo}>
-          <Background>
-            <Image
-              src='/images/projects/studio-zoubida/background.png'
-              layout='fill'
-              objectFit='cover'
-            />
-          </Background>
-          <ProjectLogo>
-            <img src='/images/projects/studio-zoubida/logo-pink.svg' />
-          </ProjectLogo>
-        </div> */}
-      </ProjectAside>
-      <ProjectsWrapper>
-        <MobileBanner>
-          <Background>
-            <Image
-              src='/images/projects/moo/background.png'
-              layout='fill'
-              objectFit='cover'
-            />
-          </Background>
-          <ProjectLogo>
-            <Image
-              src='/images/projects/moo/logo.svg'
-              width={393}
-              height={172}
-            />
-          </ProjectLogo>
-        </MobileBanner>
-        <ProjectContent ref={projectOne} id='moovintage'>
+        </AsideWrapper>
+        <ProjectContent>
           <div className='header-container'>
             <h2>MOO: Vintage and Thrift</h2>
             <ProjectURL
@@ -503,23 +362,41 @@ const Project = () => {
           <h4>Social Media Asset Examples</h4>
           <img src='/images/projects/moo/moo-asset.png' />
         </ProjectContent>
-        <MobileBanner>
+      </ProjectWrapper>
+      <MobileBanner>
+        <Background>
+          <Image
+            src='/images/projects/soap/background.png'
+            layout='fill'
+            objectFit='cover'
+          />
+        </Background>
+        <ProjectLogo>
+          <Image
+            src='/images/projects/soap/logo.svg'
+            width={393}
+            height={172}
+          />
+        </ProjectLogo>
+      </MobileBanner>
+      <ProjectWrapper id='operationsoap'>
+        <AsideWrapper>
           <Background>
             <Image
               src='/images/projects/soap/background.png'
               layout='fill'
               objectFit='cover'
+              quality='100'
             />
           </Background>
-          <ProjectLogo>
-            <Image
+          <ProjectLogo logoPosition='high'>
+            <img
               src='/images/projects/soap/logo.svg'
-              width={393}
-              height={172}
+              alt='Operation Soap Logo'
             />
           </ProjectLogo>
-        </MobileBanner>
-        <ProjectContent ref={projectTwo} id='operationsoap'>
+        </AsideWrapper>
+        <ProjectContent>
           <div className='header-container'>
             <h2>Operation SOAP</h2>
             <ProjectURL
@@ -577,23 +454,38 @@ const Project = () => {
             alt='SOAP Size Guide and instagram post'
           />
         </ProjectContent>
-        <MobileBanner>
+      </ProjectWrapper>
+      <MobileBanner>
+        <Background>
+          <Image
+            src='/images/projects/pree/background.png'
+            layout='fill'
+            objectFit='cover'
+          />
+        </Background>
+        <ProjectLogo>
+          <Image
+            src='/images/projects/pree/logo.svg'
+            width={393}
+            height={172}
+          />
+        </ProjectLogo>
+      </MobileBanner>
+      <ProjectWrapper id='pree'>
+        <AsideWrapper>
           <Background>
             <Image
               src='/images/projects/pree/background.png'
               layout='fill'
               objectFit='cover'
+              quality='100'
             />
           </Background>
           <ProjectLogo>
-            <Image
-              src='/images/projects/pree/logo.svg'
-              width={393}
-              height={172}
-            />
+            <img src='/images/projects/pree/logo.svg' alt='Pree Logo' />
           </ProjectLogo>
-        </MobileBanner>
-        <ProjectContent ref={projectThree} id='pree'>
+        </AsideWrapper>
+        <ProjectContent>
           <div className='header-container'>
             <h2>Pree Rehal: Artist and Educator</h2>
             <ProjectURL
@@ -663,23 +555,41 @@ const Project = () => {
             className='pree-3d-logo'
           />
         </ProjectContent>
-        <MobileBanner>
-          <Background>
+      </ProjectWrapper>
+      <MobileBanner>
+        <Background>
+          <Image
+            src='/images/projects/the-pielander/background.png'
+            layout='fill'
+            objectFit='cover'
+          />
+        </Background>
+        <ProjectLogo>
+          <Image
+            src='/images/projects/the-pielander/logo.svg'
+            width={393}
+            height={172}
+          />
+        </ProjectLogo>
+      </MobileBanner>
+      <ProjectWrapper id='thepielander'>
+        <AsideWrapper>
+          <Background bgOverlay={true}>
             <Image
               src='/images/projects/the-pielander/background.png'
               layout='fill'
               objectFit='cover'
+              quality='100'
             />
           </Background>
           <ProjectLogo>
-            <Image
+            <img
               src='/images/projects/the-pielander/logo.svg'
-              width={393}
-              height={172}
+              alt='The Pielander Logo'
             />
           </ProjectLogo>
-        </MobileBanner>
-        <ProjectContent ref={projectFour} id='thepielander'>
+        </AsideWrapper>
+        <ProjectContent>
           <div className='header-container'>
             <h2>The Pielander</h2>
             <ProjectURL
@@ -752,131 +662,7 @@ const Project = () => {
             alt='Pielander Menu'
           />
         </ProjectContent>
-        {/* <MobileBanner>
-          <Background>
-            <Image
-              src='/images/projects/studio-zoubida/background.png'
-              layout='fill'
-              objectFit='cover'
-            />
-          </Background>
-          <ProjectLogo>
-            <Image
-              src='/images/projects/studio-zoubida/logo-pink.svg'
-              width={200}
-              height={144}
-            />
-          </ProjectLogo>
-        </MobileBanner>
-        <ProjectContent ref={projectTwo} id='studiozoubida'>
-          <div className='header-container'>
-            <h2>Studio Zoubida</h2>
-            <ProjectURL
-              href='https://www.studiozoubida.com'
-              target='_blank'
-              rel='noopener'
-              underlineColor='pink'
-            >
-              www.studiozoubida.com
-            </ProjectURL>
-          </div>
-          <h4>Project Deliverables</h4>
-          <ul className='deliverables'>
-            <li>Shop Setp-up</li>
-            <li>Custom Shop Design</li>
-            <li>Video Creation</li>
-            <li>Logos and Brand Guide</li>
-            <li>Product Photo Editing</li>
-            <li>Social Media Assets</li>
-            <li>SEO</li>
-          </ul>
-          <p>
-            Studio Zoubida is owned by Rhekia Fahssi (they/them), a queer
-            Toronto artist making one-of-a-kind decorative rug hangings. From
-            subtle earth tones in organic shapes to vivid tufts in elegantly
-            chaotic geometry - Studio Zoubida’s aesthetic is as eclectic as it
-            is beautiful.
-          </p>
-          <p>
-            The name Studio Zoubida comes from Rhekia’s grandmother in Morocco.
-          </p>
-          <Image
-            src='/images/projects/studio-zoubida/mockup.png'
-            width={660}
-            height={435}
-          />
-          <ImageWrapper>
-            <Image
-              src='/images/projects/studio-zoubida/image-1.png'
-              width={551}
-              height={797}
-            />
-          </ImageWrapper>
-          <h4>The Brand</h4>
-          <p>
-            We set out to build a brand around Studio Zoubida that would match
-            its light hearted spirit and work well with any of the varied styles
-            that Studio Zoubida produces. Our main goal is always to highlight
-            product - adding to the overall experience and never taking away
-            from the art pieces.
-          </p>
-          <p>
-            We used backgrounds of industrial textures like cement and concrete.
-            This mimics the aesthetic in the product photos, and gives a neutral
-            yet interesting backdrop for the shop.
-          </p>
-          <p>
-            We used accent colours that spark joy in the owner, Rhekia. A light
-            peachy pink and dark muted green can be used in variety of different
-            scenarios, with light and dark backgrounds.
-          </p>
-          <div className='video-container'>
-            <video width='100%' loop autoPlay muted>
-              <source
-                src='/images/projects/studio-zoubida/product-video.mp4'
-                type='video/mp4'
-              />
-              Sorry, your browser doesn't support embedded videos.
-            </video>
-          </div>
-          <p>
-            Taking inspiration from 60s psychedelia lettering, we built the
-            Studio Zoubida logo to be light-hearted, irreverent, and versatile.
-            We created the logo in the Studio Zoubida signature colours - but of
-            course we couldn’t help but make an animated version as well.
-          </p>
-          <ImageWrapper>
-            <div>
-              <Image
-                src='/images/projects/studio-zoubida/logo-pink.svg'
-                width={200}
-                height={140}
-              />
-            </div>
-            <div>
-              <Image
-                src='/images/projects/studio-zoubida/logo-green.svg'
-                width={200}
-                height={140}
-              />
-            </div>
-          </ImageWrapper>
-          <h4>The Shop</h4>
-          <p>
-            Because many of Rhekia’s pieces are truly one-of-kind, simplicity
-            was key. We created two main sections, one for one-of-a-kind
-            designs, and one for the Zoubida classics - pieces that can be
-            remade, or made-to-order. We also highlighted the fact that
-            customers can order their very own custom pieces.
-          </p>
-          <p>
-            Studio Zoubida is a small-scale operation and we wanted the shop to
-            reflect that. We did not build out colour and size options for every
-            product because some products are truly one-of-a-kind, and we wanted
-            to highlight that.{" "}
-          </p>
-        </ProjectContent> */}
-      </ProjectsWrapper>
+      </ProjectWrapper>
     </ProjectPage>
   );
 };
