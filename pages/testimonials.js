@@ -84,6 +84,29 @@ const Testimonials = () => {
       <TestimonialsContainer>
         <TestimonialItem>
           <TestimonialName>
+            John,
+            <br />
+            Owner - Pielander
+          </TestimonialName>
+          <TestimonialImg
+            src='/images/projects/the-pielander/logo-alt.png'
+            imgWidth='200px'
+          />
+          <TestimonialContent>
+            I am thrilled with the work Studio Klein has produced. I needed a
+            website but knew nothing about design. Heather and Josh talked me
+            through the creative process, listened to my needs, and made
+            suggestions based on them. <b>The end product was even better than I
+            could have imagined. Not only was I shown how everything works, I
+            was provided with excellent after care with regards to an issue or
+            questions. I can't recommend Studio Klein enough.</b> The Studio Klein
+            are not only professional, creative and highly experienced, they
+            also care about making sure the customer is happy with the end
+            product. The whole process was a dream!
+          </TestimonialContent>
+        </TestimonialItem>
+        <TestimonialItem>
+          <TestimonialName>
             Pree Rehal,
             <br />
             Artist & Educator
@@ -116,29 +139,6 @@ const Testimonials = () => {
             merchandise, makes sales and deepen our relationship with our
             customer. We’re looking forward to working with them again as our
             business grows!
-          </TestimonialContent>
-        </TestimonialItem>
-        <TestimonialItem>
-          <TestimonialName>
-            John,
-            <br />
-            Owner - Pielander
-          </TestimonialName>
-          <TestimonialImg
-            src='/images/projects/the-pielander/logo-alt.png'
-            imgWidth='200px'
-          />
-          <TestimonialContent>
-            I am thrilled with the work Studio Klein has produced. I needed a
-            website but knew nothing about design. Heather and Josh talked me
-            through the creative process, listened to my needs, and made
-            suggestions based on them. The end product was even better than I
-            could have imagined. Not only was I shown how everything works, I
-            was provided with excellent after care with regards to an issue or
-            questions. I can't recommend Studio Klein enough. The Studio Klein
-            are not only professional, creative and highly experienced, they
-            also care about making sure the customer is happy with the end
-            product. The whole process was a dream!
           </TestimonialContent>
         </TestimonialItem>
       </TestimonialsContainer>
