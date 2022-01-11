@@ -99,6 +99,9 @@ const ProjectWrapper = styled.section`
 const ProjectContent = styled.div`
   margin: 4rem;
   position: relative;
+  @media screen and (max-width:600px){
+    margin:1rem;
+  }
 
   .header-container {
     margin-bottom: 2rem;
@@ -141,24 +144,28 @@ const ProjectContent = styled.div`
     margin-bottom: 1.5rem;
   }
 
-  h4,
-  h5 {
+  h4 {
     font-size: 22px;
     color: ${({ theme }) => theme.colours.grey};
     font-weight: 300;
     margin-bottom: 1.5rem;
   }
 
+  h5 {
+    font-size: 22px;
+    color: ${({ theme }) => theme.colours.grey};
+    font-weight: 500;
+    margin-bottom: 0.5rem;
+  }
+
   p {
     font-size: ${({ theme }) => theme.fontSize.small};
     line-height: 27px;
-    margin-bottom: 2rem;
     display: inline-block;
   }
 
   & img {
     max-width: 100%;
-    margin-bottom: 2rem;
   }
 
   .indent-left {
@@ -169,25 +176,83 @@ const ProjectContent = styled.div`
     }
   }
 
+  .project-ctn {
+    display: flex;
+    flex-direction: column;
+  }
+  .content-ctn-roomme {
+    background-color: #E4E0D8;
+    padding:2.5rem;
+    margin-bottom: 2rem;
+  }
+  .content-ctn-moo {
+    background-color: #D8E1EE;
+    padding:2.5rem;
+    margin-bottom: 2rem;
+  }
+  .content-ctn-soap {
+    background-color: #fff;
+    border:5px solid #0F265E;
+    padding:2.5rem;
+    margin-bottom: 2rem;
+  }
+  .content-ctn-rainstick {
+    background-color: #1F1F1D;
+    padding:2.5rem;
+    margin-bottom: 2rem;
+  }
+  .content-label{
+    display:flex;
+    margin-bottom:1rem;
+  }
+  .label {
+      font-size: ${({ theme }) => theme.fontSize.small};
+      color: ${({ theme }) => theme.colours.primary};
+      background-color: ${({ theme }) => theme.colours.lightGrey};
+      border-radius: 3px;
+      padding: 0.75rem 1.25rem 0.5rem;
+      margin: 0.25rem 0.25rem;
+  }
+  .content-ctn-full {
+    display:flex;
+  }
+  .project-ctn-double {
+    display:flex;
+    justify-content: space-between;
+    width: 100%;
+    margin-bottom: 2rem;
+  }
+  @media screen and (max-width:900px){
+    .project-ctn-double{
+      flex-wrap: wrap;
+    }
+  }
+  .project-ctn-double-imgctn {
+    padding-right:1rem;
+  }
+  @media screen and (max-width:900px){
+    .project-ctn-double-imgctn{
+      padding-right:0rem;
+    }
+  }
   .video-container {
     max-width: 660px;
     margin: 3rem 0;
   }
-
   .img--eight-tenths {
     width: 80%;
     max-width: 450px;
     display: block;
   }
-
-  .pree-logos:not(:nth-of-type(2)){
-    margin-left: 2rem;
-  }
-
-  .pree-3d-logo {
+  .img--computer {
+    width: 80vw;
     display: block;
   }
-
+  @media screen and (max-width:900px){
+    .img--computer{
+      width: 100vw;
+    }
+  }
   .moo-sections {
     display: flex;
     flex-direction: column;
@@ -308,6 +373,8 @@ const Project = () => {
           </ProjectLogo>
         </AsideWrapper>
         <ProjectContent>
+        <div className='project-ctn'>
+        <div className='content-ctn-moo'>
           <div className='header-container'>
             <h2>MOO: Vintage and Thrift</h2>
             <ProjectURL
@@ -319,7 +386,7 @@ const Project = () => {
               www.moovintage.com
             </ProjectURL>
           </div>
-          <h4>Project Deliverables</h4>
+          <h5>Project Deliverables</h5>
           <ul className='deliverables'>
             <li>Custom Shop</li>
             <li>Brand Creation</li>
@@ -334,33 +401,56 @@ const Project = () => {
             something light-hearted with a touch of humour, and an on-trend
             design aesthetic. That’s where the MOO brand started.
           </p>
-          <h4>The Shop</h4>
-          <p>
-            The owners were looking for innovative ways for customers to see new
-            shop items. We brainstormed with their team and implemented “Picks
-            of the Week” as well as “Shop the Look” features. These features
-            allow the MOO team to switch up their site by highlighting the
-            products they want to sell. They also encourage customers to
-            purchase items as a pair or group.
-          </p>
-          <div className='moo-sections'>
-            <div>
-              <h4>Homepage</h4>
-              <p>includes:</p>
-              <p>Parallax Cow Print</p>
-              <p>Picks of the Week</p>
-              <img src='/images/projects/moo/mockup.png' />
-            </div>
-            <div>
-              <h4>Theme Shopping Section</h4>
-              <p>includes:</p>
-              <p>Themed Collection</p>
-              <p>Shop the Look</p>
-              <img src='/images/projects/moo/mockup-section.png' />
-            </div>
           </div>
-          <h4>Social Media Asset Examples</h4>
-          <img src='/images/projects/moo/moo-asset.png' />
+          <div className='content-label'><div className='label'>Desktop</div></div>
+          <div className='content-ctn-full'>
+          <img
+            className='img--computer'
+            src='/images/projects/moo/computer-moo.png'
+            alt='Moo Vintage homepage'
+          />
+         </div>
+         <div className='content-ctn-full'>
+         
+
+         <video playsinline autoplay muted loop poster="polina.jpg" id="bgvid">
+          <source src="polina.webm" type="video/webm"/>
+          <source src="polina.mp4" type="video/mp4"/>
+        </video>
+         </div>
+
+         <div className='content-label'><div className='label'>Graphics</div></div>
+          <div className='content-ctn-full'>
+          <img
+            className='img--computer'
+            src='/images/projects/moo/graphic-moo.png'
+            alt='Moo Vintage homepage'
+          />
+         </div>
+         <div className='content-label'><div className='label'>Mobile</div></div>
+         <div className='project-ctn-double'>
+          <div className='project-ctn-double-imgctn'>
+         <img
+            src='/images/projects/moo/moo-double-1.png'
+            alt='The Pielander Mockups'
+          />
+          </div>
+          <div className='project-ctn-double-imgctn'>
+          <img
+            src='/images/projects/moo/moo-double-2.png'
+            alt='The Pielander Mockups'
+          />
+         </div>
+         </div>
+         <div className='content-label'><div className='label'>Styles</div></div>
+          <div className='content-ctn-full'>
+          <img
+            className='img--computer'
+            src='/images/projects/moo/styles-moo.svg'
+            alt='Moo Vintage homepage'
+          />
+         </div>
+          </div>
         </ProjectContent>
       </ProjectWrapper>
       <MobileBanner>
@@ -396,7 +486,9 @@ const Project = () => {
             />
           </ProjectLogo>
         </AsideWrapper>
-        <ProjectContent>
+        < ProjectContent>
+        <div className='project-ctn'>
+        <div className='content-ctn-soap'>
           <div className='header-container'>
             <h2>Operation SOAP</h2>
             <ProjectURL
@@ -424,35 +516,32 @@ const Project = () => {
             Klein set out to build a site that celebrates the bold spirit of the
             brand.
           </p>
+          </div>
+          <div className='content-label'><div className='label'>Desktop</div></div>
+          <div className='content-ctn-full'>
           <img
-            src='/images/projects/soap/mockup-1.png'
-            alt='Operation Soap Mockup'
+            className='img--computer'
+            src='/images/projects/soap/computer-soap.png'
+            alt='Roomme homepage'
           />
+         </div>
+         <div className='content-label'><div className='label'>T-Shirt Graphic</div></div>
+         <div className='content-ctn-full'>
           <img
-            src='/images/projects/soap/mockup-2.png'
-            alt='Operation Soap Mockup'
+            className='img--computer'
+            src='/images/projects/soap/shirt-graphic.png'
+            alt='Roomme homepage'
           />
-          <h4>Merch</h4>
-          <p>
-            Studio Klein designed merch for SOAP using their slogan, “Nurture
-            Your Nature”. This design draws from a 60’s era psychadelic asthetic
-            and features a mushroom motif with a highly decorative font.
-          </p>
+         </div>
+         <div className='content-label'><div className='label'>Styles</div></div>
+         <div className='content-ctn-full'>
           <img
-            className='img--eight-tenths'
-            src='/images/projects/soap/merch.png'
-            alt='Nurture Your Nature t-shirts'
+            className='img--computer'
+            src='/images/projects/soap/styles-soap.svg'
+            alt='Roomme homepage'
           />
-          <h4>Extra Assets</h4>
-          <p>
-            Many extra assets were created for website and social to ensure the
-            brand stays consistent and fresh across all platforms.
-          </p>
-          <img
-            className='img--eight-tenths'
-            src='/images/projects/soap/extra-assets.png'
-            alt='SOAP Size Guide and instagram post'
-          />
+         </div>
+        </div>
         </ProjectContent>
       </ProjectWrapper>
       <MobileBanner>
@@ -475,98 +564,96 @@ const Project = () => {
         <AsideWrapper>
           <Background>
             <Image
-              src='/images/projects/pree/background.png'
+              src='/images/projects/roomme/background.png'
               layout='fill'
               objectFit='cover'
               quality='100'
             />
           </Background>
           <ProjectLogo>
-            <img src='/images/projects/pree/logo.svg' alt='Pree Logo' />
+            <img src='/images/projects/roomme/logo.svg' alt='Roomme Logo' />
           </ProjectLogo>
         </AsideWrapper>
         <ProjectContent>
+          <div className='project-ctn'>
+          <div className='content-ctn-roomme'>
           <div className='header-container'>
-            <h2>Pree Rehal: Artist and Educator</h2>
+            <h2>Roomme</h2>
             <ProjectURL
-              underlineColor='orange'
+              underlineColor='black'
               href='https://prehal.com/'
               target='_blank'
               rel='noopener'
             >
-              www.prehal.com
+              www.roomme.ca
             </ProjectURL>
           </div>
-          <h4>Project Deliverables</h4>
+          <h5>Project Deliverables</h5>
           <ul className='deliverables'>
-            <li>Custom 2-part shop</li>
-            <li>Shop Branding</li>
-            <li>Newsletter Implementation</li>
+            <li>Brand Identity</li>
+            <li>Full Site Design</li>
+            <li>Custom Package Making</li>
             <li>Logo Design</li>
             <li>3D Rendering</li>
           </ul>
-          <h4>The Shop</h4>
+          <h4>The Brief</h4>
           <p>
-            Pree Rehal (they/them) is a multidisciplinary artist and community
-            organizer. The challenge was creating a website that separated the
-            art shop from the community organizing/education while keeping a
-            consistent feeling across both sides of the shop.
+          Roomme is taking an innovative approach to short-term rental properties by offers all-inclusive custom packages and delivery. 
           </p>
-          <p>
-            That challenge led us to create a landing page that introduces a
-            cohesive brand while splitting up the two sides of the sites. Once
-            users have chosen a path, they can switch from either side of the
-            site using the footer navigation.
-          </p>
-          <img src='/images/projects/pree/mockups.png' alt='Pree Mockups' />
-          <h4>Brand Creation</h4>
-          <p>
-            As part of Pree’s new brand, we created a logo and colour palette
-            which was utilized on the site.
-          </p>
-          <p>
-            To create a logo that best represents Pree, we were inspired by
-            common themes in their art as well as their playful use of colour. A
-            mango-shaped wordmark with a touch of whimsy and smooth bubbly lines
-            fit the bill.
-          </p>
+          </div>
+         <div className='content-label'><div className='label'>Desktop</div></div>
+          <div className='content-ctn-full'>
           <img
-            className='pree-logos'
-            src='/images/projects/pree/logo-1.svg'
-            alt='prehal gradient logo'
+            className='img--computer'
+            src='/images/projects/roomme/computer-roomme.png'
+            alt='Roomme homepage'
           />
+         </div>
+         <div className='content-label'><div className='label'>Mobile</div></div>
+         <div className='project-ctn-double'>
+          <div className='project-ctn-double-imgctn'>
+         <img
+            src='/images/projects/roomme/roomme-double-1.png'
+            alt='The Pielander Mockups'
+          />
+          </div>
+          <div className='project-ctn-double-imgctn'>
           <img
-            className='pree-logos'
-            src='/images/projects/pree/logo-2.svg'
-            alt='prehal prehal orange logo'
+            src='/images/projects/roomme/roomme-double-2.png'
+            alt='The Pielander Mockups'
           />
+         </div>
+         </div>
+         <div className='content-label'><div className='label'>User Flow</div></div>
+         <div className='content-ctn-full'>
           <img
-            className='pree-logos'
-            src='/images/projects/pree/logo-3.svg'
-            alt='prehal grey logo'
+            className='img--computer'
+            src='/images/projects/roomme/userflow.png'
+            alt='Roomme homepage'
           />
-          <h4>3D Rendering</h4>
-          <p>
-            Sometimes you just need to throw in a 3D logo rendering for fun.
-          </p>
+         </div>
+         <div className='content-label'><div className='label'>Styles</div></div>
+         <div className='content-ctn-full'>
           <img
-            src='/images/projects/pree/logo-3d.png'
-            alt='Prehal 3D Logo'
-            className='pree-3d-logo'
+            className='img--computer'
+            src='/images/projects/roomme/roomme-styles.svg'
+            alt='Roomme homepage'
           />
+         </div>
+          </div>
         </ProjectContent>
       </ProjectWrapper>
       <MobileBanner>
         <Background>
           <Image
-            src='/images/projects/the-pielander/background.png'
+            src='/images/projects/rainstick/logo.png'
             layout='fill'
             objectFit='cover'
           />
         </Background>
         <ProjectLogo>
           <Image
-            src='/images/projects/the-pielander/logo.svg'
+            src='/images/projects/rainstick/logo.png'
             width={393}
             height={172}
           />
@@ -574,9 +661,9 @@ const Project = () => {
       </MobileBanner>
       <ProjectWrapper id='thepielander'>
         <AsideWrapper>
-          <Background bgOverlay={true}>
+          <Background bgOverlay={false}>
             <Image
-              src='/images/projects/the-pielander/background.png'
+              src='/images/projects/rainstick/background.svg'
               layout='fill'
               objectFit='cover'
               quality='100'
@@ -584,21 +671,23 @@ const Project = () => {
           </Background>
           <ProjectLogo>
             <img
-              src='/images/projects/the-pielander/logo.svg'
-              alt='The Pielander Logo'
+              src='/images/projects/rainstick/logo.png'
+              alt='The Rainstick Logo'
             />
           </ProjectLogo>
         </AsideWrapper>
         <ProjectContent>
+        <div className='project-ctn'>
+        <div className='content-ctn-rainstick'>
           <div className='header-container'>
-            <h2>The Pielander</h2>
+            <h2>RainStick</h2>
             <ProjectURL
-              underlineColor='rust'
+              underlineColor='white'
               href='https://the-pielander.myshopify.com/'
               target='_blank'
               rel='noopener'
             >
-              www.thepielander.com
+              www.rainstick.ca
             </ProjectURL>
           </div>
           <h4>Project Deliverables</h4>
@@ -612,55 +701,47 @@ const Project = () => {
             <li>Social Media Assets</li>
             <li>Delivery Restrictions</li>
           </ul>
-          <p>
-            The Pielander is making delicious Scottish comfort foods such as
-            pasties, pot pies, mac and cheese and don't forget the ‘broon sass’.
-            They deliver the goodies in Toronto, Canada. Scottish import John
-            started his business during the Covid-19 pandemic, and quickly
-            realized that many Canadians shared his love of Scottish classics,
-            made vegan.
-          </p>
+          </div>
+          <div className='content-label'><div className='label'>Desktop</div></div>
+          <div className='content-ctn-full'>
           <img
-            src='/images/projects/the-pielander/mockup.png'
-            alt='The Pielander Mockups'
+            className='img--computer'
+            src='/images/projects/rainstick/computer-rainstick.png'
+            alt='Rainstick homepage'
           />
-          <h4>The Shop</h4>
-          <p>
-            Pielander needed a simple ‘get-to-the-pie’ approach. We opted for a
-            Shopify theme that would allow us to implement his menu in the most
-            straightforward way possible, while still full of personality.
-          </p>
-          <h5 className='indent-left'>Delivery Zones</h5>
-          <p className='indent-left'>
-            Pielander does local delivery only, so we implemented Postal/Zip
-            code based ordering.
-          </p>
-          <h5 className='indent-left'>Route-Making</h5>
-          <p className='indent-left'>
-            We implemented Route-Planning as the Pielander does his deliveries
-            in-house. By using this app, we have made it so the most efficient
-            route is planned out automatically according to delivery locations.
-          </p>
-          <h4>The Brand</h4>
-          <p>
-            We took the inspiration from Pielander's social media presence, and
-            developed a full-fledged brand for Pielander.
-          </p>
-          <p>
-            The colour choices reference vintagey hues reminescent of pies,
-            paried with a flamboyant-but-functional font that just makes you
-            feel like you’re in a Scottish pub! Again, this was made during a
-            global pandemic so an online pub is as good as we’re going to get.
-          </p>
-          <p>
-            Check out the menu below for an example of the branded assets we
-            created for Pielander.
-          </p>
+         </div>
+         <div className='content-label'><div className='label'>Mobile</div></div>
+         <div className='project-ctn-double'>
+          <div className='project-ctn-double-imgctn'>
+         <img
+            src='/images/projects/rainstick/rainstick-double-1.jpg'
+            alt='The rainstick shower'
+          />
+          </div>
+          <div className='project-ctn-double-imgctn'>
           <img
-            className='img--eight-tenths'
-            src='/images/projects/the-pielander/menu.svg'
-            alt='Pielander Menu'
+            src='/images/projects/rainstick/rainstick-double-2.png'
+            alt='The rainstick mobile desktop'
           />
+         </div>
+         </div>
+         <div className='content-label'><div className='label'>Water Calculator</div></div>
+          <div className='content-ctn-full'>
+          <img
+            className='img--computer'
+            src='/images/projects/rainstick/water-calculator.png'
+            alt='Rainstick homepage'
+          />
+         </div>
+         <div className='content-label'><div className='label'>Mobile App</div></div>
+          <div className='content-ctn-full'>
+          <img
+            className='img--computer'
+            src='/images/projects/rainstick/mobile-app.png'
+            alt='Rainstick homepage'
+          />
+         </div>
+          </div>
         </ProjectContent>
       </ProjectWrapper>
     </ProjectPage>
