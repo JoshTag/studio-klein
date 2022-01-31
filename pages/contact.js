@@ -7,45 +7,47 @@ import Head from "next/head";
 const ContactContainer = styled.div`
   display: flex;
   flex-direction: column-reverse;
+  justify-content: center;
+  align-items: center;
 
-  @media ${({ theme }) => theme.breakpoints.tabletLarge} {
+  /* @media ${({ theme }) => theme.breakpoints.tabletLarge} {
     flex-direction: row;
-  }
+  } */
 `;
 
-const TeamContainer = styled.div`
-  margin: 2rem 2.5%;
+// const TeamContainer = styled.div`
+//   margin: 2rem 2.5%;
 
-  @media ${({ theme }) => theme.breakpoints.tabletSmall} {
-    width: 530px;
-    margin: 2rem auto;
-  }
+//   @media ${({ theme }) => theme.breakpoints.tabletSmall} {
+//     width: 530px;
+//     margin: 2rem auto;
+//   }
 
-  @media ${({ theme }) => theme.breakpoints.tablet} {
-    width: 630px;
-  }
+//   @media ${({ theme }) => theme.breakpoints.tablet} {
+//     width: 630px;
+//   }
 
-  @media ${({ theme }) => theme.breakpoints.tabletLarge} {
-    width: 530px;
-    margin: 4rem auto;
-  }
+//   @media ${({ theme }) => theme.breakpoints.tabletLarge} {
+//     width: 530px;
+//     margin: 4rem auto;
+//   }
 
-  @media ${({ theme }) => theme.breakpoints.desktop} {
-    width: 600px;
-  }
+//   @media ${({ theme }) => theme.breakpoints.desktop} {
+//     width: 600px;
+//   }
 
-  @media ${({ theme }) => theme.breakpoints.desktopLarge} {
-    width: 700px;
-  }
+//   @media ${({ theme }) => theme.breakpoints.desktopLarge} {
+//     width: 700px;
+//   }
 
-  @media ${({ theme }) => theme.breakpoints.desktopWide} {
-    margin: 4rem 5rem;
-  }
-`;
+//   @media ${({ theme }) => theme.breakpoints.desktopWide} {
+//     margin: 4rem 5rem;
+//   }
+// `;
 
 const ContactHeader = styled.h2`
   font-size: ${({ theme }) => theme.fontSize.xxLarge};
-  color: ${({ theme }) => theme.colours.grey};
+  color: ${({ theme }) => theme.colours.mooGrey};
   font-weight: 300;
   width: auto;
   text-align: center;
@@ -55,49 +57,49 @@ const ContactHeader = styled.h2`
   }
 `;
 
-const TeamInfo = styled.div`
-  display: flex;
-  flex-direction: column;
+// const TeamInfo = styled.div`
+//   display: flex;
+//   flex-direction: column;
 
-  @media ${({ theme }) => theme.breakpoints.tabletSmall} {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-  }
-`;
+//   @media ${({ theme }) => theme.breakpoints.tabletSmall} {
+//     display: flex;
+//     flex-direction: row;
+//     justify-content: space-between;
+//   }
+// `;
 
-const TeamMember = styled.div`
-  margin: 1rem 0;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+// const TeamMember = styled.div`
+//   margin: 1rem 0;
+//   display: flex;
+//   flex-direction: column;
+//   align-items: center;
 
-  @media ${({ theme }) => theme.breakpoints.tabletSmall} {
-    max-width: 260px;
-    align-items: flex-start;
-  }
+//   @media ${({ theme }) => theme.breakpoints.tabletSmall} {
+//     max-width: 260px;
+//     align-items: flex-start;
+//   }
 
-  @media ${({ theme }) => theme.breakpoints.tabletSmall} {
-    width: 47%;
-    max-width: 460px;
-  }
+//   @media ${({ theme }) => theme.breakpoints.tabletSmall} {
+//     width: 47%;
+//     max-width: 460px;
+//   }
 
-  & > h3 {
-    font-size: ${({ theme }) => theme.fontSize.xLarge};
-    color: ${({ theme }) => theme.colours.grey};
-    font-weight: 300;
-    margin: 1rem 0;
-  }
+//   & > h3 {
+//     font-size: ${({ theme }) => theme.fontSize.xLarge};
+//     color: ${({ theme }) => theme.colours.grey};
+//     font-weight: 300;
+//     margin: 1rem 0;
+//   }
 
-  & > p {
-    font-size: ${({ theme }) => theme.fontSize.medium};
-    margin: 1rem 0;
-  }
-`;
+//   & > p {
+//     font-size: ${({ theme }) => theme.fontSize.medium};
+//     margin: 1rem 0;
+//   }
+// `;
 
-const TeamMemberPhoto = styled(Image)`
-  border-radius: 3px;
-`;
+// const TeamMemberPhoto = styled(Image)`
+//   border-radius: 3px;
+// `;
 
 const scroll = keyframes`
   0% { transform: translateX(0); }
@@ -143,7 +145,7 @@ const Contact = () => {
       </Head>
       <ContactContainer>
         <ContactForm />
-        <TeamContainer>
+        {/* <TeamContainer>
           <ContactHeader>Meet the Team</ContactHeader>
           <TeamInfo>
             <TeamMember>
@@ -171,7 +173,7 @@ const Contact = () => {
               </ProjectURL>
             </TeamMember>
           </TeamInfo>
-        </TeamContainer>
+        </TeamContainer> */}
       </ContactContainer>
     </Layout>
   );

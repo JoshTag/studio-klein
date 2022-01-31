@@ -1,6 +1,6 @@
 import Layout from "components/layout";
 import Project from "components/project";
-import PageSubHeader from "components/page-subheader";
+// import PageSubHeader from "components/page-subheader";
 import Head from "next/head";
 
 const Projects = () => {
@@ -10,7 +10,7 @@ const Projects = () => {
       <Head>
         <title>Studio Klein | Projects</title>
       </Head>
-      <PageSubHeader subheadings={subheadings} />
+      {/* <PageSubHeader subheadings={subheadings} /> */}
       <Project />
       <style global jsx>{`
         .container {

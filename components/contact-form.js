@@ -2,15 +2,19 @@ import { useState } from "react";
 import styled from "styled-components";
 
 const FormContainer = styled.div`
-  background: ${({ theme }) => theme.colours.lightGrey};
+  background: ${({ theme }) => theme.colours.putty};
   padding: 4rem 1rem;
   flex-shrink: 0;
+  width: 90%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 
   @media ${({ theme }) => theme.breakpoints.tabletSmall} {
-    padding: 4rem 2rem;
+    width: 60%;
   }
 
-  @media ${({ theme }) => theme.breakpoints.tablet} {
+  /* @media ${({ theme }) => theme.breakpoints.tablet} {
     padding: 4rem;
   }
 
@@ -28,13 +32,13 @@ const FormContainer = styled.div`
   }
 
   @media ${({ theme }) => theme.breakpoints.desktopWide} {
-    width: 450px;
-  }
+    width: 450px; 
+  } */
 `;
 
 const ContactHeader = styled.h2`
   font-size: ${({ theme }) => theme.fontSize.xxLarge};
-  color: ${({ theme }) => theme.colours.primary};
+  color: ${({ theme }) => theme.colours.mooGrey};
   font-weight: 300;
   margin-bottom: 1rem;
 `;
@@ -44,14 +48,14 @@ const Form = styled.form`
   flex-direction: column;
 
   & > label {
-    color: ${({ theme }) => theme.colours.primary};
+    color: ${({ theme }) => theme.colours.mooGrey};
     margin-bottom: 5px;
   }
 
   & > input,
   > textarea {
-    background: ${({ theme }) => theme.colours.primary};
-    border: none;
+    background: ${({ theme }) => theme.colours.putty};
+    border: 2px solid #231f20;
     height: 40px;
     padding: 5px 10px;
     margin-bottom: 1rem;
@@ -67,17 +71,17 @@ const Form = styled.form`
   & > button {
     margin-top: 2rem;
     background: transparent;
-    color: ${({ theme }) => theme.colours.primary};
+    color: ${({ theme }) => theme.colours.mooGrey};
     font-size: ${({ theme }) => theme.fontSize.medium};
     font-family: ${({ theme }) => theme.fonts.primary};
-    border: 1px solid ${({ theme }) => theme.colours.primary};
+    border: 2px solid ${({ theme }) => theme.colours.mooGrey};
     border-radius: 3px;
     height: 50px;
     transition: 0.3s;
 
     &:hover {
-      color: ${({ theme }) => theme.colours.grey};
-      background: ${({ theme }) => theme.colours.primary};
+      color: ${({ theme }) => theme.colours.putty};
+      background: ${({ theme }) => theme.colours.mooGrey};
       cursor: pointer;
     }
   }

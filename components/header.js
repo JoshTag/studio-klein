@@ -6,7 +6,8 @@ import styled from "styled-components";
 const HeaderContainer = styled.header`
   display: flex;
   justify-content: center;
-  padding: 2rem 0 0;
+  border-bottom:2px solid #231f20;
+  padding: 1rem 0 0;
   background-color: ${({ page }) =>
     page === "/" ? "transparent" : ({ theme }) => theme.colours.header};
 `;
@@ -56,7 +57,10 @@ const NavListMobile = styled.ul`
   }
 
   & li > a {
-    color: ${({ theme }) => theme.colours.primary};
+    color: ${({ theme }) => theme.colours.mooGrey};
+    font-size: 14pt;
+    font-weight: 600;
+    letter-spacing: 0.5px;
   }
 `;
 
@@ -99,14 +103,14 @@ const NavLink = styled.a`
   font-size: ${({ theme }) => theme.fontSize.large};
   color: ${({ page }) =>
     page === "/"
-      ? ({ theme }) => theme.colours.grey
-      : ({ theme }) => theme.colours.primary};
+      ? ({ theme }) => theme.colours.mooGrey
+      : ({ theme }) => theme.colours.mooGrey};
   text-transform: capitalize;
   -webkit-transition: 0.3s;
   -moz-transition: 0.3s;
   -o-transition: 0.3s;
   transition: 0.3s;
-  font-family: ${({ theme }) => theme.fonts.primary};
+  font-family: ${({ theme }) => theme.fonts.mooGrey};
 
   &:hover {
     cursor: pointer;
@@ -177,6 +181,47 @@ const Logo = styled.img`
   }
 `;
 
+const HeaderLink = styled.a`
+    position: relative;
+    padding: .8rem;
+    padding-bottom:1.2rem;
+    text-decoration: none;
+    color: inherit;
+    width: 150px;
+    text-align: center;
+    border-radius: 3px;
+    transition: 0.3s;
+    font-size: 14pt;
+    font-weight: 800;
+    letter-spacing: 0.5px;
+
+    &:before {
+      position: absolute;
+      content: '';
+      height: 100%;
+      top: 0;
+      left: 0;
+      border: ${({ page }) =>
+        page === "active"
+          ? `2px solid #231F20`
+          : `2px solid transparent`};
+      border-radius: 3px;
+      width: ${({ page }) =>
+        page === "active"
+          ? `100%`
+          : `0%`};
+      height: 100%;
+      transition: 0.3s;
+    }
+
+    &:hover:before {
+      border: 2px solid #231F20; 
+      width: 100%;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+`
+
 const Header = () => {
   const [showMenu, setShowMenu] = useState(false);
   const NAV_ITEMS = ["projects", "services", "logo", "testimonials", "contact"];
@@ -194,14 +239,14 @@ const Header = () => {
           <Link href='/'>
             <a>
             <Logo
-                src={`/images/logo-wordmark${page === "/" ? "" : "-light"}.svg`}
+                src={`/images/logo-wordmark${page === "/" ? "" : "-dark"}.svg`}
                 alt='logo'
               />
             </a>
           </Link>
           <Hamurger onClick={handleMenuClick}>
             <img
-              src={`/images/hamburger${page === "/" ? "" : "-white"}.svg`}
+              src={`/images/hamburger${page === "/" ? "" : "-mooGrey"}.svg`}
               alt='Hamburger Menu'
             />
           </Hamurger>
@@ -215,14 +260,45 @@ const Header = () => {
             </li>
           ))}
         </NavListMobile>
-        <NavList>
+        <div className='header header-desktop'>
+          <div className='header-inner-ctn'>
+            <Link href="/projects">
+              <HeaderLink className='header-link' page={page === "/projects" ? "active" : null} route="projects">
+                projects
+              </HeaderLink>
+            </Link>
+            <Link href="/testimonials">
+              <HeaderLink className='header-link' page={page === "/testimonials" ? "active" : null} route="testimonials">
+                testimonials
+              </HeaderLink>
+            </Link>
+          </div>
+          <Link href="/">
+            <a page={page} route="/">
+              <img className='header-logo' src='/images/logo-wordmark-dark.svg'/>
+            </a>
+          </Link>
+          <div className='header-inner-ctn'>
+            <Link href="/contact">
+              <HeaderLink className='header-link' page={page === "/contact" ? "active" : null} route="contact">
+                contact
+              </HeaderLink>
+            </Link>
+            <Link href="/about">
+              <HeaderLink className='header-link' page={page === "/about" ? "active" : null} route="about">
+                about
+              </HeaderLink>
+            </Link>
+          </div>
+        </div>
+        {/* <NavList>
           {NAV_ITEMS.map((route) =>
             route === "logo" ? (
               <li key={route}>
                 <Link href='/'>
                   <a>
                     <Logo
-                      src={`/images/logo-wordmark${page === "/" ? "" : "-light"}.svg`}
+                      src={`/images/logo-wordmark${page === "/" ? "" : "-dark"}.svg`}
                       alt='logo'
                     />
                   </a>
@@ -238,7 +314,7 @@ const Header = () => {
               </li>
             )
           )}
-        </NavList>
+        </NavList> */}
       </Navigation>
     </HeaderContainer>
   );

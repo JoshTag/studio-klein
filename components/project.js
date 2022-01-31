@@ -25,6 +25,7 @@ const AsideWrapper = styled.div`
   height: 100vh;
   top: 0;
   flex-shrink: 0;
+  border-right:2px solid #201f23;
 
   @media ${({ theme }) => theme.breakpoints.tabletMax} {
     display: none;
@@ -79,15 +80,8 @@ const MobileBanner = styled.div`
 
 const ProjectWrapper = styled.section`
   position: relative;
-  margin: 4rem 1rem;
-
-  @media ${({ theme }) => theme.breakpoints.tabletSmall} {
-    margin: 4rem 2rem;
-  }
-
-  @media ${({ theme }) => theme.breakpoints.tablet} {
-    margin: 4rem;
-  }
+  margin: 1rem 0rem;
+  border-bottom: 2px solid #201f23;
 
   @media ${({ theme }) => theme.breakpoints.tabletLarge} {
     margin: 0;
@@ -135,7 +129,7 @@ const ProjectContent = styled.div`
       color: ${({ theme }) => theme.colours.primary};
       background-color: ${({ theme }) => theme.colours.lightGrey};
       border-radius: 3px;
-      padding: 0.75rem 1.25rem 0.5rem;
+      padding: 0.75rem 1.25rem 0.75rem;
       margin: 0.25rem 0.25rem;
     }
   }
@@ -145,17 +139,17 @@ const ProjectContent = styled.div`
   }
 
   h4 {
-    font-size: 22px;
+    font-size: 20px;
     color: ${({ theme }) => theme.colours.grey};
     font-weight: 300;
-    margin-bottom: 1.5rem;
+    margin-bottom: 0.5rem;
   }
 
   h5 {
-    font-size: 22px;
+    font-size: 20px;
     color: ${({ theme }) => theme.colours.grey};
-    font-weight: 500;
-    margin-bottom: 0.5rem;
+    font-weight: 600;
+    margin-bottom: 1rem;
   }
 
   p {
@@ -175,7 +169,31 @@ const ProjectContent = styled.div`
       margin-left: 2rem;
     }
   }
-
+  #bgvid {
+  object-fit: cover;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+}
+#deliverables-moo{
+  background-color:#2B2D30;
+}
+#deliverables-rainstick{
+  background-color:#fafafa;
+}
+#deliverables-soap{
+  background-color:#63171C;
+}
+#deliverables-roomme{
+  background-color:#2E2D2B;
+}
+#width100{
+  width:100%!important;
+  min-width: 100%;
+  max-height: none;
+  min-height: none;
+}
   .project-ctn {
     display: flex;
     flex-direction: column;
@@ -184,22 +202,26 @@ const ProjectContent = styled.div`
     background-color: #E4E0D8;
     padding:2.5rem;
     margin-bottom: 2rem;
+    border-radius:5px;
   }
   .content-ctn-moo {
     background-color: #D8E1EE;
     padding:2.5rem;
     margin-bottom: 2rem;
+    border-radius:5px;
   }
   .content-ctn-soap {
     background-color: #fff;
     border:5px solid #0F265E;
     padding:2.5rem;
     margin-bottom: 2rem;
+    border-radius:5px;
   }
   .content-ctn-rainstick {
     background-color: #1F1F1D;
     padding:2.5rem;
     margin-bottom: 2rem;
+    border-radius:5px;
   }
   .content-label{
     display:flex;
@@ -210,11 +232,18 @@ const ProjectContent = styled.div`
       color: ${({ theme }) => theme.colours.primary};
       background-color: ${({ theme }) => theme.colours.lightGrey};
       border-radius: 3px;
-      padding: 0.75rem 1.25rem 0.5rem;
+      padding: 0.75rem 1.25rem 0.75rem;
       margin: 0.25rem 0.25rem;
+  }
+  .colorwhite{
+    color:#fafafa!important;
+  }
+  .colorblack{
+    color:#1d1d1d!important;
   }
   .content-ctn-full {
     display:flex;
+    margin-bottom:2rem;
   }
   .project-ctn-double {
     display:flex;
@@ -235,6 +264,9 @@ const ProjectContent = styled.div`
       padding-right:0rem;
     }
   }
+  .double-img{
+    border-radius:5px;
+  }
   .video-container {
     max-width: 660px;
     margin: 3rem 0;
@@ -247,7 +279,11 @@ const ProjectContent = styled.div`
   .img--computer {
     width: 80vw;
     display: block;
+    border-radius: 5px;
   }
+   .border-radius{
+     border-radius: 5px;
+   }
   @media screen and (max-width:900px){
     .img--computer{
       width: 100vw;
@@ -314,12 +350,14 @@ const scroll = keyframes`
 const ProjectURL = styled.a`
   position: relative;
   font-size: ${({ theme }) => theme.fontSize.medium};
-  color: ${({ theme }) => theme.colours.grey};
+  color: ${({ theme }) => theme.colours.mooGrey};
   display: inline-block;
   text-decoration: none;
   height: 40px;
   overflow: hidden;
   text-decoration: none;
+  font-weight: 600;
+  letter-spacing: 0.5px;
 
   &:after,
   :before {
@@ -330,7 +368,7 @@ const ProjectURL = styled.a`
     bottom: 0px;
     background: url(/images/link-underline-${({ underlineColor }) => underlineColor}.svg);
     background-repeat: no-repeat;
-    animation: ${scroll} 6s linear infinite;
+    animation: ${scroll} 11s linear infinite;
   }
 
   &:after {
@@ -338,7 +376,7 @@ const ProjectURL = styled.a`
   }
 
   &:before {
-    left: 265px;
+    left: 252px;
   }
 `;
 
@@ -348,7 +386,105 @@ const Project = () => {
       <MobileBanner>
         <Background>
           <Image
-            src='/images/projects/moo/background.png'
+            src='/images/projects/roomme/background-roomme-mobile.png'
+            layout='fill'
+            objectFit='cover'
+          />
+        </Background>
+        <ProjectLogo>
+          <Image
+            src='/images/projects/roomme/logo.svg'
+            width={393}
+            height={172}
+          />
+        </ProjectLogo>
+      </MobileBanner>
+      <ProjectWrapper id='roomme'>
+        <AsideWrapper>
+          <Background>
+            <Image
+              src='/images/projects/roomme/roomme-background.png'
+              layout='fill'
+              objectFit='cover'
+              quality='100'
+            />
+          </Background>
+          <ProjectLogo>
+            <img src='/images/projects/roomme/logo.svg' alt='Roomme Logo' />
+          </ProjectLogo>
+        </AsideWrapper>
+        <ProjectContent>
+          <div className='project-ctn'>
+          <div className='content-ctn-roomme'>
+          <div className='header-container'>
+            <h2>Roomme</h2>
+            <ProjectURL
+              underlineColor='grey3'
+              href='https://roomme.ca/'
+              target='_blank'
+              rel='noopener'
+            >
+              www.roomme.ca
+            </ProjectURL>
+          </div>
+          <h5>Project Deliverables</h5>
+          <ul className='deliverables'>
+            <li id="deliverables-roomme">Full Site Design</li>
+            <li id="deliverables-roomme">Brand Identity</li>
+            <li id="deliverables-roomme">Custom Package Making</li>
+            <li id="deliverables-roomme">Logo Design</li>
+          </ul>
+          {/* <h4>The Brief</h4> */}
+          <p>
+          Roomme takes innovative approach to short-term rental 
+          income properties by offers all-inclusive custom packages, 
+          delivery and installation. 
+          </p>
+          </div>
+         <div className='content-label'><div className='label' id='deliverables-roomme'>Desktop</div></div>
+         <div className='content-ctn-full'>
+          <video className='border-radius' playsinline autoplay="autoplay" muted loop id="bgvid">
+            <source src="/images/projects/roomme/comp-roomme.mp4" type="video/mp4"/>
+          </video>
+         </div>
+         <div className='content-label'><div className='label' id='deliverables-roomme'>Mobile</div></div>
+         <div className='project-ctn-double'>
+          <div className='project-ctn-double-imgctn'>
+         <img
+            className='double-img'
+            src='/images/projects/roomme/roomme-double-1.png'
+            alt='Roomme Mobile View'
+          />
+          </div>
+          <div className='project-ctn-double-imgctn'>
+          <img
+            className='double-img'
+            src='/images/projects/roomme/roomme-double-2.png'
+            alt='Roomme standing lamp'
+          />
+         </div>
+         </div>
+         <div className='content-label'><div className='label' id='deliverables-roomme'>Package Building User Flow</div></div>
+         <div className='content-ctn-full'>
+          <video className='border-radius' playsinline autoplay="autoplay" muted loop id="bgvid">
+            <source src="/images/projects/roomme/package-building.mp4" type="video/mp4"/>
+          </video>
+         </div>
+         <div className='content-label'><div className='label' id='deliverables-roomme'>Styles</div></div>
+         <div className='content-ctn-full'>
+          <img
+            className='img--computer'
+            src='/images/projects/roomme/roomme-styles.svg'
+            alt='Roomme homepage'
+          />
+         </div>
+          </div>
+        </ProjectContent>
+      </ProjectWrapper>
+      <MobileBanner>
+        <Background>
+          <Image
+            src='/images/projects/moo/moo-background-mobile.png'
             layout='fill'
             objectFit='cover'
           />
@@ -378,7 +514,7 @@ const Project = () => {
           <div className='header-container'>
             <h2>MOO: Vintage and Thrift</h2>
             <ProjectURL
-              underlineColor='black'
+              underlineColor='grey3'
               href='https://moo-vintage-thrift.myshopify.com/'
               target='_blank'
               rel='noopener'
@@ -388,38 +524,25 @@ const Project = () => {
           </div>
           <h5>Project Deliverables</h5>
           <ul className='deliverables'>
-            <li>Custom Shop</li>
-            <li>Brand Creation</li>
-            <li>Product Photo Editing</li>
-            <li>Logo Design</li>
-            <li>3D Rendering</li>
+            <li id="deliverables-moo">Custom Shop</li>
+            <li id="deliverables-moo">Brand Creation</li>
+            <li id="deliverables-moo">Product Photo Editing</li>
+            <li id="deliverables-moo">Logo Design</li>
+            <li id="deliverables-moo">3D Rendering</li>
           </ul>
-          <h4>The Brand</h4>
+          {/* <h4>The Brand</h4> */}
           <p>
-            The owners of Moo are just starting their vintage journey and came
-            to us for a full brand concept along with their shop. They wanted
-            something light-hearted with a touch of humour, and an on-trend
-            design aesthetic. That’s where the MOO brand started.
+            The Moo shop was built from scratch, following a light-hearted and irreverant aesthetic. Coversion-increasing 'shop-the-look' and occasion-based collections are key to this shop's success.
           </p>
           </div>
-          <div className='content-label'><div className='label'>Desktop</div></div>
-          <div className='content-ctn-full'>
-          <img
-            className='img--computer'
-            src='/images/projects/moo/computer-moo.png'
-            alt='Moo Vintage homepage'
-          />
-         </div>
+          <div className='content-label'><div className='label' id="deliverables-moo">Desktop</div></div>
          <div className='content-ctn-full'>
-         
-
-         <video playsinline autoplay muted loop poster="polina.jpg" id="bgvid">
-          <source src="polina.webm" type="video/webm"/>
-          <source src="polina.mp4" type="video/mp4"/>
+         <video className='border-radius' playsinline autoplay="autoplay" muted loop id="bgvid">
+          <source src="/images/projects/moo/computer-moo-blank_1.mp4" type="video/mp4"/>
         </video>
          </div>
 
-         <div className='content-label'><div className='label'>Graphics</div></div>
+         <div className='content-label'><div className='label' id="deliverables-moo">Graphics</div></div>
           <div className='content-ctn-full'>
           <img
             className='img--computer'
@@ -427,27 +550,134 @@ const Project = () => {
             alt='Moo Vintage homepage'
           />
          </div>
-         <div className='content-label'><div className='label'>Mobile</div></div>
+         <div className='content-label'><div className='label' id="deliverables-moo">Mobile</div></div>
          <div className='project-ctn-double'>
           <div className='project-ctn-double-imgctn'>
          <img
+            className='double-img'
             src='/images/projects/moo/moo-double-1.png'
             alt='The Pielander Mockups'
           />
           </div>
           <div className='project-ctn-double-imgctn'>
           <img
+            className='double-img'
             src='/images/projects/moo/moo-double-2.png'
             alt='The Pielander Mockups'
           />
          </div>
          </div>
-         <div className='content-label'><div className='label'>Styles</div></div>
+         <div className='content-label'><div className='label' id="deliverables-moo">Styles</div></div>
           <div className='content-ctn-full'>
           <img
             className='img--computer'
             src='/images/projects/moo/styles-moo.svg'
             alt='Moo Vintage homepage'
+          />
+         </div>
+          </div>
+        </ProjectContent>
+      </ProjectWrapper>
+
+         
+      <MobileBanner>
+        <Background>
+          <Image
+            src='/images/projects/rainstick/rainstick-background-mobile.png'
+            layout='fill'
+            objectFit='cover'
+          />
+        </Background>
+        <ProjectLogo>
+          <Image
+            src='/images/projects/rainstick/logo.png'
+            width={384}
+            height={77}
+            id={'width100'}
+          />
+        </ProjectLogo>
+      </MobileBanner>
+      <ProjectWrapper id='thepielander'>
+        <AsideWrapper>
+          <Background bgOverlay={false}>
+            <Image
+              src='/images/projects/rainstick/rainstick-background.png'
+              layout='fill'
+              objectFit='cover'
+              quality='100'
+              // className='border-bottom-1'
+            />
+          </Background>
+          <ProjectLogo>
+            <img
+              src='/images/projects/rainstick/logo.png'
+              alt='The Rainstick Logo'
+            />
+          </ProjectLogo>
+        </AsideWrapper>
+        <ProjectContent>
+        <div className='project-ctn'>
+        <div className='content-ctn-rainstick'>
+          <div className='header-container'>
+            <h2 className="colorwhite">RainStick</h2>
+            <ProjectURL
+              underlineColor='fafafa'
+              href='https://rainstickshower.com/'
+              target='_blank'
+              rel='noopener'
+            >
+              www.rainstickshower.com``
+            </ProjectURL>
+          </div>
+          <h4 className="colorwhite">Project Deliverables</h4>
+          <ul className='deliverables'>
+            <li id="deliverables-rainstick" className="colorblack">Custom Shop Design</li>
+            <li id="deliverables-rainstick" className="colorblack">SEO &amp; Google Anayltics</li>
+            <li id="deliverables-rainstick" className="colorblack">Custom Calculator</li>
+            <li id="deliverables-rainstick" className="colorblack">Custom Blog Templates</li>
+            <li id="deliverables-rainstick" className="colorblack">Mobile Application Design</li>
+
+          </ul>
+          {/* <h4 className="colorwhite">About Rainstick</h4> */}
+          <p className="colorwhite">
+          Rainstick is making showers more environmentally friendly with their revolutionary technology.
+          </p>
+          </div>
+          <div className='content-label'><div className='label' id='deliverables-roomme'>Desktop</div></div>
+          <div className='content-ctn-full'>
+         <video className='border-radius' playsinline autoplay="autoplay" muted loop id="bgvid">
+          <source src="/images/projects/rainstick/computer-rainstick.mp4" type="video/mp4"/>
+        </video>
+         </div>
+         <div className='content-label'><div className='label' id='deliverables-roomme'>Mobile</div></div>
+         <div className='project-ctn-double'>
+          <div className='project-ctn-double-imgctn'>
+         <img
+            className='double-img'
+            src='/images/projects/rainstick/rainstick-double-1.jpg'
+            alt='The rainstick shower'
+          />
+          </div>
+          <div className='project-ctn-double-imgctn'>
+          <img
+            className='double-img'
+            src='/images/projects/rainstick/rainstick-double-2.png'
+            alt='The rainstick mobile desktop'
+          />
+         </div>
+         </div>
+         <div className='content-label'><div className='label' id='deliverables-roomme'>Water Calculator</div></div>
+         <div className='content-ctn-full'>
+         <video className='border-radius' playsinline autoplay="autoplay" muted loop id="bgvid">
+          <source src="/images/projects/rainstick/calculator.mp4" type="video/mp4"/>
+        </video>
+         </div>
+         <div className='content-label'><div className='label' id='deliverables-roomme'>Mobile App</div></div>
+          <div className='content-ctn-full'>
+          <img
+            className='img--computer'
+            src='/images/projects/rainstick/mobile-app.png'
+            alt='Rainstick homepage'
           />
          </div>
           </div>
@@ -492,7 +722,7 @@ const Project = () => {
           <div className='header-container'>
             <h2>Operation SOAP</h2>
             <ProjectURL
-              underlineColor='blue'
+              underlineColor='blue6'
               href='https://soap-shop.ca/'
               target='_blank'
               rel='noopener'
@@ -502,13 +732,13 @@ const Project = () => {
           </div>
           <h4>Project Deliverables</h4>
           <ul className='deliverables'>
-            <li>Shop Set-up</li>
-            <li>Custom Shop Design</li>
-            <li>SEO</li>
-            <li>Merch Design</li>
-            <li>Web &amp; Social Media Assets</li>
+            <li id="deliverables-soap">Shop Set-up</li>
+            <li id="deliverables-soap">Custom Shop Design</li>
+            <li id="deliverables-soap">SEO</li>
+            <li id="deliverables-soap">Merch Design</li>
+            <li id="deliverables-soap">Web &amp; Social Media Assets</li>
           </ul>
-          <h4>The Shop</h4>
+          {/* <h4>The Shop</h4> */}
           <p>
             SOAP shop creates premium garments, designed and printed in Toronto,
             Canada. SOAP is short for 'Operation Soap', the metro Toronto
@@ -519,18 +749,16 @@ const Project = () => {
           </div>
           <div className='content-label'><div className='label'>Desktop</div></div>
           <div className='content-ctn-full'>
-          <img
-            className='img--computer'
-            src='/images/projects/soap/computer-soap.png'
-            alt='Roomme homepage'
-          />
+          <video className='border-radius' playsinline autoplay="autoplay" muted loop id="bgvid">
+            <source src="/images/projects/soap/comp-soap2.mp4" type="video/mp4"/>
+          </video>
          </div>
          <div className='content-label'><div className='label'>T-Shirt Graphic</div></div>
          <div className='content-ctn-full'>
           <img
             className='img--computer'
             src='/images/projects/soap/shirt-graphic.png'
-            alt='Roomme homepage'
+            alt='Soap homepage'
           />
          </div>
          <div className='content-label'><div className='label'>Styles</div></div>
@@ -544,206 +772,7 @@ const Project = () => {
         </div>
         </ProjectContent>
       </ProjectWrapper>
-      <MobileBanner>
-        <Background>
-          <Image
-            src='/images/projects/pree/background.png'
-            layout='fill'
-            objectFit='cover'
-          />
-        </Background>
-        <ProjectLogo>
-          <Image
-            src='/images/projects/pree/logo.svg'
-            width={393}
-            height={172}
-          />
-        </ProjectLogo>
-      </MobileBanner>
-      <ProjectWrapper id='pree'>
-        <AsideWrapper>
-          <Background>
-            <Image
-              src='/images/projects/roomme/background.png'
-              layout='fill'
-              objectFit='cover'
-              quality='100'
-            />
-          </Background>
-          <ProjectLogo>
-            <img src='/images/projects/roomme/logo.svg' alt='Roomme Logo' />
-          </ProjectLogo>
-        </AsideWrapper>
-        <ProjectContent>
-          <div className='project-ctn'>
-          <div className='content-ctn-roomme'>
-          <div className='header-container'>
-            <h2>Roomme</h2>
-            <ProjectURL
-              underlineColor='black'
-              href='https://prehal.com/'
-              target='_blank'
-              rel='noopener'
-            >
-              www.roomme.ca
-            </ProjectURL>
-          </div>
-          <h5>Project Deliverables</h5>
-          <ul className='deliverables'>
-            <li>Brand Identity</li>
-            <li>Full Site Design</li>
-            <li>Custom Package Making</li>
-            <li>Logo Design</li>
-            <li>3D Rendering</li>
-          </ul>
-          <h4>The Brief</h4>
-          <p>
-          Roomme is taking an innovative approach to short-term rental properties by offers all-inclusive custom packages and delivery. 
-          </p>
-          </div>
-         <div className='content-label'><div className='label'>Desktop</div></div>
-          <div className='content-ctn-full'>
-          <img
-            className='img--computer'
-            src='/images/projects/roomme/computer-roomme.png'
-            alt='Roomme homepage'
-          />
-         </div>
-         <div className='content-label'><div className='label'>Mobile</div></div>
-         <div className='project-ctn-double'>
-          <div className='project-ctn-double-imgctn'>
-         <img
-            src='/images/projects/roomme/roomme-double-1.png'
-            alt='The Pielander Mockups'
-          />
-          </div>
-          <div className='project-ctn-double-imgctn'>
-          <img
-            src='/images/projects/roomme/roomme-double-2.png'
-            alt='The Pielander Mockups'
-          />
-         </div>
-         </div>
-         <div className='content-label'><div className='label'>User Flow</div></div>
-         <div className='content-ctn-full'>
-          <img
-            className='img--computer'
-            src='/images/projects/roomme/userflow.png'
-            alt='Roomme homepage'
-          />
-         </div>
-         <div className='content-label'><div className='label'>Styles</div></div>
-         <div className='content-ctn-full'>
-          <img
-            className='img--computer'
-            src='/images/projects/roomme/roomme-styles.svg'
-            alt='Roomme homepage'
-          />
-         </div>
-          </div>
-        </ProjectContent>
-      </ProjectWrapper>
-      <MobileBanner>
-        <Background>
-          <Image
-            src='/images/projects/rainstick/logo.png'
-            layout='fill'
-            objectFit='cover'
-          />
-        </Background>
-        <ProjectLogo>
-          <Image
-            src='/images/projects/rainstick/logo.png'
-            width={393}
-            height={172}
-          />
-        </ProjectLogo>
-      </MobileBanner>
-      <ProjectWrapper id='thepielander'>
-        <AsideWrapper>
-          <Background bgOverlay={false}>
-            <Image
-              src='/images/projects/rainstick/background.svg'
-              layout='fill'
-              objectFit='cover'
-              quality='100'
-            />
-          </Background>
-          <ProjectLogo>
-            <img
-              src='/images/projects/rainstick/logo.png'
-              alt='The Rainstick Logo'
-            />
-          </ProjectLogo>
-        </AsideWrapper>
-        <ProjectContent>
-        <div className='project-ctn'>
-        <div className='content-ctn-rainstick'>
-          <div className='header-container'>
-            <h2>RainStick</h2>
-            <ProjectURL
-              underlineColor='white'
-              href='https://the-pielander.myshopify.com/'
-              target='_blank'
-              rel='noopener'
-            >
-              www.rainstick.ca
-            </ProjectURL>
-          </div>
-          <h4>Project Deliverables</h4>
-          <ul className='deliverables'>
-            <li>Shop Set-up</li>
-            <li>Custom Shop Design</li>
-            <li>Video Creation</li>
-            <li>SEO</li>
-            <li>Logos and Brand Guide</li>
-            <li>Product Photo Editing</li>
-            <li>Social Media Assets</li>
-            <li>Delivery Restrictions</li>
-          </ul>
-          </div>
-          <div className='content-label'><div className='label'>Desktop</div></div>
-          <div className='content-ctn-full'>
-          <img
-            className='img--computer'
-            src='/images/projects/rainstick/computer-rainstick.png'
-            alt='Rainstick homepage'
-          />
-         </div>
-         <div className='content-label'><div className='label'>Mobile</div></div>
-         <div className='project-ctn-double'>
-          <div className='project-ctn-double-imgctn'>
-         <img
-            src='/images/projects/rainstick/rainstick-double-1.jpg'
-            alt='The rainstick shower'
-          />
-          </div>
-          <div className='project-ctn-double-imgctn'>
-          <img
-            src='/images/projects/rainstick/rainstick-double-2.png'
-            alt='The rainstick mobile desktop'
-          />
-         </div>
-         </div>
-         <div className='content-label'><div className='label'>Water Calculator</div></div>
-          <div className='content-ctn-full'>
-          <img
-            className='img--computer'
-            src='/images/projects/rainstick/water-calculator.png'
-            alt='Rainstick homepage'
-          />
-         </div>
-         <div className='content-label'><div className='label'>Mobile App</div></div>
-          <div className='content-ctn-full'>
-          <img
-            className='img--computer'
-            src='/images/projects/rainstick/mobile-app.png'
-            alt='Rainstick homepage'
-          />
-         </div>
-          </div>
-        </ProjectContent>
-      </ProjectWrapper>
+   
     </ProjectPage>
   );
 };
