@@ -537,7 +537,7 @@ const Project = () => {
           <div className='content-label'><div className='label' id="deliverables-moo">Desktop</div></div>
          <div className='content-ctn-full'>
          <video className='border-radius' playsInline autoplay="autoplay" muted loop id="bgvid">
-          <source src="/images/projects/moo/computer-moo-blank_1.mp4" type="video/mp4"/>
+          <source src="/images/projects/moo/mooo.mp4" type="video/mp4"/>
         </video>
          </div>
 
