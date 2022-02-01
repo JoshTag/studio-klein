@@ -15,25 +15,7 @@ const HeroSection = styled.section`
 `;
 
 const HeroImages = styled.div`
-  /* width: 100%;
-  height: 575px;
-  z-index: -1;
-  position: relative;
-  margin-top: 50px;
 
-  @media ${({ theme }) => theme.breakpoints.mobileLarge} {
-    height: 620px;
-  }
-
-  @media ${({ theme }) => theme.breakpoints.tablet} {
-    height: 850px;
-  }
-
-  @media ${({ theme }) => theme.breakpoints.desktop} {
-    height: auto;
-    width: 50%;
-    margin-top: 0; 
-  }*/
 `;
 
 const ImageWrapper = styled.div`

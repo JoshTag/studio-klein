@@ -80,7 +80,7 @@ const MobileBanner = styled.div`
 
 const ProjectWrapper = styled.section`
   position: relative;
-  margin: 1rem 0rem;
+  margin: 1rem 0rem 0rem 0rem;
   border-bottom: 2px solid #201f23;
 
   @media ${({ theme }) => theme.breakpoints.tabletLarge} {
@@ -530,7 +530,6 @@ const Project = () => {
             <li id="deliverables-moo">Logo Design</li>
             <li id="deliverables-moo">3D Rendering</li>
           </ul>
-          {/* <h4>The Brand</h4> */}
           <p>
             The Moo shop was built from scratch, following a light-hearted and irreverant aesthetic. Coversion-increasing 'shop-the-look' and occasion-based collections are key to this shop's success.
           </p>
@@ -538,7 +537,7 @@ const Project = () => {
           <div className='content-label'><div className='label' id="deliverables-moo">Desktop</div></div>
          <div className='content-ctn-full'>
          <video className='border-radius' playsinline autoplay="autoplay" muted loop id="bgvid">
-          <source src="/images/projects/moo/computer-moo-blank_1.mp4" type="video/mp4"/>
+          <source src="/images/projects/moo/mooo.mp4" type="video/mp4"/>
         </video>
          </div>
 
@@ -605,7 +604,6 @@ const Project = () => {
               layout='fill'
               objectFit='cover'
               quality='100'
-              // className='border-bottom-1'
             />
           </Background>
           <ProjectLogo>
@@ -638,7 +636,6 @@ const Project = () => {
             <li id="deliverables-rainstick" className="colorblack">Mobile Application Design</li>
 
           </ul>
-          {/* <h4 className="colorwhite">About Rainstick</h4> */}
           <p className="colorwhite">
           Rainstick is making showers more environmentally friendly with their revolutionary technology.
           </p>
@@ -738,7 +735,6 @@ const Project = () => {
             <li id="deliverables-soap">Merch Design</li>
             <li id="deliverables-soap">Web &amp; Social Media Assets</li>
           </ul>
-          {/* <h4>The Shop</h4> */}
           <p>
             SOAP shop creates premium garments, designed and printed in Toronto,
             Canada. SOAP is short for 'Operation Soap', the metro Toronto
