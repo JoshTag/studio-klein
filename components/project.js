@@ -578,7 +578,7 @@ const Project = () => {
           </div>
          <div className='content-label'><div className='label' id='deliverables-roomme'>Desktop</div></div>
          <div className='content-ctn-full'>
-          <video className='border-radius' playsinline autoplay="autoplay" muted loop id="bgvid">
+          <video className='border-radius' playsInline autoplay="autoplay" muted loop id="bgvid">
             <source src="/images/projects/roomme/comp-roomme.mp4" type="video/mp4"/>
           </video>
          </div>
@@ -601,7 +601,7 @@ const Project = () => {
          </div>
          <div className='content-label'><div className='label' id='deliverables-roomme'>Package Building User Flow</div></div>
          <div className='content-ctn-full'>
-          <video className='border-radius' playsinline autoplay="autoplay" muted loop id="bgvid">
+          <video className='border-radius' playsInline autoplay="autoplay" muted loop id="bgvid">
             <source src="/images/projects/roomme/package-building.mp4" type="video/mp4"/>
           </video>
          </div>
@@ -1000,7 +1000,7 @@ const Project = () => {
           </div>
           <div className='content-label'><div className='label'>Desktop</div></div>
           <div className='content-ctn-full'>
-          <video className='border-radius' playsinline autoplay="autoplay" muted loop id="bgvid">
+          <video className='border-radius' playsInline autoplay="autoplay" muted loop id="bgvid">
             <source src="/images/projects/soap/comp-soap2.mp4" type="video/mp4"/>
           </video>
          </div>
