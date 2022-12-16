@@ -3,7 +3,7 @@ import { smoothScrollTo } from "../utils/gsap";
 
 const HeaderContainer = styled.div`
   background-color: ${({ theme }) => theme.colours.header};
-  padding-bottom: 1.5rem;
+  /* padding-bottom: 1.5rem; */
 `;
 
 const List = styled.ul`

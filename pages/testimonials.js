@@ -1,6 +1,8 @@
 import Layout from "components/layout";
 import Head from "next/head";
 import styled from "styled-components";
+import { useRouter } from "next/router";
+import Link from "next/link";
 
 
 const TestimonialsContainer = styled.div`
@@ -55,97 +57,172 @@ const TestimonialContent = styled.div`
 `;
 
 const Testimonials = () => {
+  const router = useRouter();
+  const page = router.pathname;
   return (
     <Layout>
       <Head>
         <title>Studio Klein | Testimonials</title>
       </Head>
-      {/* <TestimonialsHeader>Testimonials</TestimonialsHeader> */}
-      <TestimonialsContainer>
-        <TestimonialItem>
-          <div className='testimonials-ctn-1'>
-          <TestimonialImg
-            src='/images/projects/testimonials/circle.svg'
-            imgWidth='200px'
-          />
-          <TestimonialName>
-            <p className='testimonial-name'>Alisha M.</p>
-            <p className='testimonial-title'>Rainstick, Owner</p>
-          </TestimonialName>
-          </div>
-          <div className='testimonials-ctn-2'>
-          <TestimonialContent>
-            <p className='testimonials-lrg-txt'>"continued to surpass our expectations"</p>
-            <p className='testimonials-small-txt'>
-              Heather and Josh are creative and professional and I wouldn't think twice 
-              about working with them again. Over the course of our website development, 
-              they continued to surpass our expectations - and we weren't an easy client 
-              by any means! We had a lot of moving parts and people to manage and they 
-              handled it seamlessly. I would highly recommend working with them and 
-              look forward when we get to again (which will be soon!).
 
+
+      <div className="main__info-strip-aboutme padding-bottom-3 background-beige">
+        <div className="main__info-strip-aboutme-info">
+          <h2 className='margin-bottom-2'>
+          why me?
+          </h2>
+          <p  className="margin-bottom-1">
+            From web design, mobile apps, video, animation - 
+            I do it all, and I do it well.  I am also a developer, 
+            so I have full control over the whole process - 
+            from design to launch.
             </p>
-          </TestimonialContent>
+            <p>
+            My 10+ years experience spans from small business 
+            to the aerospace industry. I am passionate about 
+            redirecting consumer dollars away from the big guys. 
+            I want to work with companies that value social and 
+            environmental good.
+          </p>
+        </div>
+          <div  className="main__info-strip-aboutme-img-ctn">
+            <img
+                className='main__aboutme-img'
+                src='/images/heather.svg'
+                alt='click here to go to the contact page and book'
+              />
           </div>
-        </TestimonialItem>
-       
-      </TestimonialsContainer>
-      <TestimonialsContainer>
-        <TestimonialItem>
-          <div className='testimonials-ctn-1'>
-          <TestimonialImg
-            src='/images/projects/testimonials/circle.svg'
-            imgWidth='200px'
+      </div>
+
+      <div className='main__testimonials-ctn-outer background-beige-light'>
+      <h2 className='margin-bottom-2'>Studio Klein's mission</h2>
+      <div className='main__testimonials-ctn'>
+      <div className='main__testimonials-ctn-inner'>
+      <img
+                  className='main__testimonial-logo'
+                  src='/images/icon-grow.svg'
+                  alt='click here to go to the contact page and book'
+                />
+      <p className='main__testimonials-text-bold'>
+        grow small business
+      </p>
+      <p className='main__testimonials-text'>
+      my number one goal is to grow your business by creating a world-class brand and digital presence
+      </p>
+
+      </div>
+      <div className='main__testimonials-ctn-inner'>
+      <img
+                  className='main__testimonial-logo'
+                  src='/images/icon-money.svg'
+                  alt='click here to go to the contact page and book'
+                />
+      <p className='main__testimonials-text-bold'>
+      shop small
+      </p>
+      <p className='main__testimonials-text'>
+      I redirect consumers to small businesses, like yours. I'll make 
+      your shop as appealing and easy to use as the big guys! 
+      </p>
+      </div>
+      <div className='main__testimonials-ctn-inner'>
+      <img
+                  className='main__testimonial-logo'
+                  src='/images/icon-heart.svg'
+                  alt='click here to go to the contact page and book'
+                />
+      <p className='main__testimonials-text-bold'>
+      create community
+      </p>
+      <p className='main__testimonials-text'>
+      let's create a community of small businesses that believes in empowering each other 
+      through economic opportunities
+      </p>
+      </div>
+    </div>
+</div>
+      <div className="main__tiktok-ctn">
+        <video className='main__tiktok-video' playsinline autoplay="autoplay" muted loop id="bgvid">
+            <source src="/images/tiktok-livinggreen.MOV" type="video/mp4"/>
+        </video>
+        <video className='main__tiktok-video' playsinline autoplay="autoplay" muted loop id="bgvid">
+            <source src="/images/tiktok-thp2.MOV" type="video/mp4"/>
+        </video>
+        <video className='main__tiktok-video' playsinline autoplay="autoplay" muted loop id="bgvid">
+            <source src="/images/tiktok-greenberry.MOV" type="video/mp4"/>
+        </video>
+        <video className='main__tiktok-video' playsinline autoplay="autoplay" muted loop id="bgvid">
+            <source src="/images/tiktok-thp1.MOV" type="video/mp4"/>
+        </video>
+        <video className='main__tiktok-video' playsinline autoplay="autoplay" muted loop id="bgvid">
+            <source src="/images/tiktok-heather.MOV" type="video/mp4"/>
+        </video>
+        <video className='main__tiktok-video' playsinline autoplay="autoplay" muted loop id="bgvid">
+            <source src="/images/tiktok-prelim.mp4" type="video/mp4"/>
+        </video>
+      </div>
+
+
+      <div className='main__follow-along-ctn background-beige border-bottom'>
+        <Link href="https://www.tiktok.com/@thestudioklein?lang=en">
+                <img
+                className='about__follow-along-img bounce2'
+                src='/images/follow-along.svg'
+                alt='click here to go to the contact page and book'
+              />
+          </Link>
+          <Link href="https://www.instagram.com/_heidekraut/">
+          <img
+                className='main__info-strip-socials'
+                src='/images/ig.svg'
+                alt='click here to go to the contact page and book'
+              />
+            </Link>
+            <Link href="https://www.tiktok.com/@thestudioklein?lang=en">
+           <img
+                className='main__info-strip-socials'
+                src='/images/tiktok.svg'
+                alt='click here to go to the contact page and book'
+              />
+          </Link>
+      </div>
+
+
+      <div className="main__footer background-beige">
+       <Link href="/">
+              <a className='footer-links-home' page={page} route="/">
+              <img
+            className='main__footer-logo'
+            src='/images/sk-logo.svg'
+            alt='click here to go to the contact page and book'
           />
-          <TestimonialName>
-            <p className='testimonial-name'>John H.</p>
-            <p className='testimonial-title'>The Pielander, Owner</p>
-          </TestimonialName>
-          </div>
-          <div className='testimonials-ctn-2'>
-          <TestimonialContent>
-            <p className='testimonials-lrg-txt'>"better than I
-            could have imagined."</p>
-            <p className='testimonials-small-txt'>I am thrilled with the work Studio Klein has produced. I needed a
-            website but knew nothing about design. Heather and Josh talked me
-            through the creative process, listened to my needs, and made
-            suggestions based on them. The end product was even better than I
-            could have imagined. Not only was I shown how everything works, I
-            was provided with excellent after care with regards to an issue or
-            questions. I can't recommend Studio Klein enough.The Studio Klein
-            are not only professional, creative and highly experienced, they
-            also care about making sure the customer is happy with the end
-            product. The whole process was a dream!
-            </p>
-          </TestimonialContent>
-          </div>
-        </TestimonialItem>
-       
-      </TestimonialsContainer>
-      <TestimonialsContainer>
-        <TestimonialItem>
-          <div className='testimonials-ctn-1'>
-          <TestimonialImg
-            src='/images/projects/testimonials/circle.svg'
-            imgWidth='200px'
-          />
-          <TestimonialName>
-            <p className='testimonial-name'>Becca T.</p>
-            <p className='testimonial-title'>Moo Vintage, Owner</p>
-          </TestimonialName>
-          </div>
-          <div className='testimonials-ctn-2'>
-          <TestimonialContent>
-            <p className='testimonials-lrg-txt'>"for a stand-out brand identity, this is the place to come"</p>
-            <p className='testimonials-small-txt'>
-              
-            If you are looking for a stand-out brand identity, this is the place to come! I only had a vague idea of what I wanted to do with my shop, but the Studio Klein created a stunning brand identity, which I continue to get compliments on! Customers are really drawn to the site and I had a increase in sales since working with SK. 
-            </p>
-          </TestimonialContent>
-          </div>
-        </TestimonialItem>
-       
-      </TestimonialsContainer>
+              </a>
+        </Link>
+            <div className="main__footer-inner">
+            <div className="main__footer-list">
+             <Link href="/projects" className="testimonials">
+              <a className='main__footer-list-items' page={page} route="/projects">projects</a>
+             </Link>
+             <Link href="/services" className="services">
+              <a className='main__footer-list-items' page={page} route="/projects">services</a>
+             </Link>
+             <Link href="/contact" className="contact">
+              <a className='main__footer-list-items' page={page} route="/projects">contact</a>
+             </Link>
+            </div>
+            <div  className="main__footer-list">
+            <Link href="/projects" className="testimonials">
+              <a className='main__footer-list-items' page={page} route="/projects">FAQ</a>
+             </Link>
+             <Link href="/testimonials" className="testimonials">
+              <a className='main__footer-list-items' page={page} route="/testimonials">about</a>
+             </Link>
+             <Link href="/projects" className="testimonials">
+              <a className='main__footer-list-items' page={page} route="/projects">terms and conditions</a>
+             </Link>
+            </div>
+            </div>
+      </div>
     </Layout>
   );
 };

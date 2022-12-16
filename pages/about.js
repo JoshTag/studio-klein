@@ -9,10 +9,9 @@ const About = () => {
       </Head>
       <div className='about-ctn'>
           <p className='about-txt'>Studio Klein is based in Toronto, Canada.
-               It is led by Joshua Taguicana and Heather Alsen.
+               It is led by Heather Alsen.
            </p>
            <p className='about-txt-email'>heather.alsen@thestudioklein.com</p>
-           <p className='about-txt'>josh.taguicana@thestudioklein.com</p>
            </div>
 
     </Layout>

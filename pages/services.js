@@ -14,7 +14,7 @@ const Services = () => {
       <Head>
         <title>Studio Klein | Services</title>
       </Head>
-      <PageSubHeader subheadings={subheadings} />
+      {/* <PageSubHeader subheadings={subheadings} /> */}
       <Service />
     </Layout>
   );

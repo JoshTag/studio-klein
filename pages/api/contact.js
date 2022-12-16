@@ -7,10 +7,9 @@ export default async function (req, res) {
 
   const msg = {
     to: [
-      { email: "josh.taguicana@thestudioklein.com" },
       { email: "heather.alsen@thestudioklein.com" },
     ],
-    from: "josh.taguicana@thestudioklein.com",
+    from: "heather.alsen@thestudioklein.com",
     subject: `New Message From - ${email}`,
     html: `<p>Name: ${name}</p>
       <p>Subject: ${subject}</p>
@@ -21,12 +20,12 @@ export default async function (req, res) {
 
   try {
     await sgMail.send(msg);
-    res.status(200).send("Message sent successfully! We will contact you as soon as we can!");
+    res.status(200).send("Thanks for the message! I will get back to you within 3-4 business days.");
   } catch (error) {
     res
       .status(400)
       .send(
-        "Message not sent. You can contact us at heather.alsen@thestudioklein.com or josh.taguicana@thestudioklein.com"
+        "Message not sent. Please contact heather.alsen@thestudioklein.com directly."
       );
   }
 }

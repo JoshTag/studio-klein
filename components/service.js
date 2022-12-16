@@ -2,6 +2,8 @@ import { createRef, useEffect } from "react";
 import styled, { keyframes } from "styled-components";
 import Link from "next/link";
 import { serviceScrollAnimation } from "./../utils/gsap";
+import { useRouter } from "next/router";
+import Layout from "components/layout.js"
 import LottieData from "components/lottie";
 import social from "./../public/images/social.json";
 import seo from "./../public/images/seo.json";
@@ -13,7 +15,7 @@ const ServiceContainer = styled.section`
   flex-direction: column;
 
   @media ${({ theme }) => theme.breakpoints.tabletLarge} {
-    flex-direction: row;
+    flex-direction: column;
   }
 `;
 
@@ -32,7 +34,6 @@ const MobileHeader = styled.div`
     text-align: center;
     font-size: ${({ theme }) => theme.fontSize.xxLarge};
     color: ${({ theme }) => theme.colours.primary};
-    font-weight: 300;
     width: 300px;
 
     @media ${({ theme }) => theme.breakpoints.tabletSmall} {
@@ -48,7 +49,7 @@ const ServiceAside = styled.aside`
     display: block;
     background: ${({ theme }) => theme.colours.grey};
     height: 300px;
-    background: #494947;
+    background: #231F20;
     height: 100vh;
     width: 350px;
     flex-shrink: 0;
@@ -79,7 +80,7 @@ const AsideTitle = styled.h3`
   text-align: center;
   font-size: ${({ theme }) => theme.fontSize.xxLarge};
   color: ${({ theme }) => theme.colours.primary};
-  font-weight: 300;
+  /* font-weight: 300; */
   padding-bottom: 1rem;
   margin: 0 1rem;
 
@@ -120,14 +121,12 @@ const ServiceContent = styled.div`
     @media ${({ theme }) => theme.breakpoints.tabletLarge} {
       display: block;
       font-size: ${({ theme }) => theme.fontSize.xxLarge};
-      font-weight: 300;
       margin-bottom: 1.5rem;
     }
   }
 
   & > h4 {
     font-size: ${({ theme }) => theme.fontSize.mediumLarge};
-    font-weight: 300;
     margin-bottom: 1.5rem;
   }
 
@@ -181,6 +180,8 @@ const Service = () => {
   const seoContainer = createRef(null);
   const seoPath = createRef(null);
   const seoHeader = createRef(null);
+  const router = useRouter();
+  const page = router.pathname;
 
   useEffect(() => {
     serviceScrollAnimation(
@@ -209,8 +210,405 @@ const Service = () => {
 
   return (
     <ServiceContainer>
-      <ServiceAside>
-        <AsideWrapper>
+
+      <div className="main__info-strip2 background-beige-light"> 
+          <h2 className='main__info-strip-text'>
+          choose your tier
+          </h2>
+      </div>
+      <div className='main__outer-packages-ctn'>
+          <div className='main__inner-package-ctn no-border-right-mobile'>
+            <div className='main__package-title-ctn-inner'>
+              <div className='main__package-title-ctn'>
+                <h2 className='main__package-title'>tier 1 // <br></br>anything-but-basic brand guide</h2>
+              </div>
+            </div>
+          <ul className='main__package-list background-beige'>
+            <li className='main__package-list-item'>logo suite</li>
+              <p className='main__package-list-item-description'>
+              a full range of logos // 6-12 logo versions for all applications, 
+              so it looks as good on web as it does on stationary
+              </p>
+            <li className='main__package-list-item'>colour palette, type pack, mood board</li>
+              <p className='main__package-list-item-description'>
+              the complete toolkit // 
+              everything you need to make every element of your brand cohesive and beautiful
+              </p>
+            <li className='main__package-list-item'>brand pattern, textures and imagery</li>
+              <p className='main__package-list-item-description'>
+              would you recognize the Louis Vuitton pattern? yes, you would. 
+              custom brand patterns and textures have major sticking 
+              power when it comes to brand resonance. 
+              </p>
+          </ul>
+
+          <Link href="/contact" className="services">
+          <div className='main__package-title-ctn-inner'>
+            <div className='main__package-title-ctn'>
+              <h2 className='main__package-price jodaguz__small'>$800</h2>
+            </div>
+          </div>
+          </Link>
+          </div>
+
+        <div className='main__inner-package-ctn no-border-right-mobile'>
+            <div className='main__package-title-ctn-inner'>
+              <div className='main__package-title-ctn background-beige'>
+                <h2 className='main__package-title'>tier 2 // <br></br>design the site of your dreams</h2>
+              </div>
+            </div>
+          <ul className='main__package-list'>
+            <li className='main__package-list-item margin-bottom-2'>all items from tier 1+</li>
+            
+            <li className='main__package-list-item'>web mockups</li>
+              <p className='main__package-list-item-description'>
+              you have your brand, now see it come to life. 
+              I supply you with 10-20 web page mock-ups, that 
+              perfectly encapsulate your new look. 
+              </p>
+            <li className='main__package-list-item'>web and social assets</li>
+              <p className='main__package-list-item-description'>
+              consistency across platforms is key.that’s why I
+               supply icons, buttons, and social post templates of varying 
+               dimensions, to suit your needs. 
+              </p>
+          </ul>
+
+          <Link href="/contact" className="services">
+          <div className='main__package-title-ctn-inner'>
+            <div className='main__package-title-ctn'>
+              <h2 className='main__package-price jodaguz__small'>$1200</h2>
+            </div>
+          </div>
+          </Link>
+        </div>
+        <div className='main__inner-package-ctn background-radial-gradient-1'>
+            <div className='main__package-title-ctn-inner background-beige-light'>
+              <div className='main__package-title-ctn'>
+                <h2 className='main__package-title'>tier 3 // <br></br>the full package</h2>
+              </div>
+            </div>
+          <ul className='main__package-list background-radial-gradient-1'>
+            <li className='main__package-list-item'>all items from tier 2</li>
+              <p className='main__package-list-item-description'>
+              super amazing branding and full mockups
+              </p>
+            <li className='main__package-list-item'>website or e-commerce shop</li>
+              <p className='main__package-list-item-description'>
+              choose your platform - Shopify or Squarespace - based on your needs 
+              </p>
+            <li className='main__package-list-item'>website or e-commerce shop</li>
+              <p className='main__package-list-item-description'>
+              choose your platform - Shopify or Squarespace - based on your needs
+              </p>
+
+          </ul>
+          <Link href="/contact" className="services">
+          <div className='main__package-title-ctn-inner'>
+            <div className='main__package-title-ctn'>
+              <h2 className='main__package-price jodaguz__small'>$2500</h2>
+            </div>
+          </div>
+          </Link>
+        </div>
+      </div>
+      {/* <div className='main__outer-packages-ctn'>
+          <div className='main__inner-package-ctn background-radial-gradient-1 no-border-right-mobile'>
+            <div className='main__package-title-ctn-inner'>
+              <div className='main__package-title-ctn'>
+                <h2 className='main__package-title'>tier 1 / brand guide</h2>
+              </div>
+            </div>
+          <ul className='main__package-list'>
+            <li className='main__package-list-item'>logo suite</li>
+              <p className='main__package-list-item-description'>
+                a full range of logos
+              </p>
+            <li className='main__package-list-item'>colour palette, type pack, mood board</li>
+              <p className='main__package-list-item-description'>
+                all the basics covered 
+              </p>
+            <li className='main__package-list-item'>brand pattern, textures and imagery</li>
+              <p className='main__package-list-item-description'>
+                beyond basics with texture and pattern
+              </p>
+          </ul>
+
+          <Link href="/services" className="services">
+          <div className='main__package-title-ctn-inner'>
+            <div className='main__package-title-ctn'>
+            <h2 className='main__package-price'> <p className='jodaguz__small'>$</p>800</h2>
+            </div>
+          </div>
+          </Link>
+          </div>
+
+        <div className='main__inner-package-ctn background-radial-gradient-1 no-border-right-mobile'>
+            <div className='main__package-title-ctn-inner'>
+              <div className='main__package-title-ctn'>
+                <h2 className='main__package-title'>tier 2 / full brand</h2>
+              </div>
+            </div>
+          <ul className='main__package-list background-beige'>
+            <li className='main__package-list-item'>all items from tier 1</li>
+              <p className='main__package-list-item-description'>
+              plus extras to refine your brand
+              </p>
+            <li className='main__package-list-item'>web mockups</li>
+              <p className='main__package-list-item-description'>
+              see your brand come to life with a web mockup
+              </p>
+            <li className='main__package-list-item'>web and social assets</li>
+              <p className='main__package-list-item-description'>
+              icons, buttons, all other assets for web and social
+              </p>
+          </ul>
+
+          <div className='main__package-title-ctn-inner'>
+            <div className='main__package-title-ctn'>
+            <h2 className='main__package-price'> <p className='jodaguz__small'>$</p>1200</h2>
+            </div>
+          </div>
+        </div>
+        <div className='main__inner-package-ctn background-radial-gradient-1'>
+            <div className='main__package-title-ctn-inner background-beige-light'>
+              <div className='main__package-title-ctn'>
+                <h2 className='main__package-title'>tier 3 / full brand and site</h2>
+              </div>
+            </div>
+          <ul className='main__package-list'>
+            <li className='main__package-list-item'>all items from tier 2</li>
+              <p className='main__package-list-item-description'>
+              super amazing branding and full mockups
+              </p>
+            <li className='main__package-list-item'>website or e-commerce shop</li>
+              <p className='main__package-list-item-description'>
+              choose your platform - Shopify or Squarespace - based on your needs 
+              </p>
+            <li className='main__package-list-item'>website or e-commerce shop</li>
+              <p className='main__package-list-item-description'>
+              choose your platform - Shopify or Squarespace - based on your needs
+              </p>
+
+          </ul>
+          <div className='main__package-title-ctn-inner'>
+            <div className='main__package-title-ctn'>
+            <h2 className='main__package-price'> <p className='jodaguz__small'>$</p>2800</h2>
+            </div>
+          </div>
+        </div>
+      </div> */}
+
+      <h2 className='title-no-ctn'>a la carte pricing</h2>
+
+              <div className="services__outer">
+
+                <img
+                className='main__info-strip-vector bounce4'
+                src='/images/icon-money.svg'
+                alt='click here to go to the contact page and book'
+              />
+                <div className="services__prices-ctn-outer">
+
+                    <div className="services__prices-ctn-inner">
+
+                      <ul className='services__list'>
+                        <li className='services__list-item'>logo suite</li>
+                        <li className='services__list-price'>300</li>
+                      </ul>
+                      <ul className='services__list'>
+                        <li className='services__list-item'>colour palette, type pack, mood board</li>
+                        <li className='services__list-price'>350</li>
+                      </ul>
+                      <ul className='services__list'>
+                        <li className='services__list-item'>brand pattern, textures and imagery</li>
+                        <li className='services__list-price'>350</li>
+                      </ul>
+                      <ul className='services__list'>
+                        <li className='services__list-item'>web mockups</li>
+                        <li className='services__list-price'>600</li>
+                      </ul>
+                      <ul className='services__list'>
+                        <li className='services__list-item'>web and social assets</li>
+                        <li className='services__list-price'>300</li>
+                      </ul>
+                      <ul className='services__list'>
+                        <li className='services__list-item'>website or e-commerce shop</li>
+                        <li className='services__list-price'>2000</li>
+                      </ul>
+                    </div>
+                </div>
+              <img
+                className='main__info-strip-vector bounce4'
+                src='/images/icon-money.svg'
+                alt='click here to go to the contact page and book'
+              />
+</div>
+
+
+      <div className="services__info-strip background-beige">
+
+          <p className='main__info-strip-text'>
+            Also available:
+          </p>
+          <p className='main__info-strip-text'>
+            pitchdecks and presentations
+          </p>
+          <p className='main__info-strip-text'>
+            3D design
+          </p>
+          <p className='main__info-strip-text'>
+            animation for web
+          </p>
+          <p className='main__info-strip-text'>
+            video editing
+          </p>
+          <p className='main__info-strip-text'>
+            app design
+          </p>
+
+          <Link href="/contact">
+                <img
+                className='services__booknow-img bounce2'
+                src='/images/booknow.svg'
+                alt='click here to go to the contact page and book'
+              />
+           </Link>
+      </div>
+
+      <div className='main__project-ctn-outer background-super-light'>
+      
+            <div className='main__project-video-ctn'>
+              <div className='main__project-video-ctn-inner'>
+            {/* <p className='xlarge__judaguz-short'>"</p>
+            <p className='main__testimonials-text'>I've worked with designers from Apple, but SK's work is better</p>
+            <p className='xlarge__judaguz-short'>"</p> */}
+            </div>
+              <video className='main__project-video border-radius' playsinline autoplay="autoplay" muted loop id="bgvid">
+                <source src="/images/projects/soap/comp-soap2.mp4" type="video/mp4"/>
+              </video>
+              <p className='main__testimonials-text-bold'>
+             - Filip I.
+              </p>
+              <img
+                  className='main__testimonial-logo'
+                  src='/images/projects/soap/logo.svg'
+                  alt='click here to go to the contact page and book'
+                />
+            </div>
+            <div className='main__project-video-ctn'>
+            <div className='main__project-video-ctn-inner'>
+            {/* <p className='xlarge__judaguz-short'>"</p>
+            <p className='main__testimonials-text'>huge boost in conversion rate</p>
+            <p className='xlarge__judaguz-short'>"</p> */}
+            </div>
+              <video className='main__project-video border-radius' playsinline autoplay="autoplay" muted loop id="bgvid">
+                <source src="/images/projects/livinggreen/computer-lgh2.mp4" type="video/mp4"/>
+              </video>
+              <p className='main__testimonials-text-bold'>
+             - Becky T.
+              </p>
+              <img
+                  className='main__testimonial-logo'
+                  src='/images/projects/livinggreen/logo-dark-lgh2.svg'
+                  alt='click here to go to the contact page and book'
+                />
+            </div>
+            <div className='main__project-video-ctn'>
+            <div className='main__project-video-ctn-inner'>
+            {/* <p className='xlarge__judaguz-short'>"</p>
+            <p className='main__testimonials-text'>felt SO confident launching my shop</p>
+            <p className='xlarge__judaguz-short'>"</p> */}
+            </div>
+              <video className='main__project-video border-radius' playsinline autoplay="autoplay" muted loop id="bgvid">
+                <source src="/images/projects/rainstick/computer-rainstick.mp4" type="video/mp4"/>
+              </video>
+              <p className='main__testimonials-text-bold'>
+             - Chyna H.
+              </p>
+              <img
+                  className='main__testimonial-logo2'
+                  src='/images/projects/rainstick/logo.png'
+                  alt='click here to go to the contact page and book'
+                />
+            </div>
+      </div>
+
+      <div className='main__questions-outer background-radial-gradient-4-light border-top'>
+      <img
+                className='main__info-strip-vector bounce4'
+                src='/images/icon-questionmark.svg'
+                alt='click here to go to the contact page and book'
+              />
+
+      <div className="main__info-strip-contact padding-bottom-3">
+          <p className='xlarge__judaguz'>
+           questions?
+          </p>
+          <p  className='margin-bottom-1'>Let's chat! Book a call with me and let's get started. <br></br> Or feel free to shoot me an email with any questions! 
+          </p>
+          <p className='margin-bottom-1'>
+            contact me
+          </p>
+            <Link href="/contact" className="main__service-link">
+            <img
+                className='main__info-strip-arrow'
+                src='/images/arrow1.svg'
+                alt='click here to go to the contact page and book'
+              ></img>
+            </Link>
+      </div>
+      <img
+                className='main__info-strip-vector bounce4'
+                src='/images/icon-questionmark.svg'
+                alt='click here to go to the contact page and book'
+              />
+ </div>
+
+
+
+
+
+ <div className="main__footer background-beige">
+       <Link href="/">
+              <a className='footer-links-home' page={page} route="/">
+              <img
+            className='main__footer-logo'
+            src='/images/sk-logo.svg'
+            alt='click here to go to the contact page and book'
+          />
+              </a>
+        </Link>
+
+            <div className="main__footer-inner">
+            <div className="main__footer-list">
+             <Link href="/projects" className="testimonials">
+              <a className='main__footer-list-items' page={page} route="/projects">projects</a>
+             </Link>
+             <Link href="/services" className="services">
+              <a className='main__footer-list-items' page={page} route="/projects">services</a>
+             </Link>
+             <Link href="/contact" className="contact">
+              <a className='main__footer-list-items' page={page} route="/projects">contact</a>
+             </Link>
+            </div>
+            <div  className="main__footer-list">
+            <Link href="/projects" className="testimonials">
+              <a className='main__footer-list-items' page={page} route="/projects">FAQ</a>
+             </Link>
+             <Link href="/testimonials" className="testimonials">
+              <a className='main__footer-list-items' page={page} route="/testimonials">about</a>
+             </Link>
+             <Link href="/projects" className="testimonials">
+              <a className='main__footer-list-items' page={page} route="/projects">terms and conditions</a>
+             </Link>
+            </div>
+            </div>
+      </div>
+      
+
+      {/* <ServiceAside> */}
+        {/* <AsideWrapper>
           <AsideTitle ref={designHeader}>
             design and <br />
             development
@@ -254,14 +652,14 @@ const Service = () => {
               strokeWidth='1'
             />
           </SVGWrapper>
-        </AsideWrapper>
-      </ServiceAside>
-      <ServiceMain>
-        <MobileHeader>
-          <h3>Fully Customizable Shops</h3>
-        </MobileHeader>
-        <ServiceContent ref={designContainer} id='fullycustomizableshops'>
-          <h3>Fully Customizable Shops</h3>
+        </AsideWrapper> */}
+      {/* </ServiceAside> */}
+      {/* <ServiceMain> */}
+        {/* <MobileHeader> */}
+          {/* // <h3>Package 1</h3> */}
+        {/* </MobileHeader> */}
+        {/* <ServiceContent ref={designContainer} id='fullycustomizableshops' className="service__ctn"> */}
+          {/* <h3>Package 1</h3>
           <p>
             We offer comprehensive e-shop development. We understand the full
             spectrum of what is needed to succeed in e-commerce today, and in
@@ -272,16 +670,16 @@ const Service = () => {
             features, fully integrated with social media, and a stack of content
             ready for you to publish. Studio Klein will make your business stand
             out from the crowd.
-          </p>
-          <div className='services__branding-lottie'>
+          </p> */}
+          {/* <div className='services__branding-lottie'>
             <LottieData data={branding} />
           </div>
         </ServiceContent>
         <MobileHeader>
           <h3>Brand Creation</h3>
         </MobileHeader>
-        <ServiceContent ref={developContainer} id='brandcreation'>
-          <h3>Brand Creation</h3>
+        <ServiceContent ref={developContainer} id='brandcreation' className="service__ctn">
+          <h3 className="main__package-title">Brand Creation</h3>
           <p>
             If your e-commerce business needs a boost of brand power, Studio
             Klein delivers. We offer the total package - full brand creation,
@@ -332,30 +730,27 @@ const Service = () => {
             <li>Specialized shipping and tracking features</li>
             <li>And endless other options!</li>
           </ul>
-          <div className='services__seo-lottie'>
+          {/* <div className='services__seo-lottie'>
             <LottieData data={seo} />
-          </div>
-          <p>
-            Don’t see what you need in the Shopify app store? No worries, we can
-            create a custom app just for your shop.
-          </p>
-          <h3>Social Media Integration</h3>
-          <div className='services__social-lottie'>
+          </div> */}
+
+          {/* <h3>Package 2</h3> */}
+          {/* <div className='services__social-lottie'>
             <LottieData data={social} />
-          </div>
-          <p>
+          </div> */}
+          {/* <p>
             Look forward to seamless integration with social media platforms.
             Customers can buy directly from your socials, but the shop receives
             all orders as if they are ordering directly from your shop.
-          </p>
-          <p className='margin-list'>Available for:</p>
-          <ul>
+          </p> */}
+          {/* <p className='margin-list'>Available for:</p> */}
+          {/* <ul>
             <li>Instgram</li>
             <li>Facebook</li>
             <li>Any major social media platforms</li>
-          </ul>
-        </ServiceContent>
-      </ServiceMain>
+          </ul> */}
+        {/* </ServiceContent> */}
+      {/* </ServiceMain> */}
       <style jsx>
         {`
           .margin-list {

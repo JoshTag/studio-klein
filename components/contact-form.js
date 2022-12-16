@@ -159,26 +159,38 @@ const ContactForm = () => {
 
   return (
     <FormContainer>
-      <ContactHeader>Contact Us</ContactHeader>
+      <ContactHeader>Contact me! For bookings or questions.</ContactHeader>
       <Form onSubmit={handleOnSubmit}>
-        <label htmlFor='name'>name</label>
-        <input
-          className='contact-inputs'
-          id='name'
-          type='text'
-          required
-          value={inputs.name}
-          onChange={handleOnChange}
-        />
-        <label htmlFor='email'>email</label>
-        <input
-          className='contact-inputs'
-          id='email'
-          type='email'
-          required
-          value={inputs.email}
-          onChange={handleOnChange}
-        />
+
+        <div className="form-container">
+
+          <div className="form-container-inner">
+          <label htmlFor='name' className="form-container-label">your name</label>
+          <input
+            className='contact-inputs form-container-input margin-right-2'
+            id='name'
+            type='text'
+            required
+            value={inputs.name}
+            onChange={handleOnChange}
+          />
+          </div>
+
+          <div className="form-container-inner">
+          <label htmlFor='email' className="form-container-label">your email</label>
+          <input
+            className='contact-inputs form-container-input'
+            id='email'
+            type='email'
+            required
+            value={inputs.email}
+            onChange={handleOnChange}
+          />
+          </div>
+          
+        </div>
+
+
         <label htmlFor='subject'>subject</label>
         <input
           className='contact-inputs'
