@@ -3,11 +3,7 @@ import styled, { keyframes } from "styled-components";
 import Link from "next/link";
 import { serviceScrollAnimation } from "./../utils/gsap";
 import { useRouter } from "next/router";
-import Layout from "components/layout.js"
-import LottieData from "components/lottie";
-import social from "./../public/images/social.json";
-import seo from "./../public/images/seo.json";
-import branding from "./../public/images/branding.json";
+
 
 const ServiceContainer = styled.section`
   position: relative; // remove
@@ -398,12 +394,10 @@ const Service = () => {
             <p className='main__testimonials-text'>I've worked with designers from Apple, but SK's work is better</p>
             <p className='xlarge__judaguz-short'>"</p> */}
             </div>
-              {/* <video className='main__project-video border-radius' loop muted webkit-playsinline playsinline autoplay="autoplay" id="bgvid">
+              <video className='main__project-video border-radius' loop muted webkit-playsinline playsInline autoplay="autoplay" id="bgvid">
                 <source src="/images/projects/soap/comp-soap2.mp4" type="video/mp4"/>
-              </video> */}
-                <div className='main__background-video border-radius'>
-                  hi
-              </div>
+              </video>
+
               <p className='main__testimonials-text-bold'>
              - Filip I.
               </p>

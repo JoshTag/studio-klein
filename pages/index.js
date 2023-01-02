@@ -61,9 +61,7 @@ export default function Home() {
         <div className='main__lottie-ctn no-border-right-mobile background-radial-gradient-4-light'>
         <div className='lottie-shoe'>
 
-        {/* <div className='lottie'> */}
           <LottieData data={shoe} />
-        {/* </div>  */}
         </div>
         </div>
         <div className='main__info-ctn'>
@@ -390,51 +388,6 @@ export default function Home() {
               ></img>
       </div>
 
-{/* <div className='main__testimonials-ctn-outer background-beige-light'>
-<h2 className='margin-bottom-2'>my clients love me..</h2>
-    <div className='main__testimonials-ctn'>
-      <div className='main__testimonials-ctn-inner'>
-      <img
-                  className='main__testimonial-logo'
-                  src='/images/test-rainstick.svg'
-                  alt='click here to go to the contact page and book'
-                />
-      <p className='main__testimonials-text'>
-      continued to surpass our expectations... 
-      would highly recommend working with Heather
-      </p>
-      <p className='main__testimonials-text-bold'>
-     - Alisha M.
-      </p>
-      </div>
-      <div className='main__testimonials-ctn-inner'>
-      <img
-                  className='main__testimonial-logo'
-                  src='/images/test-moo.svg'
-                  alt='click here to go to the contact page and book'
-                />
-      <p className='main__testimonials-text'>
-        I saw a huge boost in sales after working with Heather
-      </p>
-      <p className='main__testimonials-text-bold'>
-      - Becca T.
-      </p>
-      </div>
-      <div className='main__testimonials-ctn-inner'>
-      <img
-                  className='main__testimonial-logo'
-                  src='/images/test-pielander.svg'
-                  alt='click here to go to the contact page and book'
-                />
-      <p className='main__testimonials-text'>
-        She made it SO easy for me - which I desperately needed
-      </p>
-      <p className='main__testimonials-text-bold'>
-      - John H.
-      </p>
-      </div>
-    </div>
-</div> */}
 
       <div className="main__tiktok-ctn">
         <video className='main__tiktok-video' loop muted webkit-playsinline playsInline autoplay="autoplay" id="bgvid">
