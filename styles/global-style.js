@@ -1225,6 +1225,18 @@ color:blue
     }
   }
 
+    .main__package-title-ctn-inner1{
+    border-top:2px solid black;
+    border-bottom:2px solid black;
+    transition:0.2s;
+  }
+
+  @media screen and (max-width:768px){
+    .main__package-title-ctn-inner1zw{
+      border-bottom:0px solid black;
+    }
+  }
+
   .main__package-title-ctn-inner:hover{
     background:#394588;
     color: #F4F2EB;

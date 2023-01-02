@@ -484,7 +484,7 @@ const Service = () => {
             <p className='main__testimonials-text'>I've worked with designers from Apple, but SK's work is better</p>
             <p className='xlarge__judaguz-short'>"</p> */}
             </div>
-              <video className='main__project-video border-radius' playsinline autoplay="autoplay" muted loop id="bgvid">
+              <video className='main__project-video border-radius' loop muted controls webkit-playsinline playsinline autoplay="autoplay" id="bgvid">
                 <source src="/images/projects/soap/comp-soap2.mp4" type="video/mp4"/>
               </video>
               <p className='main__testimonials-text-bold'>
@@ -502,7 +502,7 @@ const Service = () => {
             <p className='main__testimonials-text'>huge boost in conversion rate</p>
             <p className='xlarge__judaguz-short'>"</p> */}
             </div>
-              <video className='main__project-video border-radius' playsinline autoplay="autoplay" muted loop id="bgvid">
+              <video className='main__project-video border-radius' loop muted controls webkit-playsinline playsinline autoplay="autoplay" id="bgvid">
                 <source src="/images/projects/livinggreen/computer-lgh2.mp4" type="video/mp4"/>
               </video>
               <p className='main__testimonials-text-bold'>
@@ -520,7 +520,7 @@ const Service = () => {
             <p className='main__testimonials-text'>felt SO confident launching my shop</p>
             <p className='xlarge__judaguz-short'>"</p> */}
             </div>
-              <video className='main__project-video border-radius' playsinline autoplay="autoplay" muted loop id="bgvid">
+              <video className='main__project-video border-radius' loop muted controls webkit-playsinline playsinline autoplay="autoplay" id="bgvid">
                 <source src="/images/projects/rainstick/computer-rainstick.mp4" type="video/mp4"/>
               </video>
               <p className='main__testimonials-text-bold'>

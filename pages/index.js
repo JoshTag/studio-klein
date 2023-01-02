@@ -137,7 +137,7 @@ export default function Home() {
             <p className='main__testimonials-text'>I've worked with designers from Apple, but SK's work is better</p>
             <p className='xlarge__judaguz-short'>"</p>
             </div>
-              <video className='main__project-video border-radius' playsinline autoplay="autoplay" muted loop id="bgvid">
+              <video className='main__project-video border-radius' loop muted controls webkit-playsinline playsinline autoplay="autoplay" id="bgvid">
                 <source src="/images/projects/dreamawake/dreamawake-2.mp4" type="video/mp4"/>
               </video>
               <p className='main__testimonials-text-bold'>
@@ -155,7 +155,7 @@ export default function Home() {
             <p className='main__testimonials-text'>huge boost in conversion rate</p>
             <p className='xlarge__judaguz-short'>"</p>
             </div>
-              <video className='main__project-video border-radius' playsinline autoplay="autoplay" muted loop id="bgvid">
+              <video className='main__project-video border-radius' loop muted controls webkit-playsinline playsinline autoplay="autoplay" id="bgvid">
                 <source src="/images/projects/moo/mooo.mp4" type="video/mp4"/>
               </video>
               <p className='main__testimonials-text-bold'>
@@ -173,7 +173,7 @@ export default function Home() {
             <p className='main__testimonials-text'>felt SO confident launching my shop</p>
             <p className='xlarge__judaguz-short'>"</p>
             </div>
-              <video className='main__project-video border-radius' playsinline autoplay="autoplay" muted loop id="bgvid">
+              <video className='main__project-video border-radius' loop muted controls webkit-playsinline playsinline autoplay="autoplay" id="bgvid">
                 <source src="/images/projects/roomme/comp-roomme.mp4" type="video/mp4"/>
               </video>
               <p className='main__testimonials-text-bold'>
@@ -264,7 +264,7 @@ export default function Home() {
       </div>
       <div className='main__outer-packages-ctn'>
           <div className='main__inner-package-ctn no-border-right-mobile'>
-            <div className='main__package-title-ctn-inner'>
+            <div className='main__package-title-ctn-inner1'>
               <div className='main__package-title-ctn'>
                 <h2 className='main__package-title'>tier 1 // <br></br>anything-but-basic brand guide</h2>
               </div>
@@ -298,7 +298,7 @@ export default function Home() {
           </div>
 
         <div className='main__inner-package-ctn no-border-right-mobile'>
-            <div className='main__package-title-ctn-inner'>
+            <div className='main__package-title-ctn-inner1'>
               <div className='main__package-title-ctn background-beige'>
                 <h2 className='main__package-title'>tier 2 // <br></br>design the site of your dreams</h2>
               </div>
@@ -329,7 +329,7 @@ export default function Home() {
           </Link>
         </div>
         <div className='main__inner-package-ctn background-radial-gradient-1'>
-            <div className='main__package-title-ctn-inner background-beige-light'>
+            <div className='main__package-title-ctn-inner1 background-beige-light'>
               <div className='main__package-title-ctn'>
                 <h2 className='main__package-title'>tier 3 // <br></br>the full package</h2>
               </div>
@@ -437,22 +437,22 @@ export default function Home() {
 </div> */}
 
       <div className="main__tiktok-ctn">
-        <video className='main__tiktok-video' playsinline autoplay="autoplay" muted loop id="bgvid">
+        <video className='main__tiktok-video' loop muted controls webkit-playsinline playsinline autoplay="autoplay" id="bgvid">
             <source src="/images/tiktok-livinggreen.MOV" type="video/mp4"/>
         </video>
-        <video className='main__tiktok-video' playsinline autoplay="autoplay" muted loop id="bgvid">
+        <video className='main__tiktok-video' loop muted controls webkit-playsinline playsinline autoplay="autoplay" id="bgvid">
             <source src="/images/tiktok-thp2.MOV" type="video/mp4"/>
         </video>
-        <video className='main__tiktok-video' playsinline autoplay="autoplay" muted loop id="bgvid">
+        <video className='main__tiktok-video' loop muted controls webkit-playsinline playsinline autoplay="autoplay" id="bgvid">
             <source src="/images/tiktok-greenberry.MOV" type="video/mp4"/>
         </video>
-        <video className='main__tiktok-video' playsinline autoplay="autoplay" muted loop id="bgvid">
+        <video className='main__tiktok-video' loop muted controls webkit-playsinline playsinline autoplay="autoplay" id="bgvid">
             <source src="/images/tiktok-thp1.MOV" type="video/mp4"/>
         </video>
-        <video className='main__tiktok-video' playsinline autoplay="autoplay" muted loop id="bgvid">
+        <video className='main__tiktok-video' loop muted controls webkit-playsinline playsinline autoplay="autoplay" id="bgvid">
             <source src="/images/tiktok-heather.MOV" type="video/mp4"/>
         </video>
-        <video className='main__tiktok-video' playsinline autoplay="autoplay" muted loop id="bgvid">
+        <video className='main__tiktok-video' loop muted controls webkit-playsinline playsinline autoplay="autoplay" id="bgvid">
             <source src="/images/tiktok-prelim.mp4" type="video/mp4"/>
         </video>
       </div>
