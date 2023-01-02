@@ -137,7 +137,7 @@ export default function Home() {
             <p className='main__testimonials-text'>I've worked with designers from Apple, but SK's work is better</p>
             <p className='xlarge__judaguz-short'>"</p>
             </div>
-              <video className='main__project-video border-radius' loop muted controls webkit-playsinline playsinline autoplay="autoplay" id="bgvid">
+              <video className='main__project-video border-radius' loop muted webkit-playsinline playsinline autoplay="autoplay" id="bgvid">
                 <source src="/images/projects/dreamawake/dreamawake-2.mp4" type="video/mp4"/>
               </video>
               <p className='main__testimonials-text-bold'>
@@ -155,7 +155,7 @@ export default function Home() {
             <p className='main__testimonials-text'>huge boost in conversion rate</p>
             <p className='xlarge__judaguz-short'>"</p>
             </div>
-              <video className='main__project-video border-radius' loop muted controls webkit-playsinline playsinline autoplay="autoplay" id="bgvid">
+              <video className='main__project-video border-radius' loop muted webkit-playsinline playsinline autoplay="autoplay" id="bgvid">
                 <source src="/images/projects/moo/mooo.mp4" type="video/mp4"/>
               </video>
               <p className='main__testimonials-text-bold'>
@@ -173,7 +173,7 @@ export default function Home() {
             <p className='main__testimonials-text'>felt SO confident launching my shop</p>
             <p className='xlarge__judaguz-short'>"</p>
             </div>
-              <video className='main__project-video border-radius' loop muted controls webkit-playsinline playsinline autoplay="autoplay" id="bgvid">
+              <video className='main__project-video border-radius' loop muted webkit-playsinline playsinline autoplay="autoplay" id="bgvid">
                 <source src="/images/projects/roomme/comp-roomme.mp4" type="video/mp4"/>
               </video>
               <p className='main__testimonials-text-bold'>
@@ -437,22 +437,22 @@ export default function Home() {
 </div> */}
 
       <div className="main__tiktok-ctn">
-        <video className='main__tiktok-video' loop muted controls webkit-playsinline playsinline autoplay="autoplay" id="bgvid">
+        <video className='main__tiktok-video' loop muted webkit-playsinline playsinline autoplay="autoplay" id="bgvid">
             <source src="/images/tiktok-livinggreen.MOV" type="video/mp4"/>
         </video>
-        <video className='main__tiktok-video' loop muted controls webkit-playsinline playsinline autoplay="autoplay" id="bgvid">
+        <video className='main__tiktok-video' loop muted webkit-playsinline playsinline autoplay="autoplay" id="bgvid">
             <source src="/images/tiktok-thp2.MOV" type="video/mp4"/>
         </video>
-        <video className='main__tiktok-video' loop muted controls webkit-playsinline playsinline autoplay="autoplay" id="bgvid">
+        <video className='main__tiktok-video' loop muted webkit-playsinline playsinline autoplay="autoplay" id="bgvid">
             <source src="/images/tiktok-greenberry.MOV" type="video/mp4"/>
         </video>
-        <video className='main__tiktok-video' loop muted controls webkit-playsinline playsinline autoplay="autoplay" id="bgvid">
+        <video className='main__tiktok-video' loop muted webkit-playsinline playsinline autoplay="autoplay" id="bgvid">
             <source src="/images/tiktok-thp1.MOV" type="video/mp4"/>
         </video>
-        <video className='main__tiktok-video' loop muted controls webkit-playsinline playsinline autoplay="autoplay" id="bgvid">
+        <video className='main__tiktok-video' loop muted webkit-playsinline playsinline autoplay="autoplay" id="bgvid">
             <source src="/images/tiktok-heather.MOV" type="video/mp4"/>
         </video>
-        <video className='main__tiktok-video' loop muted controls webkit-playsinline playsinline autoplay="autoplay" id="bgvid">
+        <video className='main__tiktok-video' loop muted webkit-playsinline playsinline autoplay="autoplay" id="bgvid">
             <source src="/images/tiktok-prelim.mp4" type="video/mp4"/>
         </video>
       </div>

@@ -473,7 +473,7 @@ const Project = () => {
           </div>
           <div className='content-label'><div className='label' id="deliverables-moo">Desktop</div></div>
          <div className='content-ctn-full'>
-         <video className='border-radius' loop muted controls webkit-playsinline playsinline autoplay="autoplay" id="bgvid">
+         <video className='border-radius' loop muted webkit-playsinline playsinline autoplay="autoplay" id="bgvid">
           <source src="/images/projects/moo/mooo.mp4" type="video/mp4"/>
         </video>
          </div>
@@ -578,7 +578,7 @@ const Project = () => {
           </div>
          <div className='content-label'><div className='label' id='deliverables-roomme'>Desktop</div></div>
          <div className='content-ctn-full'>
-          <video className='border-radius' loop muted controls webkit-playsinline playsinline autoplay="autoplay" id="bgvid">
+          <video className='border-radius' loop muted webkit-playsinline playsinline autoplay="autoplay" id="bgvid">
             <source src="/images/projects/roomme/comp-roomme.mp4" type="video/mp4"/>
           </video>
          </div>
@@ -601,7 +601,7 @@ const Project = () => {
          </div>
          <div className='content-label'><div className='label' id='deliverables-roomme'>Package Building User Flow</div></div>
          <div className='content-ctn-full'>
-          <video className='border-radius' loop muted controls webkit-playsinline playsinline autoplay="autoplay" id="bgvid">
+          <video className='border-radius' loop muted webkit-playsinline playsinline autoplay="autoplay" id="bgvid">
             <source src="/images/projects/roomme/package-building.mp4" type="video/mp4"/>
           </video>
          </div>
@@ -684,7 +684,7 @@ const Project = () => {
           </div>
           <div className='content-label'><div className='label' id='deliverables-roomme'>Custome e-shop</div></div>
          <div className='content-ctn-full'>
-          <video className='border-radius' loop muted controls webkit-playsinline playsinline autoplay="autoplay" id="bgvid">
+          <video className='border-radius' loop muted webkit-playsinline playsinline autoplay="autoplay" id="bgvid">
             <source src="/images/projects/livinggreen/computer-lgh2.mp4" type="video/mp4"/>
           </video>
          </div>
@@ -774,7 +774,7 @@ const Project = () => {
           </div>
           <div className='content-label'><div className='label' id="deliverables-moo">Desktop</div></div>
          <div className='content-ctn-full'>
-         <video className='border-radius' playsinline autoplay="autoplay" muted loop id="bgvid">
+         <video className='border-radius' loop muted webkit-playsinline playsinline autoplay="autoplay" id="bgvid">
           <source src="/images/projects/dreamawake/dreamawake.mp4" type="video/mp4"/>
         </video>
          </div>
@@ -1000,7 +1000,7 @@ const Project = () => {
           </div>
           <div className='content-label'><div className='label'>Desktop</div></div>
           <div className='content-ctn-full'>
-          <video className='border-radius' playsInline autoplay="autoplay" muted loop id="bgvid">
+          <video className='border-radius' loop muted webkit-playsinline playsinline autoplay="autoplay" id="bgvid">
             <source src="/images/projects/soap/comp-soap2.mp4" type="video/mp4"/>
           </video>
          </div>
@@ -1089,7 +1089,7 @@ const Project = () => {
           </div>
           <div className='content-label'><div className='label' id='deliverables-roomme'>Desktop</div></div>
           <div className='content-ctn-full'>
-         <video className='border-radius' loop muted controls webkit-playsinline playsinline autoplay="autoplay" id="bgvid">
+         <video className='border-radius' loop muted webkit-playsinline playsinline autoplay="autoplay" id="bgvid">
           <source src="/images/projects/rainstick/computer-rainstick.mp4" type="video/mp4"/>
         </video>
          </div>
@@ -1112,7 +1112,7 @@ const Project = () => {
          </div>
          <div className='content-label'><div className='label' id='deliverables-roomme'>Water Calculator</div></div>
          <div className='content-ctn-full'>
-         <video className='border-radius' loop muted controls webkit-playsinline playsinline autoplay="autoplay" id="bgvid">
+         <video className='border-radius' loop muted webkit-playsinline playsinline autoplay="autoplay" id="bgvid">
           <source src="/images/projects/rainstick/calculator.mp4" type="video/mp4"/>
         </video>
          </div>
