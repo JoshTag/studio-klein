@@ -27,7 +27,8 @@ const GlobalStyle = createGlobalStyle`
     unicode-range: U+000-5FF;
   }
   @font-face {
-    src: local('Jodaguz'), url(${JodaguzTtf}) format('truetype'),;
+    src: local('Jodaguz'), url(${JodaguzTtf}) format('truetype'),
+       url(${JodaguzWoff}) format('woff');
     font-family: 'Jodaguz';
     font-style: normal;
     font-display: swap;
