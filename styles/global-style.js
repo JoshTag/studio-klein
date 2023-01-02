@@ -863,6 +863,17 @@ color:blue
       padding:1rem 0rem;
     }
   }
+  .main__background-video{
+    width:370px;
+    margin: 1rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height:200px;
+    width:300px;
+    background-color:blue;
+    position:absolute;
+  }
 
   .main__project-video-ctn{
     width:370px;

@@ -312,92 +312,6 @@ const Service = () => {
           </Link>
         </div>
       </div>
-      {/* <div className='main__outer-packages-ctn'>
-          <div className='main__inner-package-ctn background-radial-gradient-1 no-border-right-mobile'>
-            <div className='main__package-title-ctn-inner'>
-              <div className='main__package-title-ctn'>
-                <h2 className='main__package-title'>tier 1 / brand guide</h2>
-              </div>
-            </div>
-          <ul className='main__package-list'>
-            <li className='main__package-list-item'>logo suite</li>
-              <p className='main__package-list-item-description'>
-                a full range of logos
-              </p>
-            <li className='main__package-list-item'>colour palette, type pack, mood board</li>
-              <p className='main__package-list-item-description'>
-                all the basics covered 
-              </p>
-            <li className='main__package-list-item'>brand pattern, textures and imagery</li>
-              <p className='main__package-list-item-description'>
-                beyond basics with texture and pattern
-              </p>
-          </ul>
-
-          <Link href="/services" className="services">
-          <div className='main__package-title-ctn-inner'>
-            <div className='main__package-title-ctn'>
-            <h2 className='main__package-price'> <p className='jodaguz__small'>$</p>800</h2>
-            </div>
-          </div>
-          </Link>
-          </div>
-
-        <div className='main__inner-package-ctn background-radial-gradient-1 no-border-right-mobile'>
-            <div className='main__package-title-ctn-inner'>
-              <div className='main__package-title-ctn'>
-                <h2 className='main__package-title'>tier 2 / full brand</h2>
-              </div>
-            </div>
-          <ul className='main__package-list background-beige'>
-            <li className='main__package-list-item'>all items from tier 1</li>
-              <p className='main__package-list-item-description'>
-              plus extras to refine your brand
-              </p>
-            <li className='main__package-list-item'>web mockups</li>
-              <p className='main__package-list-item-description'>
-              see your brand come to life with a web mockup
-              </p>
-            <li className='main__package-list-item'>web and social assets</li>
-              <p className='main__package-list-item-description'>
-              icons, buttons, all other assets for web and social
-              </p>
-          </ul>
-
-          <div className='main__package-title-ctn-inner'>
-            <div className='main__package-title-ctn'>
-            <h2 className='main__package-price'> <p className='jodaguz__small'>$</p>1200</h2>
-            </div>
-          </div>
-        </div>
-        <div className='main__inner-package-ctn background-radial-gradient-1'>
-            <div className='main__package-title-ctn-inner background-beige-light'>
-              <div className='main__package-title-ctn'>
-                <h2 className='main__package-title'>tier 3 / full brand and site</h2>
-              </div>
-            </div>
-          <ul className='main__package-list'>
-            <li className='main__package-list-item'>all items from tier 2</li>
-              <p className='main__package-list-item-description'>
-              super amazing branding and full mockups
-              </p>
-            <li className='main__package-list-item'>website or e-commerce shop</li>
-              <p className='main__package-list-item-description'>
-              choose your platform - Shopify or Squarespace - based on your needs 
-              </p>
-            <li className='main__package-list-item'>website or e-commerce shop</li>
-              <p className='main__package-list-item-description'>
-              choose your platform - Shopify or Squarespace - based on your needs
-              </p>
-
-          </ul>
-          <div className='main__package-title-ctn-inner'>
-            <div className='main__package-title-ctn'>
-            <h2 className='main__package-price'> <p className='jodaguz__small'>$</p>2800</h2>
-            </div>
-          </div>
-        </div>
-      </div> */}
 
       <h2 className='title-no-ctn'>a la carte pricing</h2>
 
@@ -484,9 +398,12 @@ const Service = () => {
             <p className='main__testimonials-text'>I've worked with designers from Apple, but SK's work is better</p>
             <p className='xlarge__judaguz-short'>"</p> */}
             </div>
-              <video className='main__project-video border-radius' loop muted webkit-playsinline playsinline autoplay="autoplay" id="bgvid">
+              {/* <video className='main__project-video border-radius' loop muted webkit-playsinline playsinline autoplay="autoplay" id="bgvid">
                 <source src="/images/projects/soap/comp-soap2.mp4" type="video/mp4"/>
-              </video>
+              </video> */}
+                <div className='main__background-video border-radius'>
+                  hi
+              </div>
               <p className='main__testimonials-text-bold'>
              - Filip I.
               </p>
@@ -502,7 +419,7 @@ const Service = () => {
             <p className='main__testimonials-text'>huge boost in conversion rate</p>
             <p className='xlarge__judaguz-short'>"</p> */}
             </div>
-              <video className='main__project-video border-radius' loop muted webkit-playsinline playsinline autoplay="autoplay" id="bgvid">
+              <video className='main__project-video border-radius' loop muted webkit-playsinline playsInline autoplay="autoplay" id="bgvid">
                 <source src="/images/projects/livinggreen/computer-lgh2.mp4" type="video/mp4"/>
               </video>
               <p className='main__testimonials-text-bold'>
@@ -520,7 +437,7 @@ const Service = () => {
             <p className='main__testimonials-text'>felt SO confident launching my shop</p>
             <p className='xlarge__judaguz-short'>"</p> */}
             </div>
-              <video className='main__project-video border-radius' loop muted webkit-playsinline playsinline autoplay="autoplay" id="bgvid">
+              <video className='main__project-video border-radius' loop muted webkit-playsinline playsInline autoplay="autoplay" id="bgvid">
                 <source src="/images/projects/rainstick/computer-rainstick.mp4" type="video/mp4"/>
               </video>
               <p className='main__testimonials-text-bold'>
