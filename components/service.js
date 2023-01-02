@@ -207,7 +207,7 @@ const Service = () => {
   return (
     <ServiceContainer>
 
-      <div className="main__info-strip2 background-beige-light"> 
+      <div className="main__info-strip2 no-border-top-mobile background-beige-light"> 
           <h2 className='main__info-strip-text'>
           choose your tier
           </h2>
@@ -219,7 +219,7 @@ const Service = () => {
                 <h2 className='main__package-title'>tier 1 // <br></br>anything-but-basic brand guide</h2>
               </div>
             </div>
-          <ul className='main__package-list background-beige'>
+          <ul className='main__package-list background-beige border-top-mobile'>
             <li className='main__package-list-item'>logo suite</li>
               <p className='main__package-list-item-description'>
               a full range of logos // 6-12 logo versions for all applications, 
@@ -253,7 +253,7 @@ const Service = () => {
                 <h2 className='main__package-title'>tier 2 // <br></br>design the site of your dreams</h2>
               </div>
             </div>
-          <ul className='main__package-list'>
+          <ul className='main__package-list border-top-mobile'>
             <li className='main__package-list-item margin-bottom-2'>all items from tier 1+</li>
             
             <li className='main__package-list-item'>web mockups</li>
@@ -284,7 +284,7 @@ const Service = () => {
                 <h2 className='main__package-title'>tier 3 // <br></br>the full package</h2>
               </div>
             </div>
-          <ul className='main__package-list background-radial-gradient-1'>
+          <ul className='main__package-list border-top-mobile background-radial-gradient-1'>
             <li className='main__package-list-item'>all items from tier 2</li>
               <p className='main__package-list-item-description'>
               super amazing branding and full mockups

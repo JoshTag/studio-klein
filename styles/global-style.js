@@ -461,6 +461,18 @@ const GlobalStyle = createGlobalStyle`
     }
   }
 
+  @media screen and (max-width:768px){
+    .border-top-mobile{
+      border-top: 2px solid #231F20!important;
+    }
+  }
+
+  @media screen and (max-width:1024px){
+    .no-border-top-mobile{
+      border-top: none!important;
+    }
+  }
+
   .border-bottom{
     border-bottom:2px solid black;
   }
@@ -878,6 +890,21 @@ const GlobalStyle = createGlobalStyle`
       flex-direction:column;
     }
   }
+  .main__info-strip4{
+    width:100%;
+    display:flex;
+    text-align:center;
+    justify-content:center;
+    border-top: 2px solid #231F20;
+    justify-content: space-between;
+  }
+
+  @media screen and (max-width:1024px){
+    .main__info-strip4{
+      justify-content: center;
+      flex-direction:column-reverse;
+    }
+  }
 
   .main__howitworks-icon-ctn{
     display:flex;
@@ -902,6 +929,7 @@ const GlobalStyle = createGlobalStyle`
   @media screen and (max-width:1024px){
     .main__howitworks-icon-ctn2{
       width:100%;
+      border-left:none;
     }
   }
   .main__howitworks-text-ctn{
@@ -917,6 +945,7 @@ const GlobalStyle = createGlobalStyle`
     .main__howitworks-text-ctn{
       border-left:0px!important;
       width:100%;
+      border-top: 2px solid #000000;
     }
   }
   .main__howitworks-text-ctn2{
@@ -932,6 +961,7 @@ const GlobalStyle = createGlobalStyle`
     .main__howitworks-text-ctn2{
       border-left:0px!important;
       width:100%;
+      border-top: 2px solid #000000;
     }
   }
 
@@ -1174,7 +1204,7 @@ const GlobalStyle = createGlobalStyle`
 
   @media screen and (max-width:768px){
     .main__package-list{
-      padding: 0rem 1rem;
+      padding: 1rem;
     }
   }
 
@@ -1508,7 +1538,7 @@ const GlobalStyle = createGlobalStyle`
   .services__list-item{
     font-size:14pt;
     font-weight:600;
-    width:50%;
+    width:100%;
     border-bottom: 2px solid black;
     line-height: 27px;
   }

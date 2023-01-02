@@ -213,7 +213,7 @@ export default function Home() {
       </div>
       </div>
 
-      <div className="main__info-strip3"> 
+      <div className="main__info-strip4"> 
       <div className="main__howitworks-text-ctn2">
           <h2 className='main__howitworks-heading2'>
           execute effectively
