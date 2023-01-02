@@ -167,7 +167,7 @@ const ContactForm = () => {
           <div className="form-container-inner">
           <label htmlFor='name' className="form-container-label">your name</label>
           <input
-            className='contact-inputs form-container-input margin-right-2'
+            className='contact-inputs form-container-input margin-right-10px'
             id='name'
             type='text'
             required

@@ -100,6 +100,11 @@ const GlobalStyle = createGlobalStyle`
 
   /* MARGINS AND PADDINGS */
 
+
+  .margin-right-10px{
+    margin-right:10px;
+  }
+
   .margin-top-3{
     margin-top:3rem;
   }
@@ -1331,11 +1336,12 @@ const GlobalStyle = createGlobalStyle`
   background:#F2F2F2;
   border-radius:3px;
   padding:1rem;
+  width:100%;
+  border: 2px solid #000000;
 }
 
 .main__footer{
     width:100%;
-
     display:flex;
     justify-content:center;
     border-bottom: 2px solid #231F20;
