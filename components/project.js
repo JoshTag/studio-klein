@@ -682,7 +682,7 @@ const Project = () => {
           Studio Klein created their full custom brand and e-shop. 
           </p>
           </div>
-          <div className='content-label'><div className='label' id='deliverables-roomme'>Custome e-shop</div></div>
+          <div className='content-label'><div className='label' id='deliverables-roomme'>Custom e-shop</div></div>
          <div className='content-ctn-full'>
           <video className='border-radius' loop muted webkit-playsinline playsInline autoplay="autoplay" id="bgvid">
             <source src="/images/projects/livinggreen/computer-lgh2.mp4" type="video/mp4"/>
