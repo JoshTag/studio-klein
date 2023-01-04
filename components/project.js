@@ -766,10 +766,8 @@ const Project = () => {
             <li id="deliverables-moo">Logo Design</li>
           </ul>
           <p>
-            The Dream Awake shop was built from scratch, 
-            following a light-hearted and irreverant aesthetic. 
-            Coversion-increasing 'shop-the-look' and occasion-based 
-            collections are key to this shop's success.
+            Dream Awake is a company that is building AR technology on mobile. The owner was looking for an impactful brand
+            that references the steampunk aesthetic.
           </p>
           </div>
           <div className='content-label'><div className='label' id="deliverables-moo">Desktop</div></div>
@@ -859,15 +857,14 @@ const Project = () => {
           </div>
           <h4 className="colorwhite">Project Deliverables</h4>
           <ul className='deliverables'>
-            <li id="deliverables-rainstick" className="colorblack">Custom Shop Design</li>
-            <li id="deliverables-rainstick" className="colorblack">SEO &amp; Google Anayltics</li>
-            <li id="deliverables-rainstick" className="colorblack">Custom Calculator</li>
-            <li id="deliverables-rainstick" className="colorblack">Custom Blog Templates</li>
-            <li id="deliverables-rainstick" className="colorblack">Mobile Application Design</li>
+            <li id="deliverables-rainstick" className="colorblack">Brand Design</li>
+            <li id="deliverables-rainstick" className="colorblack">Brand Patterns</li>
+            <li id="deliverables-rainstick" className="colorblack">Logo Design</li>
 
           </ul>
           <p className="colorwhite">
-          Rainstick is making showers more environmentally friendly with their revolutionary technology.
+          The Pielander was looking for a fun and friendly brand to highlight their vegan pies. Studio Klein
+          referenced 1950s Americana and surrealism to create this eye-catching, nostalgia-inducing brand.
           </p>
           </div>
           <div className='content-label'><div className='label' id="deliverables-moo">Brand Tone</div></div>
@@ -1084,7 +1081,8 @@ const Project = () => {
 
           </ul>
           <p className="colorwhite">
-          Rainstick is making showers more environmentally friendly with their revolutionary technology.
+          Rainstick is making showers more environmentally friendly with their revolutionary technology. Studio Klein designed and 
+          built a full custom shop on Shopify. Custom items such as a water use calculator were also created.
           </p>
           </div>
           <div className='content-label'><div className='label' id='deliverables-roomme'>Desktop</div></div>

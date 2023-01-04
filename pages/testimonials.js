@@ -80,7 +80,7 @@ const Testimonials = () => {
             <p>
             My 10+ years experience spans from small business 
             to the aerospace industry. I am passionate about 
-            redirecting consumer dollars away from the big guys. 
+            redirecting consumer dollars away from huge corporations and towards local business. 
             I want to work with companies that value social and 
             environmental good.
           </p>

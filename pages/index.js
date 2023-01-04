@@ -114,9 +114,9 @@ export default function Home() {
           </h2> 
           <p className='main__info-strip-text'>
           Small business should not mean small impact. 
-          Whether you’re looking for a brand, or high-converting 
-          modern site or e-shop, I deliver scroll-stopping 
-          impact that consumers won’t forget.
+          Whether you’re looking for brand refresh, a full re-brand, or a high-converting 
+          website / e-shop, I deliver scroll-stopping 
+          impact that customers won’t forget.
           </p>
           </div>
           <img
@@ -168,7 +168,7 @@ export default function Home() {
             <div className='main__project-video-ctn'>
             <div className='main__project-video-ctn-inner'>
             <p className='xlarge__judaguz-short'>"</p>
-            <p className='main__testimonials-text'>felt SO confident launching my shop</p>
+            <p className='main__testimonials-text'>I felt SO confident launching my shop</p>
             <p className='xlarge__judaguz-short'>"</p>
             </div>
               <video className='main__project-video border-radius' loop muted webkit-playsinline playsInline autoplay="autoplay" id="bgvid">
@@ -449,7 +449,7 @@ export default function Home() {
             <p>
             My 10+ years experience spans from small business 
             to the aerospace industry. I am passionate about 
-            redirecting consumer dollars away from the big guys. 
+            redirecting consumer dollars away from huge corporations and towards local business. 
             I want to work with companies that value social and 
             environmental good.
           </p>

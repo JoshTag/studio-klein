@@ -214,7 +214,7 @@ const Service = () => {
       </div>
       <div className='main__outer-packages-ctn'>
           <div className='main__inner-package-ctn no-border-right-mobile'>
-            <div className='main__package-title-ctn-inner'>
+            <div className='main__package-title-ctn-inner1'>
               <div className='main__package-title-ctn'>
                 <h2 className='main__package-title'>tier 1 // <br></br>anything-but-basic brand guide</h2>
               </div>
@@ -248,7 +248,7 @@ const Service = () => {
           </div>
 
         <div className='main__inner-package-ctn no-border-right-mobile'>
-            <div className='main__package-title-ctn-inner'>
+            <div className='main__package-title-ctn-inner1'>
               <div className='main__package-title-ctn background-beige'>
                 <h2 className='main__package-title'>tier 2 // <br></br>design the site of your dreams</h2>
               </div>
@@ -279,7 +279,7 @@ const Service = () => {
           </Link>
         </div>
         <div className='main__inner-package-ctn background-radial-gradient-1'>
-            <div className='main__package-title-ctn-inner background-beige-light'>
+            <div className='main__package-title-ctn-inner1 background-beige-light'>
               <div className='main__package-title-ctn'>
                 <h2 className='main__package-title'>tier 3 // <br></br>the full package</h2>
               </div>
@@ -397,10 +397,10 @@ const Service = () => {
               <video className='main__project-video border-radius' loop muted webkit-playsinline playsInline autoplay="autoplay" id="bgvid">
                 <source src="/images/projects/soap/comp-soap2.mp4" type="video/mp4"/>
               </video>
-
+{/* 
               <p className='main__testimonials-text-bold'>
              - Filip I.
-              </p>
+              </p> */}
               <img
                   className='main__testimonial-logo'
                   src='/images/projects/soap/logo.svg'
@@ -416,9 +416,9 @@ const Service = () => {
               <video className='main__project-video border-radius' loop muted webkit-playsinline playsInline autoplay="autoplay" id="bgvid">
                 <source src="/images/projects/livinggreen/computer-lgh2.mp4" type="video/mp4"/>
               </video>
-              <p className='main__testimonials-text-bold'>
+              {/* <p className='main__testimonials-text-bold'>
              - Becky T.
-              </p>
+              </p> */}
               <img
                   className='main__testimonial-logo'
                   src='/images/projects/livinggreen/logo-dark-lgh2.svg'
@@ -434,9 +434,9 @@ const Service = () => {
               <video className='main__project-video border-radius' loop muted webkit-playsinline playsInline autoplay="autoplay" id="bgvid">
                 <source src="/images/projects/rainstick/computer-rainstick.mp4" type="video/mp4"/>
               </video>
-              <p className='main__testimonials-text-bold'>
+              {/* <p className='main__testimonials-text-bold'>
              - Chyna H.
-              </p>
+              </p> */}
               <img
                   className='main__testimonial-logo2'
                   src='/images/projects/rainstick/logo.png'

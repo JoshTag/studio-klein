@@ -501,7 +501,7 @@ const GlobalStyle = createGlobalStyle`
   }
 
   .no-border-top-mobile{
-    border-top: 2px solid #231F20!important;
+    border-top: 0px solid #231F20!important;
   }
   @media screen and (max-width:768px){
     .no-border-top-mobile{
@@ -1337,6 +1337,14 @@ const GlobalStyle = createGlobalStyle`
   border-radius:3px;
   padding:1rem;
   width:100%;
+  border: 2px solid #000000;
+}
+.form-container-input-1{
+  height:40px;
+  background:#F2F2F2;
+  border-radius:3px;
+  padding:1rem;
+  width:95%;
   border: 2px solid #000000;
 }
 
