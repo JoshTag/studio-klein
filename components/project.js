@@ -453,7 +453,6 @@ const Project = () => {
               target='_blank'
               rel='noopener'
             >
-              www.moovintage.com
             </ProjectURL>
           </div>
           <h5>Project Deliverables</h5>
@@ -661,7 +660,7 @@ const Project = () => {
             <h2 className='lgh-type'>Living Green Homes</h2>
             <ProjectURL
               underlineColor=''
-              href='https://livinggreenhome.ca/'
+              href='https://livinggreenhomes.myshopify.com/?_ab=0&_fd=0&_sc=1'
               target='_blank'
               rel='noopener'
               className='lgh-type'
